@@ -1,0 +1,8 @@
+{
+    "@@author": "Vishnu C Prasad",
+    "@@locale": "en",
+    "appName": "Aaraadhya Temple",
+    "@appName": {
+        "description": "The official name of the application, displayed on the home screen, splash screen, and other prominent places."
+    }
+}
