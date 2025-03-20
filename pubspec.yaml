@@ -32,3 +32,11 @@ flutter:
 
   assets:
     - .env.dev
+
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: assets/fonts/Raleway-VariableFont_wght.ttf
+          weight: 500
+        - asset: assets/fonts/Raleway-Italic-VariableFont_wght.ttf
+          style: italic
