@@ -32,6 +32,7 @@ flutter:
 
   assets:
     - .env.dev
+    - assets/images/
 
   fonts:
     - family: Raleway

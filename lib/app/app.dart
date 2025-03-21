@@ -1,5 +1,6 @@
 import 'package:aaraadhya_temple_dashboard/core/gen/l10n/app_localizations.dart';
 import 'package:aaraadhya_temple_dashboard/core/theme/app_theme.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/auth/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class AaraadhyaTempleApp extends StatelessWidget {
@@ -13,7 +14,7 @@ class AaraadhyaTempleApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: Scaffold(body: Center(child: Text('Aaraadhya Temple'))),
+      home: SplashScreen(),
     );
   }
 }
