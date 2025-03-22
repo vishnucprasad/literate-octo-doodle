@@ -20,5 +20,21 @@
     "forgotPasswordQuestion": "Forgot Password?",
     "@forgotPasswordQuestion": {
         "description": "The text displayed on the forgot password link."
+    },
+    "forgotPasswordScreenTitle": "Forgot Password",
+    "@forgotPasswordScreenTitle": {
+        "description": "The title displayed on the forgot password screen."
+    },
+    "forgotPasswordScreenSubtitle": "Enter your email address to reset your password.",
+    "@forgotPasswordScreenSubtitle": {
+        "description": "The subtitle displayed on the forgot password screen."
+    },
+    "resetPasswordButtonLabel": "Reset Password",
+    "@resetPasswordButtonLabel": {
+        "description": "The text displayed on the reset password button."
+    },
+    "passwordRestLinkSentSuccessMessage": "We have sent a password reset link to your email. Please check your inbox",
+    "@passwordRestLinkSentSuccessMessage": {
+        "description": "The success message displayed in the dialog box after sending the password reset link."
     }
 }

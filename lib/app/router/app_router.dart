@@ -20,6 +20,11 @@ GoRouter appRouter(Ref ref) {
         name: AppRoutes.signin.name,
         builder: (context, state) => AppRoutes.signin.screen,
       ),
+      GoRoute(
+        path: AppRoutes.forgotPassword.path,
+        name: AppRoutes.forgotPassword.name,
+        builder: (context, state) => AppRoutes.forgotPassword.screen,
+      ),
     ],
   );
 }

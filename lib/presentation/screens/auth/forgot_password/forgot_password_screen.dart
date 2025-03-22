@@ -1,0 +1,70 @@
+import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
+import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_back_button.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_input_field.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:flutter/material.dart';
+
+class ForgotPasswordScreen extends StatelessWidget {
+  const ForgotPasswordScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(30.0),
+          child: SizedBox(
+            width: double.infinity,
+            child: Column(
+              children: [
+                AppSpacing.verticalSmall,
+                Align(alignment: Alignment.centerLeft, child: AppBackButton()),
+                AppSpacing.verticalMedium,
+                Text(
+                  context.l10n.forgotPasswordScreenTitle,
+                  style: context.theme.textTheme.headlineSmall?.copyWith(
+                    color: context.colorScheme.primary,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                AppSpacing.verticalSmall,
+                Text(
+                  context.l10n.forgotPasswordScreenSubtitle,
+                  style: context.theme.textTheme.bodyLarge?.copyWith(
+                    color: context.colorScheme.primary,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                AppSpacing.verticalLarge,
+                AppInputField(
+                  hint: context.l10n.emailHint,
+                  prefixIcon: Icon(
+                    Icons.mail,
+                    color: context.colorScheme.primary,
+                  ),
+                ),
+                AppSpacing.verticalLarge,
+                SizedBox(
+                  width: double.infinity,
+                  height: 50,
+                  child: FilledButton(
+                    onPressed: () {},
+                    style: FilledButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14.0),
+                      ),
+                    ),
+                    child: Text(
+                      context.l10n.resetPasswordButtonLabel.toUpperCase(),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

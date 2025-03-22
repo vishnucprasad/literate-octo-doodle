@@ -1,9 +1,11 @@
+import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/assets.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_input_field.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SigninScreen extends StatelessWidget {
   const SigninScreen({super.key});
@@ -63,7 +65,9 @@ class SigninScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.push(AppRoutes.forgotPassword.path);
+                    },
                     style: TextButton.styleFrom(
                       visualDensity: VisualDensity.compact,
                       overlayColor: Colors.transparent,
