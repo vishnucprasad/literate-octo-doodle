@@ -4,14 +4,32 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.d
 import 'package:aaraadhya_temple_dashboard/core/gen/assets.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_input_field.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/auth/signin/signin_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SigninScreen extends StatelessWidget {
+class SigninScreen extends HookConsumerWidget {
   const SigninScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isPasswordVisible = useState<bool>(false);
+
+    final state = ref.watch(signinControllerProvider);
+    final controller = ref.read(signinControllerProvider.notifier);
+
+    final emailValidationErrorText = state.validationErrors.email?.when(
+      empty: () => context.l10n.emptyEmailValidationErorrMessage,
+      invalid: () => context.l10n.invalidEmailValidationErorrMessage,
+    );
+
+    final passwordValidationErrorText = state.validationErrors.password?.when(
+      empty: () => context.l10n.emptyPasswordValidationErorrMessage,
+      invalid: () => context.l10n.invalidPasswordValidationErorrMessage,
+    );
+
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -40,26 +58,40 @@ class SigninScreen extends StatelessWidget {
                 AppSpacing.verticalLarge,
                 AppInputField(
                   hint: context.l10n.emailHint,
+                  errorText:
+                      state.validationErrors.showValidationErrors
+                          ? emailValidationErrorText
+                          : null,
                   prefixIcon: Icon(
                     Icons.mail,
                     color: context.colorScheme.primary,
                   ),
+                  onChanged: controller.updateEmail,
                 ),
                 AppSpacing.verticalMedium,
                 AppInputField(
                   hint: context.l10n.passwordHint,
-                  obscureText: true,
+                  obscureText: !isPasswordVisible.value,
+                  errorText:
+                      state.validationErrors.showValidationErrors
+                          ? passwordValidationErrorText
+                          : null,
                   prefixIcon: Icon(
                     Icons.lock,
                     color: context.colorScheme.primary,
                   ),
                   suffixIcon: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      isPasswordVisible.value = !isPasswordVisible.value;
+                    },
                     icon: Icon(
-                      Icons.visibility_off_outlined,
+                      isPasswordVisible.value
+                          ? Icons.visibility_outlined
+                          : Icons.visibility_off_outlined,
                       color: context.colorScheme.primary,
                     ),
                   ),
+                  onChanged: controller.updatePassword,
                 ),
                 AppSpacing.verticalSmall,
                 Align(
@@ -85,7 +117,7 @@ class SigninScreen extends StatelessWidget {
                   width: double.infinity,
                   height: 50,
                   child: FilledButton(
-                    onPressed: () {},
+                    onPressed: controller.signin,
                     style: FilledButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14.0),

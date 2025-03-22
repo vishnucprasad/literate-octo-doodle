@@ -40,5 +40,21 @@
     "passwordRestLinkSentSuccessMessage": "We have sent a password reset link to your email. Please check your inbox",
     "@passwordRestLinkSentSuccessMessage": {
         "description": "The success message displayed in the dialog box after sending the password reset link."
+    },
+    "emptyEmailValidationErorrMessage": "Email cannot be empty",
+    "@emptyEmailValidationErorrMessage": {
+        "description": "The error message displayed when the email field is left empty."
+    },
+    "invalidEmailValidationErorrMessage": "Please enter a valid email",
+    "@invalidEmailValidationErorrMessage": {
+        "description": "The error message displayed when the email field is invalid."
+    },
+    "emptyPasswordValidationErorrMessage": "Password cannot be empty",
+    "@emptyPasswordValidationErorrMessage": {
+        "description": "The error message displayed when the password field is left empty."
+    },
+    "invalidPasswordValidationErorrMessage": "Password must minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character",
+    "@invalidPasswordValidationErorrMessage": {
+        "description": "The error message displayed when the password field is invalid."
     }
 }
