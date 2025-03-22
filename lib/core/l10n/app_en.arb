@@ -4,5 +4,57 @@
     "appName": "Aaraadhya Temple",
     "@appName": {
         "description": "The official name of the application, displayed on the home screen, splash screen, and other prominent places."
+    },
+    "signinText": "Sign In",
+    "@signinText": {
+        "description": "The text displayed on the sign-in button & sign-in screen title."
+    },
+    "emailHint": "abc@email.com",
+    "@emailHint": {
+        "description": "The hint text displayed on the email input field."
+    },
+    "passwordHint": "Password",
+    "@passwordHint": {
+        "description": "The hint text displayed on the password input field."
+    },
+    "forgotPasswordQuestion": "Forgot Password?",
+    "@forgotPasswordQuestion": {
+        "description": "The text displayed on the forgot password link."
+    },
+    "forgotPasswordScreenTitle": "Forgot Password",
+    "@forgotPasswordScreenTitle": {
+        "description": "The title displayed on the forgot password screen."
+    },
+    "forgotPasswordScreenSubtitle": "Enter your email address to reset your password.",
+    "@forgotPasswordScreenSubtitle": {
+        "description": "The subtitle displayed on the forgot password screen."
+    },
+    "resetPasswordButtonLabel": "Reset Password",
+    "@resetPasswordButtonLabel": {
+        "description": "The text displayed on the reset password button."
+    },
+    "passwordRestLinkSentSuccessTitle": "Password Reset Link Sent",
+    "@passwordRestLinkSentSuccessTitle": {
+        "description": "The title displayed in the dialog box after sending the password reset link."
+    },
+    "passwordRestLinkSentSuccessMessage": "We have sent a password reset link to your email. Please check your inbox",
+    "@passwordRestLinkSentSuccessMessage": {
+        "description": "The success message displayed in the dialog box after sending the password reset link."
+    },
+    "emptyEmailValidationErorrMessage": "Email cannot be empty",
+    "@emptyEmailValidationErorrMessage": {
+        "description": "The error message displayed when the email field is left empty."
+    },
+    "invalidEmailValidationErorrMessage": "Please enter a valid email",
+    "@invalidEmailValidationErorrMessage": {
+        "description": "The error message displayed when the email field is invalid."
+    },
+    "emptyPasswordValidationErorrMessage": "Password cannot be empty",
+    "@emptyPasswordValidationErorrMessage": {
+        "description": "The error message displayed when the password field is left empty."
+    },
+    "invalidPasswordValidationErorrMessage": "Password must minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character",
+    "@invalidPasswordValidationErorrMessage": {
+        "description": "The error message displayed when the password field is invalid."
     }
 }
