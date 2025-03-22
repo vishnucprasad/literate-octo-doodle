@@ -1,3 +1,4 @@
+import 'package:aaraadhya_temple_dashboard/presentation/screens/auth/signin/signin_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/auth/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,5 +15,11 @@ class AppRoutes {
     name: 'splash',
     path: '/splash',
     screen: SplashScreen(),
+  );
+
+  static AppRoute signin = AppRoute(
+    name: 'signin',
+    path: '/signin',
+    screen: SigninScreen(),
   );
 }

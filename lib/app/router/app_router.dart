@@ -15,6 +15,11 @@ GoRouter appRouter(Ref ref) {
         name: AppRoutes.splash.name,
         builder: (context, state) => AppRoutes.splash.screen,
       ),
+      GoRoute(
+        path: AppRoutes.signin.path,
+        name: AppRoutes.signin.name,
+        builder: (context, state) => AppRoutes.signin.screen,
+      ),
     ],
   );
 }

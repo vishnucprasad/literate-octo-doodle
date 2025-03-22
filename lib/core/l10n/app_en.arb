@@ -4,5 +4,21 @@
     "appName": "Aaraadhya Temple",
     "@appName": {
         "description": "The official name of the application, displayed on the home screen, splash screen, and other prominent places."
+    },
+    "signinText": "Sign In",
+    "@signinText": {
+        "description": "The text displayed on the sign-in button & sign-in screen title."
+    },
+    "emailHint": "abc@email.com",
+    "@emailHint": {
+        "description": "The hint text displayed on the email input field."
+    },
+    "passwordHint": "Password",
+    "@passwordHint": {
+        "description": "The hint text displayed on the password input field."
+    },
+    "forgotPasswordQuestion": "Forgot Password?",
+    "@forgotPasswordQuestion": {
+        "description": "The text displayed on the forgot password link."
     }
 }
