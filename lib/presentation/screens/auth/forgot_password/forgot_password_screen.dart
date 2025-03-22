@@ -3,7 +3,9 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.d
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_back_button.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_input_field.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/auth/forgot_password/widgets/reset_email_sent_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
@@ -49,7 +51,13 @@ class ForgotPasswordScreen extends StatelessWidget {
                   width: double.infinity,
                   height: 50,
                   child: FilledButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      await showDialog(
+                        context: context,
+                        builder: (context) => ResetEmailSentDialog(),
+                      );
+                      if (context.mounted && context.canPop()) context.pop();
+                    },
                     style: FilledButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14.0),

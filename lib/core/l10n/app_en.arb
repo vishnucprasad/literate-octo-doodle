@@ -33,6 +33,10 @@
     "@resetPasswordButtonLabel": {
         "description": "The text displayed on the reset password button."
     },
+    "passwordRestLinkSentSuccessTitle": "Password Reset Link Sent",
+    "@passwordRestLinkSentSuccessTitle": {
+        "description": "The title displayed in the dialog box after sending the password reset link."
+    },
     "passwordRestLinkSentSuccessMessage": "We have sent a password reset link to your email. Please check your inbox",
     "@passwordRestLinkSentSuccessMessage": {
         "description": "The success message displayed in the dialog box after sending the password reset link."
