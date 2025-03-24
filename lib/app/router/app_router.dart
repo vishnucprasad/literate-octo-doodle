@@ -25,6 +25,38 @@ GoRouter appRouter(Ref ref) {
         name: AppRoutes.forgotPassword.name,
         builder: (context, state) => AppRoutes.forgotPassword.screen,
       ),
+      ShellRoute(
+        builder: (context, state, child) {
+          return AppRoutes.bottomNavScreen(child: child).screen;
+        },
+        routes: [
+          GoRoute(
+            path: AppRoutes.dashboard.path,
+            name: AppRoutes.dashboard.name,
+            builder: (context, state) => AppRoutes.dashboard.screen,
+          ),
+          GoRoute(
+            path: AppRoutes.bookings.path,
+            name: AppRoutes.bookings.name,
+            builder: (context, state) => AppRoutes.bookings.screen,
+          ),
+          GoRoute(
+            path: AppRoutes.donations.path,
+            name: AppRoutes.donations.name,
+            builder: (context, state) => AppRoutes.donations.screen,
+          ),
+          GoRoute(
+            path: AppRoutes.events.path,
+            name: AppRoutes.events.name,
+            builder: (context, state) => AppRoutes.events.screen,
+          ),
+          GoRoute(
+            path: AppRoutes.more.path,
+            name: AppRoutes.more.name,
+            builder: (context, state) => AppRoutes.more.screen,
+          ),
+        ],
+      ),
     ],
   );
 }
