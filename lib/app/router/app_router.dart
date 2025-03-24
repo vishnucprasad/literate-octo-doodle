@@ -8,7 +8,7 @@ part 'app_router.g.dart';
 @riverpod
 GoRouter appRouter(Ref ref) {
   return GoRouter(
-    initialLocation: AppRoutes.splash.path,
+    initialLocation: AppRoutes.dashboard.path,
     routes: [
       GoRoute(
         path: AppRoutes.splash.path,
