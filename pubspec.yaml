@@ -49,3 +49,9 @@ flutter:
           weight: 500
         - asset: assets/fonts/Raleway-Italic-VariableFont_wght.ttf
           style: italic
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-VariableFont_wdth,wght.ttf
+          weight: 500
+        - asset: assets/fonts/Roboto-Italic-VariableFont_wdth,wght.ttf
+          style: italic

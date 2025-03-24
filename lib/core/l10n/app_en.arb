@@ -56,5 +56,49 @@
     "invalidPasswordValidationErorrMessage": "Password must minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character",
     "@invalidPasswordValidationErorrMessage": {
         "description": "The error message displayed when the password field is invalid."
+    },
+    "dashboardAppBarTitle": "Aaraadhya Admin",
+    "@dashboardAppBarTitle": {
+        "description": "The title displayed on the dashboard app bar."
+    },
+    "todaysDonationsCardTitle": "Today's Donations",
+    "@todaysDonationsCardTitle": {
+        "description": "The title displayed on the today's donations card in dashboard."
+    },
+    "todaysPoojaBookingsCardTitle": "Today's Pooja Bookings",
+    "@todaysPoojaBookingsCardTitle": {
+        "description": "The title displayed on the today's pooja bookings card in dashboard."
+    },
+    "activePoojasCardTitle": "Active Poojas",
+    "@activePoojasCardTitle": {
+        "description": "The title displayed on the active poojas card in dashboard."
+    },
+    "activeEventsCardTitle": "Active Events",
+    "@activeEventsCardTitle": {
+        "description": "The title displayed on the active events card in dashboard."
+    },
+    "quickActionsSectionTitle": "Quick Actions",
+    "@quickActionsSectionTitle": {
+        "description": "The title displayed on the quick actions section in dashboard."
+    },
+    "newPoojaButtonLabel": "New Pooja",
+    "@newPoojaButtonLabel": {
+        "description": "The text displayed on the new pooja button in dashboard."
+    },
+    "newEventButtonLabel": "New Event",
+    "@newEventButtonLabel": {
+        "description": "The text displayed on the new event button in dashboard."
+    },
+    "announcementButtonLabel": "Announcement",
+    "@announcementButtonLabel": {
+        "description": "The text displayed on the announcement button in dashboard."
+    },
+    "todaysBookingsSectionTitle": "Today's Bookings",
+    "@todaysBookingsSectionTitle": {
+        "description": "The title displayed on the today's bookings section in dashboard."
+    },
+    "notificationsSectionTitle": "Notifications",
+    "@notificationsSectionTitle": {
+        "description": "The title displayed on the notifications section in dashboard."
     }
 }
