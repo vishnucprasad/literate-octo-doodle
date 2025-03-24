@@ -36,97 +36,100 @@ class SigninScreen extends HookConsumerWidget {
           padding: const EdgeInsets.all(30.0),
           child: SizedBox(
             width: double.infinity,
-            child: Column(
-              children: [
-                AppSpacing.verticalLarge,
-                Image.asset(
-                  height: 80,
-                  Assets.images.aaraadhyaLogo.path,
-                  color: context.colorScheme.primary,
-                ),
-                AppSpacing.verticalLarge,
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    context.l10n.signinText,
-                    style: context.theme.textTheme.titleLarge?.copyWith(
-                      color: context.colorScheme.primary,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                AppSpacing.verticalLarge,
-                AppInputField(
-                  hint: context.l10n.emailHint,
-                  errorText:
-                      state.validationErrors.showValidationErrors
-                          ? emailValidationErrorText
-                          : null,
-                  prefixIcon: Icon(
-                    Icons.mail,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  AppSpacing.verticalLarge,
+                  Image.asset(
+                    height: 80,
+                    Assets.images.aaraadhyaLogo.path,
                     color: context.colorScheme.primary,
                   ),
-                  onChanged: controller.updateEmail,
-                ),
-                AppSpacing.verticalMedium,
-                AppInputField(
-                  hint: context.l10n.passwordHint,
-                  obscureText: !isPasswordVisible.value,
-                  errorText:
-                      state.validationErrors.showValidationErrors
-                          ? passwordValidationErrorText
-                          : null,
-                  prefixIcon: Icon(
-                    Icons.lock,
-                    color: context.colorScheme.primary,
-                  ),
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      isPasswordVisible.value = !isPasswordVisible.value;
-                    },
-                    icon: Icon(
-                      isPasswordVisible.value
-                          ? Icons.visibility_outlined
-                          : Icons.visibility_off_outlined,
-                      color: context.colorScheme.primary,
-                    ),
-                  ),
-                  onChanged: controller.updatePassword,
-                ),
-                AppSpacing.verticalSmall,
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {
-                      context.push(AppRoutes.forgotPassword.path);
-                    },
-                    style: TextButton.styleFrom(
-                      visualDensity: VisualDensity.compact,
-                      overlayColor: Colors.transparent,
-                    ),
+                  AppSpacing.verticalLarge,
+                  Align(
+                    alignment: Alignment.centerLeft,
                     child: Text(
-                      context.l10n.forgotPasswordQuestion,
-                      style: context.theme.textTheme.bodyMedium?.copyWith(
-                        color: context.colorScheme.primary,
+                      context.l10n.signinText,
+                      style: context.theme.textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                ),
-                AppSpacing.verticalSmall,
-                SizedBox(
-                  width: double.infinity,
-                  height: 50,
-                  child: FilledButton(
-                    onPressed: controller.signin,
-                    style: FilledButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14.0),
+                  AppSpacing.verticalLarge,
+                  AppInputField(
+                    hint: context.l10n.emailHint,
+                    errorText:
+                        state.validationErrors.showValidationErrors
+                            ? emailValidationErrorText
+                            : null,
+                    prefixIcon: Icon(
+                      Icons.mail,
+                      color: context.colors.grey[700],
+                    ),
+                    keyboardType: TextInputType.emailAddress,
+                    onChanged: controller.updateEmail,
+                  ),
+                  AppSpacing.verticalMedium,
+                  AppInputField(
+                    hint: context.l10n.passwordHint,
+                    obscureText: !isPasswordVisible.value,
+                    errorText:
+                        state.validationErrors.showValidationErrors
+                            ? passwordValidationErrorText
+                            : null,
+                    prefixIcon: Icon(
+                      Icons.lock,
+                      color: context.colors.grey[700],
+                    ),
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        isPasswordVisible.value = !isPasswordVisible.value;
+                      },
+                      icon: Icon(
+                        isPasswordVisible.value
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
+                        color: context.colors.grey[700],
                       ),
                     ),
-                    child: Text(context.l10n.signinText.toUpperCase()),
+                    keyboardType: TextInputType.visiblePassword,
+                    onChanged: controller.updatePassword,
                   ),
-                ),
-              ],
+                  AppSpacing.verticalSmall,
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: () {
+                        context.push(AppRoutes.forgotPassword.path);
+                      },
+                      style: TextButton.styleFrom(
+                        visualDensity: VisualDensity.compact,
+                        overlayColor: Colors.transparent,
+                      ),
+                      child: Text(
+                        context.l10n.forgotPasswordQuestion,
+                        style: context.theme.textTheme.bodyMedium?.copyWith(
+                          color: context.colorScheme.secondary,
+                        ),
+                      ),
+                    ),
+                  ),
+                  AppSpacing.verticalSmall,
+                  SizedBox(
+                    width: double.infinity,
+                    height: 50,
+                    child: FilledButton(
+                      onPressed: controller.signin,
+                      style: FilledButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14.0),
+                        ),
+                      ),
+                      child: Text(context.l10n.signinText.toUpperCase()),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

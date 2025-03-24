@@ -36,16 +36,13 @@ class ForgotPasswordScreen extends ConsumerWidget {
                 Text(
                   context.l10n.forgotPasswordScreenTitle,
                   style: context.theme.textTheme.headlineSmall?.copyWith(
-                    color: context.colorScheme.primary,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 AppSpacing.verticalSmall,
                 Text(
                   context.l10n.forgotPasswordScreenSubtitle,
-                  style: context.theme.textTheme.bodyLarge?.copyWith(
-                    color: context.colorScheme.primary,
-                  ),
+                  style: context.theme.textTheme.bodyLarge,
                   textAlign: TextAlign.center,
                 ),
                 AppSpacing.verticalLarge,
@@ -55,10 +52,8 @@ class ForgotPasswordScreen extends ConsumerWidget {
                       state.validationErrors.showValidationErrors
                           ? emailValidationErrorText
                           : null,
-                  prefixIcon: Icon(
-                    Icons.mail,
-                    color: context.colorScheme.primary,
-                  ),
+                  prefixIcon: Icon(Icons.mail, color: context.colors.grey[700]),
+                  keyboardType: TextInputType.emailAddress,
                   onChanged: controller.updateEmail,
                 ),
                 AppSpacing.verticalLarge,

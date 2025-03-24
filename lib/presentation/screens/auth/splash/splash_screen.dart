@@ -19,7 +19,7 @@ class SplashScreen extends StatelessWidget {
     });
 
     return Scaffold(
-      backgroundColor: Colors.orange[600],
+      // backgroundColor: context.colorScheme.primary,
       body: Center(
         child: Column(
           children: [
@@ -31,14 +31,14 @@ class SplashScreen extends StatelessWidget {
                   Image.asset(
                     Assets.images.aaraadhyaLogo.path,
                     width: 180,
-                    color: context.colors.white,
+                    color: context.colorScheme.primary,
                     filterQuality: FilterQuality.high,
                   ),
                   AppSpacing.verticalMedium,
                   Text(
                     context.l10n.appName,
                     style: context.theme.textTheme.titleLarge?.copyWith(
-                      color: context.colors.white,
+                      color: context.colorScheme.primary,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -53,7 +53,6 @@ class SplashScreen extends StatelessWidget {
                   SizedBox(
                     width: context.width / 3,
                     child: LinearProgressIndicator(
-                      color: context.colors.white,
                       backgroundColor: context.colors.grey,
                     ),
                   ),
