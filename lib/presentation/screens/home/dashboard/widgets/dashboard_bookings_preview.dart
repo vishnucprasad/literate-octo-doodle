@@ -33,7 +33,7 @@ class DashboardBookingsPreview extends StatelessWidget {
                     backgroundColor: context.colors.primary[50],
                     foregroundColor: context.colorScheme.primary,
                   ),
-                  child: Text('View All'),
+                  child: Text(context.l10n.viewAllButtonLabel),
                 ),
               ),
             ],
@@ -61,7 +61,7 @@ class DashboardBookingsPreview extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: 'Booking ID: ',
+                          text: '${context.l10n.bookingIdLabel}: ',
                           style: context.theme.textTheme.bodySmall?.copyWith(
                             fontWeight: FontWeight.bold,
                             fontVariations: [
@@ -80,7 +80,7 @@ class DashboardBookingsPreview extends StatelessWidget {
                     ),
                   ),
                   trailing: Text(
-                    '${index + 1} Poojas',
+                    context.l10n.poojasCount(index + 1),
                     style: context.theme.textTheme.bodyLarge?.copyWith(
                       color: context.colorScheme.primary,
                       fontFamily: FontFamily.roboto,

@@ -33,7 +33,7 @@ class DashboardNotifications extends StatelessWidget {
                     backgroundColor: context.colors.primary[50],
                     foregroundColor: context.colorScheme.primary,
                   ),
-                  child: Text('View All'),
+                  child: Text(context.l10n.viewAllButtonLabel),
                 ),
               ),
             ],
@@ -51,14 +51,17 @@ class DashboardNotifications extends StatelessWidget {
                 ),
                 child: ListTile(
                   title: Text(
-                    'New Pooja Booking',
+                    context.l10n.newPoojaBookingNotificationTitle,
                     style: context.theme.textTheme.titleMedium?.copyWith(
                       color: context.colorScheme.primary,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   subtitle: Text(
-                    'John Doe has successfully ordered ${index + 1} Poojas from the temple.',
+                    context.l10n.newPoojaBookingNotificationDescription(
+                      'John Doe',
+                      index + 1,
+                    ),
                     style: context.theme.textTheme.bodyMedium?.copyWith(
                       color: context.colors.grey[700],
                       fontFamily: FontFamily.roboto,

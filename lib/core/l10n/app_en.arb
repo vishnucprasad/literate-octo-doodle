@@ -100,5 +100,97 @@
     "notificationsSectionTitle": "Notifications",
     "@notificationsSectionTitle": {
         "description": "The title displayed on the notifications section in dashboard."
+    },
+    "bookingIdLabel": "Booking ID",
+    "@bookingIdLabel": {
+        "description": "The text displayed on the booking id label in dashboard."
+    },
+    "viewAllButtonLabel": "View All",
+    "@viewAllButtonLabel": {
+        "description": "The text displayed on the view all button in dashboard."
+    },
+    "bookingsManagementAppBarTitle": "Bookings Management",
+    "@bookingsManagementAppBarTitle": {
+        "description": "The title displayed on the bookings management app bar."
+    },
+    "bookingsSectionTitle": "{month} {day} Bookings",
+    "@bookingsSectionTitle": {
+        "description": "The title displayed on the bookings section.",
+        "placeholders": {
+            "month": {},
+            "day": {}
+        }
+    },
+    "paymentBadgeLabel": "₹{amount} Paid",
+    "@paymentBadgeLabel": {
+        "description": "The text displayed on the payment badge.",
+        "placeholders": {
+            "amount": {}
+        }
+    },
+    "viewDetailsButtonLabel": "View Details",
+    "@viewDetailsButtonLabel": {
+        "description": "The text displayed on the view details button"
+    },
+    "bookingDateAndTimeLabel": "Booking Date & Time",
+    "@bookingDateAndTimeLabel": {
+        "description": "The text displayed on the booking date and time label"
+    },
+    "poojasCount": "{count} Poojas",
+    "@poojasCount": {
+        "description": "The text displayed on the poojas count label",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "poojaDetailsSectionTitle": "Pooja Details",
+    "@poojaDetailsSectionTitle": {
+        "description": "The title displayed on the pooja details section."
+    },
+    "amountLabel": "₹ {amount}",
+    "@amountLabel": {
+        "description": "The text displayed on the amount label.",
+        "placeholders": {
+            "amount": {}
+        }
+    },
+    "hideDetailsButtonLabel": "Hide Details",
+    "@hideDetailsButtonLabel": {
+        "description": "The text displayed on the hide details button."
+    },
+    "confirmedBadgeLabel": "Confirmed",
+    "@confirmedBadgeLabel": {
+        "description": "The text displayed on the confirmed badge."
+    },
+    "handedOverBadgeLabel": "Handed Over",
+    "@handedOverBadgeLabel": {
+        "description": "The text displayed on the handed over badge."
+    },
+    "completedBadgeLabel": "Completed",
+    "@completedBadgeLabel": {
+        "description": "The text displayed on the completed badge."
+    },
+    "canceledBadgeLabel": "Cancelled",
+    "@canceledBadgeLabel": {
+        "description": "The text displayed on the canceled badge."
+    },
+    "allBoookingsLabelWithCount": "All Bookings ({count})",
+    "@allBoookingsLabelWithCount": {
+        "description": "The text displayed on the all bookings label with count.",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "newPoojaBookingNotificationTitle": "New Pooja Booking",
+    "@newPoojaBookingNotificationTitle": {
+        "description": "The title displayed on the new pooja booking notification."
+    },
+    "newPoojaBookingNotificationDescription": "{name} has successfully ordered {count} Poojas from the temple.",
+    "@newPoojaBookingNotificationDescription": {
+        "description": "The description displayed on the new pooja booking notification.",
+        "placeholders": {
+            "name": {},
+            "count": {}
+        }
     }
 }

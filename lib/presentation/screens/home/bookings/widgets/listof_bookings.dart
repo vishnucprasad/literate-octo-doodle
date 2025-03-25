@@ -1,0 +1,53 @@
+import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
+import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
+import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/date_list/date_list_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/widgets/booking_details_card.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
+
+class ListofBookings extends ConsumerWidget {
+  const ListofBookings({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedDate = ref.watch(
+      dateListControllerProvider.select((state) => state.selectedDate),
+    );
+
+    return Container(
+      decoration: BoxDecoration(
+        color: context.colors.grey[50],
+        borderRadius: BorderRadius.circular(14.0),
+      ),
+      padding: EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            context.l10n.bookingsSectionTitle(
+              DateFormat('MMMM').format(selectedDate),
+              DateFormat('d').format(selectedDate),
+            ),
+            style: context.theme.textTheme.titleLarge?.copyWith(
+              color: context.colors.grey[900],
+              fontFamily: FontFamily.roboto,
+            ),
+          ),
+          AppSpacing.verticalMedium,
+          ListView.separated(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: 2,
+            itemBuilder: (context, index) {
+              return BookingDetailsCard(index: index);
+            },
+            separatorBuilder: (context, index) => AppSpacing.verticalMedium,
+          ),
+        ],
+      ),
+    );
+  }
+}

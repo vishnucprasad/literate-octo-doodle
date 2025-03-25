@@ -19,7 +19,7 @@ class DashboardOverviewGrid extends StatelessWidget {
       children: [
         DashboardCard(
           title: context.l10n.todaysDonationsCardTitle,
-          value: '₹ 24,500',
+          value: context.l10n.amountLabel("24,500"),
         ),
         DashboardCard(
           title: context.l10n.todaysPoojaBookingsCardTitle,
