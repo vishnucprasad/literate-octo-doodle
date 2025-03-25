@@ -9,16 +9,12 @@ class DashboardNotifications extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: context.colors.grey[50],
-        borderRadius: BorderRadius.circular(14.0),
-      ),
-      padding: EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
@@ -38,51 +34,51 @@ class DashboardNotifications extends StatelessWidget {
               ),
             ],
           ),
-          AppSpacing.verticalMedium,
-          ListView.separated(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: 3,
-            itemBuilder: (context, index) {
-              return Container(
-                decoration: BoxDecoration(
-                  color: context.colorScheme.surface,
-                  borderRadius: BorderRadius.circular(14.0),
-                ),
-                child: ListTile(
-                  title: Text(
-                    context.l10n.newPoojaBookingNotificationTitle,
-                    style: context.theme.textTheme.titleMedium?.copyWith(
-                      color: context.colorScheme.primary,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Text(
-                    context.l10n.newPoojaBookingNotificationDescription(
-                      'John Doe',
-                      index + 1,
-                    ),
-                    style: context.theme.textTheme.bodyMedium?.copyWith(
-                      color: context.colors.grey[700],
-                      fontFamily: FontFamily.roboto,
-                    ),
-                  ),
-                  trailing: Text(
-                    '${10 + index}:00 AM',
-                    style: context.theme.textTheme.bodyLarge?.copyWith(
-                      color: context.colorScheme.primary,
-                      fontFamily: FontFamily.roboto,
-                    ),
+        ),
+        AppSpacing.verticalMedium,
+        ListView.separated(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: 3,
+          itemBuilder: (context, index) {
+            return Container(
+              decoration: BoxDecoration(
+                color: context.colors.grey[50],
+                borderRadius: BorderRadius.circular(14.0),
+              ),
+              child: ListTile(
+                title: Text(
+                  context.l10n.newPoojaBookingNotificationTitle,
+                  style: context.theme.textTheme.titleMedium?.copyWith(
+                    color: context.colorScheme.primary,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              );
-            },
-            separatorBuilder: (context, index) {
-              return AppSpacing.verticalSmall;
-            },
-          ),
-        ],
-      ),
+                subtitle: Text(
+                  context.l10n.newPoojaBookingNotificationDescription(
+                    'John Doe',
+                    index + 1,
+                  ),
+                  style: context.theme.textTheme.bodyMedium?.copyWith(
+                    color: context.colors.grey[700],
+                    fontFamily: FontFamily.roboto,
+                  ),
+                ),
+                trailing: Text(
+                  '${10 + index}:00 AM',
+                  style: context.theme.textTheme.bodyLarge?.copyWith(
+                    color: context.colorScheme.primary,
+                    fontFamily: FontFamily.roboto,
+                  ),
+                ),
+              ),
+            );
+          },
+          separatorBuilder: (context, index) {
+            return AppSpacing.verticalSmall;
+          },
+        ),
+      ],
     );
   }
 }

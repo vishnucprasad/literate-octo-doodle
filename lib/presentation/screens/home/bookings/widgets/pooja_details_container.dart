@@ -16,7 +16,7 @@ class PoojaDetailsContainer extends ConsumerWidget {
     return ListView(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 8.0),
       children: [
         AppSpacing.verticalSmall,
         Divider(color: context.colorScheme.primary),

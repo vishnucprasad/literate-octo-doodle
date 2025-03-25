@@ -8,12 +8,8 @@ class DashboardQuickActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: context.colors.grey[50],
-        borderRadius: BorderRadius.circular(14.0),
-      ),
-      padding: EdgeInsets.all(16.0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

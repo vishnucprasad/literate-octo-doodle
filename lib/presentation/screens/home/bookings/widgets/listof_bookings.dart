@@ -17,16 +17,12 @@ class ListofBookings extends ConsumerWidget {
       dateListControllerProvider.select((state) => state.selectedDate),
     );
 
-    return Container(
-      decoration: BoxDecoration(
-        color: context.colors.grey[50],
-        borderRadius: BorderRadius.circular(14.0),
-      ),
-      padding: EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Text(
             context.l10n.bookingsSectionTitle(
               DateFormat('MMMM').format(selectedDate),
               DateFormat('d').format(selectedDate),
@@ -34,20 +30,21 @@ class ListofBookings extends ConsumerWidget {
             style: context.theme.textTheme.titleLarge?.copyWith(
               color: context.colors.grey[900],
               fontFamily: FontFamily.roboto,
+              fontVariations: [FontVariation('wght', 400)],
             ),
           ),
-          AppSpacing.verticalMedium,
-          ListView.separated(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: 2,
-            itemBuilder: (context, index) {
-              return BookingDetailsCard(index: index);
-            },
-            separatorBuilder: (context, index) => AppSpacing.verticalMedium,
-          ),
-        ],
-      ),
+        ),
+        AppSpacing.verticalMedium,
+        ListView.separated(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: 2,
+          itemBuilder: (context, index) {
+            return BookingDetailsCard(index: index);
+          },
+          separatorBuilder: (context, index) => AppSpacing.verticalMedium,
+        ),
+      ],
     );
   }
 }
