@@ -2,7 +2,7 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_ext
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/booking_details/booking_details_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/widgets/pooja_details_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,8 +15,8 @@ class BookingDetailsCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final expandedBookingIndex = ref.watch(bookingDetailsControllerProvider);
-    final controller = ref.read(bookingDetailsControllerProvider.notifier);
+    final expandedIndex = ref.watch(expandableContainerControllerProvider);
+    final controller = ref.read(expandableContainerControllerProvider.notifier);
 
     return Container(
       padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
@@ -108,6 +108,7 @@ class BookingDetailsCard extends ConsumerWidget {
                     decoration: BoxDecoration(
                       color: context.colors.success[50],
                       borderRadius: BorderRadius.circular(14.0),
+                      border: Border.all(color: context.colors.success),
                     ),
                     padding: EdgeInsets.symmetric(
                       horizontal: 8.0,
@@ -123,26 +124,28 @@ class BookingDetailsCard extends ConsumerWidget {
                   ),
                   AppSpacing.verticalSmall,
                   Container(
+                    height: 20,
                     decoration: BoxDecoration(
                       color: context.colors.success,
                       borderRadius: BorderRadius.circular(14.0),
                     ),
                     padding: EdgeInsets.symmetric(
                       horizontal: 8.0,
-                      vertical: 4.0,
+                      vertical: 2.0,
                     ),
                     child: Text(
                       context.l10n.confirmedBadgeLabel,
-                      style: context.theme.textTheme.bodyMedium?.copyWith(
+                      style: context.theme.textTheme.bodySmall?.copyWith(
                         color: context.colors.white,
+                        fontWeight: FontWeight.bold,
                         fontFamily: FontFamily.roboto,
                       ),
                     ),
                   ),
                   AppSpacing.verticalMedium,
-                  if (expandedBookingIndex != index)
+                  if (expandedIndex != index)
                     SizedBox(
-                      height: 24,
+                      height: 26,
                       child: FilledButton(
                         onPressed: () => controller.setIndex(index),
                         style: FilledButton.styleFrom(
@@ -169,7 +172,7 @@ class BookingDetailsCard extends ConsumerWidget {
               ),
             ],
           ),
-          if (expandedBookingIndex == index) PoojaDetailsContainer(),
+          if (expandedIndex == index) PoojaDetailsContainer(),
         ],
       ),
     );

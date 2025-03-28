@@ -1,17 +1,20 @@
 import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class BottomNavScreen extends HookWidget {
+class BottomNavScreen extends HookConsumerWidget {
   final Widget child;
 
   const BottomNavScreen({required this.child, super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final currentIndexNotifier = useState<int>(0);
+    final controller = ref.read(expandableContainerControllerProvider.notifier);
 
     return Scaffold(
       body: SafeArea(child: child),
@@ -24,6 +27,9 @@ class BottomNavScreen extends HookWidget {
         unselectedItemColor: context.colors.grey[900],
         showUnselectedLabels: true,
         onTap: (index) {
+          controller.setIndex(null);
+          currentIndexNotifier.value = index;
+
           switch (index) {
             case 0:
               context.go(AppRoutes.dashboard.path);
@@ -41,8 +47,6 @@ class BottomNavScreen extends HookWidget {
               context.go(AppRoutes.more.path);
               break;
           }
-
-          currentIndexNotifier.value = index;
         },
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),

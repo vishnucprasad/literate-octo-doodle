@@ -2,7 +2,7 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_ext
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/booking_details/booking_details_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/widgets/individual_pooja_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -12,7 +12,7 @@ class PoojaDetailsContainer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final controller = ref.read(bookingDetailsControllerProvider.notifier);
+    final controller = ref.read(expandableContainerControllerProvider.notifier);
     return ListView(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
