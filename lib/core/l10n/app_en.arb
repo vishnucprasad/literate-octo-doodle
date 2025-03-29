@@ -368,5 +368,29 @@
     "signOutTileLabel": "Sign Out",
     "@signOutTileLabel": {
         "description": "The text displayed on the sign out tile."
+    },
+    "addNewEventFormTitle": "Add New Event",
+    "@addNewEventFormTitle": {
+        "description": "The title displayed on the add new event form."
+    },
+    "eventNameLabel": "Event Name",
+    "@eventNameLabel": {
+        "description": "The text displayed on the event name label."
+    },
+    "saveButtonLabel": "Save",
+    "@saveButtonLabel": {
+        "description": "The text displayed on the save button."
+    },
+    "cancelButtonLabel": "Cancel",
+    "@cancelButtonLabel": {
+        "description": "The text displayed on the cancel button."
+    },
+    "registrationsOpenLabel": "Registrations Open",
+    "@registrationsOpenLabel": {
+        "description": "The text displayed on the registrations open label."
+    },
+    "registrationsClosedLabel": "Registrations Closed",
+    "@registrationsClosedLabel": {
+        "description": "The text displayed on the registrations closed label."
     }
 }

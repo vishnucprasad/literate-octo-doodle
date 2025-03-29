@@ -1,6 +1,7 @@
 import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/events/widgets/event_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
@@ -65,6 +66,21 @@ class BottomNavScreen extends HookConsumerWidget {
           BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
         ],
       ),
+      floatingActionButton:
+          currentIndexNotifier.value == 3
+              ? FloatingActionButton(
+                onPressed: () {
+                  showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    builder: (context) => EventForm(),
+                  );
+                },
+                shape: CircleBorder(),
+                backgroundColor: context.colorScheme.primary,
+                child: Icon(Icons.add),
+              )
+              : null,
     );
   }
 }
