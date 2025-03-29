@@ -1,7 +1,7 @@
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/bookings_filter/bookings_filter_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/filters/filters_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -10,8 +10,8 @@ class BookingsFilters extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final selectedIndex = ref.watch(bookingsFilterControllerProvider);
-    final controller = ref.read(bookingsFilterControllerProvider.notifier);
+    final selectedIndex = ref.watch(filtersControllerProvider);
+    final controller = ref.read(filtersControllerProvider.notifier);
 
     final List<String> filters = [
       context.l10n.allBoookingsLabelWithCount(12),

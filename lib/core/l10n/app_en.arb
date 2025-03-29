@@ -248,5 +248,89 @@
     "printButtonLabel": "Print",
     "@printButtonLabel": {
         "description": "The text displayed on the print button."
+    },
+    "eventsManagementAppBarTitle": "Events Management",
+    "@eventsManagementAppBarTitle": {
+        "description": "The title displayed on the events management app bar."
+    },
+    "allEventsLabel": "All Events ({count})",
+    "@allEventsLabel": {
+        "description": "The text displayed on the all events label.",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "upcomingEventsLabel": "Upcoming",
+    "@upcomingEventsLabel": {
+        "description": "The text displayed on the upcoming events label."
+    },
+    "previousEventsLabel": "Previous",
+    "@previousEventsLabel": {
+        "description": "The text displayed on the previous events label."
+    },
+    "eventsSectionTitle": "{filter} Events",
+    "@eventsSectionTitle": {
+        "description": "The title displayed on the events section.",
+        "placeholders": {
+            "filter": {}
+        }
+    },
+    "eventDetailsSectionTitle": "Event Details",
+    "@eventDetailsSectionTitle": {
+        "description": "The title displayed on the event details section."
+    },
+    "eventDateAndTimeLabel": "Event Date & Time",
+    "@eventDateAndTimeLabel": {
+        "description": "The text displayed on the event date and time label."
+    },
+    "eventIdLabel": "Event ID",
+    "@eventIdLabel": {
+        "description": "The text displayed on the event id label."
+    },
+    "eventTypeLabel": "Type",
+    "@eventTypeLabel": {
+        "description": "The text displayed on the event type label."
+    },
+    "eventDescriptionLabel": "Description",
+    "@eventDescriptionLabel": {
+        "description": "The text displayed on the event description label."
+    },
+    "eventLocationLabel": "Location",
+    "@eventLocationLabel": {
+        "description": "The text displayed on the event location label."
+    },
+    "eventRegistrationsCountLabel": "Registrations Count",
+    "@eventRegistrationsCountLabel": {
+        "description": "The text displayed on the event registrations count label."
+    },
+    "registrationsCount": "{count} Registrations",
+    "@registrationsCount": {
+        "description": "The text displayed as the registrations count.",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "registrationsButtonLabel": "Registrations ({count})",
+    "@registrationsButtonLabel": {
+        "description": "The text displayed on the registrations button.",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "viewRegistrationsButtonLabel": "View Registrations",
+    "@viewRegistrationsButtonLabel": {
+        "description": "The text displayed on the view registrations button."
+    },
+    "editButtonLabel": "Edit",
+    "@editButtonLabel": {
+        "description": "The text displayed on the edit button."
+    },
+    "activeBadgeLabel": "Active",
+    "@activeBadgeLabel": {
+        "description": "The text displayed on the active badge."
+    },
+    "inactiveBadgeLabel": "Inactive",
+    "@inactiveBadgeLabel": {
+        "description": "The text displayed on the inactive badge."
     }
 }

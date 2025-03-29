@@ -1,9 +1,9 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'bookings_filter_controller.g.dart';
+part 'filters_controller.g.dart';
 
 @riverpod
-class BookingsFilterController extends _$BookingsFilterController {
+class FiltersController extends _$FiltersController {
   @override
   int build() {
     return 0;
