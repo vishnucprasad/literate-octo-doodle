@@ -14,7 +14,7 @@ class EventsFilters extends ConsumerWidget {
     final controller = ref.read(filtersControllerProvider.notifier);
 
     final List<String> filters = [
-      context.l10n.allEventsLabel(8),
+      context.l10n.allEventsLabelWithCount(8),
       context.l10n.upcomingEventsLabel,
       context.l10n.previousEventsLabel,
     ];

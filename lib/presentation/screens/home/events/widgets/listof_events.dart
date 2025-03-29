@@ -14,7 +14,7 @@ class ListofEvents extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final filtersIndex = ref.watch(filtersControllerProvider);
     final List<String> filterLabels = [
-      context.l10n.allEventsLabel(8),
+      context.l10n.allEventsLabel,
       context.l10n.upcomingEventsLabel,
       context.l10n.previousEventsLabel,
     ];

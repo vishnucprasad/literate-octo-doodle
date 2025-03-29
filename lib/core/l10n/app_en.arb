@@ -253,12 +253,16 @@
     "@eventsManagementAppBarTitle": {
         "description": "The title displayed on the events management app bar."
     },
-    "allEventsLabel": "All Events ({count})",
-    "@allEventsLabel": {
-        "description": "The text displayed on the all events label.",
+    "allEventsLabelWithCount": "All Events ({count})",
+    "@allEventsLabelWithCount": {
+        "description": "The text displayed on the all events label with count.",
         "placeholders": {
             "count": {}
         }
+    },
+    "allEventsLabel": "All",
+    "@allEventsLabel": {
+        "description": "The text displayed on the all events label."
     },
     "upcomingEventsLabel": "Upcoming",
     "@upcomingEventsLabel": {
