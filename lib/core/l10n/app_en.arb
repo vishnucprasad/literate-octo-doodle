@@ -1,6 +1,10 @@
 {
     "@@author": "Vishnu C Prasad",
     "@@locale": "en",
+    "appLanguage": "English",
+    "@appLanguage": {
+        "description": "The language of the application."
+    },
     "appName": "Aaraadhya Temple",
     "@appName": {
         "description": "The official name of the application, displayed on the home screen, splash screen, and other prominent places."
@@ -336,5 +340,33 @@
     "inactiveBadgeLabel": "Inactive",
     "@inactiveBadgeLabel": {
         "description": "The text displayed on the inactive badge."
+    },
+    "moreOptionsAppBarTitle": "More Options",
+    "@moreOptionsAppBarTitle": {
+        "description": "The title displayed on the more options app bar."
+    },
+    "versionLabel": "Version",
+    "@versionLabel": {
+        "description": "The text displayed on the version label."
+    },
+    "appLanguageTileLabel": "App Language",
+    "@appLanguageTileLabel": {
+        "description": "The text displayed on the app language tile."
+    },
+    "aboutTileLabel": "About",
+    "@aboutTileLabel": {
+        "description": "The text displayed on the about tile."
+    },
+    "privacyPolicyTileLabel": "Privacy Policy",
+    "@privacyPolicyTileLabel": {
+        "description": "The text displayed on the privacy policy tile."
+    },
+    "termsAndConditionsTileLabel": "Terms & Conditions",
+    "@termsAndConditionsTileLabel": {
+        "description": "The text displayed on the terms and conditions tile."
+    },
+    "signOutTileLabel": "Sign Out",
+    "@signOutTileLabel": {
+        "description": "The text displayed on the sign out tile."
     }
 }
