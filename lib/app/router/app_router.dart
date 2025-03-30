@@ -62,6 +62,11 @@ GoRouter appRouter(Ref ref) {
           ),
         ],
       ),
+      GoRoute(
+        path: AppRoutes.profileSettingsScreen.path,
+        name: AppRoutes.profileSettingsScreen.name,
+        builder: (context, state) => AppRoutes.profileSettingsScreen.screen,
+      ),
     ],
   );
 }

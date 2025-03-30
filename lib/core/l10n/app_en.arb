@@ -407,5 +407,29 @@
         "placeholders": {
             "count": {}
         }
+    },
+    "profileSettingsAppBarTitle": "Profile Settings",
+    "@profileSettingsAppBarTitle": {
+        "description": "The title displayed on the profile settings app bar."
+    },
+    "basicTabLabel": "Basic",
+    "@basicTabLabel": {
+        "description": "The text displayed on the basic tab."
+    },
+    "poojasTabLabel": "Poojas",
+    "@poojasTabLabel": {
+        "description": "The text displayed on the poojas tab."
+    },
+    "galleryTabLabel": "Gallery",
+    "@galleryTabLabel": {
+        "description": "The text displayed on the gallery tab."
+    },
+    "contactTabLabel": "Contact",
+    "@contactTabLabel": {
+        "description": "The text displayed on the contact tab."
+    },
+    "advancedTabLabel": "Advanced",
+    "@advancedTabLabel": {
+        "description": "The text displayed on the advanced tab."
     }
 }
