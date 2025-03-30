@@ -50,20 +50,31 @@ class BottomNavScreen extends HookConsumerWidget {
           }
         },
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            activeIcon: Icon(Icons.home),
+            label: 'Home',
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.confirmation_num_outlined),
+            activeIcon: Icon(Icons.confirmation_num),
             label: 'Bookings',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.monetization_on_outlined),
+            activeIcon: Icon(Icons.monetization_on),
             label: 'Donations',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.event_outlined),
+            activeIcon: Icon(Icons.event),
             label: 'Events',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.more_horiz),
+            activeIcon: Icon(Icons.more_vert),
+            label: 'More',
+          ),
         ],
       ),
       floatingActionButton:
