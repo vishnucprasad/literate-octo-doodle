@@ -46,7 +46,7 @@ class AppInputField extends StatelessWidget {
       textAlign: textAlign ?? TextAlign.start,
       style: context.theme.textTheme.bodyMedium?.copyWith(fontSize: fontsize),
       autofocus: autofocus ?? false,
-      maxLines: maxLines,
+      maxLines: obscureText == true ? 1 : maxLines,
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: context.theme.textTheme.bodyMedium?.copyWith(

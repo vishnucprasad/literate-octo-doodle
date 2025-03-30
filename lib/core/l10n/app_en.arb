@@ -392,5 +392,20 @@
     "registrationsClosedLabel": "Registrations Closed",
     "@registrationsClosedLabel": {
         "description": "The text displayed on the registrations closed label."
+    },
+    "viewRegistrationsAppBarTitle": "Registrations",
+    "@viewRegistrationsAppBarTitle": {
+        "description": "The title displayed on the view registrations app bar."
+    },
+    "searchLabel": "Search",
+    "@searchLabel": {
+        "description": "The text displayed on the search label."
+    },
+    "familyMembersCount": "{count} Family Members",
+    "@familyMembersCount": {
+        "description": "The text displayed as the family members count.",
+        "placeholders": {
+            "count": {}
+        }
     }
 }

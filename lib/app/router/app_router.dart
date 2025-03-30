@@ -25,6 +25,11 @@ GoRouter appRouter(Ref ref) {
         name: AppRoutes.forgotPassword.name,
         builder: (context, state) => AppRoutes.forgotPassword.screen,
       ),
+      GoRoute(
+        path: AppRoutes.viewRegistration.path,
+        name: AppRoutes.viewRegistration.name,
+        builder: (context, state) => AppRoutes.viewRegistration.screen,
+      ),
       ShellRoute(
         builder: (context, state, child) {
           return AppRoutes.bottomNavScreen(child: child).screen;

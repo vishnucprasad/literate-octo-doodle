@@ -7,6 +7,7 @@ import 'package:aaraadhya_temple_dashboard/presentation/screens/home/dashboard/d
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/donations/donations_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/events/events_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/more/more_screen.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/registrations/view_registrations/view_registrations_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRoute {
@@ -70,5 +71,11 @@ class AppRoutes {
     name: 'more',
     path: '/more',
     screen: MoreScreen(),
+  );
+
+  static AppRoute viewRegistration = AppRoute(
+    name: 'view-registration',
+    path: '/view-registration',
+    screen: ViewRegistrationsScreen(),
   );
 }

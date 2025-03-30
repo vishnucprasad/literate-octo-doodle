@@ -1,3 +1,4 @@
+import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
@@ -6,6 +7,7 @@ import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expanda
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/events/widgets/event_details_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
 class EventDetailsCard extends ConsumerWidget {
@@ -120,7 +122,9 @@ class EventDetailsCard extends ConsumerWidget {
               SizedBox(
                 height: 30,
                 child: FilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.push(AppRoutes.viewRegistration.path);
+                  },
                   style: FilledButton.styleFrom(
                     padding: EdgeInsets.symmetric(
                       horizontal: 16.0,
