@@ -1,6 +1,10 @@
 {
     "@@author": "Vishnu C Prasad",
     "@@locale": "en",
+    "appLanguage": "English",
+    "@appLanguage": {
+        "description": "The language of the application."
+    },
     "appName": "Aaraadhya Temple",
     "@appName": {
         "description": "The official name of the application, displayed on the home screen, splash screen, and other prominent places."
@@ -56,5 +60,352 @@
     "invalidPasswordValidationErorrMessage": "Password must minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character",
     "@invalidPasswordValidationErorrMessage": {
         "description": "The error message displayed when the password field is invalid."
+    },
+    "dashboardAppBarTitle": "Aaraadhya Admin",
+    "@dashboardAppBarTitle": {
+        "description": "The title displayed on the dashboard app bar."
+    },
+    "todaysDonationsCardTitle": "Today's Donations",
+    "@todaysDonationsCardTitle": {
+        "description": "The title displayed on the today's donations card in dashboard."
+    },
+    "todaysPoojaBookingsCardTitle": "Today's Pooja Bookings",
+    "@todaysPoojaBookingsCardTitle": {
+        "description": "The title displayed on the today's pooja bookings card in dashboard."
+    },
+    "activePoojasCardTitle": "Active Poojas",
+    "@activePoojasCardTitle": {
+        "description": "The title displayed on the active poojas card in dashboard."
+    },
+    "activeEventsCardTitle": "Active Events",
+    "@activeEventsCardTitle": {
+        "description": "The title displayed on the active events card in dashboard."
+    },
+    "quickActionsSectionTitle": "Quick Actions",
+    "@quickActionsSectionTitle": {
+        "description": "The title displayed on the quick actions section in dashboard."
+    },
+    "newPoojaButtonLabel": "New Pooja",
+    "@newPoojaButtonLabel": {
+        "description": "The text displayed on the new pooja button in dashboard."
+    },
+    "newEventButtonLabel": "New Event",
+    "@newEventButtonLabel": {
+        "description": "The text displayed on the new event button in dashboard."
+    },
+    "announcementButtonLabel": "Announcement",
+    "@announcementButtonLabel": {
+        "description": "The text displayed on the announcement button in dashboard."
+    },
+    "todaysBookingsSectionTitle": "Today's Bookings",
+    "@todaysBookingsSectionTitle": {
+        "description": "The title displayed on the today's bookings section in dashboard."
+    },
+    "notificationsSectionTitle": "Notifications",
+    "@notificationsSectionTitle": {
+        "description": "The title displayed on the notifications section in dashboard."
+    },
+    "bookingIdLabel": "Booking ID",
+    "@bookingIdLabel": {
+        "description": "The text displayed on the booking id label in dashboard."
+    },
+    "viewAllButtonLabel": "View All",
+    "@viewAllButtonLabel": {
+        "description": "The text displayed on the view all button in dashboard."
+    },
+    "bookingsManagementAppBarTitle": "Bookings Management",
+    "@bookingsManagementAppBarTitle": {
+        "description": "The title displayed on the bookings management app bar."
+    },
+    "bookingsSectionTitle": "{month} {day} Bookings",
+    "@bookingsSectionTitle": {
+        "description": "The title displayed on the bookings section.",
+        "placeholders": {
+            "month": {},
+            "day": {}
+        }
+    },
+    "paymentBadgeLabel": "₹{amount} Paid",
+    "@paymentBadgeLabel": {
+        "description": "The text displayed on the payment badge.",
+        "placeholders": {
+            "amount": {}
+        }
+    },
+    "viewDetailsButtonLabel": "View Details",
+    "@viewDetailsButtonLabel": {
+        "description": "The text displayed on the view details button"
+    },
+    "bookingDateAndTimeLabel": "Booking Date & Time",
+    "@bookingDateAndTimeLabel": {
+        "description": "The text displayed on the booking date and time label"
+    },
+    "poojasCount": "{count} Poojas",
+    "@poojasCount": {
+        "description": "The text displayed on the poojas count label",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "poojaDetailsSectionTitle": "Pooja Details",
+    "@poojaDetailsSectionTitle": {
+        "description": "The title displayed on the pooja details section."
+    },
+    "amountLabel": "₹ {amount}",
+    "@amountLabel": {
+        "description": "The text displayed on the amount label.",
+        "placeholders": {
+            "amount": {}
+        }
+    },
+    "hideDetailsButtonLabel": "Hide Details",
+    "@hideDetailsButtonLabel": {
+        "description": "The text displayed on the hide details button."
+    },
+    "confirmedBadgeLabel": "Confirmed",
+    "@confirmedBadgeLabel": {
+        "description": "The text displayed on the confirmed badge."
+    },
+    "handedOverBadgeLabel": "Handed Over",
+    "@handedOverBadgeLabel": {
+        "description": "The text displayed on the handed over badge."
+    },
+    "completedBadgeLabel": "Completed",
+    "@completedBadgeLabel": {
+        "description": "The text displayed on the completed badge."
+    },
+    "canceledBadgeLabel": "Cancelled",
+    "@canceledBadgeLabel": {
+        "description": "The text displayed on the canceled badge."
+    },
+    "allBoookingsLabelWithCount": "All Bookings ({count})",
+    "@allBoookingsLabelWithCount": {
+        "description": "The text displayed on the all bookings label with count.",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "newPoojaBookingNotificationTitle": "New Pooja Booking",
+    "@newPoojaBookingNotificationTitle": {
+        "description": "The title displayed on the new pooja booking notification."
+    },
+    "newPoojaBookingNotificationDescription": "{name} has successfully ordered {count} Poojas from the temple.",
+    "@newPoojaBookingNotificationDescription": {
+        "description": "The description displayed on the new pooja booking notification.",
+        "placeholders": {
+            "name": {},
+            "count": {}
+        }
+    },
+    "donationsManagementAppBarTitle": "Donations Management",
+    "@donationsManagementAppBarTitle": {
+        "description": "The title displayed on the donations management app bar."
+    },
+    "donationsSectionTitle": "{month} {day} Donations",
+    "@donationsSectionTitle": {
+        "description": "The title displayed on the donations section.",
+        "placeholders": {
+            "month": {},
+            "day": {}
+        }
+    },
+    "donationDateAndTimeLabel": "Donation Date & Time",
+    "@donationDateAndTimeLabel": {
+        "description": "The text displayed on the donation date and time label."
+    },
+    "transactionIdLabel": "Transaction ID",
+    "@transactionIdLabel": {
+        "description": "The text displayed on the transaction id label."
+    },
+    "donationDetailsSectionTitle": "Donation Details",
+    "@donationDetailsSectionTitle": {
+        "description": "The title displayed on the donation details section."
+    },
+    "donationPurposeLabel": "Donation Purpose",
+    "@donationPurposeLabel": {
+        "description": "The text displayed on the donation purpose label."
+    },
+    "statusLabel": "Status",
+    "@statusLabel": {
+        "description": "The text displayed on the status label."
+    },
+    "paymentMethodLabel": "Payment Method",
+    "@paymentMethodLabel": {
+        "description": "The text displayed on the payment method label."
+    },
+    "taxExemptionReceiptSectionTitle": "Tax Exemption Receipt",
+    "@taxExemptionReceiptSectionTitle": {
+        "description": "The title displayed on the tax exemption receipt section."
+    },
+    "receiptNumberLabel": "Receipt Number",
+    "@receiptNumberLabel": {
+        "description": "The text displayed on the receipt number label."
+    },
+    "taxExemptionReceiptSectionDescription": "This receipt can be used for tax exemption under Section 80G.",
+    "@taxExemptionReceiptSectionDescription": {
+        "description": "The description displayed on the tax exemption receipt section."
+    },
+    "shareTaxReceiptButtonLabel": "Share Tax Receipt",
+    "@shareTaxReceiptButtonLabel": {
+        "description": "The text displayed on the share tax receipt button."
+    },
+    "printButtonLabel": "Print",
+    "@printButtonLabel": {
+        "description": "The text displayed on the print button."
+    },
+    "eventsManagementAppBarTitle": "Events Management",
+    "@eventsManagementAppBarTitle": {
+        "description": "The title displayed on the events management app bar."
+    },
+    "allEventsLabelWithCount": "All Events ({count})",
+    "@allEventsLabelWithCount": {
+        "description": "The text displayed on the all events label with count.",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "allEventsLabel": "All",
+    "@allEventsLabel": {
+        "description": "The text displayed on the all events label."
+    },
+    "upcomingEventsLabel": "Upcoming",
+    "@upcomingEventsLabel": {
+        "description": "The text displayed on the upcoming events label."
+    },
+    "previousEventsLabel": "Previous",
+    "@previousEventsLabel": {
+        "description": "The text displayed on the previous events label."
+    },
+    "eventsSectionTitle": "{filter} Events",
+    "@eventsSectionTitle": {
+        "description": "The title displayed on the events section.",
+        "placeholders": {
+            "filter": {}
+        }
+    },
+    "eventDetailsSectionTitle": "Event Details",
+    "@eventDetailsSectionTitle": {
+        "description": "The title displayed on the event details section."
+    },
+    "eventDateAndTimeLabel": "Event Date & Time",
+    "@eventDateAndTimeLabel": {
+        "description": "The text displayed on the event date and time label."
+    },
+    "eventIdLabel": "Event ID",
+    "@eventIdLabel": {
+        "description": "The text displayed on the event id label."
+    },
+    "eventTypeLabel": "Type",
+    "@eventTypeLabel": {
+        "description": "The text displayed on the event type label."
+    },
+    "eventDescriptionLabel": "Description",
+    "@eventDescriptionLabel": {
+        "description": "The text displayed on the event description label."
+    },
+    "eventLocationLabel": "Location",
+    "@eventLocationLabel": {
+        "description": "The text displayed on the event location label."
+    },
+    "eventRegistrationsCountLabel": "Registrations Count",
+    "@eventRegistrationsCountLabel": {
+        "description": "The text displayed on the event registrations count label."
+    },
+    "registrationsCount": "{count} Registrations",
+    "@registrationsCount": {
+        "description": "The text displayed as the registrations count.",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "registrationsButtonLabel": "Registrations ({count})",
+    "@registrationsButtonLabel": {
+        "description": "The text displayed on the registrations button.",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "viewRegistrationsButtonLabel": "View Registrations",
+    "@viewRegistrationsButtonLabel": {
+        "description": "The text displayed on the view registrations button."
+    },
+    "editButtonLabel": "Edit",
+    "@editButtonLabel": {
+        "description": "The text displayed on the edit button."
+    },
+    "activeBadgeLabel": "Active",
+    "@activeBadgeLabel": {
+        "description": "The text displayed on the active badge."
+    },
+    "inactiveBadgeLabel": "Inactive",
+    "@inactiveBadgeLabel": {
+        "description": "The text displayed on the inactive badge."
+    },
+    "moreOptionsAppBarTitle": "More Options",
+    "@moreOptionsAppBarTitle": {
+        "description": "The title displayed on the more options app bar."
+    },
+    "versionLabel": "Version",
+    "@versionLabel": {
+        "description": "The text displayed on the version label."
+    },
+    "appLanguageTileLabel": "App Language",
+    "@appLanguageTileLabel": {
+        "description": "The text displayed on the app language tile."
+    },
+    "aboutTileLabel": "About",
+    "@aboutTileLabel": {
+        "description": "The text displayed on the about tile."
+    },
+    "privacyPolicyTileLabel": "Privacy Policy",
+    "@privacyPolicyTileLabel": {
+        "description": "The text displayed on the privacy policy tile."
+    },
+    "termsAndConditionsTileLabel": "Terms & Conditions",
+    "@termsAndConditionsTileLabel": {
+        "description": "The text displayed on the terms and conditions tile."
+    },
+    "signOutTileLabel": "Sign Out",
+    "@signOutTileLabel": {
+        "description": "The text displayed on the sign out tile."
+    },
+    "addNewEventFormTitle": "Add New Event",
+    "@addNewEventFormTitle": {
+        "description": "The title displayed on the add new event form."
+    },
+    "eventNameLabel": "Event Name",
+    "@eventNameLabel": {
+        "description": "The text displayed on the event name label."
+    },
+    "saveButtonLabel": "Save",
+    "@saveButtonLabel": {
+        "description": "The text displayed on the save button."
+    },
+    "cancelButtonLabel": "Cancel",
+    "@cancelButtonLabel": {
+        "description": "The text displayed on the cancel button."
+    },
+    "registrationsOpenLabel": "Registrations Open",
+    "@registrationsOpenLabel": {
+        "description": "The text displayed on the registrations open label."
+    },
+    "registrationsClosedLabel": "Registrations Closed",
+    "@registrationsClosedLabel": {
+        "description": "The text displayed on the registrations closed label."
+    },
+    "viewRegistrationsAppBarTitle": "Registrations",
+    "@viewRegistrationsAppBarTitle": {
+        "description": "The title displayed on the view registrations app bar."
+    },
+    "searchLabel": "Search",
+    "@searchLabel": {
+        "description": "The text displayed on the search label."
+    },
+    "familyMembersCount": "{count} Family Members",
+    "@familyMembersCount": {
+        "description": "The text displayed as the family members count.",
+        "placeholders": {
+            "count": {}
+        }
     }
 }

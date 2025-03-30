@@ -17,6 +17,7 @@ class AppInputField extends StatelessWidget {
     this.textAlign,
     this.fontsize,
     this.autofocus,
+    this.maxLines,
     super.key,
   });
 
@@ -31,6 +32,7 @@ class AppInputField extends StatelessWidget {
   final TextAlign? textAlign;
   final double? fontsize;
   final bool? autofocus;
+  final int? maxLines;
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
 
@@ -44,6 +46,7 @@ class AppInputField extends StatelessWidget {
       textAlign: textAlign ?? TextAlign.start,
       style: context.theme.textTheme.bodyMedium?.copyWith(fontSize: fontsize),
       autofocus: autofocus ?? false,
+      maxLines: obscureText == true ? 1 : maxLines,
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: context.theme.textTheme.bodyMedium?.copyWith(
