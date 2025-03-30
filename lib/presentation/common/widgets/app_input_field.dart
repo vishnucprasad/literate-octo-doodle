@@ -7,6 +7,7 @@ class AppInputField extends StatelessWidget {
     this.fillColor,
     this.borderRadius,
     this.hint,
+    this.labelText,
     this.obscureText,
     this.onChanged,
     this.errorText,
@@ -24,6 +25,7 @@ class AppInputField extends StatelessWidget {
   final Color? fillColor;
   final double? borderRadius;
   final String? hint;
+  final String? labelText;
   final bool? obscureText;
   final ValueChanged<String>? onChanged;
   final String? errorText;
@@ -38,32 +40,51 @@ class AppInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      obscureText: obscureText ?? false,
-      onChanged: onChanged,
-      keyboardType: keyboardType,
-      inputFormatters: inputFormatters,
-      textAlign: textAlign ?? TextAlign.start,
-      style: context.theme.textTheme.bodyMedium?.copyWith(fontSize: fontsize),
-      autofocus: autofocus ?? false,
-      maxLines: obscureText == true ? 1 : maxLines,
-      decoration: InputDecoration(
-        hintText: hint,
-        hintStyle: context.theme.textTheme.bodyMedium?.copyWith(
-          color: context.colors.grey[900],
-          fontSize: fontsize,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (labelText != null) ...[
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, bottom: 4.0),
+            child: Text(
+              labelText!,
+              style: context.theme.textTheme.bodyMedium?.copyWith(
+                color: context.colors.grey[900],
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+        TextFormField(
+          obscureText: obscureText ?? false,
+          onChanged: onChanged,
+          keyboardType: keyboardType,
+          inputFormatters: inputFormatters,
+          textAlign: textAlign ?? TextAlign.start,
+          style: context.theme.textTheme.bodyMedium?.copyWith(
+            fontSize: fontsize,
+          ),
+          autofocus: autofocus ?? false,
+          maxLines: obscureText == true ? 1 : maxLines,
+          decoration: InputDecoration(
+            hintText: hint,
+            hintStyle: context.theme.textTheme.bodyMedium?.copyWith(
+              color: context.colors.grey[900],
+              fontSize: fontsize,
+            ),
+            errorMaxLines: 3,
+            errorText: errorText,
+            filled: true,
+            fillColor: fillColor ?? context.colors.grey[100],
+            border: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(borderRadius ?? 14.0),
+            ),
+            prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
+          ),
         ),
-        errorMaxLines: 3,
-        errorText: errorText,
-        filled: true,
-        fillColor: fillColor ?? context.colors.grey[100],
-        border: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(borderRadius ?? 14.0),
-        ),
-        prefixIcon: prefixIcon,
-        suffixIcon: suffixIcon,
-      ),
+      ],
     );
   }
 }

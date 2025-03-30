@@ -431,5 +431,81 @@
     "advancedTabLabel": "Advanced",
     "@advancedTabLabel": {
         "description": "The text displayed on the advanced tab."
+    },
+    "profilePictureLabel": "Profile Picture",
+    "@profilePictureLabel": {
+        "description": "The text displayed on the profile picture label."
+    },
+    "uploadNewImageLabel": "Upload New Image",
+    "@uploadNewImageLabel": {
+        "description": "The text displayed on the upload new image label."
+    },
+    "imageTypeAndSizeLabel": "JPG, PNG (Max 5MB)",
+    "@imageTypeAndSizeLabel": {
+        "description": "The text displayed on the image type and size label."
+    },
+    "templeBasicDetailsLabel": " Temple Basic Details",
+    "@templeBasicDetailsLabel": {
+        "description": "The text displayed on the temple basic details label."
+    },
+    "templeNameLabel": "Temple Name",
+    "@templeNameLabel": {
+        "description": "The text displayed on the temple name label."
+    },
+    "mainDeityLabel": "Main Deity",
+    "@mainDeityLabel": {
+        "description": "The text displayed on the main deity label."
+    },
+    "otherDeitieslabel": "Other Deities ( Seperate using commas )",
+    "@otherDeitieslabel": {
+        "description": "The text displayed on the other deities label."
+    },
+    "managingAuthorityLabel": "Managing Authority",
+    "@managingAuthorityLabel": {
+        "description": "The text displayed on the managing authority label."
+    },
+    "chooseOneLabel": "Choose One",
+    "@chooseOneLabel": {
+        "description": "The text displayed on the choose one label."
+    },
+    "templeSchedulesLabel": "Temple Schedules",
+    "@templeSchedulesLabel": {
+        "description": "The text displayed on the temple schedules label."
+    },
+    "timePickerLabel": "HH:MM",
+    "@timePickerLabel": {
+        "description": "The text displayed on the time picker label."
+    },
+    "morningScheduleLabel": "Morning Schedule",
+    "@morningScheduleLabel": {
+        "description": "The text displayed on the morning schedule label."
+    },
+    "eveningScheduleLabel": "Evening Schedule",
+    "@eveningScheduleLabel": {
+        "description": "The text displayed on the evening schedule label."
+    },
+    "templeDescriptionLabel": "Temple Description",
+    "@templeDescriptionLabel": {
+        "description": "The text displayed on the temple description label."
+    },
+    "templeRulesLabel": "Temple Rules",
+    "@templeRulesLabel": {
+        "description": "The text displayed on the temple rules label."
+    },
+    "devaswomBoardLabel": "Devaswom Board",
+    "@devaswomBoardLabel": {
+        "description": "The text displayed on the devaswom board label."
+    },
+    "privateTrustLabel": "Private Trust",
+    "@privateTrustLabel": {
+        "description": "The text displayed on the private trust label."
+    },
+    "familyTrustLabel": "Family Trust",
+    "@familyTrustLabel": {
+        "description": "The text displayed on the family trust label."
+    },
+    "othersLabel": "Others",
+    "@othersLabel": {
+        "description": "The text displayed on the others label."
     }
 }
