@@ -507,5 +507,9 @@
     "othersLabel": "Others",
     "@othersLabel": {
         "description": "The text displayed on the others label."
+    },
+    "moreDetailsLabel": "More Details",
+    "@moreDetailsLabel": {
+        "description": "The text displayed on the more details label."
     }
 }

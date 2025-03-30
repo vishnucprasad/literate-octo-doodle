@@ -12,11 +12,12 @@ class BasicDetailsForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           context.l10n.templeBasicDetailsLabel,
           style: context.theme.textTheme.titleSmall?.copyWith(
-            color: context.colors.grey[900],
+            color: context.colors.primary,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -63,7 +64,7 @@ class BasicDetailsForm extends StatelessWidget {
         Text(
           context.l10n.templeSchedulesLabel,
           style: context.theme.textTheme.titleSmall?.copyWith(
-            color: context.colors.grey[900],
+            color: context.colors.primary,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -71,6 +72,14 @@ class BasicDetailsForm extends StatelessWidget {
         TimeRangePickerButton(labelText: context.l10n.morningScheduleLabel),
         AppSpacing.verticalMedium,
         TimeRangePickerButton(labelText: context.l10n.eveningScheduleLabel),
+        AppSpacing.verticalMedium,
+        Text(
+          context.l10n.moreDetailsLabel,
+          style: context.theme.textTheme.titleSmall?.copyWith(
+            color: context.colors.primary,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         AppSpacing.verticalMedium,
         AppInputField(
           hint: context.l10n.templeDescriptionLabel,
