@@ -615,5 +615,100 @@
     "locationLinkLabel": "Location Link",
     "@locationLinkLabel": {
         "description": "The text displayed on the location link label."
+    },
+    "notificationsAndAlertsLabel": "Notifications & Alerts",
+    "@notificationsAndAlertsLabel": {
+        "description": "The text displayed on the notifications and alerts label."
+    },
+    "smsNotificationsForDevoteesLabel": "SMS notifications for devotees",
+    "@smsNotificationsForDevoteesLabel": {
+        "description": "The text displayed on the sms notifications for devotees label."
+    },
+    "emailNotificationsForDevoteesLabel": "Email notifications for devotees",
+    "@emailNotificationsForDevoteesLabel": {
+        "description": "The text displayed on the email notifications for devotees label."
+    },
+    "bookingSettingsLabel": "Booking Settings",
+    "@bookingSettingsLabel": {
+        "description": "The text displayed on the booking settings label."
+    },
+    "enableOnlineBookingsLabel": "Enable online bookings",
+    "@enableOnlineBookingsLabel": {
+        "description": "The text displayed on the enable online bookings label."
+    },
+    "advancedBookingLimitLabel": "Advanced booking limit",
+    "@advancedBookingLimitLabel": {
+        "description": "The text displayed on the advanced booking limit label."
+    },
+    "accountSettingsLabel": "Account Settings",
+    "@accountSettingsLabel": {
+        "description": "The text displayed on the account settings label."
+    },
+    "changePasswordLabel": "Change password",
+    "@changePasswordLabel": {
+        "description": "The text displayed on the change password label."
+    },
+    "bankDetailsForPoojaPaymentsLabel": "Bank details for pooja payments",
+    "@bankDetailsForPoojaPaymentsLabel": {
+        "description": "The text displayed on the bank details for pooja payments label."
+    },
+    "daysLabelWithDaysCount": "{daysCount} days",
+    "@daysLabelWithDaysCount": {
+        "description": "The text displayed on the days label.",
+        "placeholders": {
+            "daysCount": {}
+        }
+    },
+    "changeAccountPasswordFormTitle": "Change Account Password",
+    "@changeAccountPasswordFormTitle": {
+        "description": "The title displayed on the change account password form."
+    },
+    "newPasswordLabel": "New password",
+    "@newPasswordLabel": {
+        "description": "The text displayed on the new password label."
+    },
+    "newPassWordHintText": "Enter new password",
+    "@newPassWordHintText": {
+        "description": "The text displayed on the new password hint text."
+    },
+    "confirmPasswordLabel": "Confirm password",
+    "@confirmPasswordLabel": {
+        "description": "The text displayed on the confirm password label."
+    },
+    "confirmPasswordHintText": "Enter confirm password",
+    "@confirmPasswordHintText": {
+        "description": "The text displayed on the confirm password hint text."
+    },
+    "bankDetailsFormTitle": "Bank Details",
+    "@bankDetailsFormTitle": {
+        "description": "The title displayed on the bank details form."
+    },
+    "bankNameLabel": "Bank name",
+    "@bankNameLabel": {
+        "description": "The text displayed on the bank name label."
+    },
+    "bankNameHintText": "Enter bank name",
+    "@bankNameHintText": {
+        "description": "The text displayed on the bank name hint text."
+    },
+    "accountHolderNameLabel": "Account holder name",
+    "@accountHolderNameLabel": {
+        "description": "The text displayed on the account holder name label."
+    },
+    "accountHolderNameHintText": "Enter account holder name",
+    "@accountHolderNameHintText": {
+        "description": "The text displayed on the account holder name hint text."
+    },
+    "upiIdLabel": "UPI ID",
+    "@upiIdLabel": {
+        "description": "The text displayed on the upi id label."
+    },
+    "upiIdHintText": "Enter upi id",
+    "@upiIdHintText": {
+        "description": "The text displayed on the upi id hint text."
+    },
+    "advancedBookingLimitDialogTitle": "Advanced booking limit ( Days )",
+    "@advancedBookingLimitDialogTitle": {
+        "description": "The title displayed on the advanced booking limit dialog."
     }
 }

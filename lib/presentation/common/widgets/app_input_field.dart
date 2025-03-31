@@ -17,8 +17,10 @@ class AppInputField extends StatelessWidget {
     this.inputFormatters,
     this.textAlign,
     this.fontsize,
+    this.fontFamily,
     this.autofocus,
     this.maxLines,
+    this.controller,
     super.key,
   });
 
@@ -33,10 +35,12 @@ class AppInputField extends StatelessWidget {
   final Widget? suffixIcon;
   final TextAlign? textAlign;
   final double? fontsize;
+  final String? fontFamily;
   final bool? autofocus;
   final int? maxLines;
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
@@ -56,12 +60,14 @@ class AppInputField extends StatelessWidget {
           ),
         ],
         TextFormField(
+          controller: controller,
           obscureText: obscureText ?? false,
           onChanged: onChanged,
           keyboardType: keyboardType,
           inputFormatters: inputFormatters,
           textAlign: textAlign ?? TextAlign.start,
           style: context.theme.textTheme.bodyMedium?.copyWith(
+            fontFamily: fontFamily,
             fontSize: fontsize,
           ),
           autofocus: autofocus ?? false,
