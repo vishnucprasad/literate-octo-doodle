@@ -536,5 +536,41 @@
         "placeholders": {
             "poojaPrice": {}
         }
+    },
+    "addNewPoojaFormTitle": "Add New Pooja",
+    "@addNewPoojaFormTitle": {
+        "description": "The title displayed on the add new pooja form."
+    },
+    "poojaNameLabel": "Pooja Name",
+    "@poojaNameLabel": {
+        "description": "The text displayed on the pooja name label."
+    },
+    "pricelabel": "Price (₹)",
+    "@pricelabel": {
+        "description": "The text displayed on the pooja price label."
+    },
+    "homamLabel": "Homam",
+    "@homamLabel": {
+        "description": "The text displayed on the homam label."
+    },
+    "archanaLabel": "Archana",
+    "@archanaLabel": {
+        "description": "The text displayed on the archana label."
+    },
+    "specialPoojaLabel": "Special Pooja",
+    "@specialPoojaLabel": {
+        "description": "The text displayed on the special pooja label."
+    },
+    "poojaTypeLabelText": "Type",
+    "@poojaTypeLabelText": {
+        "description": "The text displayed on the pooja type label."
+    },
+    "poojaDescriptionLabel": "Description",
+    "@poojaDescriptionLabel": {
+        "description": "The text displayed on the pooja description label."
+    },
+    "poojaDescriptionHintText": "Enter pooja description",
+    "@poojaDescriptionHintText": {
+        "description": "The text displayed on the pooja description hint text."
     }
 }

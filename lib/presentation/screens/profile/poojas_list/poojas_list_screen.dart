@@ -4,6 +4,7 @@ import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_input
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/common/filters/filters_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/poojas_list/widgets/listof_poojas.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/poojas_list/widgets/pooja_form.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/poojas_list/widgets/poojas_filters.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -19,22 +20,42 @@ class PoojasListScreen extends ConsumerWidget {
       controller.selectIndex(0);
     });
 
-    return ListView(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+    return Stack(
       children: [
-        AppSpacing.verticalMedium,
-        PoojasFilters(),
-        AppSpacing.verticalSmall,
-        AppInputField(
-          hint: context.l10n.searchLabel,
-          prefixIcon: Icon(
-            Icons.search_outlined,
-            color: context.colors.grey[700],
+        ListView(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          children: [
+            AppSpacing.verticalMedium,
+            PoojasFilters(),
+            AppSpacing.verticalSmall,
+            AppInputField(
+              hint: context.l10n.searchLabel,
+              prefixIcon: Icon(
+                Icons.search_outlined,
+                color: context.colors.grey[700],
+              ),
+            ),
+            AppSpacing.verticalSmall,
+            ListofPoojas(),
+            AppSpacing.verticalLarge,
+          ],
+        ),
+        Positioned(
+          right: 16,
+          bottom: 56,
+          child: FloatingActionButton(
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                isScrollControlled: true,
+                builder: (context) => PoojaForm(),
+              );
+            },
+            shape: CircleBorder(),
+            backgroundColor: context.colorScheme.primary,
+            child: Icon(Icons.add_outlined),
           ),
         ),
-        AppSpacing.verticalSmall,
-        ListofPoojas(),
-        AppSpacing.verticalLarge,
       ],
     );
   }
