@@ -333,6 +333,10 @@
     "@editButtonLabel": {
         "description": "The text displayed on the edit button."
     },
+    "deleteButtonLabel": "Delete",
+    "@deleteButtonLabel": {
+        "description": "The text displayed on the delete button."
+    },
     "activeBadgeLabel": "Active",
     "@activeBadgeLabel": {
         "description": "The text displayed on the active badge."
@@ -511,5 +515,26 @@
     "moreDetailsLabel": "More Details",
     "@moreDetailsLabel": {
         "description": "The text displayed on the more details label."
+    },
+    "allPoojasCountLabel": "All Poojas ({count})",
+    "@allPoojasCountLabel": {
+        "description": "The text displayed on the all poojas count label.",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "poojaTypeLabel": "Type: {poojaType}",
+    "@poojaTypeLabel": {
+        "description": "The text displayed on the pooja type label.",
+        "placeholders": {
+            "poojaType": {}
+        }
+    },
+    "poojaPriceLabel": "Price: ₹ {poojaPrice}",
+    "@poojaPriceLabel": {
+        "description": "The text displayed on the pooja price label.",
+        "placeholders": {
+            "poojaPrice": {}
+        }
     }
 }
