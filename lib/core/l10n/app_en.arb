@@ -576,5 +576,44 @@
     "uploadButtonLabel": "Upload",
     "@uploadButtonLabel": {
         "description": "The text displayed on the upload button."
+    },
+    "templeCommiteeMembersLabel": "Temple Committee Members",
+    "@templeCommiteeMembersLabel": {
+        "description": "The text displayed on the temple committee members label."
+    },
+    "chiefPriestLabel": "Chief Priest",
+    "@chiefPriestLabel": {
+        "description": "The text displayed on the chief priest label."
+    },
+    "nameLabel": "Name",
+    "@nameLabel": {
+        "description": "The text displayed on the name label."
+    },
+    "numberLabel": "Number",
+    "@numberLabel": {
+        "description": "The text displayed on the number label."
+    },
+    "addressLabel": "Address",
+    "@addressLabel": {
+        "description": "The text displayed on the address label."
+    },
+    "websiteLinkLabel": "Website Link",
+    "@websiteLinkLabel": {
+        "description": "The text displayed on the website link label."
+    },
+    "personLabelWithCount": "Person {count}",
+    "@personLabelWithCount": {
+        "description": "The text displayed on the person label.",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "addMemberButtonTitle": "Add Member",
+    "@addMemberButtonTitle": {
+        "description": "The title displayed on the add member button."
+    },
+    "locationLinkLabel": "Location Link",
+    "@locationLinkLabel": {
+        "description": "The text displayed on the location link label."
     }
 }
