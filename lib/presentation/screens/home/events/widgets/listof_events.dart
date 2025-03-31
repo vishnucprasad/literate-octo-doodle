@@ -2,7 +2,7 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_ext
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/filters/filters_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/common/filters/filters_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/events/widgets/event_details_card.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

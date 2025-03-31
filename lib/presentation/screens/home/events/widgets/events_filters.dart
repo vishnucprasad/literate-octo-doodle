@@ -1,7 +1,7 @@
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/filters/filters_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/common/filters/filters_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
