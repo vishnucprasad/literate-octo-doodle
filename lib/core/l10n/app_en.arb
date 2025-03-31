@@ -572,5 +572,9 @@
     "poojaDescriptionHintText": "Enter pooja description",
     "@poojaDescriptionHintText": {
         "description": "The text displayed on the pooja description hint text."
+    },
+    "uploadButtonLabel": "Upload",
+    "@uploadButtonLabel": {
+        "description": "The text displayed on the upload button."
     }
 }
