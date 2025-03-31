@@ -1,3 +1,4 @@
+import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_back_button.dart';
 import 'package:flutter/material.dart';
@@ -8,11 +9,13 @@ class HomeAppBar extends StatelessWidget {
     super.key,
     required this.title,
     this.leading,
+    this.bottom,
     this.actions,
   });
 
   final String title;
   final Widget? leading;
+  final Widget? bottom;
   final List<Widget>? actions;
 
   @override
@@ -33,12 +36,21 @@ class HomeAppBar extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
+      bottom:
+          bottom != null
+              ? PreferredSize(
+                preferredSize: Size.fromHeight(46.0),
+                child: bottom!,
+              )
+              : null,
       actionsPadding: EdgeInsets.only(right: 8.0),
       actions:
           actions ??
           [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                context.push(AppRoutes.profileSettingsScreen.path);
+              },
               icon: CircleAvatar(
                 backgroundColor: context.theme.colorScheme.primary,
                 child: Icon(

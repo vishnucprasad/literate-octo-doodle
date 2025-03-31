@@ -333,6 +333,10 @@
     "@editButtonLabel": {
         "description": "The text displayed on the edit button."
     },
+    "deleteButtonLabel": "Delete",
+    "@deleteButtonLabel": {
+        "description": "The text displayed on the delete button."
+    },
     "activeBadgeLabel": "Active",
     "@activeBadgeLabel": {
         "description": "The text displayed on the active badge."
@@ -407,5 +411,304 @@
         "placeholders": {
             "count": {}
         }
+    },
+    "profileSettingsAppBarTitle": "Profile Settings",
+    "@profileSettingsAppBarTitle": {
+        "description": "The title displayed on the profile settings app bar."
+    },
+    "basicTabLabel": "Basic",
+    "@basicTabLabel": {
+        "description": "The text displayed on the basic tab."
+    },
+    "poojasTabLabel": "Poojas",
+    "@poojasTabLabel": {
+        "description": "The text displayed on the poojas tab."
+    },
+    "galleryTabLabel": "Gallery",
+    "@galleryTabLabel": {
+        "description": "The text displayed on the gallery tab."
+    },
+    "contactTabLabel": "Contact",
+    "@contactTabLabel": {
+        "description": "The text displayed on the contact tab."
+    },
+    "advancedTabLabel": "Advanced",
+    "@advancedTabLabel": {
+        "description": "The text displayed on the advanced tab."
+    },
+    "profilePictureLabel": "Profile Picture",
+    "@profilePictureLabel": {
+        "description": "The text displayed on the profile picture label."
+    },
+    "uploadNewImageLabel": "Upload New Image",
+    "@uploadNewImageLabel": {
+        "description": "The text displayed on the upload new image label."
+    },
+    "imageTypeAndSizeLabel": "JPG, PNG (Max 5MB)",
+    "@imageTypeAndSizeLabel": {
+        "description": "The text displayed on the image type and size label."
+    },
+    "templeBasicDetailsLabel": " Temple Basic Details",
+    "@templeBasicDetailsLabel": {
+        "description": "The text displayed on the temple basic details label."
+    },
+    "templeNameLabel": "Temple Name",
+    "@templeNameLabel": {
+        "description": "The text displayed on the temple name label."
+    },
+    "mainDeityLabel": "Main Deity",
+    "@mainDeityLabel": {
+        "description": "The text displayed on the main deity label."
+    },
+    "otherDeitieslabel": "Other Deities ( Seperate using commas )",
+    "@otherDeitieslabel": {
+        "description": "The text displayed on the other deities label."
+    },
+    "managingAuthorityLabel": "Managing Authority",
+    "@managingAuthorityLabel": {
+        "description": "The text displayed on the managing authority label."
+    },
+    "chooseOneLabel": "Choose One",
+    "@chooseOneLabel": {
+        "description": "The text displayed on the choose one label."
+    },
+    "templeSchedulesLabel": "Temple Schedules",
+    "@templeSchedulesLabel": {
+        "description": "The text displayed on the temple schedules label."
+    },
+    "timePickerLabel": "HH:MM",
+    "@timePickerLabel": {
+        "description": "The text displayed on the time picker label."
+    },
+    "morningScheduleLabel": "Morning Schedule",
+    "@morningScheduleLabel": {
+        "description": "The text displayed on the morning schedule label."
+    },
+    "eveningScheduleLabel": "Evening Schedule",
+    "@eveningScheduleLabel": {
+        "description": "The text displayed on the evening schedule label."
+    },
+    "templeDescriptionLabel": "Temple Description",
+    "@templeDescriptionLabel": {
+        "description": "The text displayed on the temple description label."
+    },
+    "templeRulesLabel": "Temple Rules",
+    "@templeRulesLabel": {
+        "description": "The text displayed on the temple rules label."
+    },
+    "devaswomBoardLabel": "Devaswom Board",
+    "@devaswomBoardLabel": {
+        "description": "The text displayed on the devaswom board label."
+    },
+    "privateTrustLabel": "Private Trust",
+    "@privateTrustLabel": {
+        "description": "The text displayed on the private trust label."
+    },
+    "familyTrustLabel": "Family Trust",
+    "@familyTrustLabel": {
+        "description": "The text displayed on the family trust label."
+    },
+    "othersLabel": "Others",
+    "@othersLabel": {
+        "description": "The text displayed on the others label."
+    },
+    "moreDetailsLabel": "More Details",
+    "@moreDetailsLabel": {
+        "description": "The text displayed on the more details label."
+    },
+    "allPoojasCountLabel": "All Poojas ({count})",
+    "@allPoojasCountLabel": {
+        "description": "The text displayed on the all poojas count label.",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "poojaTypeLabel": "Type: {poojaType}",
+    "@poojaTypeLabel": {
+        "description": "The text displayed on the pooja type label.",
+        "placeholders": {
+            "poojaType": {}
+        }
+    },
+    "poojaPriceLabel": "Price: ₹ {poojaPrice}",
+    "@poojaPriceLabel": {
+        "description": "The text displayed on the pooja price label.",
+        "placeholders": {
+            "poojaPrice": {}
+        }
+    },
+    "addNewPoojaFormTitle": "Add New Pooja",
+    "@addNewPoojaFormTitle": {
+        "description": "The title displayed on the add new pooja form."
+    },
+    "poojaNameLabel": "Pooja Name",
+    "@poojaNameLabel": {
+        "description": "The text displayed on the pooja name label."
+    },
+    "pricelabel": "Price (₹)",
+    "@pricelabel": {
+        "description": "The text displayed on the pooja price label."
+    },
+    "homamLabel": "Homam",
+    "@homamLabel": {
+        "description": "The text displayed on the homam label."
+    },
+    "archanaLabel": "Archana",
+    "@archanaLabel": {
+        "description": "The text displayed on the archana label."
+    },
+    "specialPoojaLabel": "Special Pooja",
+    "@specialPoojaLabel": {
+        "description": "The text displayed on the special pooja label."
+    },
+    "poojaTypeLabelText": "Type",
+    "@poojaTypeLabelText": {
+        "description": "The text displayed on the pooja type label."
+    },
+    "poojaDescriptionLabel": "Description",
+    "@poojaDescriptionLabel": {
+        "description": "The text displayed on the pooja description label."
+    },
+    "poojaDescriptionHintText": "Enter pooja description",
+    "@poojaDescriptionHintText": {
+        "description": "The text displayed on the pooja description hint text."
+    },
+    "uploadButtonLabel": "Upload",
+    "@uploadButtonLabel": {
+        "description": "The text displayed on the upload button."
+    },
+    "templeCommiteeMembersLabel": "Temple Committee Members",
+    "@templeCommiteeMembersLabel": {
+        "description": "The text displayed on the temple committee members label."
+    },
+    "chiefPriestLabel": "Chief Priest",
+    "@chiefPriestLabel": {
+        "description": "The text displayed on the chief priest label."
+    },
+    "nameLabel": "Name",
+    "@nameLabel": {
+        "description": "The text displayed on the name label."
+    },
+    "numberLabel": "Number",
+    "@numberLabel": {
+        "description": "The text displayed on the number label."
+    },
+    "addressLabel": "Address",
+    "@addressLabel": {
+        "description": "The text displayed on the address label."
+    },
+    "websiteLinkLabel": "Website Link",
+    "@websiteLinkLabel": {
+        "description": "The text displayed on the website link label."
+    },
+    "personLabelWithCount": "Person {count}",
+    "@personLabelWithCount": {
+        "description": "The text displayed on the person label.",
+        "placeholders": {
+            "count": {}
+        }
+    },
+    "addMemberButtonTitle": "Add Member",
+    "@addMemberButtonTitle": {
+        "description": "The title displayed on the add member button."
+    },
+    "locationLinkLabel": "Location Link",
+    "@locationLinkLabel": {
+        "description": "The text displayed on the location link label."
+    },
+    "notificationsAndAlertsLabel": "Notifications & Alerts",
+    "@notificationsAndAlertsLabel": {
+        "description": "The text displayed on the notifications and alerts label."
+    },
+    "smsNotificationsForDevoteesLabel": "SMS notifications for devotees",
+    "@smsNotificationsForDevoteesLabel": {
+        "description": "The text displayed on the sms notifications for devotees label."
+    },
+    "emailNotificationsForDevoteesLabel": "Email notifications for devotees",
+    "@emailNotificationsForDevoteesLabel": {
+        "description": "The text displayed on the email notifications for devotees label."
+    },
+    "bookingSettingsLabel": "Booking Settings",
+    "@bookingSettingsLabel": {
+        "description": "The text displayed on the booking settings label."
+    },
+    "enableOnlineBookingsLabel": "Enable online bookings",
+    "@enableOnlineBookingsLabel": {
+        "description": "The text displayed on the enable online bookings label."
+    },
+    "advancedBookingLimitLabel": "Advanced booking limit",
+    "@advancedBookingLimitLabel": {
+        "description": "The text displayed on the advanced booking limit label."
+    },
+    "accountSettingsLabel": "Account Settings",
+    "@accountSettingsLabel": {
+        "description": "The text displayed on the account settings label."
+    },
+    "changePasswordLabel": "Change password",
+    "@changePasswordLabel": {
+        "description": "The text displayed on the change password label."
+    },
+    "bankDetailsForPoojaPaymentsLabel": "Bank details for pooja payments",
+    "@bankDetailsForPoojaPaymentsLabel": {
+        "description": "The text displayed on the bank details for pooja payments label."
+    },
+    "daysLabelWithDaysCount": "{daysCount} days",
+    "@daysLabelWithDaysCount": {
+        "description": "The text displayed on the days label.",
+        "placeholders": {
+            "daysCount": {}
+        }
+    },
+    "changeAccountPasswordFormTitle": "Change Account Password",
+    "@changeAccountPasswordFormTitle": {
+        "description": "The title displayed on the change account password form."
+    },
+    "newPasswordLabel": "New password",
+    "@newPasswordLabel": {
+        "description": "The text displayed on the new password label."
+    },
+    "newPassWordHintText": "Enter new password",
+    "@newPassWordHintText": {
+        "description": "The text displayed on the new password hint text."
+    },
+    "confirmPasswordLabel": "Confirm password",
+    "@confirmPasswordLabel": {
+        "description": "The text displayed on the confirm password label."
+    },
+    "confirmPasswordHintText": "Enter confirm password",
+    "@confirmPasswordHintText": {
+        "description": "The text displayed on the confirm password hint text."
+    },
+    "bankDetailsFormTitle": "Bank Details",
+    "@bankDetailsFormTitle": {
+        "description": "The title displayed on the bank details form."
+    },
+    "bankNameLabel": "Bank name",
+    "@bankNameLabel": {
+        "description": "The text displayed on the bank name label."
+    },
+    "bankNameHintText": "Enter bank name",
+    "@bankNameHintText": {
+        "description": "The text displayed on the bank name hint text."
+    },
+    "accountHolderNameLabel": "Account holder name",
+    "@accountHolderNameLabel": {
+        "description": "The text displayed on the account holder name label."
+    },
+    "accountHolderNameHintText": "Enter account holder name",
+    "@accountHolderNameHintText": {
+        "description": "The text displayed on the account holder name hint text."
+    },
+    "upiIdLabel": "UPI ID",
+    "@upiIdLabel": {
+        "description": "The text displayed on the upi id label."
+    },
+    "upiIdHintText": "Enter upi id",
+    "@upiIdHintText": {
+        "description": "The text displayed on the upi id hint text."
+    },
+    "advancedBookingLimitDialogTitle": "Advanced booking limit ( Days )",
+    "@advancedBookingLimitDialogTitle": {
+        "description": "The title displayed on the advanced booking limit dialog."
     }
 }
