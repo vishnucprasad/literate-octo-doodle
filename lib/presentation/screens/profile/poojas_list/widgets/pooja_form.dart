@@ -82,7 +82,7 @@ class PoojaForm extends StatelessWidget {
                   ),
                   AppSpacing.verticalMedium,
                   AppInputField(
-                    hint: context.l10n.poojaNameLabel,
+                    hint: context.l10n.poojaNameHintText,
                     labelText: context.l10n.poojaNameLabel,
                     prefixIcon: Icon(
                       Icons.temple_hindu_outlined,
@@ -91,7 +91,7 @@ class PoojaForm extends StatelessWidget {
                   ),
                   AppSpacing.verticalMedium,
                   AppInputField(
-                    hint: context.l10n.pricelabel,
+                    hint: context.l10n.poojaPriceHintText,
                     labelText: context.l10n.pricelabel,
                     prefixIcon: Icon(
                       Icons.currency_rupee_sharp,

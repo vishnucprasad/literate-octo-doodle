@@ -23,17 +23,17 @@ class BasicDetailsForm extends StatelessWidget {
         ),
         AppSpacing.verticalMedium,
         AppInputField(
-          hint: context.l10n.templeNameLabel,
+          hint: context.l10n.templeNameHintText,
           labelText: context.l10n.templeNameLabel,
         ),
         AppSpacing.verticalMedium,
         AppInputField(
-          hint: context.l10n.mainDeityLabel,
+          hint: context.l10n.mainDeityHintText,
           labelText: context.l10n.mainDeityLabel,
         ),
         AppSpacing.verticalMedium,
         AppInputField(
-          hint: context.l10n.otherDeitieslabel,
+          hint: context.l10n.otherDeitiesHintText,
           labelText: context.l10n.otherDeitieslabel,
         ),
         AppSpacing.verticalMedium,
@@ -82,13 +82,13 @@ class BasicDetailsForm extends StatelessWidget {
         ),
         AppSpacing.verticalMedium,
         AppInputField(
-          hint: context.l10n.templeDescriptionLabel,
+          hint: context.l10n.templeDescriptionHintText,
           labelText: context.l10n.templeDescriptionLabel,
           maxLines: 5,
         ),
         AppSpacing.verticalMedium,
         AppInputField(
-          hint: context.l10n.templeRulesLabel,
+          hint: context.l10n.templeRulesHintText,
           labelText: context.l10n.templeRulesLabel,
           maxLines: 5,
         ),

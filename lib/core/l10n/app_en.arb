@@ -303,9 +303,17 @@
     "@eventDescriptionLabel": {
         "description": "The text displayed on the event description label."
     },
+    "eventDescriptionHintText": "Enter event description",
+    "@eventDescriptionHintText": {
+        "description": "The hint text displayed on the event description hint text."
+    },
     "eventLocationLabel": "Location",
     "@eventLocationLabel": {
         "description": "The text displayed on the event location label."
+    },
+    "eventLocationHintText": "Enter event location",
+    "@eventLocationHintText": {
+        "description": "The hint text displayed on the event location hint text."
     },
     "eventRegistrationsCountLabel": "Registrations Count",
     "@eventRegistrationsCountLabel": {
@@ -380,6 +388,10 @@
     "eventNameLabel": "Event Name",
     "@eventNameLabel": {
         "description": "The text displayed on the event name label."
+    },
+    "eventNameHintText": "Enter event name",
+    "@eventNameHintText": {
+        "description": "The hint text displayed on the event name hint text."
     },
     "saveButtonLabel": "Save",
     "@saveButtonLabel": {
@@ -456,13 +468,25 @@
     "@templeNameLabel": {
         "description": "The text displayed on the temple name label."
     },
+    "templeNameHintText": "Enter temple name",
+    "@templeNameHintText": {
+        "description": "The hint text displayed on the temple name hint text."
+    },
     "mainDeityLabel": "Main Deity",
     "@mainDeityLabel": {
         "description": "The text displayed on the main deity label."
     },
+    "mainDeityHintText": "Enter main deity name",
+    "@mainDeityHintText": {
+        "description": "The hint text displayed on the main deity hint text."
+    },
     "otherDeitieslabel": "Other Deities ( Seperate using commas )",
     "@otherDeitieslabel": {
         "description": "The text displayed on the other deities label."
+    },
+    "otherDeitiesHintText": "Enter other deities names ( Seperate using commas )",
+    "@otherDeitiesHintText": {
+        "description": "The hint text displayed on the other deities hint text."
     },
     "managingAuthorityLabel": "Managing Authority",
     "@managingAuthorityLabel": {
@@ -492,9 +516,17 @@
     "@templeDescriptionLabel": {
         "description": "The text displayed on the temple description label."
     },
+    "templeDescriptionHintText": "Enter temple description",
+    "@templeDescriptionHintText": {
+        "description": "The hint text displayed on the temple description hint text."
+    },
     "templeRulesLabel": "Temple Rules",
     "@templeRulesLabel": {
         "description": "The text displayed on the temple rules label."
+    },
+    "templeRulesHintText": "Enter temple rules",
+    "@templeRulesHintText": {
+        "description": "The hint text displayed on the temple rules hint text."
     },
     "devaswomBoardLabel": "Devaswom Board",
     "@devaswomBoardLabel": {
@@ -545,9 +577,17 @@
     "@poojaNameLabel": {
         "description": "The text displayed on the pooja name label."
     },
+    "poojaNameHintText": "Enter pooja name",
+    "@poojaNameHintText": {
+        "description": "The hint text displayed on the pooja name hint text."
+    },
     "pricelabel": "Price (₹)",
     "@pricelabel": {
         "description": "The text displayed on the pooja price label."
+    },
+    "poojaPriceHintText": "Enter pooja price",
+    "@poojaPriceHintText": {
+        "description": "The hint text displayed on the pooja price hint text."
     },
     "homamLabel": "Homam",
     "@homamLabel": {
@@ -597,9 +637,17 @@
     "@addressLabel": {
         "description": "The text displayed on the address label."
     },
+    "addressHintText": "Enter address",
+    "@addressHintText": {
+        "description": "The hint text displayed on the address hint text."
+    },
     "websiteLinkLabel": "Website Link",
     "@websiteLinkLabel": {
         "description": "The text displayed on the website link label."
+    },
+    "websiteLinkHintText": "Enter website link (If any)",
+    "@websiteLinkHintText": {
+        "description": "The hint text displayed on the website link hint text."
     },
     "personLabelWithCount": "Person {count}",
     "@personLabelWithCount": {
@@ -615,6 +663,10 @@
     "locationLinkLabel": "Location Link",
     "@locationLinkLabel": {
         "description": "The text displayed on the location link label."
+    },
+    "locationLinkHintText": "Enter location link",
+    "@locationLinkHintText": {
+        "description": "The text displayed on the location link hint text."
     },
     "notificationsAndAlertsLabel": "Notifications & Alerts",
     "@notificationsAndAlertsLabel": {
