@@ -1,3 +1,4 @@
+import 'package:aaraadhya_temple_dashboard/app/router/app_route.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/auth/forgot_password/forgot_password_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/auth/signin/signin_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/auth/splash/splash_screen.dart';
@@ -11,78 +12,66 @@ import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/profile_
 import 'package:aaraadhya_temple_dashboard/presentation/screens/registrations/view_registrations/view_registrations_screen.dart';
 import 'package:flutter/material.dart';
 
-class AppRoute {
-  final String name;
-  final String path;
-  final Widget screen;
-
-  AppRoute({required this.name, required this.path, required this.screen});
-}
-
 class AppRoutes {
   static AppRoute splash = AppRoute(
+    SplashScreen(),
     name: 'splash',
     path: '/splash',
-    screen: SplashScreen(),
   );
 
   static AppRoute signin = AppRoute(
+    SigninScreen(),
     name: 'signin',
     path: '/signin',
-    screen: SigninScreen(),
   );
 
   static AppRoute forgotPassword = AppRoute(
+    ForgotPasswordScreen(),
     name: 'forgot-password',
     path: '/forgot-password',
-    screen: ForgotPasswordScreen(),
   );
 
   static AppRoute bottomNavScreen({required Widget child}) => AppRoute(
+    BottomNavScreen(child: child),
     name: 'bottom-nav-screen',
     path: '/bottom-nav-screen',
-    screen: BottomNavScreen(child: child),
   );
 
   static AppRoute dashboard = AppRoute(
+    DashboardScreen(),
     name: 'dashboard',
     path: '/dashboard',
-    screen: DashboardScreen(),
   );
 
   static AppRoute bookings = AppRoute(
+    BookingsScreen(),
     name: 'bookings',
     path: '/bookings',
-    screen: BookingsScreen(),
   );
 
   static AppRoute donations = AppRoute(
+    DonationsScreen(),
     name: 'donations',
     path: '/donations',
-    screen: DonationsScreen(),
   );
 
   static AppRoute events = AppRoute(
+    EventsScreen(),
     name: 'events',
     path: '/events',
-    screen: EventsScreen(),
   );
 
-  static AppRoute more = AppRoute(
-    name: 'more',
-    path: '/more',
-    screen: MoreScreen(),
-  );
+  static AppRoute more = AppRoute(MoreScreen(), name: 'more', path: '/more');
 
   static AppRoute viewRegistration = AppRoute(
+    ViewRegistrationsScreen(),
     name: 'view-registration',
     path: '/view-registration',
-    screen: ViewRegistrationsScreen(),
   );
 
   static AppRoute profileSettingsScreen = AppRoute(
+    ProfileSettingsScreen(),
     name: 'profile-settings-screen',
     path: '/profile-settings-screen',
-    screen: ProfileSettingsScreen(),
   );
 }
