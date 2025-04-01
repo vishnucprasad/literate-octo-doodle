@@ -14,7 +14,7 @@ class EventForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
-      initialChildSize: 0.6,
+      initialChildSize: 0.75,
       minChildSize: 0.3,
       expand: false,
       maxChildSize: 0.88,
@@ -83,19 +83,21 @@ class EventForm extends StatelessWidget {
                   ),
                   AppSpacing.verticalMedium,
                   AppInputField(
-                    hint: context.l10n.eventNameLabel,
+                    hint: context.l10n.eventNameHintText,
+                    labelText: context.l10n.eventNameLabel,
                     prefixIcon: Icon(
                       Icons.event_outlined,
                       color: context.colors.grey[700],
                     ),
                   ),
-                  AppSpacing.verticalSmall,
+                  AppSpacing.verticalMedium,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(
                         child: AppDropdownMenu<String>(
-                          hint: context.l10n.eventTypeLabel,
+                          hint: context.l10n.chooseOneLabel,
+                          labelText: context.l10n.eventTypeLabel,
                           items: [
                             DropdownMenuEntry<String>(
                               value: 'Pooja',
@@ -112,7 +114,8 @@ class EventForm extends StatelessWidget {
                       AppSpacing.horizontalSmall,
                       Expanded(
                         child: AppDropdownMenu<String>(
-                          hint: context.l10n.statusLabel,
+                          hint: context.l10n.chooseOneLabel,
+                          labelText: context.l10n.statusLabel,
                           items: [
                             DropdownMenuEntry<String>(
                               value: context.l10n.activeBadgeLabel,
@@ -128,19 +131,23 @@ class EventForm extends StatelessWidget {
                       ),
                     ],
                   ),
-                  AppSpacing.verticalSmall,
+                  AppSpacing.verticalMedium,
                   AppInputField(
-                    hint: context.l10n.eventLocationLabel,
+                    hint: context.l10n.eventLocationHintText,
+                    labelText: context.l10n.eventLocationLabel,
                     prefixIcon: Icon(
                       Icons.location_pin,
                       color: context.colors.grey[700],
                     ),
                   ),
-                  AppSpacing.verticalSmall,
-                  DateAndTimePickerButton(),
-                  AppSpacing.verticalSmall,
+                  AppSpacing.verticalMedium,
+                  DateAndTimePickerButton(
+                    labelText: context.l10n.eventDateAndTimeLabel,
+                  ),
+                  AppSpacing.verticalMedium,
                   AppInputField(
-                    hint: context.l10n.eventDescriptionLabel,
+                    hint: context.l10n.eventDescriptionHintText,
+                    labelText: context.l10n.eventDescriptionLabel,
                     maxLines: 5,
                   ),
                   AppSpacing.verticalMedium,

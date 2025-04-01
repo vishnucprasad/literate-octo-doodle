@@ -74,17 +74,17 @@ class ContactDetailsScreen extends StatelessWidget {
             ),
             AppSpacing.verticalMedium,
             AppInputField(
-              hint: context.l10n.addressLabel,
+              hint: context.l10n.addressHintText,
               labelText: context.l10n.addressLabel,
             ),
             AppSpacing.verticalMedium,
             AppInputField(
-              hint: context.l10n.locationLinkLabel,
+              hint: context.l10n.locationLinkHintText,
               labelText: context.l10n.locationLinkLabel,
             ),
             AppSpacing.verticalMedium,
             AppInputField(
-              hint: context.l10n.websiteLinkLabel,
+              hint: context.l10n.websiteLinkHintText,
               labelText: context.l10n.websiteLinkLabel,
             ),
             AppSpacing.verticalFromPixels(100),

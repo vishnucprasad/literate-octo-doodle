@@ -67,6 +67,7 @@ class ProfilePictureContainer extends StatelessWidget {
                           style: context.theme.textTheme.bodyMedium?.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
+                          textAlign: TextAlign.center,
                         ),
                         AppSpacing.verticalSmall,
                         Text(
@@ -74,6 +75,7 @@ class ProfilePictureContainer extends StatelessWidget {
                           style: context.theme.textTheme.bodySmall?.copyWith(
                             fontFamily: FontFamily.roboto,
                           ),
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),

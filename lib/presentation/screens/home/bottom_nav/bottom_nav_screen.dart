@@ -1,6 +1,7 @@
 import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bottom_nav/widgets/rupee_icon.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/events/widgets/event_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -61,8 +62,16 @@ class BottomNavScreen extends HookConsumerWidget {
             label: 'Bookings',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.monetization_on_outlined),
-            activeIcon: Icon(Icons.monetization_on),
+            icon: RupeeIcon(
+              borderColor: context.colorScheme.onSurface,
+              backgroundColor: context.colorScheme.surface,
+              iconColor: context.colorScheme.onSurface,
+            ),
+            activeIcon: RupeeIcon(
+              borderColor: context.colorScheme.primary,
+              backgroundColor: context.colorScheme.primary,
+              iconColor: context.colorScheme.surface,
+            ),
             label: 'Donations',
           ),
           BottomNavigationBarItem(
