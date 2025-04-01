@@ -9,7 +9,7 @@ part 'auth_controller.g.dart';
 class AuthController extends _$AuthController {
   @override
   AuthState build() {
-    Future.delayed(const Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 2), () {
       listenToAuthState();
     });
     return AuthState();

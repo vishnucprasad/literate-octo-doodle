@@ -25,59 +25,61 @@ GoRouter appRouter(Ref ref) {
           }
           return AppRoutes.signin.path;
         },
-        builder: (context, state) => AppRoutes.splash.screen,
+        builder: AppRoutes.splash.builder,
       ),
       GoRoute(
         path: AppRoutes.signin.path,
         name: AppRoutes.signin.name,
-        builder: (context, state) => AppRoutes.signin.screen,
+        builder: AppRoutes.signin.builder,
       ),
       GoRoute(
         path: AppRoutes.forgotPassword.path,
         name: AppRoutes.forgotPassword.name,
-        builder: (context, state) => AppRoutes.forgotPassword.screen,
+        pageBuilder: AppRoutes.forgotPassword.slideTransitionBuilder,
       ),
       GoRoute(
         path: AppRoutes.viewRegistration.path,
         name: AppRoutes.viewRegistration.name,
-        builder: (context, state) => AppRoutes.viewRegistration.screen,
+        pageBuilder: AppRoutes.viewRegistration.slideTransitionBuilder,
       ),
       ShellRoute(
         builder: (context, state, child) {
-          return AppRoutes.bottomNavScreen(child: child).screen;
+          return AppRoutes.bottomNavScreen(
+            child: child,
+          ).builder(context, state);
         },
         routes: [
           GoRoute(
             path: AppRoutes.dashboard.path,
             name: AppRoutes.dashboard.name,
-            builder: (context, state) => AppRoutes.dashboard.screen,
+            pageBuilder: AppRoutes.dashboard.revealTransitionBuilder,
           ),
           GoRoute(
             path: AppRoutes.bookings.path,
             name: AppRoutes.bookings.name,
-            builder: (context, state) => AppRoutes.bookings.screen,
+            pageBuilder: AppRoutes.bookings.revealTransitionBuilder,
           ),
           GoRoute(
             path: AppRoutes.donations.path,
             name: AppRoutes.donations.name,
-            builder: (context, state) => AppRoutes.donations.screen,
+            pageBuilder: AppRoutes.donations.revealTransitionBuilder,
           ),
           GoRoute(
             path: AppRoutes.events.path,
             name: AppRoutes.events.name,
-            builder: (context, state) => AppRoutes.events.screen,
+            pageBuilder: AppRoutes.events.revealTransitionBuilder,
           ),
           GoRoute(
             path: AppRoutes.more.path,
             name: AppRoutes.more.name,
-            builder: (context, state) => AppRoutes.more.screen,
+            pageBuilder: AppRoutes.more.revealTransitionBuilder,
           ),
         ],
       ),
       GoRoute(
         path: AppRoutes.profileSettingsScreen.path,
         name: AppRoutes.profileSettingsScreen.name,
-        builder: (context, state) => AppRoutes.profileSettingsScreen.screen,
+        pageBuilder: AppRoutes.profileSettingsScreen.slideTransitionBuilder,
       ),
     ],
   );
