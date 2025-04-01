@@ -1,4 +1,6 @@
+import 'package:aaraadhya_temple_dashboard/core/exceptions/auth_exception.dart';
 import 'package:aaraadhya_temple_dashboard/core/utils/validators.dart';
+import 'package:aaraadhya_temple_dashboard/data/repositories/auth_repository.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/auth/signin/signin_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -37,6 +39,22 @@ class SigninController extends _$SigninController {
           password: Validators.validatePassword(state.credentials.password),
           showValidationErrors: true,
         ),
+      );
+    }
+
+    state = state.copyWith(isSubmitting: true, error: null);
+
+    final authRepository = ref.read(authRepositoryProvider);
+
+    try {
+      await authRepository.signIn(state.credentials);
+      state = state.copyWith(isSubmitting: false);
+    } on AuthException catch (e) {
+      state = state.copyWith(isSubmitting: false, error: e);
+    } catch (e) {
+      state = state.copyWith(
+        isSubmitting: false,
+        error: AuthException.unexpected(e.toString()),
       );
     }
   }

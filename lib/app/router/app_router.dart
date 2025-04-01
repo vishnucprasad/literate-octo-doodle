@@ -1,4 +1,5 @@
 import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/auth/auth_controller.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -7,12 +8,23 @@ part 'app_router.g.dart';
 
 @riverpod
 GoRouter appRouter(Ref ref) {
+  final authState = ref.watch(authControllerProvider);
+
   return GoRouter(
-    initialLocation: AppRoutes.dashboard.path,
+    initialLocation: AppRoutes.splash.path,
     routes: [
       GoRoute(
         path: AppRoutes.splash.path,
         name: AppRoutes.splash.name,
+        redirect: (context, state) {
+          if (authState.isAuthenticating) {
+            return AppRoutes.splash.path;
+          }
+          if (authState.user != null) {
+            return AppRoutes.dashboard.path;
+          }
+          return AppRoutes.signin.path;
+        },
         builder: (context, state) => AppRoutes.splash.screen,
       ),
       GoRoute(

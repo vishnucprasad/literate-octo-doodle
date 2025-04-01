@@ -1,5 +1,6 @@
 import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
+import 'package:aaraadhya_temple_dashboard/core/extensions/app_snack_bar_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/assets.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_input_field.dart';
@@ -19,6 +20,25 @@ class SigninScreen extends HookConsumerWidget {
 
     final state = ref.watch(signinControllerProvider);
     final controller = ref.read(signinControllerProvider.notifier);
+
+    ref.listen(signinControllerProvider.select((value) => value.error), (
+      _,
+      error,
+    ) {
+      if (error != null) {
+        context.showErrorSnackbar(
+          message: error.maybeWhen(
+            invalidCredential:
+                () => context.l10n.invalidCredentialsErrorMessage,
+            tooManyRequests: () => context.l10n.tooManyRequestsErrorMessage,
+            userDisabled: () => context.l10n.userDisabledErrorMessage,
+            generic: (message) => message,
+            unexpected: (error) => error,
+            orElse: () => context.l10n.defaultErrorMessage,
+          ),
+        );
+      }
+    });
 
     final emailValidationErrorText = state.validationErrors.email?.when(
       empty: () => context.l10n.emptyEmailValidationErorrMessage,
@@ -125,7 +145,15 @@ class SigninScreen extends HookConsumerWidget {
                           borderRadius: BorderRadius.circular(14.0),
                         ),
                       ),
-                      child: Text(context.l10n.signinText.toUpperCase()),
+                      child:
+                          state.isSubmitting
+                              ? SizedBox.square(
+                                dimension: 24,
+                                child: CircularProgressIndicator(
+                                  color: context.colorScheme.surface,
+                                ),
+                              )
+                              : Text(context.l10n.signinText.toUpperCase()),
                     ),
                   ),
                 ],

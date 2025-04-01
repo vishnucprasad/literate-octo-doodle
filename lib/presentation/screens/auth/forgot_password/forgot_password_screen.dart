@@ -1,4 +1,5 @@
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
+import 'package:aaraadhya_temple_dashboard/core/extensions/app_snack_bar_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_back_button.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_input_field.dart';
@@ -16,6 +17,23 @@ class ForgotPasswordScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(forgotPasswordControllerProvider);
     final controller = ref.read(forgotPasswordControllerProvider.notifier);
+
+    ref.listen(
+      forgotPasswordControllerProvider.select((value) => value.error),
+      (_, error) {
+        if (error != null) {
+          context.showErrorSnackbar(
+            message: error.maybeWhen(
+              invalidEmail: () => context.l10n.invalidEmailErrorMessage,
+              userNotFound: () => context.l10n.userNotFoundErrorMessage,
+              generic: (message) => message,
+              unexpected: (error) => error,
+              orElse: () => context.l10n.defaultErrorMessage,
+            ),
+          );
+        }
+      },
+    );
 
     final emailValidationErrorText = state.validationErrors.email?.when(
       empty: () => context.l10n.emptyEmailValidationErorrMessage,
@@ -77,9 +95,18 @@ class ForgotPasswordScreen extends ConsumerWidget {
                         borderRadius: BorderRadius.circular(14.0),
                       ),
                     ),
-                    child: Text(
-                      context.l10n.resetPasswordButtonLabel.toUpperCase(),
-                    ),
+                    child:
+                        state.isSubmitting
+                            ? SizedBox.square(
+                              dimension: 24,
+                              child: CircularProgressIndicator(
+                                color: context.colorScheme.surface,
+                              ),
+                            )
+                            : Text(
+                              context.l10n.resetPasswordButtonLabel
+                                  .toUpperCase(),
+                            ),
                   ),
                 ),
               ],

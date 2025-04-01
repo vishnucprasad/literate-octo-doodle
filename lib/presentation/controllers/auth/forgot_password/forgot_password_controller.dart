@@ -1,4 +1,6 @@
+import 'package:aaraadhya_temple_dashboard/core/exceptions/auth_exception.dart';
 import 'package:aaraadhya_temple_dashboard/core/utils/validators.dart';
+import 'package:aaraadhya_temple_dashboard/data/repositories/auth_repository.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/auth/forgot_password/forgot_password_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -28,10 +30,26 @@ class ForgotPasswordController extends _$ForgotPasswordController {
           showValidationErrors: true,
         ),
       );
-
       return false;
     }
 
-    return true;
+    state = state.copyWith(isSubmitting: true, error: null);
+
+    final authRepository = ref.read(authRepositoryProvider);
+
+    try {
+      await authRepository.sendPasswordResetEmail(state.email);
+      state = state.copyWith(isSubmitting: false);
+      return true;
+    } on AuthException catch (e) {
+      state = state.copyWith(isSubmitting: false, error: e);
+      return false;
+    } catch (e) {
+      state = state.copyWith(
+        isSubmitting: false,
+        error: AuthException.unexpected(e.toString()),
+      );
+      return false;
+    }
   }
 }

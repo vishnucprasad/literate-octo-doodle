@@ -1,3 +1,4 @@
+import 'package:aaraadhya_temple_dashboard/core/exceptions/auth_exception.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/auth/validation_errors/validation_errors.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -9,7 +10,7 @@ class ForgotPasswordState with _$ForgotPasswordState {
     @Default(false) bool isSubmitting,
     @Default('') String email,
     @Default(ValidationErrors()) ValidationErrors validationErrors,
-    @Default(null) String? errorMessage,
+    @Default(null) AuthException? error,
   }) = _ForgotPasswordState;
 
   const ForgotPasswordState._();
