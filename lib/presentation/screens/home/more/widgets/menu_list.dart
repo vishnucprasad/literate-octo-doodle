@@ -1,6 +1,7 @@
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/more/widgets/signout_confirmation_dialog.dart';
 import 'package:flutter/material.dart';
 
 class MenuList extends StatelessWidget {
@@ -77,6 +78,12 @@ class MenuList extends StatelessWidget {
           ),
           AppSpacing.verticalLarge,
           ListTile(
+            onTap: () async {
+              await showDialog(
+                context: context,
+                builder: (context) => SignoutConfirmationDialog(),
+              );
+            },
             tileColor: context.colors.primary[50],
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(14.0),

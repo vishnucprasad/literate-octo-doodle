@@ -51,3 +51,6 @@ app.*.map.json
 *.g.dart
 *.freezed.dart
 /lib/core/gen
+
+# firebase
+firebase.json

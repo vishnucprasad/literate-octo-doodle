@@ -41,7 +41,7 @@
     "@passwordRestLinkSentSuccessTitle": {
         "description": "The title displayed in the dialog box after sending the password reset link."
     },
-    "passwordRestLinkSentSuccessMessage": "We have sent a password reset link to your email. Please check your inbox",
+    "passwordRestLinkSentSuccessMessage": "If an account with this email exists, you will receive a password reset email. Please check your inbox",
     "@passwordRestLinkSentSuccessMessage": {
         "description": "The success message displayed in the dialog box after sending the password reset link."
     },
@@ -57,7 +57,7 @@
     "@emptyPasswordValidationErorrMessage": {
         "description": "The error message displayed when the password field is left empty."
     },
-    "invalidPasswordValidationErorrMessage": "Password must minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character",
+    "invalidPasswordValidationErorrMessage": "Password must be at least 8 characters long and include at least one letter and one number.",
     "@invalidPasswordValidationErorrMessage": {
         "description": "The error message displayed when the password field is invalid."
     },
@@ -762,5 +762,41 @@
     "advancedBookingLimitDialogTitle": "Advanced booking limit ( Days )",
     "@advancedBookingLimitDialogTitle": {
         "description": "The title displayed on the advanced booking limit dialog."
+    },
+    "signoutConfirmationDialogTitle": "Sign out",
+    "@signoutConfirmationDialogTitle": {
+        "description": "The title displayed on the signout confirmation dialog."
+    },
+    "signoutConfirmationDialogDescription": "Are you sure you want to sign out?",
+    "@signoutConfirmationDialogDescription": {
+        "description": "The description displayed on the signout confirmation dialog."
+    },
+    "invalidCredentialsErrorMessage": "Incorrect username or password. Please try again.",
+    "@invalidCredentialsErrorMessage": {
+        "description": "The message displayed when login credentials are incorrect."
+    },
+    "invalidEmailErrorMessage": "Please enter a valid email address.",
+    "@invalidEmailErrorMessage": {
+        "description": "The message displayed when the entered email is invalid."
+    },
+    "userNotFoundErrorMessage": "No account found with this email. Please check and try again.",
+    "@userNotFoundErrorMessage": {
+        "description": "The message displayed when the entered email does not match any account."
+    },
+    "userDisabledErrorMessage": "This account has been disabled. Contact support for assistance.",
+    "@userDisabledErrorMessage": {
+        "description": "The message displayed when a user’s account is disabled."
+    },
+    "operationNotAllowedErrorMessage": "This action is not permitted. Please contact support if you need help.",
+    "@operationNotAllowedErrorMessage": {
+        "description": "The message displayed when a user attempts an unauthorized action."
+    },
+    "tooManyRequestsErrorMessage": "Too many login attempts. Please wait a few minutes before trying again.",
+    "@tooManyRequestsErrorMessage": {
+        "description": "The message displayed when a user exceeds the allowed number of login attempts."
+    },
+    "defaultErrorMessage": "An unexpected error occurred. Please try again later.",
+    "@defaultErrorMessage": {
+        "description": "The message displayed for general errors."
     }
 }

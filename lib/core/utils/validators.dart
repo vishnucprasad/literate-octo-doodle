@@ -20,9 +20,7 @@ class Validators {
   static ValidationError? validatePassword(String password) {
     if (password.isEmpty) return ValidationError.empty();
 
-    final passwordRegExp = RegExp(
-      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$',
-    );
+    final passwordRegExp = RegExp(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d\W_]{8,}$');
 
     if (!passwordRegExp.hasMatch(password)) {
       return ValidationError.invalid();
