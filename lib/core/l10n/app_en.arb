@@ -759,7 +759,7 @@
     "@upiIdHintText": {
         "description": "The text displayed on the upi id hint text."
     },
-    "advancedBookingLimitDialogTitle": "Advanced booking limit ( Days )",
+    "advancedBookingLimitDialogTitle": "Advanced booking limit \n ( Days )",
     "@advancedBookingLimitDialogTitle": {
         "description": "The title displayed on the advanced booking limit dialog."
     },

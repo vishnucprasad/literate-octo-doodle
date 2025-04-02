@@ -7,6 +7,8 @@ class AppRoute {
   final String path;
   final Widget _screen;
 
+  AppRoute(this._screen, {required this.name, required this.path});
+
   Widget _builder(BuildContext context, GoRouterState state) => _screen;
 
   CustomTransitionPage _revealTransitionBuilder(
@@ -44,6 +46,4 @@ class AppRoute {
   GoRouterWidgetBuilder get builder => _builder;
   GoRouterPageBuilder get slideTransitionBuilder => _slideTransitionBuilder;
   GoRouterPageBuilder get revealTransitionBuilder => _revealTransitionBuilder;
-
-  AppRoute(this._screen, {required this.name, required this.path});
 }

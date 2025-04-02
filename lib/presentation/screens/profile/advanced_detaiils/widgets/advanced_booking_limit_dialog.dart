@@ -14,9 +14,9 @@ class AdvancedBookingLimitDialog extends HookWidget {
     final controller = useTextEditingController(text: '30');
 
     return AlertDialog(
-      titlePadding: EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 16.0),
-      contentPadding: EdgeInsets.symmetric(vertical: 8.0),
-      actionsPadding: EdgeInsets.only(top: 16.0, bottom: 30.0),
+      titlePadding: EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 16.0),
+      contentPadding: EdgeInsets.zero,
+      actionsPadding: EdgeInsets.all(4.0),
       actionsAlignment: MainAxisAlignment.center,
       title: Text(
         context.l10n.advancedBookingLimitDialogTitle,
@@ -61,18 +61,7 @@ class AdvancedBookingLimitDialog extends HookWidget {
         ),
       ),
       actions: [
-        SizedBox(
-          height: 36,
-          child: FilledButton(
-            onPressed: () {},
-            style: FilledButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(14.0),
-              ),
-            ),
-            child: Text(context.l10n.saveButtonLabel),
-          ),
-        ),
+        TextButton(onPressed: () {}, child: Text(context.l10n.saveButtonLabel)),
       ],
     );
   }
