@@ -1,6 +1,7 @@
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/more/widgets/menu_list_tile.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/more/widgets/signout_confirmation_dialog.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +14,7 @@ class MenuList extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
         children: [
-          ListTile(
-            tileColor: context.colors.grey[50],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14.0),
-            ),
+          MenuListTile(
             leading: Icon(Icons.language),
             title: Text(
               context.l10n.appLanguageTileLabel,
@@ -32,11 +29,7 @@ class MenuList extends StatelessWidget {
             trailing: Icon(Icons.arrow_forward_ios_outlined),
           ),
           AppSpacing.verticalSmall,
-          ListTile(
-            tileColor: context.colors.grey[50],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14.0),
-            ),
+          MenuListTile(
             leading: Icon(Icons.info_outline),
             title: Text(
               context.l10n.aboutTileLabel,
@@ -47,11 +40,7 @@ class MenuList extends StatelessWidget {
             trailing: Icon(Icons.arrow_forward_ios_outlined),
           ),
           AppSpacing.verticalSmall,
-          ListTile(
-            tileColor: context.colors.grey[50],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14.0),
-            ),
+          MenuListTile(
             leading: Icon(Icons.privacy_tip_outlined),
             title: Text(
               context.l10n.privacyPolicyTileLabel,
@@ -62,11 +51,7 @@ class MenuList extends StatelessWidget {
             trailing: Icon(Icons.arrow_forward_ios_outlined),
           ),
           AppSpacing.verticalSmall,
-          ListTile(
-            tileColor: context.colors.grey[50],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14.0),
-            ),
+          MenuListTile(
             leading: Icon(Icons.gavel_outlined),
             title: Text(
               context.l10n.termsAndConditionsTileLabel,
@@ -77,7 +62,7 @@ class MenuList extends StatelessWidget {
             trailing: Icon(Icons.arrow_forward_ios_outlined),
           ),
           AppSpacing.verticalLarge,
-          ListTile(
+          MenuListTile(
             onTap: () async {
               await showDialog(
                 context: context,
@@ -85,9 +70,6 @@ class MenuList extends StatelessWidget {
               );
             },
             tileColor: context.colors.primary[50],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14.0),
-            ),
             leading: Icon(
               Icons.logout_outlined,
               color: context.colorScheme.error,
