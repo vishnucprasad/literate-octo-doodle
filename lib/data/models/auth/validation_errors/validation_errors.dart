@@ -1,4 +1,4 @@
-import 'package:aaraadhya_temple_dashboard/data/models/auth/validation_errors/validation_error.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/common/validation_error.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'validation_errors.freezed.dart';

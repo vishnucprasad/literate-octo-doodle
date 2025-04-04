@@ -798,5 +798,101 @@
     "defaultErrorMessage": "An unexpected error occurred. Please try again later.",
     "@defaultErrorMessage": {
         "description": "The message displayed for general errors."
+    },
+    "permissionDeniedErrorMessage": "You do not have permission to perform this action.",
+    "@permissionDeniedErrorMessage": {
+        "description": "The message displayed when a user does not have permission to perform an action."
+    },
+    "notFoundErrorMessage": "The requested resource was not found.",
+    "@notFoundErrorMessage": {
+        "description": "The message displayed when the requested resource is not found."
+    },
+    "alreadyExistsErrorMessage": "The requested resource already exists.",
+    "@alreadyExistsErrorMessage": {
+        "description": "The message displayed when the requested resource already exists."
+    },
+    "cancelledErrorMessage": "The operation was cancelled.",
+    "@cancelledErrorMessage": {
+        "description": "The message displayed when an operation is cancelled."
+    },
+    "deadlineExceededErrorMessage": "The operation exceeded the deadline.",
+    "@deadlineExceededErrorMessage": {
+        "description": "The message displayed when an operation exceeds the deadline."
+    },
+    "unavailableErrorMessage": "The service is currently unavailable. Please try again later.",
+    "@unavailableErrorMessage": {
+        "description": "The message displayed when the service is unavailable."
+    },
+    "abortedErrorMessage": "The operation was aborted.",
+    "@abortedErrorMessage": {
+        "description": "The message displayed when an operation is aborted."
+    },
+    "dataLossErrorMessage": "Data loss occurred. Please try again.",
+    "@dataLossErrorMessage": {
+        "description": "The message displayed when data loss occurs."
+    },
+    "internalErrorMessage": "An internal error occurred. Please try again later.",
+    "@internalErrorMessage": {
+        "description": "The message displayed when an internal error occurs."
+    },
+    "objectNotFoundErrorMessage": "The requested object was not found.",
+    "@objectNotFoundErrorMessage": {
+        "description": "The message displayed when the requested object is not found."
+    },
+    "unAuthorizedErrorMessage": "You are not authorized to perform this action. Please contact support.",
+    "@unAuthorizedErrorMessage": {
+        "description": "The message displayed when a user is not authorized to perform an action."
+    },
+    "unknownErrorMessage": "An unknown error occurred. Please try again later.",
+    "@unknownErrorMessage": {
+        "description": "The message displayed when an unknown error occurs."
+    },
+    "quotaExceededErrorMessage": "The operation exceeded the quota.",
+    "@quotaExceededErrorMessage": {
+        "description": "The message displayed when an operation exceeds the quota."
+    },
+    "templeNameEmptyErrorText": "Temple name cannot be empty",
+    "@templeNameEmptyErrorText": {
+        "description": "The text displayed when the temple name is empty."
+    },
+    "templeNameInvalidErrorText": "Invalid temple name. Please enter a valid name.",
+    "@templeNameInvalidErrorText": {
+        "description": "The text displayed when the temple name is invalid."
+    },
+    "mainDeityNameEmptyErrorText": "Main deity name cannot be empty",
+    "@mainDeityNameEmptyErrorText": {
+        "description": "The text displayed when the main deity name is empty."
+    },
+    "mainDeityNameInvalidErrorText": "Invalid deity name. Please enter a valid name.",
+    "@mainDeityNameInvalidErrorText": {
+        "description": "The text displayed when the main deity name is invalid."
+    },
+    "otherDeitiesEmptyErrorText": "Other deities cannot be empty",
+    "@otherDeitiesEmptyErrorText": {
+        "description": "The text displayed when the other deities are empty."
+    },
+    "managingAuthorityEmptyErrorText": "Choose a managing authority",
+    "@managingAuthorityEmptyErrorText": {
+        "description": "The text displayed when the managing authority is empty."
+    },
+    "morningScheduleEmptyErrorText": "Morning schedule cannot be empty",
+    "@morningScheduleEmptyErrorText": {
+        "description": "The text displayed when the morning schedule is empty."
+    },
+    "eveningScheduleEmptyErrorText": "Evening schedule cannot be empty",
+    "@eveningScheduleEmptyErrorText": {
+        "description": "The text displayed when the evening schedule is empty."
+    },
+    "templeDescriptionEmptyErrorText": "Temple description cannot be empty",
+    "@templeDescriptionEmptyErrorText": {
+        "description": "The text displayed when the temple description is empty."
+    },
+    "templeRulesEmptyErrorText": "Temple rules cannot be empty",
+    "@templeRulesEmptyErrorText": {
+        "description": "The text displayed when the temple rules are empty."
+    },
+    "successMessage": "Success",
+    "@successMessage": {
+        "description": "The text displayed when an operation is successful."
     }
 }

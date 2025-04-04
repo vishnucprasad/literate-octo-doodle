@@ -2,11 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'time_range.freezed.dart';
+part 'time_range.g.dart';
 
 @freezed
 class TimeRange with _$TimeRange {
   const factory TimeRange({
-    @Default(null) TimeOfDay? startTime,
-    @Default(null) TimeOfDay? endTime,
+    @TimeOfDayConverter() @Default(null) TimeOfDay? startTime,
+    @TimeOfDayConverter() @Default(null) TimeOfDay? endTime,
   }) = _TimeRange;
+
+  factory TimeRange.fromJson(Map<String, dynamic> json) =>
+      _$TimeRangeFromJson(json);
+}
+
+class TimeOfDayConverter implements JsonConverter<TimeOfDay?, String?> {
+  const TimeOfDayConverter();
+
+  @override
+  TimeOfDay? fromJson(String? json) {
+    if (json == null) return null;
+    final parts = json.split(':');
+    return TimeOfDay(hour: int.parse(parts[0]), minute: int.parse(parts[1]));
+  }
+
+  @override
+  String? toJson(TimeOfDay? object) {
+    if (object == null) return null;
+    return '${object.hour}:${object.minute}';
+  }
 }

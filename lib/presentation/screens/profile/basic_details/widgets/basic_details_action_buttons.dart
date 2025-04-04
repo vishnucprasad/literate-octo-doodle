@@ -1,14 +1,19 @@
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/profile/basic_details/basic_details_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class BasicDetailsActionButtons extends StatelessWidget {
+class BasicDetailsActionButtons extends ConsumerWidget {
   const BasicDetailsActionButtons({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(basicDetailsControllerProvider);
+    final controller = ref.read(basicDetailsControllerProvider.notifier);
+
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
@@ -22,6 +27,11 @@ class BasicDetailsActionButtons extends StatelessWidget {
         ),
         child: Column(
           children: [
+            if (state.isSaving) ...[
+              LinearProgressIndicator(
+                backgroundColor: context.colorScheme.surface,
+              ),
+            ],
             AppSpacing.verticalMedium,
             Row(
               children: [
@@ -41,7 +51,7 @@ class BasicDetailsActionButtons extends StatelessWidget {
                 AppSpacing.horizontalSmall,
                 Expanded(
                   child: FilledButton(
-                    onPressed: () {},
+                    onPressed: controller.saveChanges,
                     style: FilledButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14.0),

@@ -1,4 +1,5 @@
 import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
+import 'package:aaraadhya_temple_dashboard/core/exceptions/auth_exception.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_snack_bar_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
@@ -27,28 +28,23 @@ class SigninScreen extends HookConsumerWidget {
     ) {
       if (error != null) {
         context.showErrorSnackbar(
-          message: error.maybeWhen(
-            invalidCredential:
-                () => context.l10n.invalidCredentialsErrorMessage,
-            tooManyRequests: () => context.l10n.tooManyRequestsErrorMessage,
-            userDisabled: () => context.l10n.userDisabledErrorMessage,
-            generic: (message) => message,
-            unexpected: (error) => error,
-            orElse: () => context.l10n.defaultErrorMessage,
-          ),
+          message: error.getAuthExceptionMessage(context),
         );
       }
     });
 
-    final emailValidationErrorText = state.validationErrors.email?.when(
+    final emailValidationErrorText = state.validationErrors.email?.maybeWhen(
       empty: () => context.l10n.emptyEmailValidationErorrMessage,
       invalid: () => context.l10n.invalidEmailValidationErorrMessage,
+      orElse: () => null,
     );
 
-    final passwordValidationErrorText = state.validationErrors.password?.when(
-      empty: () => context.l10n.emptyPasswordValidationErorrMessage,
-      invalid: () => context.l10n.invalidPasswordValidationErorrMessage,
-    );
+    final passwordValidationErrorText = state.validationErrors.password
+        ?.maybeWhen(
+          empty: () => context.l10n.emptyPasswordValidationErorrMessage,
+          invalid: () => context.l10n.invalidPasswordValidationErorrMessage,
+          orElse: () => null,
+        );
 
     return Scaffold(
       body: SafeArea(

@@ -21,6 +21,7 @@ class AppInputField extends StatelessWidget {
     this.autofocus,
     this.maxLines,
     this.controller,
+    this.initialValue,
     super.key,
   });
 
@@ -41,6 +42,7 @@ class AppInputField extends StatelessWidget {
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
   final TextEditingController? controller;
+  final String? initialValue;
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +63,7 @@ class AppInputField extends StatelessWidget {
         ],
         TextFormField(
           controller: controller,
+          initialValue: initialValue,
           obscureText: obscureText ?? false,
           onChanged: onChanged,
           keyboardType: keyboardType,

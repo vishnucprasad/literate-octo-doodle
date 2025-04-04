@@ -7,13 +7,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class TimeRangePickerButton extends HookWidget {
-  const TimeRangePickerButton({super.key, this.labelText});
+  const TimeRangePickerButton({
+    super.key,
+    this.labelText,
+    this.errorText,
+    this.initialRange,
+    this.onChanged,
+  });
 
   final String? labelText;
+  final String? errorText;
+  final TimeRange? initialRange;
+  final ValueChanged<TimeRange>? onChanged;
 
   @override
   Widget build(BuildContext context) {
-    final timeRangeNotifier = useState<TimeRange>(TimeRange());
+    final timeRangeNotifier = useState<TimeRange>(initialRange ?? TimeRange());
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,6 +73,11 @@ class TimeRangePickerButton extends HookWidget {
                   timeRangeNotifier.value = timeRangeNotifier.value.copyWith(
                     startTime: pickedTime,
                   );
+
+                  if (timeRangeNotifier.value.startTime != null &&
+                      timeRangeNotifier.value.endTime != null) {
+                    onChanged?.call(timeRangeNotifier.value);
+                  }
                 },
                 style: FilledButton.styleFrom(
                   backgroundColor: context.colors.grey[50],
@@ -127,6 +141,11 @@ class TimeRangePickerButton extends HookWidget {
                   timeRangeNotifier.value = timeRangeNotifier.value.copyWith(
                     endTime: pickedTime,
                   );
+
+                  if (timeRangeNotifier.value.startTime != null &&
+                      timeRangeNotifier.value.endTime != null) {
+                    onChanged?.call(timeRangeNotifier.value);
+                  }
                 },
                 style: FilledButton.styleFrom(
                   backgroundColor: context.colors.grey[50],
@@ -158,6 +177,18 @@ class TimeRangePickerButton extends HookWidget {
             ),
           ],
         ),
+        if (errorText != null) ...[
+          AppSpacing.verticalSmall,
+          Padding(
+            padding: const EdgeInsets.only(left: 16.0),
+            child: Text(
+              errorText!,
+              style: context.theme.textTheme.bodySmall?.copyWith(
+                color: context.colors.error,
+              ),
+            ),
+          ),
+        ],
       ],
     );
   }

@@ -16,7 +16,8 @@ class AppSnackBars {
       padding: EdgeInsets.all(16.0),
       behavior: SnackBarBehavior.floating,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.0)),
-      margin: EdgeInsets.all(30.0),
+      margin: EdgeInsets.all(16.0),
+      duration: Duration(seconds: 3),
       content: Row(
         children: [
           icon ?? Icon(Icons.check, color: AppColors().white, size: 30.0),
@@ -24,7 +25,11 @@ class AppSnackBars {
           Flexible(
             child: Text(
               message,
-              style: TextTheme().bodyMedium?.copyWith(color: AppColors().white),
+              style: TextStyle(
+                color: AppColors().white,
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],
@@ -38,7 +43,7 @@ class AppSnackBars {
       padding: EdgeInsets.all(16.0),
       behavior: SnackBarBehavior.floating,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.0)),
-      margin: EdgeInsets.all(30.0),
+      margin: EdgeInsets.all(16.0),
       content: Row(
         children: [
           icon ??
@@ -47,8 +52,10 @@ class AppSnackBars {
           Flexible(
             child: Text(
               message,
-              style: TextTheme().bodyMedium?.copyWith(
+              style: TextStyle(
                 color: AppColors().primary,
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -63,7 +70,7 @@ class AppSnackBars {
       padding: EdgeInsets.all(16.0),
       behavior: SnackBarBehavior.floating,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.0)),
-      margin: EdgeInsets.all(30.0),
+      margin: EdgeInsets.all(16.0),
       content: Row(
         children: [
           icon ??
@@ -72,7 +79,11 @@ class AppSnackBars {
           Flexible(
             child: Text(
               message,
-              style: TextTheme().bodyMedium?.copyWith(color: AppColors().white),
+              style: TextStyle(
+                color: AppColors().white,
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],

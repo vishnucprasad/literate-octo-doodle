@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 class AppDropdownMenu<T> extends StatelessWidget {
   const AppDropdownMenu({
     super.key,
+    this.controller,
     this.hint,
     this.labelText,
+    this.errorText,
     this.filled,
     this.fillColor,
     this.menuBackgroundColor,
@@ -14,8 +16,10 @@ class AppDropdownMenu<T> extends StatelessWidget {
     required this.onSelected,
   });
 
+  final TextEditingController? controller;
   final String? hint;
   final String? labelText;
+  final String? errorText;
   final bool? filled;
   final Color? fillColor;
   final Color? menuBackgroundColor;
@@ -45,6 +49,7 @@ class AppDropdownMenu<T> extends StatelessWidget {
             DropdownMenu<T>(
               width: constraints.maxWidth,
               hintText: hint,
+              errorText: errorText,
               inputDecorationTheme: InputDecorationTheme(
                 filled: filled ?? true,
                 fillColor: fillColor ?? context.colors.grey[50],
