@@ -41,6 +41,42 @@ class Validators {
     return null;
   }
 
+  static ValidationError? validatePhoneNumber(String? phoneNumber) {
+    if (phoneNumber == null || phoneNumber.isEmpty) {
+      return ValidationError.empty();
+    }
+
+    final phoneRegExp = RegExp(r'^(\+?\d{1,4}[-\s]?)?\d{10}$');
+
+    if (!phoneRegExp.hasMatch(phoneNumber)) {
+      return ValidationError.invalid();
+    }
+
+    return null;
+  }
+
+  static validateLink(String? value) {
+    if (value == null || value.isEmpty) return ValidationError.empty();
+    final urlRegExp = RegExp(
+      r'^(?:http|https):\/\/[\w\-]+(?:\.[\w\-]+)+[\w\-.,@?^=%&:/~+#]*$',
+    );
+    if (!urlRegExp.hasMatch(value)) {
+      return ValidationError.invalid();
+    }
+    return null;
+  }
+
+  static validateNullableLink(String? value) {
+    if (value == null || value.isEmpty) return null;
+    final urlRegExp = RegExp(
+      r'^(?:http|https):\/\/[\w\-]+(?:\.[\w\-]+)+[\w\-.,@?^=%&:/~+#]*$',
+    );
+    if (!urlRegExp.hasMatch(value)) {
+      return ValidationError.invalid();
+    }
+    return null;
+  }
+
   static validateRequired(String? value) {
     if (value == null || value.isEmpty) return ValidationError.empty();
     return null;

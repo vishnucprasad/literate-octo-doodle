@@ -894,5 +894,37 @@
     "successMessage": "Success",
     "@successMessage": {
         "description": "The text displayed when an operation is successful."
+    },
+    "nameEmptyErrorText": "Name cannot be empty",
+    "@nameEmptyErrorText": {
+        "description": "The text displayed when the name is empty."
+    },
+    "nameInvalidErrorText": "Invalid name. Please enter a valid name.",
+    "@nameInvalidErrorText": {
+        "description": "The text displayed when the name is invalid."
+    },
+    "phoneNumberEmptyErrorText": "Phone number cannot be empty",
+    "@phoneNumberEmptyErrorText": {
+        "description": "The text displayed when the phone number is empty."
+    },
+    "phoneNumberInvalidErrorText": "Invalid phone number. Please enter a valid phone number.",
+    "@phoneNumberInvalidErrorText": {
+        "description": "The text displayed when the phone number is invalid."
+    },
+    "addressEmptyErrorText": "Address cannot be empty",
+    "@addressEmptyErrorText": {
+        "description": "The text displayed when the address is empty."
+    },
+    "locationLinkErrorText": "Location link cannot be empty",
+    "@locationLinkErrorText": {
+        "description": "The text displayed when the location link is empty."
+    },
+    "locationLinkInvalidErrorText": "Invalid location link. Please enter a valid link.",
+    "@locationLinkInvalidErrorText": {
+        "description": "The text displayed when the location link is invalid."
+    },
+    "websiteLinkInvalidErrorText": "Invalid website link. Please enter a valid link.",
+    "@websiteLinkInvalidErrorText": {
+        "description": "The text displayed when the website link is invalid."
     }
 }

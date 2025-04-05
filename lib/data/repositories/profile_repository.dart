@@ -1,5 +1,6 @@
 import 'package:aaraadhya_temple_dashboard/data/datasources/remote/db_datasource.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_basic_detaiils/temple_basic_details.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_contact_details/temple_contact_details.dart';
 import 'package:aaraadhya_temple_dashboard/data/repositories_impl/profile_repository_impl.dart';
 import 'package:aaraadhya_temple_dashboard/services/firebase_storage_service.dart';
 import 'package:aaraadhya_temple_dashboard/services/image_service.dart';
@@ -17,6 +18,11 @@ abstract class ProfileRepository {
   Future<void> saveBasicDetails(
     String userId,
     TempleBasicDetails templeBasicDetails,
+  );
+  Future<TempleContactDetails?> getContactDetails(String userId);
+  Future<void> saveContactDetails(
+    String userId,
+    TempleContactDetails templeContactDetails,
   );
 }
 

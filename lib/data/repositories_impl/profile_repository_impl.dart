@@ -1,5 +1,6 @@
 import 'package:aaraadhya_temple_dashboard/data/datasources/remote/db_datasource.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_basic_detaiils/temple_basic_details.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_contact_details/temple_contact_details.dart';
 import 'package:aaraadhya_temple_dashboard/data/repositories/profile_repository.dart';
 import 'package:aaraadhya_temple_dashboard/services/firebase_storage_service.dart';
 import 'package:aaraadhya_temple_dashboard/services/image_service.dart';
@@ -51,6 +52,24 @@ class ProfileRepositoryImpl implements ProfileRepository {
   ) async {
     return await _dbDataSource.updateDocument('temples', userId, {
       "basicDetails": templeBasicDetails.toJson(),
+    });
+  }
+
+  @override
+  Future<TempleContactDetails?> getContactDetails(String userId) async {
+    return await _dbDataSource.getDocument('temples', userId).then((data) {
+      if (data?['contactDetails'] == null) return null;
+      return TempleContactDetails.fromJson(data!['contactDetails']);
+    });
+  }
+
+  @override
+  Future<void> saveContactDetails(
+    String userId,
+    TempleContactDetails templeContactDetails,
+  ) async {
+    return await _dbDataSource.updateDocument('temples', userId, {
+      "contactDetails": templeContactDetails.toJson(),
     });
   }
 }
