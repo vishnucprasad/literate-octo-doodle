@@ -43,4 +43,30 @@ class FirebaseAuthDatasourceImpl implements AuthDatasource {
       throw AuthException.unexpected(e.toString());
     }
   }
+
+  @override
+  Future<void> changePassword(
+    String currentPassword,
+    String newPassword,
+  ) async {
+    try {
+      final user = getCurrentUser();
+
+      if (user?.email == null) throw AuthException.invalidEmail();
+
+      final credential = EmailAuthProvider.credential(
+        email: user!.email!,
+        password: currentPassword,
+      );
+
+      await user.reauthenticateWithCredential(credential);
+      await user.updatePassword(newPassword);
+    } on FirebaseAuthException catch (e) {
+      throw AuthException.fromFirebaseAuthException(e);
+    } on AuthException {
+      rethrow;
+    } catch (e) {
+      throw AuthException.unexpected(e.toString());
+    }
+  }
 }

@@ -29,6 +29,16 @@ class Validators {
     return null;
   }
 
+  static ValidationError? validateConfirmPassword(
+    String password,
+    String confirmPassword,
+  ) {
+    if (password.isEmpty) return ValidationError.empty();
+    if (password != confirmPassword) return ValidationError.notMatched();
+
+    return null;
+  }
+
   static ValidationError? validateName(String? name) {
     if (name == null || name.isEmpty) return ValidationError.empty();
 

@@ -715,6 +715,14 @@
     "@changeAccountPasswordFormTitle": {
         "description": "The title displayed on the change account password form."
     },
+    "currentPasswordLabel": "Current password",
+    "@currentPasswordLabel": {
+        "description": "The text displayed on the current password label."
+    },
+    "currentPasswordHintText": "Enter current password",
+    "@currentPasswordHintText": {
+        "description": "The text displayed on the current password hint text."
+    },
     "newPasswordLabel": "New password",
     "@newPasswordLabel": {
         "description": "The text displayed on the new password label."
@@ -974,5 +982,9 @@
     "ifscCodeInvalidErrorText": "Please enter a valid 11-character IFSC code - (e.g., SBIN0001234).",
     "@ifscCodeInvalidErrorText": {
         "description": "The text displayed when the IFSC code is invalid."
+    },
+    "passwordsDoNotMatchErrorText": "Passwords do not match",
+    "@passwordsDoNotMatchErrorText": {
+        "description": "The text displayed when the passwords do not match."
     }
 }
