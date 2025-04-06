@@ -1,11 +1,13 @@
 import 'package:aaraadhya_temple_dashboard/data/datasources/remote/db_datasource.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/common/image_data.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/temple/advanced_options/advanced_options.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_basic_detaiils/temple_basic_details.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_contact_details/temple_contact_details.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_gallery/gallery_item.dart';
 import 'package:aaraadhya_temple_dashboard/data/repositories/profile_repository.dart';
 import 'package:aaraadhya_temple_dashboard/services/firebase_storage_service.dart';
 import 'package:aaraadhya_temple_dashboard/services/image_service.dart';
-import 'package:flutter/services.dart';
+import 'package:image_cropper/image_cropper.dart';
 
 class ProfileRepositoryImpl implements ProfileRepository {
   final ImageService _imageService;
@@ -23,10 +25,12 @@ class ProfileRepositoryImpl implements ProfileRepository {
     String userId,
     TempleBasicDetails templeBasicDetails,
   ) async {
-    final Uint8List image = await _imageService.pickAndCropImage();
+    final ImageData image = await _imageService.pickAndCropImage(
+      cropAspectRatio: CropAspectRatioPreset.square,
+    );
 
-    final String imageUrl = await _firebaseStorageService.uploadImage(
-      imageBytes: image,
+    final String imageUrl = await _firebaseStorageService.uploadFile(
+      fileBytes: image.bytes,
       path: "/temples/$userId/profile-pic.png",
     );
 
@@ -90,5 +94,48 @@ class ProfileRepositoryImpl implements ProfileRepository {
     return await _dbDataSource.updateDocument('temples', userId, {
       "advancedOptions": advancedOptions.toJson(),
     });
+  }
+
+  @override
+  Future<List<GalleryItem>> getGalleryItems(String userId) async {
+    return await _dbDataSource
+        .getCollection('temples/$userId/gallery', orderBy: 'uploadedAt')
+        .then((data) => data.map((doc) => GalleryItem.fromJson(doc)).toList());
+  }
+
+  @override
+  Future<GalleryItem> uploadNewGalleryItem(String userId) async {
+    final ImageData image = await _imageService.pickAndCropImage();
+
+    final String id = _dbDataSource.generateId('temples/$userId/gallery');
+
+    final String imageUrl = await _firebaseStorageService.uploadFile(
+      fileBytes: image.bytes,
+      path: "/temples/$userId/gallery/$id-${image.fileName}",
+    );
+
+    final item = GalleryItem(
+      id: id,
+      url: imageUrl,
+      fileName: image.fileName,
+      uploadedAt: DateTime.now(),
+    );
+
+    await _dbDataSource.createDocument(
+      'temples/$userId/gallery',
+      id,
+      item.toJson(),
+    );
+
+    return item;
+  }
+
+  @override
+  Future<void> deleteGalleryItem(String userId, GalleryItem item) async {
+    await _firebaseStorageService.deleteFile(fileUrl: item.url);
+    return await _dbDataSource.deleteDocument(
+      'temples/$userId/gallery',
+      item.id,
+    );
   }
 }

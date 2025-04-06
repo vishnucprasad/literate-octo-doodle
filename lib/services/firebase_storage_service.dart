@@ -7,10 +7,11 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'firebase_storage_service.g.dart';
 
 abstract class FirebaseStorageService {
-  Future<String> uploadImage({
+  Future<String> uploadFile({
     required String path,
-    required Uint8List imageBytes,
+    required Uint8List fileBytes,
   });
+  Future<void> deleteFile({required String fileUrl});
 }
 
 @riverpod

@@ -9,14 +9,26 @@ class FirebaseStorageServiceImpl implements FirebaseStorageService {
   FirebaseStorageServiceImpl(this._storage);
 
   @override
-  Future<String> uploadImage({
+  Future<String> uploadFile({
     required String path,
-    required Uint8List imageBytes,
+    required Uint8List fileBytes,
   }) async {
     try {
       final ref = _storage.ref().child(path);
-      await ref.putData(imageBytes);
+      await ref.putData(fileBytes);
       return await ref.getDownloadURL();
+    } on FirebaseException catch (e) {
+      throw FirebaseStorageException.fromFirebaseException(e);
+    } catch (e) {
+      throw FirebaseStorageException.unexpected(e.toString());
+    }
+  }
+
+  @override
+  Future<void> deleteFile({required String fileUrl}) {
+    try {
+      final ref = _storage.refFromURL(fileUrl);
+      return ref.delete();
     } on FirebaseException catch (e) {
       throw FirebaseStorageException.fromFirebaseException(e);
     } catch (e) {

@@ -986,5 +986,21 @@
     "passwordsDoNotMatchErrorText": "Passwords do not match",
     "@passwordsDoNotMatchErrorText": {
         "description": "The text displayed when the passwords do not match."
+    },
+    "noImagesInGalleryText": "Nothing here yet. Upload your first image to get started!",
+    "@noImagesInGalleryText": {
+        "description": "The text displayed when there are no images in the gallery."
+    },
+    "deleteImagesConfirmationDialogTitle": "Delete Images",
+    "@deleteImagesConfirmationDialogTitle": {
+        "description": "The title displayed on the delete confirmation dialog."
+    },
+    "deleteImagesConfirmationDialogDescription": "Are you sure you want to delete selected images?",
+    "@deleteImagesConfirmationDialogDescription": {
+        "description": "The description displayed on the delete confirmation dialog."
+    },
+    "noImagesSelectedToDeleteErrorText": "No images selected to delete, Please select aleast one image to delete.",
+    "@noImagesSelectedToDeleteErrorText": {
+        "description": "The text displayed when no images are selected to delete."
     }
 }

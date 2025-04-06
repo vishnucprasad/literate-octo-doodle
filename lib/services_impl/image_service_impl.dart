@@ -1,5 +1,6 @@
 import 'package:aaraadhya_temple_dashboard/core/exceptions/image_picker_exeception.dart';
 import 'package:aaraadhya_temple_dashboard/core/theme/app_colors.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/common/image_data.dart';
 import 'package:aaraadhya_temple_dashboard/services/image_service.dart';
 import 'package:flutter/services.dart';
 import 'package:image_cropper/image_cropper.dart';
@@ -12,7 +13,9 @@ class ImageServiceImpl implements ImageService {
   ImageServiceImpl(this._imagePicker, this._imageCropper);
 
   @override
-  Future<Uint8List> pickAndCropImage() async {
+  Future<ImageData> pickAndCropImage({
+    CropAspectRatioPreset? cropAspectRatio,
+  }) async {
     try {
       final XFile? pickedImage = await _imagePicker.pickImage(
         source: ImageSource.gallery,
@@ -29,10 +32,10 @@ class ImageServiceImpl implements ImageService {
             statusBarColor: AppColors().white,
             activeControlsWidgetColor: AppColors().white,
             backgroundColor: AppColors().white,
-            cropGridColor: AppColors().white,
+            cropGridColor: AppColors().black,
             cropFrameColor: AppColors().black,
-            initAspectRatio: CropAspectRatioPreset.square,
-            lockAspectRatio: true,
+            initAspectRatio: cropAspectRatio,
+            lockAspectRatio: cropAspectRatio != null,
             hideBottomControls: true,
             dimmedLayerColor: AppColors().white.withValues(alpha: 0.5),
           ),
@@ -44,7 +47,10 @@ class ImageServiceImpl implements ImageService {
 
       if (croppedFile == null) throw ImagePickerExeception.cancelled();
 
-      return await croppedFile.readAsBytes();
+      return ImageData(
+        fileName: pickedImage.name,
+        bytes: await croppedFile.readAsBytes(),
+      );
     } on ImagePickerExeception {
       rethrow;
     } on PlatformException catch (e) {

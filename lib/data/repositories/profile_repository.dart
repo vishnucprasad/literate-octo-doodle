@@ -2,6 +2,7 @@ import 'package:aaraadhya_temple_dashboard/data/datasources/remote/db_datasource
 import 'package:aaraadhya_temple_dashboard/data/models/temple/advanced_options/advanced_options.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_basic_detaiils/temple_basic_details.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_contact_details/temple_contact_details.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_gallery/gallery_item.dart';
 import 'package:aaraadhya_temple_dashboard/data/repositories_impl/profile_repository_impl.dart';
 import 'package:aaraadhya_temple_dashboard/services/firebase_storage_service.dart';
 import 'package:aaraadhya_temple_dashboard/services/image_service.dart';
@@ -30,6 +31,9 @@ abstract class ProfileRepository {
     String userId,
     AdvancedOptions advancedOptions,
   );
+  Future<List<GalleryItem>> getGalleryItems(String userId);
+  Future<GalleryItem> uploadNewGalleryItem(String userId);
+  Future<void> deleteGalleryItem(String userId, GalleryItem item);
 }
 
 @riverpod

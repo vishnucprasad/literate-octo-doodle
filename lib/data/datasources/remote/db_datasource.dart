@@ -6,6 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'db_datasource.g.dart';
 
 abstract class DbDatasource {
+  String generateId(String collectionPath);
   Future<void> createDocument(
     String collectionPath,
     String docId,
@@ -15,6 +16,11 @@ abstract class DbDatasource {
     String collectionPath,
     String docId,
   );
+  Future<List<Map<String, dynamic>>> getCollection(
+    String collectionPath, {
+    String? orderBy,
+    bool descending = true,
+  });
   Future<void> updateDocument(
     String collectionPath,
     String docId,
