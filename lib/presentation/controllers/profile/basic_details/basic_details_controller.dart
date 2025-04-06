@@ -14,7 +14,7 @@ part 'basic_details_controller.g.dart';
 class BasicDetailsController extends _$BasicDetailsController {
   @override
   BasicDetailsState build() {
-    Future.microtask(() => loadBasicDetails());
+    Future.microtask(loadBasicDetails);
     return BasicDetailsState();
   }
 

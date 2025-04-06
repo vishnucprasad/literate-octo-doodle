@@ -1,4 +1,5 @@
 import 'package:aaraadhya_temple_dashboard/data/datasources/remote/db_datasource.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/temple/advanced_options/advanced_options.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_basic_detaiils/temple_basic_details.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_contact_details/temple_contact_details.dart';
 import 'package:aaraadhya_temple_dashboard/data/repositories/profile_repository.dart';
@@ -70,6 +71,24 @@ class ProfileRepositoryImpl implements ProfileRepository {
   ) async {
     return await _dbDataSource.updateDocument('temples', userId, {
       "contactDetails": templeContactDetails.toJson(),
+    });
+  }
+
+  @override
+  Future<AdvancedOptions?> getAdvancedOptions(String userId) async {
+    return await _dbDataSource.getDocument('temples', userId).then((data) {
+      if (data?['advancedOptions'] == null) return null;
+      return AdvancedOptions.fromJson(data!['advancedOptions']);
+    });
+  }
+
+  @override
+  Future<void> saveAdvancedOptions(
+    String userId,
+    AdvancedOptions advancedOptions,
+  ) async {
+    return await _dbDataSource.updateDocument('temples', userId, {
+      "advancedOptions": advancedOptions.toJson(),
     });
   }
 }

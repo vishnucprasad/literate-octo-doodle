@@ -99,4 +99,37 @@ class Validators {
     if (value == null) return ValidationError.empty();
     return null;
   }
+
+  static validateLimit(String? value) {
+    if (value == null || value.isEmpty) return ValidationError.empty();
+
+    final limitRegExp = RegExp(r'^\d{1,2}$');
+    if (!limitRegExp.hasMatch(value)) {
+      return ValidationError.invalid();
+    }
+
+    return null;
+  }
+
+  static validateBankAccountNumber(String? value) {
+    if (value == null || value.isEmpty) return ValidationError.empty();
+
+    final accountNumberRegExp = RegExp(r'^\d{9,18}$');
+    if (!accountNumberRegExp.hasMatch(value)) {
+      return ValidationError.invalid();
+    }
+
+    return null;
+  }
+
+  static validateIFSCCode(String? value) {
+    if (value == null || value.isEmpty) return ValidationError.empty();
+
+    final ifscCodeRegExp = RegExp(r'^[A-Z]{4}0[A-Z0-9]{6}$');
+    if (!ifscCodeRegExp.hasMatch(value)) {
+      return ValidationError.invalid();
+    }
+
+    return null;
+  }
 }

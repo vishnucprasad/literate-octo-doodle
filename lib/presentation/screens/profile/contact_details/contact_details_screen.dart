@@ -1,5 +1,4 @@
 import 'package:aaraadhya_temple_dashboard/core/exceptions/database_exception.dart';
-import 'package:aaraadhya_temple_dashboard/core/exceptions/firebase_storage_exception.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_snack_bar_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
@@ -31,12 +30,6 @@ class ContactDetailsScreen extends ConsumerWidget {
       if (error is DatabaseException) {
         context.showErrorSnackbar(
           message: error.getDatabaseExceptionMessage(context),
-        );
-      }
-
-      if (error is FirebaseStorageException) {
-        context.showErrorSnackbar(
-          message: error.getFirebaseStorageExceptionMessage(context),
         );
       }
     });

@@ -1,4 +1,5 @@
 import 'package:aaraadhya_temple_dashboard/data/datasources/remote/db_datasource.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/temple/advanced_options/advanced_options.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_basic_detaiils/temple_basic_details.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/temple/temple_contact_details/temple_contact_details.dart';
 import 'package:aaraadhya_temple_dashboard/data/repositories_impl/profile_repository_impl.dart';
@@ -23,6 +24,11 @@ abstract class ProfileRepository {
   Future<void> saveContactDetails(
     String userId,
     TempleContactDetails templeContactDetails,
+  );
+  Future<AdvancedOptions?> getAdvancedOptions(String userId);
+  Future<void> saveAdvancedOptions(
+    String userId,
+    AdvancedOptions advancedOptions,
   );
 }
 

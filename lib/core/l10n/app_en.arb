@@ -751,6 +751,22 @@
     "@accountHolderNameHintText": {
         "description": "The text displayed on the account holder name hint text."
     },
+    "accountNumberLabel": "Account number",
+    "@accountNumberLabel": {
+        "description": "The text displayed on the account number label."
+    },
+    "accountNumberHintText": "Enter account number",
+    "@accountNumberHintText": {
+        "description": "The text displayed on the account number hint text."
+    },
+    "ifscCodeLabel": "IFSC code",
+    "@ifscCodeLabel": {
+        "description": "The text displayed on the ifsc code label."
+    },
+    "ifscCodeHintText": "Enter ifsc code",
+    "@ifscCodeHintText": {
+        "description": "The text displayed on the ifsc code hint text."
+    },
     "upiIdLabel": "UPI ID",
     "@upiIdLabel": {
         "description": "The text displayed on the upi id label."
@@ -926,5 +942,37 @@
     "websiteLinkInvalidErrorText": "Invalid website link. Please enter a valid link.",
     "@websiteLinkInvalidErrorText": {
         "description": "The text displayed when the website link is invalid."
+    },
+    "bankNameEmptyErrorText": "Bank name cannot be empty",
+    "@bankNameEmptyErrorText": {
+        "description": "The text displayed when the bank name is empty."
+    },
+    "bankNameInvalidErrorText": "Invalid bank name. Please enter a valid name.",
+    "@bankNameInvalidErrorText": {
+        "description": "The text displayed when the bank name is invalid."
+    },
+    "accountHolderNameEmptyErrorText": "Account holder name cannot be empty",
+    "@accountHolderNameEmptyErrorText": {
+        "description": "The text displayed when the account holder name is empty."
+    },
+    "accountHolderNameInvalidErrorText": "Invalid account holder name. Please enter a valid name.",
+    "@accountHolderNameInvalidErrorText": {
+        "description": "The text displayed when the account holder name is invalid."
+    },
+    "accountNumberEmptyErrorText": "Account number cannot be empty",
+    "@accountNumberEmptyErrorText": {
+        "description": "The text displayed when the account number is empty."
+    },
+    "accountNumberInvalidErrorText": "Please enter a valid bank account number (9 to 18 digits).",
+    "@accountNumberInvalidErrorText": {
+        "description": "The text displayed when the account number is invalid."
+    },
+    "ifscCodeEmptyErrorText": "IFSC code cannot be empty",
+    "@ifscCodeEmptyErrorText": {
+        "description": "The text displayed when the IFSC code is empty."
+    },
+    "ifscCodeInvalidErrorText": "Please enter a valid 11-character IFSC code - (e.g., SBIN0001234).",
+    "@ifscCodeInvalidErrorText": {
+        "description": "The text displayed when the IFSC code is invalid."
     }
 }

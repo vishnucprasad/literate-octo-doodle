@@ -16,7 +16,7 @@ part 'contact_details_controller.g.dart';
 class ContactDetailsController extends _$ContactDetailsController {
   @override
   ContactDetailsState build() {
-    Future.microtask(() => loadContactDetails());
+    Future.microtask(loadContactDetails);
     return ContactDetailsState();
   }
 
