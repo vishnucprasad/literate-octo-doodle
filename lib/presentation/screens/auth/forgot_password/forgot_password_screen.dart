@@ -21,8 +21,8 @@ class ForgotPasswordScreen extends ConsumerWidget {
 
     ref.listen(
       forgotPasswordControllerProvider.select((value) => value.error),
-      (_, error) {
-        if (error != null) {
+      (previousError, error) {
+        if (error != null && previousError != error) {
           context.showErrorSnackbar(
             message: error.getAuthExceptionMessage(context),
           );

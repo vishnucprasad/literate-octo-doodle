@@ -27,11 +27,13 @@ class BankDetailsForm extends ConsumerWidget {
         context.showSuccessSnackbar(message: context.l10n.successMessage);
       }
 
-      if (error is DatabaseException) {
-        context.pop();
-        context.showErrorSnackbar(
-          message: error.getDatabaseExceptionMessage(context),
-        );
+      if (previous?.error != next.error) {
+        if (error is DatabaseException) {
+          context.pop();
+          context.showErrorSnackbar(
+            message: error.getDatabaseExceptionMessage(context),
+          );
+        }
       }
     });
 

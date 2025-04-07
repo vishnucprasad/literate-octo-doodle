@@ -23,10 +23,10 @@ class SigninScreen extends HookConsumerWidget {
     final controller = ref.read(signinControllerProvider.notifier);
 
     ref.listen(signinControllerProvider.select((value) => value.error), (
-      _,
+      previousError,
       error,
     ) {
-      if (error != null) {
+      if (error != null && previousError != error) {
         context.showErrorSnackbar(
           message: error.getAuthExceptionMessage(context),
         );

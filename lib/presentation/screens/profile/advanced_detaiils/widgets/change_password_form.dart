@@ -31,11 +31,13 @@ class ChangePasswordForm extends HookConsumerWidget {
         context.showSuccessSnackbar(message: context.l10n.successMessage);
       }
 
-      if (error is AuthException) {
-        context.pop();
-        context.showErrorSnackbar(
-          message: error.getAuthExceptionMessage(context),
-        );
+      if (previous?.error != next.error) {
+        if (error is AuthException) {
+          context.pop();
+          context.showErrorSnackbar(
+            message: error.getAuthExceptionMessage(context),
+          );
+        }
       }
     });
 
