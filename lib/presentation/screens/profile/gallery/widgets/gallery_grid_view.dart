@@ -3,6 +3,7 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.d
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/shimmer_loader.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/profile/gallery/gallery_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/gallery/widgets/view_image_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -59,7 +60,16 @@ class GalleryGridView extends ConsumerWidget {
                   if (!controller.isAnySelected) {
                     controller.changeSelectMode(false);
                   }
+
+                  return;
                 }
+
+                showDialog(
+                  context: context,
+                  barrierColor: context.colorScheme.surface,
+                  barrierDismissible: false,
+                  builder: (context) => ViewImageDialog(initialIndex: index),
+                );
               },
               child: Stack(
                 children: [
