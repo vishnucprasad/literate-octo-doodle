@@ -1,25 +1,31 @@
-import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
+import 'package:aaraadhya_temple_dashboard/core/exceptions/auth_exception.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_media_query_extension.dart';
+import 'package:aaraadhya_temple_dashboard/core/extensions/app_snack_bar_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/assets.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/auth/auth_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends ConsumerWidget {
   const SplashScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      Future.delayed(const Duration(seconds: 2), () {
-        if (context.mounted) context.go(AppRoutes.signin.path);
-      });
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen(authControllerProvider.select((value) => value.error), (
+      previousError,
+      error,
+    ) {
+      if (error != null && previousError != error) {
+        context.showErrorSnackbar(
+          message: error.getAuthExceptionMessage(context),
+        );
+      }
     });
 
     return Scaffold(
-      // backgroundColor: context.colorScheme.primary,
       body: Center(
         child: Column(
           children: [

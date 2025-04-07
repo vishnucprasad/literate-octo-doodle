@@ -15,24 +15,26 @@ class GalleryScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen(galleryControllerProvider, (previous, next) {
-      final error = next.error;
+      if (previous?.error != next.error) {
+        final error = next.error;
 
-      if (error is DatabaseException) {
-        context.showErrorSnackbar(
-          message: error.getDatabaseExceptionMessage(context),
-        );
-      }
+        if (error is DatabaseException) {
+          context.showErrorSnackbar(
+            message: error.getDatabaseExceptionMessage(context),
+          );
+        }
 
-      if (error is FirebaseStorageException) {
-        context.showErrorSnackbar(
-          message: error.getFirebaseStorageExceptionMessage(context),
-        );
-      }
+        if (error is FirebaseStorageException) {
+          context.showErrorSnackbar(
+            message: error.getFirebaseStorageExceptionMessage(context),
+          );
+        }
 
-      if (error is ImagePickerExeception) {
-        context.showErrorSnackbar(
-          message: error.getImagePickerExeceptionMessage(context),
-        );
+        if (error is ImagePickerExeception) {
+          context.showErrorSnackbar(
+            message: error.getImagePickerExeceptionMessage(context),
+          );
+        }
       }
     });
 

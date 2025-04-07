@@ -27,10 +27,12 @@ class ContactDetailsScreen extends ConsumerWidget {
         context.showSuccessSnackbar(message: context.l10n.successMessage);
       }
 
-      if (error is DatabaseException) {
-        context.showErrorSnackbar(
-          message: error.getDatabaseExceptionMessage(context),
-        );
+      if (previous?.error != next.error) {
+        if (error is DatabaseException) {
+          context.showErrorSnackbar(
+            message: error.getDatabaseExceptionMessage(context),
+          );
+        }
       }
     });
 

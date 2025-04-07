@@ -23,22 +23,24 @@ class BasicDetailsScreen extends ConsumerWidget {
         context.showSuccessSnackbar(message: context.l10n.successMessage);
       }
 
-      if (error is DatabaseException) {
-        context.showErrorSnackbar(
-          message: error.getDatabaseExceptionMessage(context),
-        );
-      }
+      if (previous?.error != next.error) {
+        if (error is DatabaseException) {
+          context.showErrorSnackbar(
+            message: error.getDatabaseExceptionMessage(context),
+          );
+        }
 
-      if (error is FirebaseStorageException) {
-        context.showErrorSnackbar(
-          message: error.getFirebaseStorageExceptionMessage(context),
-        );
-      }
+        if (error is FirebaseStorageException) {
+          context.showErrorSnackbar(
+            message: error.getFirebaseStorageExceptionMessage(context),
+          );
+        }
 
-      if (error is ImagePickerExeception) {
-        context.showErrorSnackbar(
-          message: error.getImagePickerExeceptionMessage(context),
-        );
+        if (error is ImagePickerExeception) {
+          context.showErrorSnackbar(
+            message: error.getImagePickerExeceptionMessage(context),
+          );
+        }
       }
     });
 
