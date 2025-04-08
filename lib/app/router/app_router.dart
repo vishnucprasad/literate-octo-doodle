@@ -81,6 +81,11 @@ GoRouter appRouter(Ref ref) {
         name: AppRoutes.profileSettingsScreen.name,
         pageBuilder: AppRoutes.profileSettingsScreen.slideTransitionBuilder,
       ),
+      GoRoute(
+        path: AppRoutes.schedulePoojaScreen.path,
+        name: AppRoutes.schedulePoojaScreen.name,
+        pageBuilder: AppRoutes.schedulePoojaScreen.slideTransitionBuilder,
+      ),
     ],
   );
 }

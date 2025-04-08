@@ -4,7 +4,7 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.d
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_dropdown_menu.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_input_field.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/screens/home/events/widgets/date_and_time_picker_button.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/date_and_time_picker_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -143,6 +143,7 @@ class EventForm extends StatelessWidget {
                   AppSpacing.verticalMedium,
                   DateAndTimePickerButton(
                     labelText: context.l10n.eventDateAndTimeLabel,
+                    hintText: context.l10n.eventDateAndTimeLabel,
                   ),
                   AppSpacing.verticalMedium,
                   AppInputField(

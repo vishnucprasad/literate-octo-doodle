@@ -4,19 +4,20 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.d
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_dropdown_menu.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_input_field.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/date_and_time_picker_button.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/schedule_pooja/widgets/repeat_days_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class PoojaForm extends StatelessWidget {
-  const PoojaForm({super.key});
+class SchedulePoojaForm extends StatelessWidget {
+  const SchedulePoojaForm({super.key});
 
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
-      initialChildSize: 0.65,
+      initialChildSize: 0.8,
       minChildSize: 0.3,
       expand: false,
-      maxChildSize: 0.88,
       builder: (context, scrollController) {
         return Padding(
           padding: EdgeInsets.only(
@@ -48,7 +49,7 @@ class PoojaForm extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        context.l10n.addNewPoojaFormTitle,
+                        context.l10n.schedulePoojaAppBarTitle,
                         style: context.theme.textTheme.titleMedium?.copyWith(
                           color: context.colorScheme.primary,
                           fontWeight: FontWeight.bold,
@@ -82,51 +83,80 @@ class PoojaForm extends StatelessWidget {
                   ),
                   AppSpacing.verticalMedium,
                   AppInputField(
-                    hint: context.l10n.poojaNameHintText,
-                    labelText: context.l10n.poojaNameLabel,
-                    prefixIcon: Icon(
-                      Icons.temple_hindu_outlined,
-                      color: context.colors.grey[700],
-                    ),
-                  ),
-                  AppSpacing.verticalMedium,
-                  AppInputField(
                     hint: context.l10n.poojaPriceHintText,
                     labelText: context.l10n.pricelabel,
                     prefixIcon: Icon(
-                      Icons.currency_rupee_sharp,
+                      Icons.currency_rupee_outlined,
                       color: context.colors.grey[700],
                     ),
+                    keyboardType: TextInputType.numberWithOptions(),
                   ),
                   AppSpacing.verticalMedium,
                   AppDropdownMenu<String>(
-                    hint: context.l10n.chooseOneLabel,
-                    labelText: context.l10n.poojaTypeLabelText,
+                    labelText: context.l10n.deityLabel,
+                    hint: context.l10n.deityHintText,
                     items: [
                       DropdownMenuEntry<String>(
-                        value: context.l10n.homamLabel,
-                        label: context.l10n.homamLabel,
+                        value: 'Main Deity',
+                        label: 'Main Deity',
                       ),
                       DropdownMenuEntry<String>(
-                        value: context.l10n.archanaLabel,
-                        label: context.l10n.archanaLabel,
+                        value: 'Deity 1',
+                        label: 'Deity 1',
                       ),
                       DropdownMenuEntry<String>(
-                        value: context.l10n.specialPoojaLabel,
-                        label: context.l10n.specialPoojaLabel,
-                      ),
-                      DropdownMenuEntry<String>(
-                        value: context.l10n.othersLabel,
-                        label: context.l10n.othersLabel,
+                        value: 'Deity 2',
+                        label: 'Deity 2',
                       ),
                     ],
                     onSelected: (value) {},
                   ),
                   AppSpacing.verticalMedium,
-                  AppInputField(
-                    hint: context.l10n.poojaDescriptionHintText,
-                    labelText: context.l10n.poojaDescriptionLabel,
-                    maxLines: 5,
+                  AppDropdownMenu<String>(
+                    labelText: context.l10n.scheduleModeLabel,
+                    hint: context.l10n.scheduleModeHintText,
+                    items: [
+                      DropdownMenuEntry<String>(
+                        value: context.l10n.repeatModeLabel,
+                        label: context.l10n.repeatModeLabel,
+                      ),
+                      DropdownMenuEntry<String>(
+                        value: context.l10n.onceOnlyModeLabel,
+                        label: context.l10n.onceOnlyModeLabel,
+                      ),
+                    ],
+                    onSelected: (value) {},
+                  ),
+                  AppSpacing.verticalMedium,
+                  RepeatDaysPicker(
+                    labelText: context.l10n.poojaDaysLabel,
+                    initialSelected: List.generate(7, (index) {
+                      if (index == DateTime.now().weekday) {
+                        return true;
+                      }
+                      return false;
+                    }),
+                  ),
+                  AppSpacing.verticalMedium,
+                  AppDropdownMenu<String>(
+                    labelText: context.l10n.poojaTimeLabel,
+                    hint: context.l10n.poojaTimeHintText,
+                    items: [
+                      DropdownMenuEntry<String>(
+                        value: context.l10n.morningLabel,
+                        label: context.l10n.morningLabel,
+                      ),
+                      DropdownMenuEntry<String>(
+                        value: context.l10n.eveningLabel,
+                        label: context.l10n.eveningLabel,
+                      ),
+                    ],
+                    onSelected: (value) {},
+                  ),
+                  AppSpacing.verticalMedium,
+                  DateAndTimePickerButton(
+                    labelText: context.l10n.poojaDateAndTimeLabel,
+                    hintText: context.l10n.poojaDateAndTimeHintText,
                   ),
                   AppSpacing.verticalMedium,
                   Row(
