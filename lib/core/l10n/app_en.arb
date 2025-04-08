@@ -569,9 +569,17 @@
             "poojaPrice": {}
         }
     },
+    "addNewPoojaButtonLabel": "Add New Pooja",
+    "@addNewPoojaButtonLabel": {
+        "description": "The text displayed on the add new pooja button."
+    },
     "addNewPoojaFormTitle": "Add New Pooja",
     "@addNewPoojaFormTitle": {
         "description": "The title displayed on the add new pooja form."
+    },
+    "poojaImageLabel": "Pooja Image",
+    "@poojaImageLabel": {
+        "description": "The text displayed on the pooja image label."
     },
     "poojaNameLabel": "Pooja Name",
     "@poojaNameLabel": {
@@ -589,13 +597,61 @@
     "@poojaPriceHintText": {
         "description": "The hint text displayed on the pooja price hint text."
     },
-    "homamLabel": "Homam",
-    "@homamLabel": {
-        "description": "The text displayed on the homam label."
+    "poojaLabel": "Pooja",
+    "@poojaLabel": {
+        "description": "The text displayed on the pooja label."
     },
-    "archanaLabel": "Archana",
-    "@archanaLabel": {
-        "description": "The text displayed on the archana label."
+    "poojaTimeHintText": "Choose One",
+    "@poojaTimeHintText": {
+        "description": "The hint text displayed on the pooja time hint text."
+    },
+    "poojaTimeLabel": "Pooja Time",
+    "@poojaTimeLabel": {
+        "description": "The text displayed on the pooja time label."
+    },
+    "morningLabel": "Morning",
+    "@morningLabel": {
+        "description": "The text displayed on the morning label."
+    },
+    "eveningLabel": "Evening",
+    "@eveningLabel": {
+        "description": "The text displayed on the evening label."
+    },
+    "scheduleModeLabel": "Schedule Mode",
+    "@scheduleModeLabel": {
+        "description": "The text displayed on the schedule mode label."
+    },
+    "scheduleModeHintText": "Choose One",
+    "@scheduleModeHintText": {
+        "description": "The hint text displayed on the schedule mode hint text."
+    },
+    "repeatModeLabel": "Repeat Mode",
+    "@repeatModeLabel": {
+        "description": "The text displayed on the repeat mode label."
+    },
+    "onceOnlyModeLabel": "Once Only",
+    "@onceOnlyModeLabel": {
+        "description": "The text displayed on the once only mode label."
+    },
+    "poojaDateAndTimeLabel": "Pooja Date & Time",
+    "@poojaDateAndTimeLabel": {
+        "description": "The text displayed on the pooja date and time label."
+    },
+    "poojaDateAndTimeHintText": "MMM-DD-YYYY • HH:MM • A",
+    "@poojaDateAndTimeHintText": {
+        "description": "The hint text displayed on the pooja date and time hint text."
+    },
+    "deityLabel": "Deity",
+    "@deityLabel": {
+        "description": "The text displayed on the deity label."
+    },
+    "deityHintText": "Choose One Deity",
+    "@deityHintText": {
+        "description": "The hint text displayed on the deity hint text."
+    },
+    "poojaDaysLabel": "Pooja Days",
+    "@poojaDaysLabel": {
+        "description": "The text displayed on the pooja days label."
     },
     "specialPoojaLabel": "Special Pooja",
     "@specialPoojaLabel": {
@@ -604,6 +660,14 @@
     "poojaTypeLabelText": "Type",
     "@poojaTypeLabelText": {
         "description": "The text displayed on the pooja type label."
+    },
+    "poojaPurposeHintText": "Enter pooja purpose",
+    "@poojaPurposeHintText": {
+        "description": "The hint text displayed on the pooja purpose hint text."
+    },
+    "poojaPurposeLabel": "Purpose",
+    "@poojaPurposeLabel": {
+        "description": "The text displayed on the pooja purpose label."
     },
     "poojaDescriptionLabel": "Description",
     "@poojaDescriptionLabel": {
@@ -775,14 +839,6 @@
     "@ifscCodeHintText": {
         "description": "The text displayed on the ifsc code hint text."
     },
-    "upiIdLabel": "UPI ID",
-    "@upiIdLabel": {
-        "description": "The text displayed on the upi id label."
-    },
-    "upiIdHintText": "Enter upi id",
-    "@upiIdHintText": {
-        "description": "The text displayed on the upi id hint text."
-    },
     "advancedBookingLimitDialogTitle": "Advanced booking limit \n ( Days )",
     "@advancedBookingLimitDialogTitle": {
         "description": "The title displayed on the advanced booking limit dialog."
@@ -794,6 +850,22 @@
     "signoutConfirmationDialogDescription": "Are you sure you want to sign out?",
     "@signoutConfirmationDialogDescription": {
         "description": "The description displayed on the signout confirmation dialog."
+    },
+    "schedulePoojaAppBarTitle": "Schedule Pooja",
+    "@schedulePoojaAppBarTitle": {
+        "description": "The title displayed on the schedule pooja app bar."
+    },
+    "commonPoojasLabel": "Common Poojas",
+    "@commonPoojasLabel": {
+        "description": "The text displayed on the common poojas label."
+    },
+    "specialPoojasLabel": "Special Poojas",
+    "@specialPoojasLabel": {
+        "description": "The text displayed on the special poojas label."
+    },
+    "scheduleNowButtonLabel": "Schedule Now",
+    "@scheduleNowButtonLabel": {
+        "description": "The text displayed on the schedule now button."
     },
     "invalidCredentialsErrorMessage": "Incorrect username or password. Please try again.",
     "@invalidCredentialsErrorMessage": {

@@ -9,6 +9,7 @@ import 'package:aaraadhya_temple_dashboard/presentation/screens/home/donations/d
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/events/events_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/more/more_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/profile_settings/profile_settings_screen.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/schedule_pooja/schedule_pooja_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/registrations/view_registrations/view_registrations_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -73,5 +74,11 @@ class AppRoutes {
     ProfileSettingsScreen(),
     name: 'profile-settings-screen',
     path: '/profile-settings-screen',
+  );
+
+  static AppRoute schedulePoojaScreen = AppRoute(
+    SchedulePoojaScreen(),
+    name: 'schedule-pooja-screen',
+    path: '/schedule-pooja-screen',
   );
 }

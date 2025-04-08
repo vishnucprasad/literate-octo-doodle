@@ -1,13 +1,14 @@
+import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_input_field.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/common/filters/filters_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/poojas_list/widgets/listof_poojas.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/poojas_list/widgets/pooja_form.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/poojas_list/widgets/poojas_filters.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class PoojasListScreen extends ConsumerWidget {
   const PoojasListScreen({super.key});
@@ -44,13 +45,7 @@ class PoojasListScreen extends ConsumerWidget {
           right: 16,
           bottom: 56,
           child: FloatingActionButton(
-            onPressed: () {
-              showModalBottomSheet(
-                context: context,
-                isScrollControlled: true,
-                builder: (context) => PoojaForm(),
-              );
-            },
+            onPressed: () => context.push(AppRoutes.schedulePoojaScreen.path),
             shape: CircleBorder(),
             backgroundColor: context.colorScheme.primary,
             child: Icon(Icons.add_outlined),
