@@ -1,5 +1,6 @@
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/pooja/pooja.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/schedule_pooja/widgets/schedule_pooja_form.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,9 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ViewPoojaDetailsDialog extends ConsumerWidget {
-  const ViewPoojaDetailsDialog({super.key});
+  const ViewPoojaDetailsDialog({required this.pooja, super.key});
+
+  final Pooja pooja;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,9 +30,7 @@ class ViewPoojaDetailsDialog extends ConsumerWidget {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: NetworkImage(
-                              'https://i.pinimg.com/736x/56/22/bf/5622bf0a3b82f3947fd6bf946a2925eb.jpg',
-                            ),
+                            image: NetworkImage(pooja.imageUrl),
                           ),
                         ),
                       ),
@@ -40,7 +41,7 @@ class ViewPoojaDetailsDialog extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Archana',
+                            pooja.name,
                             style: context.theme.textTheme.headlineSmall
                                 ?.copyWith(
                                   color: context.colorScheme.primary,
@@ -49,7 +50,7 @@ class ViewPoojaDetailsDialog extends ConsumerWidget {
                           ),
                           AppSpacing.verticalMedium,
                           Text(
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                            pooja.description,
                             style: context.theme.textTheme.bodyMedium,
                           ),
                         ],

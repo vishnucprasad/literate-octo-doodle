@@ -585,6 +585,10 @@
     "@poojaNameLabel": {
         "description": "The text displayed on the pooja name label."
     },
+    "selectPoojaImageLabel": "Select Pooja Image",
+    "@selectPoojaImageLabel": {
+        "description": "The text displayed on the select pooja image label."
+    },
     "poojaNameHintText": "Enter pooja name",
     "@poojaNameHintText": {
         "description": "The hint text displayed on the pooja name hint text."
@@ -1074,5 +1078,29 @@
     "noImagesSelectedToDeleteErrorText": "No images selected to delete, Please select aleast one image to delete.",
     "@noImagesSelectedToDeleteErrorText": {
         "description": "The text displayed when no images are selected to delete."
+    },
+    "poojaImageNotSelectedErrorText": "Please select a pooja image",
+    "@poojaImageNotSelectedErrorText": {
+        "description": "The text displayed when a pooja image is not selected."
+    },
+    "poojaNameEmptyErrorText": "Pooja name cannot be empty",
+    "@poojaNameEmptyErrorText": {
+        "description": "The text displayed when the pooja name is empty."
+    },
+    "poojaNameDuplicateErrorText": "Pooja name already exists",
+    "@poojaNameDuplicateErrorText": {
+        "description": "The text displayed when the pooja name already exists."
+    },
+    "poojaTypeNotSelectedErrorText": "Please select a pooja type",
+    "@poojaTypeNotSelectedErrorText": {
+        "description": "The text displayed when a pooja type is not selected."
+    },
+    "poojaDescriptionEmptyErrorText": "Pooja description cannot be empty",
+    "@poojaDescriptionEmptyErrorText": {
+        "description": "The text displayed when the pooja description is empty."
+    },
+    "poojaListEmptyText": "No poojas found",
+    "@poojaListEmptyText": {
+        "description": "The text displayed when the pooja list is empty."
     }
 }

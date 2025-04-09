@@ -6,6 +6,7 @@ part 'validation_error.freezed.dart';
 class ValidationError with _$ValidationError {
   const factory ValidationError.empty() = _Empty;
   const factory ValidationError.invalid() = _Invalid;
+  const factory ValidationError.duplicate() = _Duplicate;
   const factory ValidationError.notMatched() = _NotMatched;
   const factory ValidationError.short(int minLength) = _Short;
   const factory ValidationError.exceedingLength(int maxLength) =

@@ -1,20 +1,61 @@
+import 'package:aaraadhya_temple_dashboard/core/enums/pooja_type.dart';
+import 'package:aaraadhya_temple_dashboard/core/exceptions/database_exception.dart';
+import 'package:aaraadhya_temple_dashboard/core/exceptions/firebase_storage_exception.dart';
+import 'package:aaraadhya_temple_dashboard/core/exceptions/image_picker_exeception.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_media_query_extension.dart';
+import 'package:aaraadhya_temple_dashboard/core/extensions/app_snack_bar_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_dropdown_menu.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_input_field.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/profile/poojas/poojas_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/schedule_pooja/widgets/pooja_image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class AddPoojaForm extends StatelessWidget {
+class AddPoojaForm extends ConsumerWidget {
   const AddPoojaForm({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(poojasControllerProvider);
+    final controller = ref.read(poojasControllerProvider.notifier);
+
+    ref.listen(poojasControllerProvider, (previous, next) {
+      final error = next.error;
+
+      if (error == null && previous?.isSaving == true && !next.isSaving) {
+        context.showSuccessSnackbar(message: context.l10n.successMessage);
+        context.pop();
+      }
+
+      if (previous?.error != next.error) {
+        if (error is DatabaseException) {
+          context.showErrorSnackbar(
+            message: error.getDatabaseExceptionMessage(context),
+          );
+        }
+
+        if (error is FirebaseStorageException) {
+          context.showErrorSnackbar(
+            message: error.getFirebaseStorageExceptionMessage(context),
+          );
+        }
+
+        if (error is ImagePickerExeception) {
+          context.showErrorSnackbar(
+            message: error.getImagePickerExeceptionMessage(context),
+          );
+        }
+
+        context.pop();
+      }
+    });
+
     return DraggableScrollableSheet(
-      initialChildSize: 0.8,
+      initialChildSize: 1,
       minChildSize: 0.3,
       expand: false,
       builder: (context, scrollController) {
@@ -52,45 +93,106 @@ class AddPoojaForm extends StatelessWidget {
                     ),
                   ),
                   AppSpacing.verticalMedium,
-                  PoojaImagePicker(),
+                  PoojaImagePicker(
+                    errorText:
+                        state.validationErrors.showValidationErrors
+                            ? state.validationErrors.poojaImage?.maybeMap(
+                              empty:
+                                  (value) =>
+                                      context
+                                          .l10n
+                                          .poojaImageNotSelectedErrorText,
+                              orElse: () => null,
+                            )
+                            : null,
+                  ),
                   AppSpacing.verticalMedium,
                   AppInputField(
                     hint: context.l10n.poojaNameHintText,
                     labelText: context.l10n.poojaNameLabel,
+                    errorText:
+                        state.validationErrors.showValidationErrors
+                            ? state.validationErrors.poojaName?.maybeMap(
+                              empty:
+                                  (value) =>
+                                      context.l10n.poojaNameEmptyErrorText,
+                              duplicate:
+                                  (value) =>
+                                      context.l10n.poojaNameDuplicateErrorText,
+                              orElse: () => null,
+                            )
+                            : null,
                     prefixIcon: Icon(
                       Icons.temple_hindu_outlined,
                       color: context.colors.grey[700],
                     ),
+                    onChanged: controller.updatePoojaName,
                   ),
                   AppSpacing.verticalMedium,
-                  AppDropdownMenu<String>(
+                  AppDropdownMenu<PoojaType>(
                     hint: context.l10n.chooseOneLabel,
                     labelText: context.l10n.poojaTypeLabelText,
+                    errorText:
+                        state.validationErrors.showValidationErrors
+                            ? state.validationErrors.poojaType?.maybeMap(
+                              empty:
+                                  (value) =>
+                                      context
+                                          .l10n
+                                          .poojaTypeNotSelectedErrorText,
+                              orElse: () => null,
+                            )
+                            : null,
                     items: [
-                      DropdownMenuEntry<String>(
-                        value: context.l10n.poojaLabel,
+                      DropdownMenuEntry<PoojaType>(
+                        value: PoojaType.pooja,
                         label: context.l10n.poojaLabel,
                       ),
-                      DropdownMenuEntry<String>(
-                        value: context.l10n.specialPoojaLabel,
+                      DropdownMenuEntry<PoojaType>(
+                        value: PoojaType.specialPooja,
                         label: context.l10n.specialPoojaLabel,
                       ),
                     ],
-                    onSelected: (value) {},
+                    onSelected: (value) {
+                      if (value != null) {
+                        controller.updatePoojaType(value);
+                      }
+                    },
                   ),
-                  AppSpacing.verticalMedium,
-                  AppInputField(
-                    hint: context.l10n.poojaPurposeHintText,
-                    labelText: context.l10n.poojaPurposeLabel,
-                    maxLines: 5,
-                  ),
+                  if (state.pooja.poojaType == PoojaType.specialPooja) ...[
+                    AppSpacing.verticalMedium,
+                    AppInputField(
+                      hint: context.l10n.poojaPurposeHintText,
+                      labelText: context.l10n.poojaPurposeLabel,
+                      maxLines: 5,
+                      onChanged: controller.updatePoojaPurpose,
+                    ),
+                  ],
                   AppSpacing.verticalMedium,
                   AppInputField(
                     hint: context.l10n.poojaDescriptionHintText,
                     labelText: context.l10n.poojaDescriptionLabel,
+                    errorText:
+                        state.validationErrors.showValidationErrors
+                            ? state.validationErrors.poojaDescription?.maybeMap(
+                              empty:
+                                  (value) =>
+                                      context
+                                          .l10n
+                                          .poojaDescriptionEmptyErrorText,
+                              orElse: () => null,
+                            )
+                            : null,
                     maxLines: 5,
+                    onChanged: controller.updatePoojaDescription,
                   ),
                   AppSpacing.verticalMedium,
+                  if (state.isSaving) ...[
+                    LinearProgressIndicator(
+                      backgroundColor: context.colorScheme.surface,
+                    ),
+                    AppSpacing.verticalMedium,
+                  ],
                   Row(
                     children: [
                       Expanded(
@@ -112,7 +214,7 @@ class AddPoojaForm extends StatelessWidget {
                       AppSpacing.horizontalSmall,
                       Expanded(
                         child: FilledButton(
-                          onPressed: () {},
+                          onPressed: controller.savePooja,
                           style: FilledButton.styleFrom(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(14.0),

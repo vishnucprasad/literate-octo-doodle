@@ -3,13 +3,20 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.d
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/custom_painters/dotted_border_painter.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/profile/poojas/poojas_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class PoojaImagePicker extends StatelessWidget {
-  const PoojaImagePicker({super.key});
+class PoojaImagePicker extends ConsumerWidget {
+  const PoojaImagePicker({this.errorText, super.key});
+
+  final String? errorText;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(poojasControllerProvider);
+    final controller = ref.read(poojasControllerProvider.notifier);
+
     return Container(
       padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
@@ -25,10 +32,10 @@ class PoojaImagePicker extends StatelessWidget {
           ),
           AppSpacing.verticalMedium,
           Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Expanded(
-                flex: 2,
                 child: AspectRatio(
                   aspectRatio: 3 / 4,
                   child: Container(
@@ -39,58 +46,74 @@ class PoojaImagePicker extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         color: context.colors.grey,
+                        image:
+                            state.poojaImage != null
+                                ? DecorationImage(
+                                  image: MemoryImage(state.poojaImage!.bytes),
+                                  fit: BoxFit.cover,
+                                )
+                                : null,
                         borderRadius: BorderRadius.circular(16.0),
                       ),
-                      child: Center(
-                        child: Icon(
-                          Icons.image_not_supported_outlined,
-                          size: 48,
-                        ),
-                      ),
+                      child:
+                          state.poojaImage == null
+                              ? Center(
+                                child: Icon(
+                                  Icons.image_not_supported_outlined,
+                                  size: 48,
+                                ),
+                              )
+                              : null,
                     ),
                   ),
                 ),
               ),
               AppSpacing.horizontalMedium,
               Expanded(
-                flex: 3,
-                child: FittedBox(
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
                   child: GestureDetector(
-                    onTap: () {},
-                    child: CustomPaint(
-                      painter: DottedBorderPainter(color: context.colors.grey),
-                      child: Container(
-                        padding: EdgeInsets.all(16.0),
-                        decoration: BoxDecoration(
-                          color: context.colorScheme.surface,
-                          borderRadius: BorderRadius.circular(16.0),
+                    onTap: controller.pickPoojaImage,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4.0),
+                      child: CustomPaint(
+                        painter: DottedBorderPainter(
+                          color: context.colors.grey,
                         ),
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 30.0,
-                              backgroundColor: context.colors.primary[50],
-                              child: Icon(
-                                Icons.upload_outlined,
-                                size: 36.0,
-                                color: context.colorScheme.primary,
+                        child: Container(
+                          padding: EdgeInsets.all(16.0),
+                          decoration: BoxDecoration(
+                            color: context.colorScheme.surface,
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CircleAvatar(
+                                radius: 30.0,
+                                backgroundColor: context.colors.primary[50],
+                                child: Icon(
+                                  Icons.upload_outlined,
+                                  size: 36.0,
+                                  color: context.colorScheme.primary,
+                                ),
                               ),
-                            ),
-                            AppSpacing.verticalSmall,
-                            Text(
-                              context.l10n.uploadNewImageLabel,
-                              style: context.theme.textTheme.bodyMedium
-                                  ?.copyWith(fontWeight: FontWeight.bold),
-                              textAlign: TextAlign.center,
-                            ),
-                            AppSpacing.verticalSmall,
-                            Text(
-                              context.l10n.imageTypeAndSizeLabel,
-                              style: context.theme.textTheme.bodySmall
-                                  ?.copyWith(fontFamily: FontFamily.roboto),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
+                              AppSpacing.verticalSmall,
+                              Text(
+                                context.l10n.selectPoojaImageLabel,
+                                style: context.theme.textTheme.bodyMedium
+                                    ?.copyWith(fontWeight: FontWeight.bold),
+                                textAlign: TextAlign.center,
+                              ),
+                              AppSpacing.verticalSmall,
+                              Text(
+                                context.l10n.imageTypeAndSizeLabel,
+                                style: context.theme.textTheme.bodySmall
+                                    ?.copyWith(fontFamily: FontFamily.roboto),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -100,6 +123,15 @@ class PoojaImagePicker extends StatelessWidget {
               AppSpacing.horizontalSmall,
             ],
           ),
+          if (errorText != null) ...[
+            AppSpacing.verticalSmall,
+            Text(
+              errorText!,
+              style: context.theme.textTheme.bodySmall?.copyWith(
+                color: context.colorScheme.error,
+              ),
+            ),
+          ],
         ],
       ),
     );

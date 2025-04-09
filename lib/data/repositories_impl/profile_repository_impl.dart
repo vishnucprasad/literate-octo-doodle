@@ -26,7 +26,7 @@ class ProfileRepositoryImpl implements ProfileRepository {
     TempleBasicDetails templeBasicDetails,
   ) async {
     final ImageData image = await _imageService.pickAndCropImage(
-      cropAspectRatio: CropAspectRatioPreset.square,
+      cropAspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
     );
 
     final String imageUrl = await _firebaseStorageService.uploadFile(

@@ -13,9 +13,7 @@ class ImageServiceImpl implements ImageService {
   ImageServiceImpl(this._imagePicker, this._imageCropper);
 
   @override
-  Future<ImageData> pickAndCropImage({
-    CropAspectRatioPreset? cropAspectRatio,
-  }) async {
+  Future<ImageData> pickAndCropImage({CropAspectRatio? cropAspectRatio}) async {
     try {
       final XFile? pickedImage = await _imagePicker.pickImage(
         source: ImageSource.gallery,
@@ -36,12 +34,12 @@ class ImageServiceImpl implements ImageService {
             cropFrameColor: AppColors().white,
             cropGridStrokeWidth: 4,
             cropFrameStrokeWidth: 4,
-            initAspectRatio: cropAspectRatio,
             lockAspectRatio: cropAspectRatio != null,
             hideBottomControls: true,
             dimmedLayerColor: AppColors().black.withValues(alpha: 0.25),
           ),
         ],
+        aspectRatio: cropAspectRatio,
         sourcePath: pickedImage.path,
         compressFormat: ImageCompressFormat.png,
         compressQuality: 80,

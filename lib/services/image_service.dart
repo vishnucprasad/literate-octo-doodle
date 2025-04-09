@@ -8,7 +8,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'image_service.g.dart';
 
 abstract class ImageService {
-  Future<ImageData> pickAndCropImage({CropAspectRatioPreset? cropAspectRatio});
+  Future<ImageData> pickAndCropImage({CropAspectRatio? cropAspectRatio});
 }
 
 @riverpod

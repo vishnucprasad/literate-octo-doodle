@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class AppDropdownMenu<T> extends StatelessWidget {
   const AppDropdownMenu({
     super.key,
-    this.controller,
+    this.initialSelection,
     this.hint,
     this.labelText,
     this.errorText,
@@ -16,7 +16,7 @@ class AppDropdownMenu<T> extends StatelessWidget {
     required this.onSelected,
   });
 
-  final TextEditingController? controller;
+  final T? initialSelection;
   final String? hint;
   final String? labelText;
   final String? errorText;
@@ -47,6 +47,7 @@ class AppDropdownMenu<T> extends StatelessWidget {
               ),
             ],
             DropdownMenu<T>(
+              initialSelection: initialSelection,
               width: constraints.maxWidth,
               hintText: hint,
               errorText: errorText,
