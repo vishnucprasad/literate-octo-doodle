@@ -78,9 +78,7 @@ class FirestoreDbDatasourceImpl implements DbDatasource {
         querySnapshot = await _db.collection(collectionPath).get();
       }
 
-      return querySnapshot.docs
-          .map((doc) => {"id": doc.id, ...doc.data()})
-          .toList();
+      return querySnapshot.docs.map((doc) => doc.data()).toList();
     } on FirebaseException catch (e) {
       throw DatabaseException.fromFirebaseException(e);
     } on PlatformException catch (e) {
@@ -133,5 +131,11 @@ class FirestoreDbDatasourceImpl implements DbDatasource {
     } catch (e) {
       throw DatabaseException.unexpected(e.toString());
     }
+  }
+
+  @override
+  Future<QuerySnapshot<Object?>> getPoojaSchedules(String templeId) {
+    // TODO: implement getPoojaSchedules
+    throw UnimplementedError();
   }
 }

@@ -3,28 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class RepeatDaysPicker extends HookWidget {
-  final List<bool> initialSelected;
+  final List<bool>? initialSelected;
   final void Function(List<bool>)? onChanged;
   final String? labelText;
+  final String? errorText;
 
   const RepeatDaysPicker({
     super.key,
-    this.initialSelected = const [
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-    ],
+    this.initialSelected,
     this.onChanged,
     this.labelText,
+    this.errorText,
   });
 
   @override
   Widget build(BuildContext context) {
-    final selectedDays = useState<List<bool>>(List.from(initialSelected));
+    final selectedDays = useState<List<bool>>(
+      List.from(initialSelected ?? List<bool>.filled(7, false)),
+    );
 
     final List<String> daysShort = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
     final List<String> daysFull = [
@@ -84,6 +80,17 @@ class RepeatDaysPicker extends HookWidget {
             );
           }),
         ),
+        if (errorText != null) ...[
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, top: 4.0),
+            child: Text(
+              errorText!,
+              style: context.theme.textTheme.bodySmall?.copyWith(
+                color: context.colorScheme.error,
+              ),
+            ),
+          ),
+        ],
       ],
     );
   }

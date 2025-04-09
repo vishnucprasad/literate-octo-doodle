@@ -1,7 +1,6 @@
 import 'package:aaraadhya_temple_dashboard/core/enums/pooja_type.dart';
 import 'package:aaraadhya_temple_dashboard/core/exceptions/database_exception.dart';
 import 'package:aaraadhya_temple_dashboard/core/exceptions/firebase_storage_exception.dart';
-import 'package:aaraadhya_temple_dashboard/core/exceptions/image_picker_exeception.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_media_query_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_snack_bar_extension.dart';
@@ -36,21 +35,15 @@ class AddPoojaForm extends ConsumerWidget {
           context.showErrorSnackbar(
             message: error.getDatabaseExceptionMessage(context),
           );
+          context.pop();
         }
 
         if (error is FirebaseStorageException) {
           context.showErrorSnackbar(
             message: error.getFirebaseStorageExceptionMessage(context),
           );
+          context.pop();
         }
-
-        if (error is ImagePickerExeception) {
-          context.showErrorSnackbar(
-            message: error.getImagePickerExeceptionMessage(context),
-          );
-        }
-
-        context.pop();
       }
     });
 

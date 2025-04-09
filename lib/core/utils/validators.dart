@@ -65,7 +65,7 @@ class Validators {
     return null;
   }
 
-  static validateLink(String? value) {
+  static ValidationError? validateLink(String? value) {
     if (value == null || value.isEmpty) return ValidationError.empty();
     final urlRegExp = RegExp(
       r'^(?:http|https):\/\/[\w\-]+(?:\.[\w\-]+)+[\w\-.,@?^=%&:/~+#]*$',
@@ -76,7 +76,7 @@ class Validators {
     return null;
   }
 
-  static validateNullableLink(String? value) {
+  static ValidationError? validateNullableLink(String? value) {
     if (value == null || value.isEmpty) return null;
     final urlRegExp = RegExp(
       r'^(?:http|https):\/\/[\w\-]+(?:\.[\w\-]+)+[\w\-.,@?^=%&:/~+#]*$',
@@ -87,12 +87,12 @@ class Validators {
     return null;
   }
 
-  static validateRequired(String? value) {
+  static ValidationError? validateRequired(String? value) {
     if (value == null || value.isEmpty) return ValidationError.empty();
     return null;
   }
 
-  static validateRequiredWithMinAndMaxLength(
+  static ValidationError? validateRequiredWithMinAndMaxLength(
     String? value,
     int minLength,
     int maxLength,
@@ -105,12 +105,12 @@ class Validators {
     return null;
   }
 
-  static validateNotNull(dynamic value) {
+  static ValidationError? validateNotNull(dynamic value) {
     if (value == null) return ValidationError.empty();
     return null;
   }
 
-  static validateLimit(String? value) {
+  static ValidationError? validateLimit(String? value) {
     if (value == null || value.isEmpty) return ValidationError.empty();
 
     final limitRegExp = RegExp(r'^\d{1,2}$');
@@ -121,7 +121,7 @@ class Validators {
     return null;
   }
 
-  static validateBankAccountNumber(String? value) {
+  static ValidationError? validateBankAccountNumber(String? value) {
     if (value == null || value.isEmpty) return ValidationError.empty();
 
     final accountNumberRegExp = RegExp(r'^\d{9,18}$');
@@ -132,7 +132,7 @@ class Validators {
     return null;
   }
 
-  static validateIFSCCode(String? value) {
+  static ValidationError? validateIFSCCode(String? value) {
     if (value == null || value.isEmpty) return ValidationError.empty();
 
     final ifscCodeRegExp = RegExp(r'^[A-Z]{4}0[A-Z0-9]{6}$');

@@ -1,5 +1,6 @@
 import 'package:aaraadhya_temple_dashboard/data/datasources_impl/remote/firestore_db_datasource_impl.dart';
 import 'package:aaraadhya_temple_dashboard/di/firebase_providers.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -28,6 +29,7 @@ abstract class DbDatasource {
   );
   Future<void> deleteDocument(String collectionPath, String docId);
   Stream<List<Map<String, dynamic>>> listenToCollection(String collectionPath);
+  Future<QuerySnapshot> getPoojaSchedules(String templeId);
 }
 
 @riverpod

@@ -1102,5 +1102,29 @@
     "poojaListEmptyText": "No poojas found",
     "@poojaListEmptyText": {
         "description": "The text displayed when the pooja list is empty."
+    },
+    "priceEmptyErrorText": "Price cannot be empty",
+    "@priceEmptyErrorText": {
+        "description": "The text displayed when the price is empty."
+    },
+    "deityNotSelectedErrorText": "Please select a deity",
+    "@deityNotSelectedErrorText": {
+        "description": "The text displayed when a deity is not selected."
+    },
+    "scheduleModeNotSelectedErrorText": "Please select a schedule mode",
+    "@scheduleModeNotSelectedErrorText": {
+        "description": "The text displayed when a schedule mode is not selected."
+    },
+    "poojaDaysNotSelectedErrorText": "Please select pooja days",
+    "@poojaDaysNotSelectedErrorText": {
+        "description": "The text displayed when pooja days are not selected."
+    },
+    "poojaTimeNotSelectedErrorText": "Please select pooja time",
+    "@poojaTimeNotSelectedErrorText": {
+        "description": "The text displayed when pooja time is not selected."
+    },
+    "poojaDateTimeEmptyErrorText": "Please select pooja date and time",
+    "@poojaDateTimeEmptyErrorText": {
+        "description": "The text displayed when pooja date and time is empty."
     }
 }

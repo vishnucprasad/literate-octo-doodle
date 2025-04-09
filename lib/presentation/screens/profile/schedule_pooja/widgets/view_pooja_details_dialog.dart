@@ -2,6 +2,7 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_ext
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/pooja/pooja.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/profile/poojas/pooja_schedules_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/schedule_pooja/widgets/schedule_pooja_form.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -14,6 +15,8 @@ class ViewPoojaDetailsDialog extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final controller = ref.watch(poojaSchedulesControllerProvider.notifier);
+
     return Dialog(
       backgroundColor: Colors.transparent,
       insetPadding: EdgeInsets.zero,
@@ -66,6 +69,8 @@ class ViewPoojaDetailsDialog extends ConsumerWidget {
                 ),
                 child: FilledButton(
                   onPressed: () {
+                    controller.selectPoojaForSchedule(pooja);
+                    context.pop();
                     showModalBottomSheet(
                       context: context,
                       isScrollControlled: true,
