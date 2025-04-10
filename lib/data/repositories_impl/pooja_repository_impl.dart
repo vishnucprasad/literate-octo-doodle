@@ -69,18 +69,39 @@ class PoojaRepositoryImpl implements PoojaRepository {
   ) async {
     final String id = _dbDatasource.generateId('temple-poojas');
 
-    await _dbDatasource.createDocument(
-      "temple-poojas",
-      id,
-      schedule
-          .copyWith(id: id, templeId: userId, createdAt: DateTime.now())
-          .toJson(),
-    );
+    final data = {
+      "id": id,
+      "templeId": userId,
+      "poojaId": schedule.pooja.id,
+      "isActive": schedule.isActive,
+      "price": schedule.price,
+      "deityName": schedule.deityName,
+      "scheduleMode": schedule.scheduleMode?.name,
+      "poojaDays": schedule.poojaDays,
+      "poojaTime": schedule.poojaTime?.name,
+      "poojaDateAndTime": schedule.poojaDateAndTime?.toIso8601String(),
+      "createdAt": DateTime.now().toIso8601String(),
+      "updatedAt": DateTime.now().toIso8601String(),
+    };
+
+    await _dbDatasource.createDocument("temple-poojas", id, data);
   }
 
   @override
-  Future<List<PoojaSchedule>> getPoojaSchedules(String userId) {
-    // TODO: implement getPoojaSchedules
-    throw UnimplementedError();
+  Future<List<PoojaSchedule>> getPoojaSchedules(String userId) async {
+    final docs = await _dbDatasource.getCollectionByField(
+      'temple-poojas',
+      field: "templeId",
+      value: userId,
+    );
+
+    final schedules = await Future.wait(
+      docs.map((doc) async {
+        final pooja = await _dbDatasource.getDocument('poojas', doc['poojaId']);
+        return PoojaSchedule.fromJson({...doc, "pooja": pooja});
+      }),
+    );
+
+    return schedules;
   }
 }

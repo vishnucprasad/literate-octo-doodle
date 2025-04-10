@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:aaraadhya_temple_dashboard/core/enums/pooja_time.dart';
 import 'package:aaraadhya_temple_dashboard/core/enums/schedule_mode.dart';
 import 'package:aaraadhya_temple_dashboard/core/exceptions/base_exception.dart';
@@ -22,7 +24,29 @@ class PoojaSchedulesController extends _$PoojaSchedulesController {
     return PoojaSchedulesState.initial();
   }
 
-  Future<void> loadSchedules() async {}
+  Future<void> loadSchedules() async {
+    final poojaRepository = ref.watch(poojaRepositoryProvider);
+    final authRepository = ref.watch(authRepositoryProvider);
+
+    try {
+      final user = authRepository.getCurrentUser();
+
+      state = state.copyWith(isLoading: true, error: null);
+      if (user != null) {
+        state = state.copyWith(
+          schedules: await poojaRepository.getPoojaSchedules(user.uid),
+        );
+      }
+    } on BaseException catch (e) {
+      log(e.toString());
+      state = state.copyWith(error: e);
+    } catch (e) {
+      log(e.toString());
+      state = state.copyWith(error: DatabaseException.unexpected(e.toString()));
+    } finally {
+      state = state.copyWith(isLoading: false);
+    }
+  }
 
   void selectPoojaForSchedule(Pooja pooja) {
     state = state.copyWith(schedule: state.schedule.copyWith(pooja: pooja));
@@ -138,6 +162,7 @@ class PoojaSchedulesController extends _$PoojaSchedulesController {
           schedule: PoojaSchedule.empty(),
           validationErrors: PoojaScheduleValidationErrors(),
         );
+        loadSchedules();
       }
     } on BaseException catch (e) {
       state = state.copyWith(error: e);

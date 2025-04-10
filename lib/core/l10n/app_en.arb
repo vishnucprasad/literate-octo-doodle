@@ -555,11 +555,11 @@
             "count": {}
         }
     },
-    "poojaTypeLabel": "Type: {poojaType}",
-    "@poojaTypeLabel": {
-        "description": "The text displayed on the pooja type label.",
+    "poojaModeLabel": "Mode: {poojaMode}",
+    "@poojaModeLabel": {
+        "description": "The text displayed on the pooja Mode label.",
         "placeholders": {
-            "poojaType": {}
+            "poojaMode": {}
         }
     },
     "poojaPriceLabel": "Price: ₹ {poojaPrice}",

@@ -89,6 +89,42 @@ class FirestoreDbDatasourceImpl implements DbDatasource {
   }
 
   @override
+  Future<List<Map<String, dynamic>>> getCollectionByField(
+    String collectionPath, {
+    required Object field,
+    required dynamic value,
+    String? orderBy,
+    bool descending = true,
+  }) async {
+    try {
+      final QuerySnapshot<Map<String, dynamic>> querySnapshot;
+
+      if (orderBy != null) {
+        querySnapshot =
+            await _db
+                .collection(collectionPath)
+                .orderBy(orderBy, descending: descending)
+                .where(field, isEqualTo: value)
+                .get();
+      } else {
+        querySnapshot =
+            await _db
+                .collection(collectionPath)
+                .where(field, isEqualTo: value)
+                .get();
+      }
+
+      return querySnapshot.docs.map((doc) => doc.data()).toList();
+    } on FirebaseException catch (e) {
+      throw DatabaseException.fromFirebaseException(e);
+    } on PlatformException catch (e) {
+      throw DatabaseException.fromPlatformException(e);
+    } catch (e) {
+      throw DatabaseException.unexpected(e.toString());
+    }
+  }
+
+  @override
   Future<void> updateDocument(
     String collectionPath,
     String docId,
@@ -131,11 +167,5 @@ class FirestoreDbDatasourceImpl implements DbDatasource {
     } catch (e) {
       throw DatabaseException.unexpected(e.toString());
     }
-  }
-
-  @override
-  Future<QuerySnapshot<Object?>> getPoojaSchedules(String templeId) {
-    // TODO: implement getPoojaSchedules
-    throw UnimplementedError();
   }
 }
