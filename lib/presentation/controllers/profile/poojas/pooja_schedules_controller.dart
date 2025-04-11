@@ -121,6 +121,32 @@ class PoojaSchedulesController extends _$PoojaSchedulesController {
     state = state.copyWith(isEditing: true, schedule: schedule);
   }
 
+  Future<void> changeStatus(bool status, String scheduleId) async {
+    final poojaRepository = ref.read(poojaRepositoryProvider);
+    final authRepository = ref.read(authRepositoryProvider);
+
+    try {
+      final user = authRepository.getCurrentUser();
+
+      if (user != null) {
+        final schedule = state.schedules
+            .singleWhere((doc) => doc.id == scheduleId)
+            .copyWith(isActive: status);
+        await poojaRepository.updatePoojaSchedule(user.uid, schedule);
+        state = state.copyWith(
+          schedules:
+              state.schedules
+                  .map((doc) => doc.id == schedule.id ? schedule : doc)
+                  .toList(),
+        );
+      }
+    } on BaseException catch (e) {
+      state = state.copyWith(error: e);
+    } catch (e) {
+      state = state.copyWith(error: DatabaseException.unexpected(e.toString()));
+    }
+  }
+
   Future<dynamic> schedulePooja() async {
     if (!state.isValid) {
       return state = state.copyWith(

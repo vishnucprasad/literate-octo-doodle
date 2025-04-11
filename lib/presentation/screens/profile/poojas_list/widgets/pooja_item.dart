@@ -161,7 +161,9 @@ class PoojaItem extends ConsumerWidget {
                     activeTrackColor: context.colors.primary,
                     inactiveThumbColor: context.colors.grey[700],
                     value: schedule.isActive,
-                    onChanged: (value) {},
+                    onChanged: (value) {
+                      controller.changeStatus(value, schedule.id);
+                    },
                   ),
                   RichText(
                     text: TextSpan(
