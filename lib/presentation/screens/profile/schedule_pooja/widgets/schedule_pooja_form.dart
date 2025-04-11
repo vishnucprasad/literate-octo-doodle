@@ -118,6 +118,7 @@ class SchedulePoojaForm extends ConsumerWidget {
                   ),
                   AppSpacing.verticalMedium,
                   AppInputField(
+                    initialValue: state.isEditing ? state.schedule.price : null,
                     hint: context.l10n.poojaPriceHintText,
                     labelText: context.l10n.pricelabel,
                     errorText:
@@ -138,7 +139,12 @@ class SchedulePoojaForm extends ConsumerWidget {
                   AppSpacing.verticalMedium,
                   AppDropdownMenu<String>(
                     labelText: context.l10n.deityLabel,
-                    hint: context.l10n.deityHintText,
+                    hint:
+                        state.isEditing
+                            ? state.schedule.deityName
+                            : context.l10n.deityHintText,
+                    initialSelection:
+                        state.isEditing ? state.schedule.deityName : null,
                     errorText:
                         state.validationErrors.showValidationErrors
                             ? state.validationErrors.deityName?.maybeMap(
@@ -173,6 +179,8 @@ class SchedulePoojaForm extends ConsumerWidget {
                   AppDropdownMenu<ScheduleMode>(
                     labelText: context.l10n.scheduleModeLabel,
                     hint: context.l10n.scheduleModeHintText,
+                    initialSelection:
+                        state.isEditing ? state.schedule.scheduleMode : null,
                     errorText:
                         state.validationErrors.showValidationErrors
                             ? state.validationErrors.scheduleMode?.maybeMap(
@@ -218,6 +226,8 @@ class SchedulePoojaForm extends ConsumerWidget {
                     AppDropdownMenu<PoojaTime>(
                       labelText: context.l10n.poojaTimeLabel,
                       hint: context.l10n.poojaTimeHintText,
+                      initialSelection:
+                          state.isEditing ? state.schedule.poojaTime : null,
                       errorText:
                           state.validationErrors.showValidationErrors
                               ? state.validationErrors.poojaTime?.maybeMap(
@@ -247,6 +257,10 @@ class SchedulePoojaForm extends ConsumerWidget {
                     DateAndTimePickerButton(
                       labelText: context.l10n.poojaDateAndTimeLabel,
                       hintText: context.l10n.poojaDateAndTimeHintText,
+                      initialDateTime:
+                          state.isEditing
+                              ? state.schedule.poojaDateAndTime
+                              : null,
                       errorText:
                           state.validationErrors.showValidationErrors
                               ? state.validationErrors.poojaDateAndTime

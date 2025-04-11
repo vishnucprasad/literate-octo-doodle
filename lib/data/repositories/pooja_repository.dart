@@ -14,8 +14,15 @@ abstract class PoojaRepository {
   Future<List<Pooja>> getPoojas();
   Future<ImageData> pickPoojaImage();
   Future<Pooja> addPooja(Pooja pooja, ImageData image);
-  Future<void> addNewPoojaSchedule(String userId, PoojaSchedule schedule);
+  Future<PoojaSchedule> addNewPoojaSchedule(
+    String userId,
+    PoojaSchedule schedule,
+  );
   Future<List<PoojaSchedule>> getPoojaSchedules(String userId);
+  Future<PoojaSchedule> updatePoojaSchedule(
+    String userId,
+    PoojaSchedule schedule,
+  );
 }
 
 @riverpod

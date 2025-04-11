@@ -63,7 +63,7 @@ class PoojaRepositoryImpl implements PoojaRepository {
   }
 
   @override
-  Future<void> addNewPoojaSchedule(
+  Future<PoojaSchedule> addNewPoojaSchedule(
     String userId,
     PoojaSchedule schedule,
   ) async {
@@ -85,6 +85,8 @@ class PoojaRepositoryImpl implements PoojaRepository {
     };
 
     await _dbDatasource.createDocument("temple-poojas", id, data);
+
+    return PoojaSchedule.fromJson({...data, "pooja": schedule.pooja.toJson()});
   }
 
   @override
@@ -103,5 +105,30 @@ class PoojaRepositoryImpl implements PoojaRepository {
     );
 
     return schedules;
+  }
+
+  @override
+  Future<PoojaSchedule> updatePoojaSchedule(
+    String userId,
+    PoojaSchedule schedule,
+  ) async {
+    final data = {
+      "id": schedule.id,
+      "templeId": schedule.templeId,
+      "poojaId": schedule.pooja.id,
+      "isActive": schedule.isActive,
+      "price": schedule.price,
+      "deityName": schedule.deityName,
+      "scheduleMode": schedule.scheduleMode?.name,
+      "poojaDays": schedule.poojaDays,
+      "poojaTime": schedule.poojaTime?.name,
+      "poojaDateAndTime": schedule.poojaDateAndTime?.toIso8601String(),
+      "createdAt": schedule.createdAt.toIso8601String(),
+      "updatedAt": DateTime.now().toIso8601String(),
+    };
+
+    await _dbDatasource.updateDocument("temple-poojas", schedule.id, data);
+
+    return PoojaSchedule.fromJson({...data, "pooja": schedule.pooja.toJson()});
   }
 }

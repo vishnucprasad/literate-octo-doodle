@@ -10,6 +10,8 @@ class PoojaSchedulesState with _$PoojaSchedulesState {
   const factory PoojaSchedulesState({
     @Default(false) bool isLoading,
     @Default(false) bool isSaving,
+    @Default(false) bool isEditing,
+    @Default(false) bool isDeleting,
     @Default([]) List<PoojaSchedule> schedules,
     required PoojaSchedule schedule,
     @Default(PoojaScheduleValidationErrors())

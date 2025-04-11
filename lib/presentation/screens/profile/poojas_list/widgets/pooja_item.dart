@@ -5,16 +5,21 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.d
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/pooja/pooja_schedule/pooja_schedule.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/profile/poojas/pooja_schedules_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/schedule_pooja/widgets/schedule_pooja_form.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
-class PoojaItem extends StatelessWidget {
+class PoojaItem extends ConsumerWidget {
   const PoojaItem({super.key, required this.schedule});
 
   final PoojaSchedule schedule;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final controller = ref.read(poojaSchedulesControllerProvider.notifier);
+
     return Container(
       padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
@@ -31,7 +36,7 @@ class PoojaItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      schedule.pooja.name,
+                      "${schedule.pooja.name} ( ${schedule.deityName} )",
                       style: context.theme.textTheme.titleMedium?.copyWith(
                         color: context.colorScheme.primary,
                         fontWeight: FontWeight.bold,
@@ -197,7 +202,14 @@ class PoojaItem extends StatelessWidget {
               SizedBox(
                 height: 30,
                 child: FilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.editSchedule(schedule);
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      builder: (context) => SchedulePoojaForm(),
+                    );
+                  },
                   style: FilledButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 16.0),
                     backgroundColor: context.colors.primary[50],

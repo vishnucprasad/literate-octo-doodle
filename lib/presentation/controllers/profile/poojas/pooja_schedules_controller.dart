@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:aaraadhya_temple_dashboard/core/enums/pooja_time.dart';
 import 'package:aaraadhya_temple_dashboard/core/enums/schedule_mode.dart';
 import 'package:aaraadhya_temple_dashboard/core/exceptions/base_exception.dart';
@@ -38,10 +36,8 @@ class PoojaSchedulesController extends _$PoojaSchedulesController {
         );
       }
     } on BaseException catch (e) {
-      log(e.toString());
       state = state.copyWith(error: e);
     } catch (e) {
-      log(e.toString());
       state = state.copyWith(error: DatabaseException.unexpected(e.toString()));
     } finally {
       state = state.copyWith(isLoading: false);
@@ -121,6 +117,10 @@ class PoojaSchedulesController extends _$PoojaSchedulesController {
     );
   }
 
+  void editSchedule(PoojaSchedule schedule) {
+    state = state.copyWith(isEditing: true, schedule: schedule);
+  }
+
   Future<dynamic> schedulePooja() async {
     if (!state.isValid) {
       return state = state.copyWith(
@@ -157,19 +157,36 @@ class PoojaSchedulesController extends _$PoojaSchedulesController {
       state = state.copyWith(isSaving: true, error: null);
 
       if (user != null) {
-        await poojaRepository.addNewPoojaSchedule(user.uid, state.schedule);
-        state = state.copyWith(
-          schedule: PoojaSchedule.empty(),
-          validationErrors: PoojaScheduleValidationErrors(),
-        );
-        loadSchedules();
+        if (state.isEditing) {
+          final schedule = await poojaRepository.updatePoojaSchedule(
+            user.uid,
+            state.schedule,
+          );
+          state = state.copyWith(
+            isEditing: false,
+            schedules:
+                state.schedules
+                    .map((doc) => doc.id == schedule.id ? schedule : doc)
+                    .toList(),
+          );
+        } else {
+          final schedule = await poojaRepository.addNewPoojaSchedule(
+            user.uid,
+            state.schedule,
+          );
+          state = state.copyWith(schedules: [schedule, ...state.schedules]);
+        }
       }
     } on BaseException catch (e) {
       state = state.copyWith(error: e);
     } catch (e) {
       state = state.copyWith(error: DatabaseException.unexpected(e.toString()));
     } finally {
-      state = state.copyWith(isSaving: false);
+      state = state.copyWith(
+        isSaving: false,
+        schedule: PoojaSchedule.empty(),
+        validationErrors: PoojaScheduleValidationErrors(),
+      );
     }
   }
 }

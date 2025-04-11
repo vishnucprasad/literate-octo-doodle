@@ -10,6 +10,7 @@ class DateAndTimePickerButton extends HookWidget {
     this.labelText,
     this.hintText,
     this.errorText,
+    this.initialDateTime,
     this.onChanged,
     super.key,
   });
@@ -17,6 +18,7 @@ class DateAndTimePickerButton extends HookWidget {
   final String? labelText;
   final String? hintText;
   final String? errorText;
+  final DateTime? initialDateTime;
   final ValueChanged<DateTime?>? onChanged;
 
   @override
@@ -117,6 +119,8 @@ class DateAndTimePickerButton extends HookWidget {
                     ? DateFormat(
                       "MMMM d, y • h:mm a",
                     ).format(selectedDateAndTimeNotifier.value!)
+                    : initialDateTime != null
+                    ? DateFormat("MMMM d, y • h:mm a").format(initialDateTime!)
                     : hintText ?? '',
                 style: context.theme.textTheme.bodyMedium?.copyWith(
                   color: context.colors.grey[700],
