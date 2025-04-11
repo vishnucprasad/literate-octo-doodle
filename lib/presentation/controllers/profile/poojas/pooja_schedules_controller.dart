@@ -123,27 +123,41 @@ class PoojaSchedulesController extends _$PoojaSchedulesController {
 
   Future<void> changeStatus(bool status, String scheduleId) async {
     final poojaRepository = ref.read(poojaRepositoryProvider);
-    final authRepository = ref.read(authRepositoryProvider);
 
     try {
-      final user = authRepository.getCurrentUser();
-
-      if (user != null) {
-        final schedule = state.schedules
-            .singleWhere((doc) => doc.id == scheduleId)
-            .copyWith(isActive: status);
-        await poojaRepository.updatePoojaSchedule(user.uid, schedule);
-        state = state.copyWith(
-          schedules:
-              state.schedules
-                  .map((doc) => doc.id == schedule.id ? schedule : doc)
-                  .toList(),
-        );
-      }
+      final schedule = state.schedules
+          .singleWhere((doc) => doc.id == scheduleId)
+          .copyWith(isActive: status);
+      await poojaRepository.updatePoojaSchedule(schedule);
+      state = state.copyWith(
+        schedules:
+            state.schedules
+                .map((doc) => doc.id == schedule.id ? schedule : doc)
+                .toList(),
+      );
     } on BaseException catch (e) {
       state = state.copyWith(error: e);
     } catch (e) {
       state = state.copyWith(error: DatabaseException.unexpected(e.toString()));
+    }
+  }
+
+  Future<void> deleteSchedule(String scheduleId) async {
+    final poojaRepository = ref.read(poojaRepositoryProvider);
+
+    try {
+      state = state.copyWith(isDeleting: true, error: null);
+      await poojaRepository.deletePoojaSchedule(scheduleId);
+      state = state.copyWith(
+        schedules:
+            state.schedules.where((doc) => doc.id != scheduleId).toList(),
+      );
+    } on BaseException catch (e) {
+      state = state.copyWith(error: e);
+    } catch (e) {
+      state = state.copyWith(error: DatabaseException.unexpected(e.toString()));
+    } finally {
+      state = state.copyWith(isDeleting: false);
     }
   }
 
@@ -185,7 +199,6 @@ class PoojaSchedulesController extends _$PoojaSchedulesController {
       if (user != null) {
         if (state.isEditing) {
           final schedule = await poojaRepository.updatePoojaSchedule(
-            user.uid,
             state.schedule,
           );
           state = state.copyWith(

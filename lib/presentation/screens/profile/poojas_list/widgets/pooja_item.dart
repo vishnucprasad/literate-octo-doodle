@@ -6,6 +6,7 @@ import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/pooja/pooja_schedule/pooja_schedule.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/profile/poojas/pooja_schedules_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/poojas_list/widgets/delete_schedule_confirmation_dialog.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/schedule_pooja/widgets/schedule_pooja_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -228,7 +229,16 @@ class PoojaItem extends ConsumerWidget {
               SizedBox(
                 height: 30,
                 child: FilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return DeleteScheduleConfirmationDialog(
+                          scheduleId: schedule.id,
+                        );
+                      },
+                    );
+                  },
                   style: FilledButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 16.0),
                     backgroundColor: context.colors.primary[50],

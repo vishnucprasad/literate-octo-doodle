@@ -108,10 +108,7 @@ class PoojaRepositoryImpl implements PoojaRepository {
   }
 
   @override
-  Future<PoojaSchedule> updatePoojaSchedule(
-    String userId,
-    PoojaSchedule schedule,
-  ) async {
+  Future<PoojaSchedule> updatePoojaSchedule(PoojaSchedule schedule) async {
     final data = {
       "id": schedule.id,
       "templeId": schedule.templeId,
@@ -130,5 +127,10 @@ class PoojaRepositoryImpl implements PoojaRepository {
     await _dbDatasource.updateDocument("temple-poojas", schedule.id, data);
 
     return PoojaSchedule.fromJson({...data, "pooja": schedule.pooja.toJson()});
+  }
+
+  @override
+  Future<void> deletePoojaSchedule(String id) async {
+    await _dbDatasource.deleteDocument("temple-poojas", id);
   }
 }

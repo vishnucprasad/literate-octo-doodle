@@ -19,10 +19,8 @@ abstract class PoojaRepository {
     PoojaSchedule schedule,
   );
   Future<List<PoojaSchedule>> getPoojaSchedules(String userId);
-  Future<PoojaSchedule> updatePoojaSchedule(
-    String userId,
-    PoojaSchedule schedule,
-  );
+  Future<PoojaSchedule> updatePoojaSchedule(PoojaSchedule schedule);
+  Future<void> deletePoojaSchedule(String id);
 }
 
 @riverpod

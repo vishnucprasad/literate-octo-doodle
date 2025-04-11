@@ -36,7 +36,7 @@ class PoojasListScreen extends ConsumerWidget {
                 color: context.colors.grey[700],
               ),
             ),
-            AppSpacing.verticalSmall,
+            AppSpacing.verticalMedium,
             ListofPoojas(),
             AppSpacing.verticalLarge,
           ],

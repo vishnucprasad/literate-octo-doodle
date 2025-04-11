@@ -1126,5 +1126,13 @@
     "poojaDateTimeEmptyErrorText": "Please select pooja date and time",
     "@poojaDateTimeEmptyErrorText": {
         "description": "The text displayed when pooja date and time is empty."
+    },
+    "deleteScheduleConfirmationDialogTitle": "Delete",
+    "@deleteScheduleConfirmationDialogTitle": {
+        "description": "The title displayed on the delete confirmation dialog."
+    },
+    "deleteScheduleConfirmationDialogDescription": "Are you sure you want to delete this pooja schedule?",
+    "@deleteScheduleConfirmationDialogDescription": {
+        "description": "The description displayed on the delete confirmation dialog."
     }
 }
