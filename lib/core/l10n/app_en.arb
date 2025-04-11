@@ -1134,5 +1134,9 @@
     "deleteScheduleConfirmationDialogDescription": "Are you sure you want to delete this pooja schedule?",
     "@deleteScheduleConfirmationDialogDescription": {
         "description": "The description displayed on the delete confirmation dialog."
+    },
+    "scheduleListEmptyText": "No pooja schedules found",
+    "@scheduleListEmptyText": {
+        "description": "The text displayed when the pooja schedule list is empty."
     }
 }

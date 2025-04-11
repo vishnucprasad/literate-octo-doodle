@@ -1,3 +1,5 @@
+import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
+import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/pooja/pooja_schedule/pooja_schedule.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/shimmer_loader.dart';
@@ -39,6 +41,19 @@ class ListofPoojas extends ConsumerWidget {
             },
             separatorBuilder: (context, index) => AppSpacing.verticalMedium,
           ),
+        )
+        : schedulesList.isEmpty
+        ? Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.block_outlined,
+              size: 72,
+              color: context.colors.grey[700],
+            ),
+            AppSpacing.verticalMedium,
+            Text(context.l10n.scheduleListEmptyText),
+          ],
         )
         : ListView.separated(
           shrinkWrap: true,

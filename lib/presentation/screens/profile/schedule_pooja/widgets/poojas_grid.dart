@@ -138,7 +138,11 @@ class PoojasGrid extends ConsumerWidget {
         : Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.block_outlined, size: 72),
+            Icon(
+              Icons.block_outlined,
+              size: 72,
+              color: context.colors.grey[700],
+            ),
             AppSpacing.verticalMedium,
             Text(context.l10n.poojaListEmptyText),
           ],
