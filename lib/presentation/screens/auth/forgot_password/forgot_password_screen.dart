@@ -1,3 +1,4 @@
+import 'package:aaraadhya_temple_dashboard/core/exceptions/auth_exception.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_snack_bar_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
@@ -20,24 +21,19 @@ class ForgotPasswordScreen extends ConsumerWidget {
 
     ref.listen(
       forgotPasswordControllerProvider.select((value) => value.error),
-      (_, error) {
-        if (error != null) {
+      (previousError, error) {
+        if (error != null && previousError != error) {
           context.showErrorSnackbar(
-            message: error.maybeWhen(
-              invalidEmail: () => context.l10n.invalidEmailErrorMessage,
-              userNotFound: () => context.l10n.userNotFoundErrorMessage,
-              generic: (message) => message,
-              unexpected: (error) => error,
-              orElse: () => context.l10n.defaultErrorMessage,
-            ),
+            message: error.getAuthExceptionMessage(context),
           );
         }
       },
     );
 
-    final emailValidationErrorText = state.validationErrors.email?.when(
+    final emailValidationErrorText = state.validationErrors.email?.maybeWhen(
       empty: () => context.l10n.emptyEmailValidationErorrMessage,
       invalid: () => context.l10n.invalidEmailValidationErorrMessage,
+      orElse: () => null,
     );
 
     return Scaffold(

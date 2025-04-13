@@ -18,7 +18,7 @@ class FirebaseAuthDatasourceImpl implements AuthDatasource {
     try {
       await _auth.sendPasswordResetEmail(email: email);
     } on FirebaseAuthException catch (e) {
-      throw _mapFirebaseAuthException(e);
+      throw AuthException.fromFirebaseAuthException(e);
     } catch (e) {
       throw AuthException.unexpected(e.toString());
     }
@@ -29,7 +29,7 @@ class FirebaseAuthDatasourceImpl implements AuthDatasource {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      throw _mapFirebaseAuthException(e);
+      throw AuthException.fromFirebaseAuthException(e);
     } catch (e) {
       throw AuthException.unexpected(e.toString());
     }
@@ -44,24 +44,29 @@ class FirebaseAuthDatasourceImpl implements AuthDatasource {
     }
   }
 
-  AuthException _mapFirebaseAuthException(FirebaseAuthException exception) {
-    switch (exception.code) {
-      case 'invalid-email':
-        return const AuthException.invalidEmail();
-      case 'user-disabled':
-        return const AuthException.userDisabled();
-      case 'user-not-found':
-        return const AuthException.userNotFound();
-      case 'operation-not-allowed':
-        return const AuthException.operationNotAllowed();
-      case 'invalid-credential':
-        return const AuthException.invalidCredential();
-      case 'too-many-requests':
-        return const AuthException.tooManyRequests();
-      default:
-        return AuthException.generic(
-          exception.message ?? 'An unknown error occurred.',
-        );
+  @override
+  Future<void> changePassword(
+    String currentPassword,
+    String newPassword,
+  ) async {
+    try {
+      final user = getCurrentUser();
+
+      if (user?.email == null) throw AuthException.invalidEmail();
+
+      final credential = EmailAuthProvider.credential(
+        email: user!.email!,
+        password: currentPassword,
+      );
+
+      await user.reauthenticateWithCredential(credential);
+      await user.updatePassword(newPassword);
+    } on FirebaseAuthException catch (e) {
+      throw AuthException.fromFirebaseAuthException(e);
+    } on AuthException {
+      rethrow;
+    } catch (e) {
+      throw AuthException.unexpected(e.toString());
     }
   }
 }

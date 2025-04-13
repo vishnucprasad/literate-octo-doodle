@@ -1,4 +1,3 @@
-import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
@@ -7,9 +6,20 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:intl/intl.dart';
 
 class DateAndTimePickerButton extends HookWidget {
-  const DateAndTimePickerButton({this.labelText, super.key});
+  const DateAndTimePickerButton({
+    this.labelText,
+    this.hintText,
+    this.errorText,
+    this.initialDateTime,
+    this.onChanged,
+    super.key,
+  });
 
   final String? labelText;
+  final String? hintText;
+  final String? errorText;
+  final DateTime? initialDateTime;
+  final ValueChanged<DateTime?>? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -90,6 +100,7 @@ class DateAndTimePickerButton extends HookWidget {
                   pickedTime.hour,
                   pickedTime.minute,
                 );
+                onChanged?.call(selectedDateAndTimeNotifier.value);
               }
             }
           },
@@ -108,7 +119,9 @@ class DateAndTimePickerButton extends HookWidget {
                     ? DateFormat(
                       "MMMM d, y • h:mm a",
                     ).format(selectedDateAndTimeNotifier.value!)
-                    : context.l10n.eventDateAndTimeLabel,
+                    : initialDateTime != null
+                    ? DateFormat("MMMM d, y • h:mm a").format(initialDateTime!)
+                    : hintText ?? '',
                 style: context.theme.textTheme.bodyMedium?.copyWith(
                   color: context.colors.grey[700],
                   fontFamily: FontFamily.roboto,
@@ -123,6 +136,17 @@ class DateAndTimePickerButton extends HookWidget {
             ],
           ),
         ),
+        if (errorText != null) ...[
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, top: 4.0),
+            child: Text(
+              errorText!,
+              style: context.theme.textTheme.bodySmall?.copyWith(
+                color: context.colorScheme.error,
+              ),
+            ),
+          ),
+        ],
       ],
     );
   }

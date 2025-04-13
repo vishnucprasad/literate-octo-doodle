@@ -13,6 +13,7 @@ abstract class AuthRepository {
   Future<void> signOut();
   Future<void> sendPasswordResetEmail(String email);
   User? getCurrentUser();
+  Future<void> changePassword(String currentPassword, String newPassword);
 }
 
 @riverpod
