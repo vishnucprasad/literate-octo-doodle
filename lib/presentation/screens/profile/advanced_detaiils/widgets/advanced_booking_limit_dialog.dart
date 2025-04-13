@@ -80,6 +80,7 @@ class AdvancedBookingLimitDialog extends HookConsumerWidget {
                 fontFamily: FontFamily.roboto,
                 textAlign: TextAlign.center,
                 keyboardType: TextInputType.number,
+                onChanged: controller.updateAdvancedBookingLimit,
               ),
             ),
             AppSpacing.horizontalSmall,

@@ -11,6 +11,7 @@ class BasicDetailsState with _$BasicDetailsState {
     @Default(false) bool isLoading,
     @Default(false) bool isUploading,
     @Default(false) bool isSaving,
+    @Default(false) bool isFormEnabled,
     @Default(TempleBasicDetails()) TempleBasicDetails basicDetails,
     @Default(BasicDetailsValidationErrors())
     BasicDetailsValidationErrors validationErrors,

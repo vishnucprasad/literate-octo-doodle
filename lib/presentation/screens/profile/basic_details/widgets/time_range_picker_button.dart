@@ -13,12 +13,14 @@ class TimeRangePickerButton extends HookWidget {
     this.errorText,
     this.initialRange,
     this.onChanged,
+    this.enabled,
   });
 
   final String? labelText;
   final String? errorText;
   final TimeRange? initialRange;
   final ValueChanged<TimeRange>? onChanged;
+  final bool? enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +47,8 @@ class TimeRangePickerButton extends HookWidget {
             Expanded(
               child: FilledButton(
                 onPressed: () async {
+                  if (enabled == false) return;
+
                   TimeOfDay? pickedTime = await showTimePicker(
                     context: context,
                     builder: (context, child) {
@@ -113,6 +117,8 @@ class TimeRangePickerButton extends HookWidget {
             Expanded(
               child: FilledButton(
                 onPressed: () async {
+                  if (enabled == false) return;
+
                   TimeOfDay? pickedTime = await showTimePicker(
                     context: context,
                     builder: (context, child) {

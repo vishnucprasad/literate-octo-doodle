@@ -66,9 +66,8 @@ class ContactDetailsScreen extends ConsumerWidget {
                 separatorBuilder: (context, index) => AppSpacing.verticalSmall,
               ),
             ),
-            ShimmerLoader(
-              isLoading: state.isLoading,
-              child: SizedBox(
+            if (state.isFormEnabled) ...[
+              SizedBox(
                 height: 40,
                 child: FilledButton(
                   onPressed: controller.addNewCommitteeMember,
@@ -82,8 +81,8 @@ class ContactDetailsScreen extends ConsumerWidget {
                   child: Text(context.l10n.addMemberButtonTitle),
                 ),
               ),
-            ),
-            AppSpacing.verticalMedium,
+              AppSpacing.verticalMedium,
+            ],
             ShimmerLoader(
               isLoading: state.isLoading,
               showBackground: true,
@@ -102,6 +101,7 @@ class ContactDetailsScreen extends ConsumerWidget {
                 children: [
                   Expanded(
                     child: AppInputField(
+                      enabled: state.isFormEnabled,
                       initialValue: state.contactDetails.chiefPriest.name,
                       hint: context.l10n.nameLabel,
                       onChanged: controller.updateCheifPriestName,
@@ -110,6 +110,7 @@ class ContactDetailsScreen extends ConsumerWidget {
                   AppSpacing.horizontalSmall,
                   Expanded(
                     child: AppInputField(
+                      enabled: state.isFormEnabled,
                       initialValue:
                           state.contactDetails.chiefPriest.phoneNumber,
                       hint: context.l10n.numberLabel,
@@ -162,6 +163,7 @@ class ContactDetailsScreen extends ConsumerWidget {
               child: Column(
                 children: [
                   AppInputField(
+                    enabled: state.isFormEnabled,
                     initialValue: state.contactDetails.address,
                     hint: context.l10n.addressHintText,
                     labelText: context.l10n.addressLabel,
@@ -173,6 +175,7 @@ class ContactDetailsScreen extends ConsumerWidget {
                   ),
                   AppSpacing.verticalMedium,
                   AppInputField(
+                    enabled: state.isFormEnabled,
                     initialValue: state.contactDetails.locationLink,
                     hint: context.l10n.locationLinkHintText,
                     labelText: context.l10n.locationLinkLabel,
@@ -186,6 +189,7 @@ class ContactDetailsScreen extends ConsumerWidget {
                   ),
                   AppSpacing.verticalMedium,
                   AppInputField(
+                    enabled: state.isFormEnabled,
                     initialValue: state.contactDetails.websiteLink,
                     hint: context.l10n.websiteLinkHintText,
                     labelText: context.l10n.websiteLinkLabel,
@@ -199,7 +203,7 @@ class ContactDetailsScreen extends ConsumerWidget {
                 ],
               ),
             ),
-            AppSpacing.verticalFromPixels(100),
+            AppSpacing.verticalFromPixels(state.isFormEnabled ? 100.0 : 16.0),
           ],
         ),
         ContactDetailsActionButtons(),

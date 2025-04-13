@@ -14,6 +14,7 @@ class AppDropdownMenu<T> extends StatelessWidget {
     this.textStyle,
     required this.items,
     required this.onSelected,
+    this.enabled = true,
   });
 
   final T? initialSelection;
@@ -26,6 +27,7 @@ class AppDropdownMenu<T> extends StatelessWidget {
   final TextStyle? textStyle;
   final List<DropdownMenuEntry<T>> items;
   final ValueChanged<T?> onSelected;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +49,7 @@ class AppDropdownMenu<T> extends StatelessWidget {
               ),
             ],
             DropdownMenu<T>(
+              enabled: enabled,
               initialSelection: initialSelection,
               width: constraints.maxWidth,
               hintText: hint,

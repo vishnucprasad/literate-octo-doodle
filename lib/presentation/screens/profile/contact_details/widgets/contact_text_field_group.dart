@@ -33,6 +33,7 @@ class ContactTextFieldGroup extends ConsumerWidget {
           children: [
             Expanded(
               child: AppInputField(
+                enabled: state.isFormEnabled,
                 initialValue: state.contactDetails.committeeMembers[index].name,
                 hint: context.l10n.nameLabel,
                 onChanged: (name) {
@@ -43,6 +44,7 @@ class ContactTextFieldGroup extends ConsumerWidget {
             AppSpacing.horizontalSmall,
             Expanded(
               child: AppInputField(
+                enabled: state.isFormEnabled,
                 initialValue:
                     state.contactDetails.committeeMembers[index].phoneNumber,
                 hint: context.l10n.numberLabel,

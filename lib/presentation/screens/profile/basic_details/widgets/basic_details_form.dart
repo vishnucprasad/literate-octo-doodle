@@ -37,6 +37,7 @@ class BasicDetailsForm extends HookConsumerWidget {
           ),
           AppSpacing.verticalMedium,
           AppInputField(
+            enabled: state.isFormEnabled,
             initialValue: state.basicDetails.templeName,
             hint: context.l10n.templeNameHintText,
             labelText: context.l10n.templeNameLabel,
@@ -49,6 +50,7 @@ class BasicDetailsForm extends HookConsumerWidget {
           ),
           AppSpacing.verticalMedium,
           AppInputField(
+            enabled: state.isFormEnabled,
             initialValue: state.basicDetails.mainDeityName,
             hint: context.l10n.mainDeityHintText,
             labelText: context.l10n.mainDeityLabel,
@@ -61,6 +63,7 @@ class BasicDetailsForm extends HookConsumerWidget {
           ),
           AppSpacing.verticalMedium,
           AppInputField(
+            enabled: state.isFormEnabled,
             initialValue: state.basicDetails.otherDeities?.join(','),
             hint: context.l10n.otherDeitiesHintText,
             labelText: context.l10n.otherDeitieslabel,
@@ -72,6 +75,7 @@ class BasicDetailsForm extends HookConsumerWidget {
           ),
           AppSpacing.verticalMedium,
           AppDropdownMenu<TempleManagingAuthority>(
+            enabled: state.isFormEnabled,
             hint:
                 state.basicDetails.managingAuthority?.getName(context) ??
                 context.l10n.chooseOneLabel,
@@ -124,6 +128,7 @@ class BasicDetailsForm extends HookConsumerWidget {
               empty: (value) => context.l10n.morningScheduleEmptyErrorText,
               orElse: () => null,
             ),
+            enabled: state.isFormEnabled,
             onChanged: controller.updateMorningSchedule,
           ),
           AppSpacing.verticalMedium,
@@ -134,6 +139,7 @@ class BasicDetailsForm extends HookConsumerWidget {
               empty: (value) => context.l10n.eveningScheduleEmptyErrorText,
               orElse: () => null,
             ),
+            enabled: state.isFormEnabled,
             onChanged: controller.updateEveningSchedule,
           ),
           AppSpacing.verticalMedium,
@@ -158,6 +164,7 @@ class BasicDetailsForm extends HookConsumerWidget {
               orElse: () => null,
             ),
             maxLines: 5,
+            enabled: state.isFormEnabled,
             onChanged: controller.updateTempleDescription,
           ),
           AppSpacing.verticalMedium,
@@ -170,6 +177,7 @@ class BasicDetailsForm extends HookConsumerWidget {
               orElse: () => null,
             ),
             maxLines: 5,
+            enabled: state.isFormEnabled,
             onChanged: controller.updateRules,
           ),
           AppSpacing.verticalMedium,

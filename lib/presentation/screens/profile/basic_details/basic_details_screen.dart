@@ -16,6 +16,7 @@ class BasicDetailsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(basicDetailsControllerProvider);
     ref.listen(basicDetailsControllerProvider, (previous, next) {
       final error = next.error;
 
@@ -53,7 +54,7 @@ class BasicDetailsScreen extends ConsumerWidget {
             ProfilePictureContainer(),
             AppSpacing.verticalMedium,
             BasicDetailsForm(),
-            SizedBox(height: 100.0),
+            SizedBox(height: state.isFormEnabled ? 100.0 : 16.0),
           ],
         ),
         BasicDetailsActionButtons(),

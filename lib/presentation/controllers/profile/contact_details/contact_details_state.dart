@@ -10,6 +10,7 @@ class ContactDetailsState with _$ContactDetailsState {
   const factory ContactDetailsState({
     @Default(false) bool isLoading,
     @Default(false) bool isSaving,
+    @Default(false) bool isFormEnabled,
     @Default(TempleContactDetails()) TempleContactDetails contactDetails,
     @Default(ContactDetailsValidationErrors())
     ContactDetailsValidationErrors validationErrors,

@@ -10,7 +10,7 @@ class AdvancedOptions with _$AdvancedOptions {
     bool? smsNotificationForDevotees,
     bool? emailNotificationForDevotees,
     bool? enableOnlineBooking,
-    @Default('30') String advancedOnlneBookingLimit,
+    @Default('10') String advancedOnlneBookingLimit,
     @Default(BankDetails()) BankDetails bankDetails,
   }) = _AdvancedOptions;
 

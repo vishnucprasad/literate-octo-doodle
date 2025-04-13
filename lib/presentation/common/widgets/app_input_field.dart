@@ -22,6 +22,7 @@ class AppInputField extends StatelessWidget {
     this.maxLines,
     this.controller,
     this.initialValue,
+    this.enabled,
     super.key,
   });
 
@@ -43,6 +44,7 @@ class AppInputField extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
   final TextEditingController? controller;
   final String? initialValue;
+  final bool? enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +64,7 @@ class AppInputField extends StatelessWidget {
           ),
         ],
         TextFormField(
+          enabled: enabled,
           controller: controller,
           initialValue: initialValue,
           obscureText: obscureText ?? false,

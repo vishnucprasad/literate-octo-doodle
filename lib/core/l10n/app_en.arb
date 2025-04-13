@@ -401,6 +401,10 @@
     "@cancelButtonLabel": {
         "description": "The text displayed on the cancel button."
     },
+    "closeButtonLabel": "Close",
+    "@closeButtonLabel": {
+        "description": "The text displayed on the close button."
+    },
     "registrationsOpenLabel": "Registrations Open",
     "@registrationsOpenLabel": {
         "description": "The text displayed on the registrations open label."

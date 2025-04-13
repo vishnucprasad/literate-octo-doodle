@@ -18,6 +18,10 @@ class BasicDetailsController extends _$BasicDetailsController {
     return BasicDetailsState();
   }
 
+  void enableForm() => state = state.copyWith(isFormEnabled: true);
+
+  void disableForm() => state = state.copyWith(isFormEnabled: false);
+
   Future<void> loadBasicDetails() async {
     final authRepository = ref.watch(authRepositoryProvider);
     final profileRepository = ref.watch(profileRepositoryProvider);
@@ -199,7 +203,11 @@ class BasicDetailsController extends _$BasicDetailsController {
       if (user != null) {
         await profileRepository.saveBasicDetails(user.uid, state.basicDetails);
       }
-      state = state.copyWith(isSaving: false, error: null);
+      state = state.copyWith(
+        isSaving: false,
+        isFormEnabled: false,
+        error: null,
+      );
     } on BaseException catch (e) {
       state = state.copyWith(isSaving: false, error: e);
     } catch (e) {
