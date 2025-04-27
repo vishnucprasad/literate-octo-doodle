@@ -141,6 +141,17 @@ class BasicDetailsController extends _$BasicDetailsController {
     );
   }
 
+  void updateAmenities(String amenities) {
+    state = state.copyWith(
+      basicDetails: state.basicDetails.copyWith(
+        amenities: amenities.split(','),
+      ),
+      validationErrors: state.validationErrors.copyWith(
+        amenities: Validators.validateRequired(amenities),
+      ),
+    );
+  }
+
   void updateTempleDescription(String description) {
     state = state.copyWith(
       basicDetails: state.basicDetails.copyWith(description: description),

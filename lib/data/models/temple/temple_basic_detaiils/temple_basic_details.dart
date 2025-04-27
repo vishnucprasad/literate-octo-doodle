@@ -15,6 +15,7 @@ class TempleBasicDetails with _$TempleBasicDetails {
     TempleManagingAuthority? managingAuthority,
     TimeRange? morningSchedule,
     TimeRange? eveningSchedule,
+    List<String>? amenities,
     String? description,
     String? rules,
   }) = _TempleBasicDetails;
@@ -32,6 +33,8 @@ class TempleBasicDetails with _$TempleBasicDetails {
       managingAuthority!.name.isEmpty ||
       morningSchedule == null ||
       eveningSchedule == null ||
+      amenities == null ||
+      amenities!.isEmpty ||
       description == null ||
       description!.isEmpty ||
       rules == null ||

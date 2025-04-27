@@ -1,1146 +1,1158 @@
 {
-    "@@author": "Vishnu C Prasad",
-    "@@locale": "en",
-    "appLanguage": "English",
-    "@appLanguage": {
-        "description": "The language of the application."
-    },
-    "appName": "Aaraadhya Temple",
-    "@appName": {
-        "description": "The official name of the application, displayed on the home screen, splash screen, and other prominent places."
-    },
-    "signinText": "Sign In",
-    "@signinText": {
-        "description": "The text displayed on the sign-in button & sign-in screen title."
-    },
-    "emailHint": "abc@email.com",
-    "@emailHint": {
-        "description": "The hint text displayed on the email input field."
-    },
-    "passwordHint": "Password",
-    "@passwordHint": {
-        "description": "The hint text displayed on the password input field."
-    },
-    "forgotPasswordQuestion": "Forgot Password?",
-    "@forgotPasswordQuestion": {
-        "description": "The text displayed on the forgot password link."
-    },
-    "forgotPasswordScreenTitle": "Forgot Password",
-    "@forgotPasswordScreenTitle": {
-        "description": "The title displayed on the forgot password screen."
-    },
-    "forgotPasswordScreenSubtitle": "Enter your email address to reset your password.",
-    "@forgotPasswordScreenSubtitle": {
-        "description": "The subtitle displayed on the forgot password screen."
-    },
-    "resetPasswordButtonLabel": "Reset Password",
-    "@resetPasswordButtonLabel": {
-        "description": "The text displayed on the reset password button."
-    },
-    "passwordRestLinkSentSuccessTitle": "Password Reset Link Sent",
-    "@passwordRestLinkSentSuccessTitle": {
-        "description": "The title displayed in the dialog box after sending the password reset link."
-    },
-    "passwordRestLinkSentSuccessMessage": "If an account with this email exists, you will receive a password reset email. Please check your inbox",
-    "@passwordRestLinkSentSuccessMessage": {
-        "description": "The success message displayed in the dialog box after sending the password reset link."
-    },
-    "emptyEmailValidationErorrMessage": "Email cannot be empty",
-    "@emptyEmailValidationErorrMessage": {
-        "description": "The error message displayed when the email field is left empty."
-    },
-    "invalidEmailValidationErorrMessage": "Please enter a valid email",
-    "@invalidEmailValidationErorrMessage": {
-        "description": "The error message displayed when the email field is invalid."
-    },
-    "emptyPasswordValidationErorrMessage": "Password cannot be empty",
-    "@emptyPasswordValidationErorrMessage": {
-        "description": "The error message displayed when the password field is left empty."
-    },
-    "invalidPasswordValidationErorrMessage": "Password must be at least 8 characters long and include at least one letter and one number.",
-    "@invalidPasswordValidationErorrMessage": {
-        "description": "The error message displayed when the password field is invalid."
-    },
-    "dashboardAppBarTitle": "Aaraadhya Admin",
-    "@dashboardAppBarTitle": {
-        "description": "The title displayed on the dashboard app bar."
-    },
-    "todaysDonationsCardTitle": "Today's Donations",
-    "@todaysDonationsCardTitle": {
-        "description": "The title displayed on the today's donations card in dashboard."
-    },
-    "todaysPoojaBookingsCardTitle": "Today's Pooja Bookings",
-    "@todaysPoojaBookingsCardTitle": {
-        "description": "The title displayed on the today's pooja bookings card in dashboard."
-    },
-    "activePoojasCardTitle": "Active Poojas",
-    "@activePoojasCardTitle": {
-        "description": "The title displayed on the active poojas card in dashboard."
-    },
-    "activeEventsCardTitle": "Active Events",
-    "@activeEventsCardTitle": {
-        "description": "The title displayed on the active events card in dashboard."
-    },
-    "quickActionsSectionTitle": "Quick Actions",
-    "@quickActionsSectionTitle": {
-        "description": "The title displayed on the quick actions section in dashboard."
-    },
-    "newPoojaButtonLabel": "New Pooja",
-    "@newPoojaButtonLabel": {
-        "description": "The text displayed on the new pooja button in dashboard."
-    },
-    "newEventButtonLabel": "New Event",
-    "@newEventButtonLabel": {
-        "description": "The text displayed on the new event button in dashboard."
-    },
-    "announcementButtonLabel": "Announcement",
-    "@announcementButtonLabel": {
-        "description": "The text displayed on the announcement button in dashboard."
-    },
-    "todaysBookingsSectionTitle": "Today's Bookings",
-    "@todaysBookingsSectionTitle": {
-        "description": "The title displayed on the today's bookings section in dashboard."
-    },
-    "notificationsSectionTitle": "Notifications",
-    "@notificationsSectionTitle": {
-        "description": "The title displayed on the notifications section in dashboard."
-    },
-    "bookingIdLabel": "Booking ID",
-    "@bookingIdLabel": {
-        "description": "The text displayed on the booking id label in dashboard."
-    },
-    "viewAllButtonLabel": "View All",
-    "@viewAllButtonLabel": {
-        "description": "The text displayed on the view all button in dashboard."
-    },
-    "bookingsManagementAppBarTitle": "Bookings Management",
-    "@bookingsManagementAppBarTitle": {
-        "description": "The title displayed on the bookings management app bar."
-    },
-    "bookingsSectionTitle": "{month} {day} Bookings",
-    "@bookingsSectionTitle": {
-        "description": "The title displayed on the bookings section.",
-        "placeholders": {
-            "month": {},
-            "day": {}
-        }
-    },
-    "paymentBadgeLabel": "₹{amount} Paid",
-    "@paymentBadgeLabel": {
-        "description": "The text displayed on the payment badge.",
-        "placeholders": {
-            "amount": {}
-        }
-    },
-    "viewDetailsButtonLabel": "View Details",
-    "@viewDetailsButtonLabel": {
-        "description": "The text displayed on the view details button"
-    },
-    "bookingDateAndTimeLabel": "Booking Date & Time",
-    "@bookingDateAndTimeLabel": {
-        "description": "The text displayed on the booking date and time label"
-    },
-    "poojasCount": "{count} Poojas",
-    "@poojasCount": {
-        "description": "The text displayed on the poojas count label",
-        "placeholders": {
-            "count": {}
-        }
-    },
-    "poojaDetailsSectionTitle": "Pooja Details",
-    "@poojaDetailsSectionTitle": {
-        "description": "The title displayed on the pooja details section."
-    },
-    "amountLabel": "₹ {amount}",
-    "@amountLabel": {
-        "description": "The text displayed on the amount label.",
-        "placeholders": {
-            "amount": {}
-        }
-    },
-    "hideDetailsButtonLabel": "Hide Details",
-    "@hideDetailsButtonLabel": {
-        "description": "The text displayed on the hide details button."
-    },
-    "confirmedBadgeLabel": "Confirmed",
-    "@confirmedBadgeLabel": {
-        "description": "The text displayed on the confirmed badge."
-    },
-    "handedOverBadgeLabel": "Handed Over",
-    "@handedOverBadgeLabel": {
-        "description": "The text displayed on the handed over badge."
-    },
-    "completedBadgeLabel": "Completed",
-    "@completedBadgeLabel": {
-        "description": "The text displayed on the completed badge."
-    },
-    "canceledBadgeLabel": "Cancelled",
-    "@canceledBadgeLabel": {
-        "description": "The text displayed on the canceled badge."
-    },
-    "allBoookingsLabelWithCount": "All Bookings ({count})",
-    "@allBoookingsLabelWithCount": {
-        "description": "The text displayed on the all bookings label with count.",
-        "placeholders": {
-            "count": {}
-        }
-    },
-    "newPoojaBookingNotificationTitle": "New Pooja Booking",
-    "@newPoojaBookingNotificationTitle": {
-        "description": "The title displayed on the new pooja booking notification."
-    },
-    "newPoojaBookingNotificationDescription": "{name} has successfully ordered {count} Poojas from the temple.",
-    "@newPoojaBookingNotificationDescription": {
-        "description": "The description displayed on the new pooja booking notification.",
-        "placeholders": {
-            "name": {},
-            "count": {}
-        }
-    },
-    "donationsManagementAppBarTitle": "Donations Management",
-    "@donationsManagementAppBarTitle": {
-        "description": "The title displayed on the donations management app bar."
-    },
-    "donationsSectionTitle": "{month} {day} Donations",
-    "@donationsSectionTitle": {
-        "description": "The title displayed on the donations section.",
-        "placeholders": {
-            "month": {},
-            "day": {}
-        }
-    },
-    "donationDateAndTimeLabel": "Donation Date & Time",
-    "@donationDateAndTimeLabel": {
-        "description": "The text displayed on the donation date and time label."
-    },
-    "transactionIdLabel": "Transaction ID",
-    "@transactionIdLabel": {
-        "description": "The text displayed on the transaction id label."
-    },
-    "donationDetailsSectionTitle": "Donation Details",
-    "@donationDetailsSectionTitle": {
-        "description": "The title displayed on the donation details section."
-    },
-    "donationPurposeLabel": "Donation Purpose",
-    "@donationPurposeLabel": {
-        "description": "The text displayed on the donation purpose label."
-    },
-    "statusLabel": "Status",
-    "@statusLabel": {
-        "description": "The text displayed on the status label."
-    },
-    "paymentMethodLabel": "Payment Method",
-    "@paymentMethodLabel": {
-        "description": "The text displayed on the payment method label."
-    },
-    "taxExemptionReceiptSectionTitle": "Tax Exemption Receipt",
-    "@taxExemptionReceiptSectionTitle": {
-        "description": "The title displayed on the tax exemption receipt section."
-    },
-    "receiptNumberLabel": "Receipt Number",
-    "@receiptNumberLabel": {
-        "description": "The text displayed on the receipt number label."
-    },
-    "taxExemptionReceiptSectionDescription": "This receipt can be used for tax exemption under Section 80G.",
-    "@taxExemptionReceiptSectionDescription": {
-        "description": "The description displayed on the tax exemption receipt section."
-    },
-    "shareTaxReceiptButtonLabel": "Share Tax Receipt",
-    "@shareTaxReceiptButtonLabel": {
-        "description": "The text displayed on the share tax receipt button."
-    },
-    "printButtonLabel": "Print",
-    "@printButtonLabel": {
-        "description": "The text displayed on the print button."
-    },
-    "eventsManagementAppBarTitle": "Events Management",
-    "@eventsManagementAppBarTitle": {
-        "description": "The title displayed on the events management app bar."
-    },
-    "allEventsLabelWithCount": "All Events ({count})",
-    "@allEventsLabelWithCount": {
-        "description": "The text displayed on the all events label with count.",
-        "placeholders": {
-            "count": {}
-        }
-    },
-    "allEventsLabel": "All",
-    "@allEventsLabel": {
-        "description": "The text displayed on the all events label."
-    },
-    "upcomingEventsLabel": "Upcoming",
-    "@upcomingEventsLabel": {
-        "description": "The text displayed on the upcoming events label."
-    },
-    "previousEventsLabel": "Previous",
-    "@previousEventsLabel": {
-        "description": "The text displayed on the previous events label."
-    },
-    "eventsSectionTitle": "{filter} Events",
-    "@eventsSectionTitle": {
-        "description": "The title displayed on the events section.",
-        "placeholders": {
-            "filter": {}
-        }
-    },
-    "eventDetailsSectionTitle": "Event Details",
-    "@eventDetailsSectionTitle": {
-        "description": "The title displayed on the event details section."
-    },
-    "eventDateAndTimeLabel": "Event Date & Time",
-    "@eventDateAndTimeLabel": {
-        "description": "The text displayed on the event date and time label."
-    },
-    "eventIdLabel": "Event ID",
-    "@eventIdLabel": {
-        "description": "The text displayed on the event id label."
-    },
-    "eventTypeLabel": "Type",
-    "@eventTypeLabel": {
-        "description": "The text displayed on the event type label."
-    },
-    "eventDescriptionLabel": "Description",
-    "@eventDescriptionLabel": {
-        "description": "The text displayed on the event description label."
-    },
-    "eventDescriptionHintText": "Enter event description",
-    "@eventDescriptionHintText": {
-        "description": "The hint text displayed on the event description hint text."
-    },
-    "eventLocationLabel": "Location",
-    "@eventLocationLabel": {
-        "description": "The text displayed on the event location label."
-    },
-    "eventLocationHintText": "Enter event location",
-    "@eventLocationHintText": {
-        "description": "The hint text displayed on the event location hint text."
-    },
-    "eventRegistrationsCountLabel": "Registrations Count",
-    "@eventRegistrationsCountLabel": {
-        "description": "The text displayed on the event registrations count label."
-    },
-    "registrationsCount": "{count} Registrations",
-    "@registrationsCount": {
-        "description": "The text displayed as the registrations count.",
-        "placeholders": {
-            "count": {}
-        }
-    },
-    "registrationsButtonLabel": "Registrations ({count})",
-    "@registrationsButtonLabel": {
-        "description": "The text displayed on the registrations button.",
-        "placeholders": {
-            "count": {}
-        }
-    },
-    "viewRegistrationsButtonLabel": "View Registrations",
-    "@viewRegistrationsButtonLabel": {
-        "description": "The text displayed on the view registrations button."
-    },
-    "editButtonLabel": "Edit",
-    "@editButtonLabel": {
-        "description": "The text displayed on the edit button."
-    },
-    "deleteButtonLabel": "Delete",
-    "@deleteButtonLabel": {
-        "description": "The text displayed on the delete button."
-    },
-    "activeBadgeLabel": "Active",
-    "@activeBadgeLabel": {
-        "description": "The text displayed on the active badge."
-    },
-    "inactiveBadgeLabel": "Inactive",
-    "@inactiveBadgeLabel": {
-        "description": "The text displayed on the inactive badge."
-    },
-    "moreOptionsAppBarTitle": "More Options",
-    "@moreOptionsAppBarTitle": {
-        "description": "The title displayed on the more options app bar."
-    },
-    "versionLabel": "Version",
-    "@versionLabel": {
-        "description": "The text displayed on the version label."
-    },
-    "appLanguageTileLabel": "App Language",
-    "@appLanguageTileLabel": {
-        "description": "The text displayed on the app language tile."
-    },
-    "aboutTileLabel": "About",
-    "@aboutTileLabel": {
-        "description": "The text displayed on the about tile."
-    },
-    "privacyPolicyTileLabel": "Privacy Policy",
-    "@privacyPolicyTileLabel": {
-        "description": "The text displayed on the privacy policy tile."
-    },
-    "termsAndConditionsTileLabel": "Terms & Conditions",
-    "@termsAndConditionsTileLabel": {
-        "description": "The text displayed on the terms and conditions tile."
-    },
-    "signOutTileLabel": "Sign Out",
-    "@signOutTileLabel": {
-        "description": "The text displayed on the sign out tile."
-    },
-    "addNewEventFormTitle": "Add New Event",
-    "@addNewEventFormTitle": {
-        "description": "The title displayed on the add new event form."
-    },
-    "eventNameLabel": "Event Name",
-    "@eventNameLabel": {
-        "description": "The text displayed on the event name label."
-    },
-    "eventNameHintText": "Enter event name",
-    "@eventNameHintText": {
-        "description": "The hint text displayed on the event name hint text."
-    },
-    "saveButtonLabel": "Save",
-    "@saveButtonLabel": {
-        "description": "The text displayed on the save button."
-    },
-    "cancelButtonLabel": "Cancel",
-    "@cancelButtonLabel": {
-        "description": "The text displayed on the cancel button."
-    },
-    "closeButtonLabel": "Close",
-    "@closeButtonLabel": {
-        "description": "The text displayed on the close button."
-    },
-    "registrationsOpenLabel": "Registrations Open",
-    "@registrationsOpenLabel": {
-        "description": "The text displayed on the registrations open label."
-    },
-    "registrationsClosedLabel": "Registrations Closed",
-    "@registrationsClosedLabel": {
-        "description": "The text displayed on the registrations closed label."
-    },
-    "viewRegistrationsAppBarTitle": "Registrations",
-    "@viewRegistrationsAppBarTitle": {
-        "description": "The title displayed on the view registrations app bar."
-    },
-    "searchLabel": "Search",
-    "@searchLabel": {
-        "description": "The text displayed on the search label."
-    },
-    "familyMembersCount": "{count} Family Members",
-    "@familyMembersCount": {
-        "description": "The text displayed as the family members count.",
-        "placeholders": {
-            "count": {}
-        }
-    },
-    "profileSettingsAppBarTitle": "Profile Settings",
-    "@profileSettingsAppBarTitle": {
-        "description": "The title displayed on the profile settings app bar."
-    },
-    "basicTabLabel": "Basic",
-    "@basicTabLabel": {
-        "description": "The text displayed on the basic tab."
-    },
-    "poojasTabLabel": "Poojas",
-    "@poojasTabLabel": {
-        "description": "The text displayed on the poojas tab."
-    },
-    "galleryTabLabel": "Gallery",
-    "@galleryTabLabel": {
-        "description": "The text displayed on the gallery tab."
-    },
-    "contactTabLabel": "Contact",
-    "@contactTabLabel": {
-        "description": "The text displayed on the contact tab."
-    },
-    "advancedTabLabel": "Advanced",
-    "@advancedTabLabel": {
-        "description": "The text displayed on the advanced tab."
-    },
-    "profilePictureLabel": "Profile Picture",
-    "@profilePictureLabel": {
-        "description": "The text displayed on the profile picture label."
-    },
-    "uploadNewImageLabel": "Upload New Image",
-    "@uploadNewImageLabel": {
-        "description": "The text displayed on the upload new image label."
-    },
-    "imageTypeAndSizeLabel": "JPG, PNG (Max 5MB)",
-    "@imageTypeAndSizeLabel": {
-        "description": "The text displayed on the image type and size label."
-    },
-    "templeBasicDetailsLabel": " Temple Basic Details",
-    "@templeBasicDetailsLabel": {
-        "description": "The text displayed on the temple basic details label."
-    },
-    "templeNameLabel": "Temple Name",
-    "@templeNameLabel": {
-        "description": "The text displayed on the temple name label."
-    },
-    "templeNameHintText": "Enter temple name",
-    "@templeNameHintText": {
-        "description": "The hint text displayed on the temple name hint text."
-    },
-    "mainDeityLabel": "Main Deity",
-    "@mainDeityLabel": {
-        "description": "The text displayed on the main deity label."
-    },
-    "mainDeityHintText": "Enter main deity name",
-    "@mainDeityHintText": {
-        "description": "The hint text displayed on the main deity hint text."
-    },
-    "otherDeitieslabel": "Other Deities ( Seperate using commas )",
-    "@otherDeitieslabel": {
-        "description": "The text displayed on the other deities label."
-    },
-    "otherDeitiesHintText": "Enter other deities names ( Seperate using commas )",
-    "@otherDeitiesHintText": {
-        "description": "The hint text displayed on the other deities hint text."
-    },
-    "managingAuthorityLabel": "Managing Authority",
-    "@managingAuthorityLabel": {
-        "description": "The text displayed on the managing authority label."
-    },
-    "chooseOneLabel": "Choose One",
-    "@chooseOneLabel": {
-        "description": "The text displayed on the choose one label."
-    },
-    "templeSchedulesLabel": "Temple Schedules",
-    "@templeSchedulesLabel": {
-        "description": "The text displayed on the temple schedules label."
-    },
-    "timePickerLabel": "HH:MM",
-    "@timePickerLabel": {
-        "description": "The text displayed on the time picker label."
-    },
-    "morningScheduleLabel": "Morning Schedule",
-    "@morningScheduleLabel": {
-        "description": "The text displayed on the morning schedule label."
-    },
-    "eveningScheduleLabel": "Evening Schedule",
-    "@eveningScheduleLabel": {
-        "description": "The text displayed on the evening schedule label."
-    },
-    "templeDescriptionLabel": "Temple Description",
-    "@templeDescriptionLabel": {
-        "description": "The text displayed on the temple description label."
-    },
-    "templeDescriptionHintText": "Enter temple description",
-    "@templeDescriptionHintText": {
-        "description": "The hint text displayed on the temple description hint text."
-    },
-    "templeRulesLabel": "Temple Rules",
-    "@templeRulesLabel": {
-        "description": "The text displayed on the temple rules label."
-    },
-    "templeRulesHintText": "Enter temple rules",
-    "@templeRulesHintText": {
-        "description": "The hint text displayed on the temple rules hint text."
-    },
-    "devaswomBoardLabel": "Devaswom Board",
-    "@devaswomBoardLabel": {
-        "description": "The text displayed on the devaswom board label."
-    },
-    "privateTrustLabel": "Private Trust",
-    "@privateTrustLabel": {
-        "description": "The text displayed on the private trust label."
-    },
-    "familyTrustLabel": "Family Trust",
-    "@familyTrustLabel": {
-        "description": "The text displayed on the family trust label."
-    },
-    "othersLabel": "Others",
-    "@othersLabel": {
-        "description": "The text displayed on the others label."
-    },
-    "moreDetailsLabel": "More Details",
-    "@moreDetailsLabel": {
-        "description": "The text displayed on the more details label."
-    },
-    "allPoojasCountLabel": "All Poojas ({count})",
-    "@allPoojasCountLabel": {
-        "description": "The text displayed on the all poojas count label.",
-        "placeholders": {
-            "count": {}
-        }
-    },
-    "poojaModeLabel": "Mode: {poojaMode}",
-    "@poojaModeLabel": {
-        "description": "The text displayed on the pooja Mode label.",
-        "placeholders": {
-            "poojaMode": {}
-        }
-    },
-    "poojaPriceLabel": "Price: ₹ {poojaPrice}",
-    "@poojaPriceLabel": {
-        "description": "The text displayed on the pooja price label.",
-        "placeholders": {
-            "poojaPrice": {}
-        }
-    },
-    "addNewPoojaButtonLabel": "Add New Pooja",
-    "@addNewPoojaButtonLabel": {
-        "description": "The text displayed on the add new pooja button."
-    },
-    "addNewPoojaFormTitle": "Add New Pooja",
-    "@addNewPoojaFormTitle": {
-        "description": "The title displayed on the add new pooja form."
-    },
-    "poojaImageLabel": "Pooja Image",
-    "@poojaImageLabel": {
-        "description": "The text displayed on the pooja image label."
-    },
-    "poojaNameLabel": "Pooja Name",
-    "@poojaNameLabel": {
-        "description": "The text displayed on the pooja name label."
-    },
-    "selectPoojaImageLabel": "Select Pooja Image",
-    "@selectPoojaImageLabel": {
-        "description": "The text displayed on the select pooja image label."
-    },
-    "poojaNameHintText": "Enter pooja name",
-    "@poojaNameHintText": {
-        "description": "The hint text displayed on the pooja name hint text."
-    },
-    "pricelabel": "Price (₹)",
-    "@pricelabel": {
-        "description": "The text displayed on the pooja price label."
-    },
-    "poojaPriceHintText": "Enter pooja price",
-    "@poojaPriceHintText": {
-        "description": "The hint text displayed on the pooja price hint text."
-    },
-    "poojaLabel": "Pooja",
-    "@poojaLabel": {
-        "description": "The text displayed on the pooja label."
-    },
-    "poojaTimeHintText": "Choose One",
-    "@poojaTimeHintText": {
-        "description": "The hint text displayed on the pooja time hint text."
-    },
-    "poojaTimeLabel": "Pooja Time",
-    "@poojaTimeLabel": {
-        "description": "The text displayed on the pooja time label."
-    },
-    "morningLabel": "Morning",
-    "@morningLabel": {
-        "description": "The text displayed on the morning label."
-    },
-    "eveningLabel": "Evening",
-    "@eveningLabel": {
-        "description": "The text displayed on the evening label."
-    },
-    "scheduleModeLabel": "Schedule Mode",
-    "@scheduleModeLabel": {
-        "description": "The text displayed on the schedule mode label."
-    },
-    "scheduleModeHintText": "Choose One",
-    "@scheduleModeHintText": {
-        "description": "The hint text displayed on the schedule mode hint text."
-    },
-    "repeatModeLabel": "Repeat Mode",
-    "@repeatModeLabel": {
-        "description": "The text displayed on the repeat mode label."
-    },
-    "onceOnlyModeLabel": "Once Only",
-    "@onceOnlyModeLabel": {
-        "description": "The text displayed on the once only mode label."
-    },
-    "poojaDateAndTimeLabel": "Pooja Date & Time",
-    "@poojaDateAndTimeLabel": {
-        "description": "The text displayed on the pooja date and time label."
-    },
-    "poojaDateAndTimeHintText": "MMM-DD-YYYY • HH:MM • A",
-    "@poojaDateAndTimeHintText": {
-        "description": "The hint text displayed on the pooja date and time hint text."
-    },
-    "deityLabel": "Deity",
-    "@deityLabel": {
-        "description": "The text displayed on the deity label."
-    },
-    "deityHintText": "Choose One Deity",
-    "@deityHintText": {
-        "description": "The hint text displayed on the deity hint text."
-    },
-    "poojaDaysLabel": "Pooja Days",
-    "@poojaDaysLabel": {
-        "description": "The text displayed on the pooja days label."
-    },
-    "specialPoojaLabel": "Special Pooja",
-    "@specialPoojaLabel": {
-        "description": "The text displayed on the special pooja label."
-    },
-    "poojaTypeLabelText": "Type",
-    "@poojaTypeLabelText": {
-        "description": "The text displayed on the pooja type label."
-    },
-    "poojaPurposeHintText": "Enter pooja purpose",
-    "@poojaPurposeHintText": {
-        "description": "The hint text displayed on the pooja purpose hint text."
-    },
-    "poojaPurposeLabel": "Purpose",
-    "@poojaPurposeLabel": {
-        "description": "The text displayed on the pooja purpose label."
-    },
-    "poojaDescriptionLabel": "Description",
-    "@poojaDescriptionLabel": {
-        "description": "The text displayed on the pooja description label."
-    },
-    "poojaDescriptionHintText": "Enter pooja description",
-    "@poojaDescriptionHintText": {
-        "description": "The text displayed on the pooja description hint text."
-    },
-    "uploadButtonLabel": "Upload",
-    "@uploadButtonLabel": {
-        "description": "The text displayed on the upload button."
-    },
-    "templeCommiteeMembersLabel": "Temple Committee Members",
-    "@templeCommiteeMembersLabel": {
-        "description": "The text displayed on the temple committee members label."
-    },
-    "chiefPriestLabel": "Chief Priest",
-    "@chiefPriestLabel": {
-        "description": "The text displayed on the chief priest label."
-    },
-    "nameLabel": "Name",
-    "@nameLabel": {
-        "description": "The text displayed on the name label."
-    },
-    "numberLabel": "Number",
-    "@numberLabel": {
-        "description": "The text displayed on the number label."
-    },
-    "addressLabel": "Address",
-    "@addressLabel": {
-        "description": "The text displayed on the address label."
-    },
-    "addressHintText": "Enter address",
-    "@addressHintText": {
-        "description": "The hint text displayed on the address hint text."
-    },
-    "websiteLinkLabel": "Website Link",
-    "@websiteLinkLabel": {
-        "description": "The text displayed on the website link label."
-    },
-    "websiteLinkHintText": "Enter website link (If any)",
-    "@websiteLinkHintText": {
-        "description": "The hint text displayed on the website link hint text."
-    },
-    "personLabelWithCount": "Person {count}",
-    "@personLabelWithCount": {
-        "description": "The text displayed on the person label.",
-        "placeholders": {
-            "count": {}
-        }
-    },
-    "addMemberButtonTitle": "Add Member",
-    "@addMemberButtonTitle": {
-        "description": "The title displayed on the add member button."
-    },
-    "locationLinkLabel": "Location Link",
-    "@locationLinkLabel": {
-        "description": "The text displayed on the location link label."
-    },
-    "locationLinkHintText": "Enter location link",
-    "@locationLinkHintText": {
-        "description": "The text displayed on the location link hint text."
-    },
-    "notificationsAndAlertsLabel": "Notifications & Alerts",
-    "@notificationsAndAlertsLabel": {
-        "description": "The text displayed on the notifications and alerts label."
-    },
-    "smsNotificationsForDevoteesLabel": "SMS notifications for devotees",
-    "@smsNotificationsForDevoteesLabel": {
-        "description": "The text displayed on the sms notifications for devotees label."
-    },
-    "emailNotificationsForDevoteesLabel": "Email notifications for devotees",
-    "@emailNotificationsForDevoteesLabel": {
-        "description": "The text displayed on the email notifications for devotees label."
-    },
-    "bookingSettingsLabel": "Booking Settings",
-    "@bookingSettingsLabel": {
-        "description": "The text displayed on the booking settings label."
-    },
-    "enableOnlineBookingsLabel": "Enable online bookings",
-    "@enableOnlineBookingsLabel": {
-        "description": "The text displayed on the enable online bookings label."
-    },
-    "advancedBookingLimitLabel": "Advanced booking limit",
-    "@advancedBookingLimitLabel": {
-        "description": "The text displayed on the advanced booking limit label."
-    },
-    "accountSettingsLabel": "Account Settings",
-    "@accountSettingsLabel": {
-        "description": "The text displayed on the account settings label."
-    },
-    "changePasswordLabel": "Change password",
-    "@changePasswordLabel": {
-        "description": "The text displayed on the change password label."
-    },
-    "bankDetailsForPoojaPaymentsLabel": "Bank details for pooja payments",
-    "@bankDetailsForPoojaPaymentsLabel": {
-        "description": "The text displayed on the bank details for pooja payments label."
-    },
-    "daysLabelWithDaysCount": "{daysCount} days",
-    "@daysLabelWithDaysCount": {
-        "description": "The text displayed on the days label.",
-        "placeholders": {
-            "daysCount": {}
-        }
-    },
-    "changeAccountPasswordFormTitle": "Change Account Password",
-    "@changeAccountPasswordFormTitle": {
-        "description": "The title displayed on the change account password form."
-    },
-    "currentPasswordLabel": "Current password",
-    "@currentPasswordLabel": {
-        "description": "The text displayed on the current password label."
-    },
-    "currentPasswordHintText": "Enter current password",
-    "@currentPasswordHintText": {
-        "description": "The text displayed on the current password hint text."
-    },
-    "newPasswordLabel": "New password",
-    "@newPasswordLabel": {
-        "description": "The text displayed on the new password label."
-    },
-    "newPassWordHintText": "Enter new password",
-    "@newPassWordHintText": {
-        "description": "The text displayed on the new password hint text."
-    },
-    "confirmPasswordLabel": "Confirm password",
-    "@confirmPasswordLabel": {
-        "description": "The text displayed on the confirm password label."
-    },
-    "confirmPasswordHintText": "Enter confirm password",
-    "@confirmPasswordHintText": {
-        "description": "The text displayed on the confirm password hint text."
-    },
-    "bankDetailsFormTitle": "Bank Details",
-    "@bankDetailsFormTitle": {
-        "description": "The title displayed on the bank details form."
-    },
-    "bankNameLabel": "Bank name",
-    "@bankNameLabel": {
-        "description": "The text displayed on the bank name label."
-    },
-    "bankNameHintText": "Enter bank name",
-    "@bankNameHintText": {
-        "description": "The text displayed on the bank name hint text."
-    },
-    "accountHolderNameLabel": "Account holder name",
-    "@accountHolderNameLabel": {
-        "description": "The text displayed on the account holder name label."
-    },
-    "accountHolderNameHintText": "Enter account holder name",
-    "@accountHolderNameHintText": {
-        "description": "The text displayed on the account holder name hint text."
-    },
-    "accountNumberLabel": "Account number",
-    "@accountNumberLabel": {
-        "description": "The text displayed on the account number label."
-    },
-    "accountNumberHintText": "Enter account number",
-    "@accountNumberHintText": {
-        "description": "The text displayed on the account number hint text."
-    },
-    "ifscCodeLabel": "IFSC code",
-    "@ifscCodeLabel": {
-        "description": "The text displayed on the ifsc code label."
-    },
-    "ifscCodeHintText": "Enter ifsc code",
-    "@ifscCodeHintText": {
-        "description": "The text displayed on the ifsc code hint text."
-    },
-    "advancedBookingLimitDialogTitle": "Advanced booking limit \n ( Days )",
-    "@advancedBookingLimitDialogTitle": {
-        "description": "The title displayed on the advanced booking limit dialog."
-    },
-    "signoutConfirmationDialogTitle": "Sign out",
-    "@signoutConfirmationDialogTitle": {
-        "description": "The title displayed on the signout confirmation dialog."
-    },
-    "signoutConfirmationDialogDescription": "Are you sure you want to sign out?",
-    "@signoutConfirmationDialogDescription": {
-        "description": "The description displayed on the signout confirmation dialog."
-    },
-    "schedulePoojaAppBarTitle": "Schedule Pooja",
-    "@schedulePoojaAppBarTitle": {
-        "description": "The title displayed on the schedule pooja app bar."
-    },
-    "commonPoojasLabel": "Common Poojas",
-    "@commonPoojasLabel": {
-        "description": "The text displayed on the common poojas label."
-    },
-    "specialPoojasLabel": "Special Poojas",
-    "@specialPoojasLabel": {
-        "description": "The text displayed on the special poojas label."
-    },
-    "scheduleNowButtonLabel": "Schedule Now",
-    "@scheduleNowButtonLabel": {
-        "description": "The text displayed on the schedule now button."
-    },
-    "invalidCredentialsErrorMessage": "Incorrect username or password. Please try again.",
-    "@invalidCredentialsErrorMessage": {
-        "description": "The message displayed when login credentials are incorrect."
-    },
-    "invalidEmailErrorMessage": "Please enter a valid email address.",
-    "@invalidEmailErrorMessage": {
-        "description": "The message displayed when the entered email is invalid."
-    },
-    "userNotFoundErrorMessage": "No account found with this email. Please check and try again.",
-    "@userNotFoundErrorMessage": {
-        "description": "The message displayed when the entered email does not match any account."
-    },
-    "userDisabledErrorMessage": "This account has been disabled. Contact support for assistance.",
-    "@userDisabledErrorMessage": {
-        "description": "The message displayed when a user’s account is disabled."
-    },
-    "operationNotAllowedErrorMessage": "This action is not permitted. Please contact support if you need help.",
-    "@operationNotAllowedErrorMessage": {
-        "description": "The message displayed when a user attempts an unauthorized action."
-    },
-    "tooManyRequestsErrorMessage": "Too many login attempts. Please wait a few minutes before trying again.",
-    "@tooManyRequestsErrorMessage": {
-        "description": "The message displayed when a user exceeds the allowed number of login attempts."
-    },
-    "defaultErrorMessage": "An unexpected error occurred. Please try again later.",
-    "@defaultErrorMessage": {
-        "description": "The message displayed for general errors."
-    },
-    "permissionDeniedErrorMessage": "You do not have permission to perform this action.",
-    "@permissionDeniedErrorMessage": {
-        "description": "The message displayed when a user does not have permission to perform an action."
-    },
-    "notFoundErrorMessage": "The requested resource was not found.",
-    "@notFoundErrorMessage": {
-        "description": "The message displayed when the requested resource is not found."
-    },
-    "alreadyExistsErrorMessage": "The requested resource already exists.",
-    "@alreadyExistsErrorMessage": {
-        "description": "The message displayed when the requested resource already exists."
-    },
-    "cancelledErrorMessage": "The operation was cancelled.",
-    "@cancelledErrorMessage": {
-        "description": "The message displayed when an operation is cancelled."
-    },
-    "deadlineExceededErrorMessage": "The operation exceeded the deadline.",
-    "@deadlineExceededErrorMessage": {
-        "description": "The message displayed when an operation exceeds the deadline."
-    },
-    "unavailableErrorMessage": "The service is currently unavailable. Please try again later.",
-    "@unavailableErrorMessage": {
-        "description": "The message displayed when the service is unavailable."
-    },
-    "abortedErrorMessage": "The operation was aborted.",
-    "@abortedErrorMessage": {
-        "description": "The message displayed when an operation is aborted."
-    },
-    "dataLossErrorMessage": "Data loss occurred. Please try again.",
-    "@dataLossErrorMessage": {
-        "description": "The message displayed when data loss occurs."
-    },
-    "internalErrorMessage": "An internal error occurred. Please try again later.",
-    "@internalErrorMessage": {
-        "description": "The message displayed when an internal error occurs."
-    },
-    "objectNotFoundErrorMessage": "The requested object was not found.",
-    "@objectNotFoundErrorMessage": {
-        "description": "The message displayed when the requested object is not found."
-    },
-    "unAuthorizedErrorMessage": "You are not authorized to perform this action. Please contact support.",
-    "@unAuthorizedErrorMessage": {
-        "description": "The message displayed when a user is not authorized to perform an action."
-    },
-    "unknownErrorMessage": "An unknown error occurred. Please try again later.",
-    "@unknownErrorMessage": {
-        "description": "The message displayed when an unknown error occurs."
-    },
-    "quotaExceededErrorMessage": "The operation exceeded the quota.",
-    "@quotaExceededErrorMessage": {
-        "description": "The message displayed when an operation exceeds the quota."
-    },
-    "templeNameEmptyErrorText": "Temple name cannot be empty",
-    "@templeNameEmptyErrorText": {
-        "description": "The text displayed when the temple name is empty."
-    },
-    "templeNameInvalidErrorText": "Invalid temple name. Please enter a valid name.",
-    "@templeNameInvalidErrorText": {
-        "description": "The text displayed when the temple name is invalid."
-    },
-    "mainDeityNameEmptyErrorText": "Main deity name cannot be empty",
-    "@mainDeityNameEmptyErrorText": {
-        "description": "The text displayed when the main deity name is empty."
-    },
-    "mainDeityNameInvalidErrorText": "Invalid deity name. Please enter a valid name.",
-    "@mainDeityNameInvalidErrorText": {
-        "description": "The text displayed when the main deity name is invalid."
-    },
-    "otherDeitiesEmptyErrorText": "Other deities cannot be empty",
-    "@otherDeitiesEmptyErrorText": {
-        "description": "The text displayed when the other deities are empty."
-    },
-    "managingAuthorityEmptyErrorText": "Choose a managing authority",
-    "@managingAuthorityEmptyErrorText": {
-        "description": "The text displayed when the managing authority is empty."
-    },
-    "morningScheduleEmptyErrorText": "Morning schedule cannot be empty",
-    "@morningScheduleEmptyErrorText": {
-        "description": "The text displayed when the morning schedule is empty."
-    },
-    "eveningScheduleEmptyErrorText": "Evening schedule cannot be empty",
-    "@eveningScheduleEmptyErrorText": {
-        "description": "The text displayed when the evening schedule is empty."
-    },
-    "templeDescriptionEmptyErrorText": "Temple description cannot be empty",
-    "@templeDescriptionEmptyErrorText": {
-        "description": "The text displayed when the temple description is empty."
-    },
-    "templeRulesEmptyErrorText": "Temple rules cannot be empty",
-    "@templeRulesEmptyErrorText": {
-        "description": "The text displayed when the temple rules are empty."
-    },
-    "successMessage": "Success",
-    "@successMessage": {
-        "description": "The text displayed when an operation is successful."
-    },
-    "nameEmptyErrorText": "Name cannot be empty",
-    "@nameEmptyErrorText": {
-        "description": "The text displayed when the name is empty."
-    },
-    "nameInvalidErrorText": "Invalid name. Please enter a valid name.",
-    "@nameInvalidErrorText": {
-        "description": "The text displayed when the name is invalid."
-    },
-    "phoneNumberEmptyErrorText": "Phone number cannot be empty",
-    "@phoneNumberEmptyErrorText": {
-        "description": "The text displayed when the phone number is empty."
-    },
-    "phoneNumberInvalidErrorText": "Invalid phone number. Please enter a valid phone number.",
-    "@phoneNumberInvalidErrorText": {
-        "description": "The text displayed when the phone number is invalid."
-    },
-    "addressEmptyErrorText": "Address cannot be empty",
-    "@addressEmptyErrorText": {
-        "description": "The text displayed when the address is empty."
-    },
-    "locationLinkErrorText": "Location link cannot be empty",
-    "@locationLinkErrorText": {
-        "description": "The text displayed when the location link is empty."
-    },
-    "locationLinkInvalidErrorText": "Invalid location link. Please enter a valid link.",
-    "@locationLinkInvalidErrorText": {
-        "description": "The text displayed when the location link is invalid."
-    },
-    "websiteLinkInvalidErrorText": "Invalid website link. Please enter a valid link.",
-    "@websiteLinkInvalidErrorText": {
-        "description": "The text displayed when the website link is invalid."
-    },
-    "bankNameEmptyErrorText": "Bank name cannot be empty",
-    "@bankNameEmptyErrorText": {
-        "description": "The text displayed when the bank name is empty."
-    },
-    "bankNameInvalidErrorText": "Invalid bank name. Please enter a valid name.",
-    "@bankNameInvalidErrorText": {
-        "description": "The text displayed when the bank name is invalid."
-    },
-    "accountHolderNameEmptyErrorText": "Account holder name cannot be empty",
-    "@accountHolderNameEmptyErrorText": {
-        "description": "The text displayed when the account holder name is empty."
-    },
-    "accountHolderNameInvalidErrorText": "Invalid account holder name. Please enter a valid name.",
-    "@accountHolderNameInvalidErrorText": {
-        "description": "The text displayed when the account holder name is invalid."
-    },
-    "accountNumberEmptyErrorText": "Account number cannot be empty",
-    "@accountNumberEmptyErrorText": {
-        "description": "The text displayed when the account number is empty."
-    },
-    "accountNumberInvalidErrorText": "Please enter a valid bank account number (9 to 18 digits).",
-    "@accountNumberInvalidErrorText": {
-        "description": "The text displayed when the account number is invalid."
-    },
-    "ifscCodeEmptyErrorText": "IFSC code cannot be empty",
-    "@ifscCodeEmptyErrorText": {
-        "description": "The text displayed when the IFSC code is empty."
-    },
-    "ifscCodeInvalidErrorText": "Please enter a valid 11-character IFSC code - (e.g., SBIN0001234).",
-    "@ifscCodeInvalidErrorText": {
-        "description": "The text displayed when the IFSC code is invalid."
-    },
-    "passwordsDoNotMatchErrorText": "Passwords do not match",
-    "@passwordsDoNotMatchErrorText": {
-        "description": "The text displayed when the passwords do not match."
-    },
-    "noImagesInGalleryText": "Nothing here yet. Upload your first image to get started!",
-    "@noImagesInGalleryText": {
-        "description": "The text displayed when there are no images in the gallery."
-    },
-    "deleteImagesConfirmationDialogTitle": "Delete Images",
-    "@deleteImagesConfirmationDialogTitle": {
-        "description": "The title displayed on the delete confirmation dialog."
-    },
-    "deleteImagesConfirmationDialogDescription": "Are you sure you want to delete selected images?",
-    "@deleteImagesConfirmationDialogDescription": {
-        "description": "The description displayed on the delete confirmation dialog."
-    },
-    "noImagesSelectedToDeleteErrorText": "No images selected to delete, Please select aleast one image to delete.",
-    "@noImagesSelectedToDeleteErrorText": {
-        "description": "The text displayed when no images are selected to delete."
-    },
-    "poojaImageNotSelectedErrorText": "Please select a pooja image",
-    "@poojaImageNotSelectedErrorText": {
-        "description": "The text displayed when a pooja image is not selected."
-    },
-    "poojaNameEmptyErrorText": "Pooja name cannot be empty",
-    "@poojaNameEmptyErrorText": {
-        "description": "The text displayed when the pooja name is empty."
-    },
-    "poojaNameDuplicateErrorText": "Pooja name already exists",
-    "@poojaNameDuplicateErrorText": {
-        "description": "The text displayed when the pooja name already exists."
-    },
-    "poojaTypeNotSelectedErrorText": "Please select a pooja type",
-    "@poojaTypeNotSelectedErrorText": {
-        "description": "The text displayed when a pooja type is not selected."
-    },
-    "poojaDescriptionEmptyErrorText": "Pooja description cannot be empty",
-    "@poojaDescriptionEmptyErrorText": {
-        "description": "The text displayed when the pooja description is empty."
-    },
-    "poojaListEmptyText": "No poojas found",
-    "@poojaListEmptyText": {
-        "description": "The text displayed when the pooja list is empty."
-    },
-    "priceEmptyErrorText": "Price cannot be empty",
-    "@priceEmptyErrorText": {
-        "description": "The text displayed when the price is empty."
-    },
-    "deityNotSelectedErrorText": "Please select a deity",
-    "@deityNotSelectedErrorText": {
-        "description": "The text displayed when a deity is not selected."
-    },
-    "scheduleModeNotSelectedErrorText": "Please select a schedule mode",
-    "@scheduleModeNotSelectedErrorText": {
-        "description": "The text displayed when a schedule mode is not selected."
-    },
-    "poojaDaysNotSelectedErrorText": "Please select pooja days",
-    "@poojaDaysNotSelectedErrorText": {
-        "description": "The text displayed when pooja days are not selected."
-    },
-    "poojaTimeNotSelectedErrorText": "Please select pooja time",
-    "@poojaTimeNotSelectedErrorText": {
-        "description": "The text displayed when pooja time is not selected."
-    },
-    "poojaDateTimeEmptyErrorText": "Please select pooja date and time",
-    "@poojaDateTimeEmptyErrorText": {
-        "description": "The text displayed when pooja date and time is empty."
-    },
-    "deleteScheduleConfirmationDialogTitle": "Delete",
-    "@deleteScheduleConfirmationDialogTitle": {
-        "description": "The title displayed on the delete confirmation dialog."
-    },
-    "deleteScheduleConfirmationDialogDescription": "Are you sure you want to delete this pooja schedule?",
-    "@deleteScheduleConfirmationDialogDescription": {
-        "description": "The description displayed on the delete confirmation dialog."
-    },
-    "scheduleListEmptyText": "No pooja schedules found",
-    "@scheduleListEmptyText": {
-        "description": "The text displayed when the pooja schedule list is empty."
+  "@@author": "Vishnu C Prasad",
+  "@@locale": "en",
+  "appLanguage": "English",
+  "@appLanguage": {
+    "description": "The language of the application."
+  },
+  "appName": "Aaraadhya Temple",
+  "@appName": {
+    "description": "The official name of the application, displayed on the home screen, splash screen, and other prominent places."
+  },
+  "signinText": "Sign In",
+  "@signinText": {
+    "description": "The text displayed on the sign-in button & sign-in screen title."
+  },
+  "emailHint": "abc@email.com",
+  "@emailHint": {
+    "description": "The hint text displayed on the email input field."
+  },
+  "passwordHint": "Password",
+  "@passwordHint": {
+    "description": "The hint text displayed on the password input field."
+  },
+  "forgotPasswordQuestion": "Forgot Password?",
+  "@forgotPasswordQuestion": {
+    "description": "The text displayed on the forgot password link."
+  },
+  "forgotPasswordScreenTitle": "Forgot Password",
+  "@forgotPasswordScreenTitle": {
+    "description": "The title displayed on the forgot password screen."
+  },
+  "forgotPasswordScreenSubtitle": "Enter your email address to reset your password.",
+  "@forgotPasswordScreenSubtitle": {
+    "description": "The subtitle displayed on the forgot password screen."
+  },
+  "resetPasswordButtonLabel": "Reset Password",
+  "@resetPasswordButtonLabel": {
+    "description": "The text displayed on the reset password button."
+  },
+  "passwordRestLinkSentSuccessTitle": "Password Reset Link Sent",
+  "@passwordRestLinkSentSuccessTitle": {
+    "description": "The title displayed in the dialog box after sending the password reset link."
+  },
+  "passwordRestLinkSentSuccessMessage": "If an account with this email exists, you will receive a password reset email. Please check your inbox",
+  "@passwordRestLinkSentSuccessMessage": {
+    "description": "The success message displayed in the dialog box after sending the password reset link."
+  },
+  "emptyEmailValidationErorrMessage": "Email cannot be empty",
+  "@emptyEmailValidationErorrMessage": {
+    "description": "The error message displayed when the email field is left empty."
+  },
+  "invalidEmailValidationErorrMessage": "Please enter a valid email",
+  "@invalidEmailValidationErorrMessage": {
+    "description": "The error message displayed when the email field is invalid."
+  },
+  "emptyPasswordValidationErorrMessage": "Password cannot be empty",
+  "@emptyPasswordValidationErorrMessage": {
+    "description": "The error message displayed when the password field is left empty."
+  },
+  "invalidPasswordValidationErorrMessage": "Password must be at least 8 characters long and include at least one letter and one number.",
+  "@invalidPasswordValidationErorrMessage": {
+    "description": "The error message displayed when the password field is invalid."
+  },
+  "dashboardAppBarTitle": "Aaraadhya Admin",
+  "@dashboardAppBarTitle": {
+    "description": "The title displayed on the dashboard app bar."
+  },
+  "todaysDonationsCardTitle": "Today's Donations",
+  "@todaysDonationsCardTitle": {
+    "description": "The title displayed on the today's donations card in dashboard."
+  },
+  "todaysPoojaBookingsCardTitle": "Today's Pooja Bookings",
+  "@todaysPoojaBookingsCardTitle": {
+    "description": "The title displayed on the today's pooja bookings card in dashboard."
+  },
+  "activePoojasCardTitle": "Active Poojas",
+  "@activePoojasCardTitle": {
+    "description": "The title displayed on the active poojas card in dashboard."
+  },
+  "activeEventsCardTitle": "Active Events",
+  "@activeEventsCardTitle": {
+    "description": "The title displayed on the active events card in dashboard."
+  },
+  "quickActionsSectionTitle": "Quick Actions",
+  "@quickActionsSectionTitle": {
+    "description": "The title displayed on the quick actions section in dashboard."
+  },
+  "newPoojaButtonLabel": "New Pooja",
+  "@newPoojaButtonLabel": {
+    "description": "The text displayed on the new pooja button in dashboard."
+  },
+  "newEventButtonLabel": "New Event",
+  "@newEventButtonLabel": {
+    "description": "The text displayed on the new event button in dashboard."
+  },
+  "announcementButtonLabel": "Announcement",
+  "@announcementButtonLabel": {
+    "description": "The text displayed on the announcement button in dashboard."
+  },
+  "todaysBookingsSectionTitle": "Today's Bookings",
+  "@todaysBookingsSectionTitle": {
+    "description": "The title displayed on the today's bookings section in dashboard."
+  },
+  "notificationsSectionTitle": "Notifications",
+  "@notificationsSectionTitle": {
+    "description": "The title displayed on the notifications section in dashboard."
+  },
+  "bookingIdLabel": "Booking ID",
+  "@bookingIdLabel": {
+    "description": "The text displayed on the booking id label in dashboard."
+  },
+  "viewAllButtonLabel": "View All",
+  "@viewAllButtonLabel": {
+    "description": "The text displayed on the view all button in dashboard."
+  },
+  "bookingsManagementAppBarTitle": "Bookings Management",
+  "@bookingsManagementAppBarTitle": {
+    "description": "The title displayed on the bookings management app bar."
+  },
+  "bookingsSectionTitle": "{month} {day} Bookings",
+  "@bookingsSectionTitle": {
+    "description": "The title displayed on the bookings section.",
+    "placeholders": {
+      "month": {},
+      "day": {}
     }
+  },
+  "paymentBadgeLabel": "₹{amount} Paid",
+  "@paymentBadgeLabel": {
+    "description": "The text displayed on the payment badge.",
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "viewDetailsButtonLabel": "View Details",
+  "@viewDetailsButtonLabel": {
+    "description": "The text displayed on the view details button"
+  },
+  "bookingDateAndTimeLabel": "Booking Date & Time",
+  "@bookingDateAndTimeLabel": {
+    "description": "The text displayed on the booking date and time label"
+  },
+  "poojasCount": "{count} Poojas",
+  "@poojasCount": {
+    "description": "The text displayed on the poojas count label",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "poojaDetailsSectionTitle": "Pooja Details",
+  "@poojaDetailsSectionTitle": {
+    "description": "The title displayed on the pooja details section."
+  },
+  "amountLabel": "₹ {amount}",
+  "@amountLabel": {
+    "description": "The text displayed on the amount label.",
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "hideDetailsButtonLabel": "Hide Details",
+  "@hideDetailsButtonLabel": {
+    "description": "The text displayed on the hide details button."
+  },
+  "confirmedBadgeLabel": "Confirmed",
+  "@confirmedBadgeLabel": {
+    "description": "The text displayed on the confirmed badge."
+  },
+  "handedOverBadgeLabel": "Handed Over",
+  "@handedOverBadgeLabel": {
+    "description": "The text displayed on the handed over badge."
+  },
+  "completedBadgeLabel": "Completed",
+  "@completedBadgeLabel": {
+    "description": "The text displayed on the completed badge."
+  },
+  "canceledBadgeLabel": "Cancelled",
+  "@canceledBadgeLabel": {
+    "description": "The text displayed on the canceled badge."
+  },
+  "allBoookingsLabelWithCount": "All Bookings ({count})",
+  "@allBoookingsLabelWithCount": {
+    "description": "The text displayed on the all bookings label with count.",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "newPoojaBookingNotificationTitle": "New Pooja Booking",
+  "@newPoojaBookingNotificationTitle": {
+    "description": "The title displayed on the new pooja booking notification."
+  },
+  "newPoojaBookingNotificationDescription": "{name} has successfully ordered {count} Poojas from the temple.",
+  "@newPoojaBookingNotificationDescription": {
+    "description": "The description displayed on the new pooja booking notification.",
+    "placeholders": {
+      "name": {},
+      "count": {}
+    }
+  },
+  "donationsManagementAppBarTitle": "Donations Management",
+  "@donationsManagementAppBarTitle": {
+    "description": "The title displayed on the donations management app bar."
+  },
+  "donationsSectionTitle": "{month} {day} Donations",
+  "@donationsSectionTitle": {
+    "description": "The title displayed on the donations section.",
+    "placeholders": {
+      "month": {},
+      "day": {}
+    }
+  },
+  "donationDateAndTimeLabel": "Donation Date & Time",
+  "@donationDateAndTimeLabel": {
+    "description": "The text displayed on the donation date and time label."
+  },
+  "transactionIdLabel": "Transaction ID",
+  "@transactionIdLabel": {
+    "description": "The text displayed on the transaction id label."
+  },
+  "donationDetailsSectionTitle": "Donation Details",
+  "@donationDetailsSectionTitle": {
+    "description": "The title displayed on the donation details section."
+  },
+  "donationPurposeLabel": "Donation Purpose",
+  "@donationPurposeLabel": {
+    "description": "The text displayed on the donation purpose label."
+  },
+  "statusLabel": "Status",
+  "@statusLabel": {
+    "description": "The text displayed on the status label."
+  },
+  "paymentMethodLabel": "Payment Method",
+  "@paymentMethodLabel": {
+    "description": "The text displayed on the payment method label."
+  },
+  "taxExemptionReceiptSectionTitle": "Tax Exemption Receipt",
+  "@taxExemptionReceiptSectionTitle": {
+    "description": "The title displayed on the tax exemption receipt section."
+  },
+  "receiptNumberLabel": "Receipt Number",
+  "@receiptNumberLabel": {
+    "description": "The text displayed on the receipt number label."
+  },
+  "taxExemptionReceiptSectionDescription": "This receipt can be used for tax exemption under Section 80G.",
+  "@taxExemptionReceiptSectionDescription": {
+    "description": "The description displayed on the tax exemption receipt section."
+  },
+  "shareTaxReceiptButtonLabel": "Share Tax Receipt",
+  "@shareTaxReceiptButtonLabel": {
+    "description": "The text displayed on the share tax receipt button."
+  },
+  "printButtonLabel": "Print",
+  "@printButtonLabel": {
+    "description": "The text displayed on the print button."
+  },
+  "eventsManagementAppBarTitle": "Events Management",
+  "@eventsManagementAppBarTitle": {
+    "description": "The title displayed on the events management app bar."
+  },
+  "allEventsLabelWithCount": "All Events ({count})",
+  "@allEventsLabelWithCount": {
+    "description": "The text displayed on the all events label with count.",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "allEventsLabel": "All",
+  "@allEventsLabel": {
+    "description": "The text displayed on the all events label."
+  },
+  "upcomingEventsLabel": "Upcoming",
+  "@upcomingEventsLabel": {
+    "description": "The text displayed on the upcoming events label."
+  },
+  "previousEventsLabel": "Previous",
+  "@previousEventsLabel": {
+    "description": "The text displayed on the previous events label."
+  },
+  "eventsSectionTitle": "{filter} Events",
+  "@eventsSectionTitle": {
+    "description": "The title displayed on the events section.",
+    "placeholders": {
+      "filter": {}
+    }
+  },
+  "eventDetailsSectionTitle": "Event Details",
+  "@eventDetailsSectionTitle": {
+    "description": "The title displayed on the event details section."
+  },
+  "eventDateAndTimeLabel": "Event Date & Time",
+  "@eventDateAndTimeLabel": {
+    "description": "The text displayed on the event date and time label."
+  },
+  "eventIdLabel": "Event ID",
+  "@eventIdLabel": {
+    "description": "The text displayed on the event id label."
+  },
+  "eventTypeLabel": "Type",
+  "@eventTypeLabel": {
+    "description": "The text displayed on the event type label."
+  },
+  "eventDescriptionLabel": "Description",
+  "@eventDescriptionLabel": {
+    "description": "The text displayed on the event description label."
+  },
+  "eventDescriptionHintText": "Enter event description",
+  "@eventDescriptionHintText": {
+    "description": "The hint text displayed on the event description hint text."
+  },
+  "eventLocationLabel": "Location",
+  "@eventLocationLabel": {
+    "description": "The text displayed on the event location label."
+  },
+  "eventLocationHintText": "Enter event location",
+  "@eventLocationHintText": {
+    "description": "The hint text displayed on the event location hint text."
+  },
+  "eventRegistrationsCountLabel": "Registrations Count",
+  "@eventRegistrationsCountLabel": {
+    "description": "The text displayed on the event registrations count label."
+  },
+  "registrationsCount": "{count} Registrations",
+  "@registrationsCount": {
+    "description": "The text displayed as the registrations count.",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "registrationsButtonLabel": "Registrations ({count})",
+  "@registrationsButtonLabel": {
+    "description": "The text displayed on the registrations button.",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "viewRegistrationsButtonLabel": "View Registrations",
+  "@viewRegistrationsButtonLabel": {
+    "description": "The text displayed on the view registrations button."
+  },
+  "editButtonLabel": "Edit",
+  "@editButtonLabel": {
+    "description": "The text displayed on the edit button."
+  },
+  "deleteButtonLabel": "Delete",
+  "@deleteButtonLabel": {
+    "description": "The text displayed on the delete button."
+  },
+  "activeBadgeLabel": "Active",
+  "@activeBadgeLabel": {
+    "description": "The text displayed on the active badge."
+  },
+  "inactiveBadgeLabel": "Inactive",
+  "@inactiveBadgeLabel": {
+    "description": "The text displayed on the inactive badge."
+  },
+  "moreOptionsAppBarTitle": "More Options",
+  "@moreOptionsAppBarTitle": {
+    "description": "The title displayed on the more options app bar."
+  },
+  "versionLabel": "Version",
+  "@versionLabel": {
+    "description": "The text displayed on the version label."
+  },
+  "appLanguageTileLabel": "App Language",
+  "@appLanguageTileLabel": {
+    "description": "The text displayed on the app language tile."
+  },
+  "aboutTileLabel": "About",
+  "@aboutTileLabel": {
+    "description": "The text displayed on the about tile."
+  },
+  "privacyPolicyTileLabel": "Privacy Policy",
+  "@privacyPolicyTileLabel": {
+    "description": "The text displayed on the privacy policy tile."
+  },
+  "termsAndConditionsTileLabel": "Terms & Conditions",
+  "@termsAndConditionsTileLabel": {
+    "description": "The text displayed on the terms and conditions tile."
+  },
+  "signOutTileLabel": "Sign Out",
+  "@signOutTileLabel": {
+    "description": "The text displayed on the sign out tile."
+  },
+  "addNewEventFormTitle": "Add New Event",
+  "@addNewEventFormTitle": {
+    "description": "The title displayed on the add new event form."
+  },
+  "eventNameLabel": "Event Name",
+  "@eventNameLabel": {
+    "description": "The text displayed on the event name label."
+  },
+  "eventNameHintText": "Enter event name",
+  "@eventNameHintText": {
+    "description": "The hint text displayed on the event name hint text."
+  },
+  "saveButtonLabel": "Save",
+  "@saveButtonLabel": {
+    "description": "The text displayed on the save button."
+  },
+  "cancelButtonLabel": "Cancel",
+  "@cancelButtonLabel": {
+    "description": "The text displayed on the cancel button."
+  },
+  "closeButtonLabel": "Close",
+  "@closeButtonLabel": {
+    "description": "The text displayed on the close button."
+  },
+  "registrationsOpenLabel": "Registrations Open",
+  "@registrationsOpenLabel": {
+    "description": "The text displayed on the registrations open label."
+  },
+  "registrationsClosedLabel": "Registrations Closed",
+  "@registrationsClosedLabel": {
+    "description": "The text displayed on the registrations closed label."
+  },
+  "viewRegistrationsAppBarTitle": "Registrations",
+  "@viewRegistrationsAppBarTitle": {
+    "description": "The title displayed on the view registrations app bar."
+  },
+  "searchLabel": "Search",
+  "@searchLabel": {
+    "description": "The text displayed on the search label."
+  },
+  "familyMembersCount": "{count} Family Members",
+  "@familyMembersCount": {
+    "description": "The text displayed as the family members count.",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "profileSettingsAppBarTitle": "Profile Settings",
+  "@profileSettingsAppBarTitle": {
+    "description": "The title displayed on the profile settings app bar."
+  },
+  "basicTabLabel": "Basic",
+  "@basicTabLabel": {
+    "description": "The text displayed on the basic tab."
+  },
+  "poojasTabLabel": "Poojas",
+  "@poojasTabLabel": {
+    "description": "The text displayed on the poojas tab."
+  },
+  "galleryTabLabel": "Gallery",
+  "@galleryTabLabel": {
+    "description": "The text displayed on the gallery tab."
+  },
+  "contactTabLabel": "Contact",
+  "@contactTabLabel": {
+    "description": "The text displayed on the contact tab."
+  },
+  "advancedTabLabel": "Advanced",
+  "@advancedTabLabel": {
+    "description": "The text displayed on the advanced tab."
+  },
+  "profilePictureLabel": "Profile Picture",
+  "@profilePictureLabel": {
+    "description": "The text displayed on the profile picture label."
+  },
+  "uploadNewImageLabel": "Upload New Image",
+  "@uploadNewImageLabel": {
+    "description": "The text displayed on the upload new image label."
+  },
+  "imageTypeAndSizeLabel": "JPG, PNG (Max 5MB)",
+  "@imageTypeAndSizeLabel": {
+    "description": "The text displayed on the image type and size label."
+  },
+  "templeBasicDetailsLabel": " Temple Basic Details",
+  "@templeBasicDetailsLabel": {
+    "description": "The text displayed on the temple basic details label."
+  },
+  "templeNameLabel": "Temple Name",
+  "@templeNameLabel": {
+    "description": "The text displayed on the temple name label."
+  },
+  "templeNameHintText": "Enter temple name",
+  "@templeNameHintText": {
+    "description": "The hint text displayed on the temple name hint text."
+  },
+  "mainDeityLabel": "Main Deity",
+  "@mainDeityLabel": {
+    "description": "The text displayed on the main deity label."
+  },
+  "mainDeityHintText": "Enter main deity name",
+  "@mainDeityHintText": {
+    "description": "The hint text displayed on the main deity hint text."
+  },
+  "otherDeitieslabel": "Other Deities ( Seperate using commas )",
+  "@otherDeitieslabel": {
+    "description": "The text displayed on the other deities label."
+  },
+  "otherDeitiesHintText": "Enter other deities names ( Seperate using commas )",
+  "@otherDeitiesHintText": {
+    "description": "The hint text displayed on the other deities hint text."
+  },
+  "managingAuthorityLabel": "Managing Authority",
+  "@managingAuthorityLabel": {
+    "description": "The text displayed on the managing authority label."
+  },
+  "chooseOneLabel": "Choose One",
+  "@chooseOneLabel": {
+    "description": "The text displayed on the choose one label."
+  },
+  "templeSchedulesLabel": "Temple Schedules",
+  "@templeSchedulesLabel": {
+    "description": "The text displayed on the temple schedules label."
+  },
+  "timePickerLabel": "HH:MM",
+  "@timePickerLabel": {
+    "description": "The text displayed on the time picker label."
+  },
+  "morningScheduleLabel": "Morning Schedule",
+  "@morningScheduleLabel": {
+    "description": "The text displayed on the morning schedule label."
+  },
+  "eveningScheduleLabel": "Evening Schedule",
+  "@eveningScheduleLabel": {
+    "description": "The text displayed on the evening schedule label."
+  },
+  "templeAmenitiesLabel": "Temple Amenities ( Seperate using commas )",
+  "@templeAmenitiesLabel": {
+    "description": "The text displayed on the temple amenities label."
+  },
+  "templeAmenitiesHintText": "Enter temple amenities",
+  "@templeAmenitiesHintText": {
+    "description": "The hint text displayed on the temple amenities hint text."
+  },
+  "templeDescriptionLabel": "Temple Description",
+  "@templeDescriptionLabel": {
+    "description": "The text displayed on the temple description label."
+  },
+  "templeDescriptionHintText": "Enter temple description",
+  "@templeDescriptionHintText": {
+    "description": "The hint text displayed on the temple description hint text."
+  },
+  "templeRulesLabel": "Temple Rules",
+  "@templeRulesLabel": {
+    "description": "The text displayed on the temple rules label."
+  },
+  "templeRulesHintText": "Enter temple rules",
+  "@templeRulesHintText": {
+    "description": "The hint text displayed on the temple rules hint text."
+  },
+  "devaswomBoardLabel": "Devaswom Board",
+  "@devaswomBoardLabel": {
+    "description": "The text displayed on the devaswom board label."
+  },
+  "privateTrustLabel": "Private Trust",
+  "@privateTrustLabel": {
+    "description": "The text displayed on the private trust label."
+  },
+  "familyTrustLabel": "Family Trust",
+  "@familyTrustLabel": {
+    "description": "The text displayed on the family trust label."
+  },
+  "othersLabel": "Others",
+  "@othersLabel": {
+    "description": "The text displayed on the others label."
+  },
+  "moreDetailsLabel": "More Details",
+  "@moreDetailsLabel": {
+    "description": "The text displayed on the more details label."
+  },
+  "allPoojasCountLabel": "All Poojas ({count})",
+  "@allPoojasCountLabel": {
+    "description": "The text displayed on the all poojas count label.",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "poojaModeLabel": "Mode: {poojaMode}",
+  "@poojaModeLabel": {
+    "description": "The text displayed on the pooja Mode label.",
+    "placeholders": {
+      "poojaMode": {}
+    }
+  },
+  "poojaPriceLabel": "Price: ₹ {poojaPrice}",
+  "@poojaPriceLabel": {
+    "description": "The text displayed on the pooja price label.",
+    "placeholders": {
+      "poojaPrice": {}
+    }
+  },
+  "addNewPoojaButtonLabel": "Add New Pooja",
+  "@addNewPoojaButtonLabel": {
+    "description": "The text displayed on the add new pooja button."
+  },
+  "addNewPoojaFormTitle": "Add New Pooja",
+  "@addNewPoojaFormTitle": {
+    "description": "The title displayed on the add new pooja form."
+  },
+  "poojaImageLabel": "Pooja Image",
+  "@poojaImageLabel": {
+    "description": "The text displayed on the pooja image label."
+  },
+  "poojaNameLabel": "Pooja Name",
+  "@poojaNameLabel": {
+    "description": "The text displayed on the pooja name label."
+  },
+  "selectPoojaImageLabel": "Select Pooja Image",
+  "@selectPoojaImageLabel": {
+    "description": "The text displayed on the select pooja image label."
+  },
+  "poojaNameHintText": "Enter pooja name",
+  "@poojaNameHintText": {
+    "description": "The hint text displayed on the pooja name hint text."
+  },
+  "pricelabel": "Price (₹)",
+  "@pricelabel": {
+    "description": "The text displayed on the pooja price label."
+  },
+  "poojaPriceHintText": "Enter pooja price",
+  "@poojaPriceHintText": {
+    "description": "The hint text displayed on the pooja price hint text."
+  },
+  "poojaLabel": "Pooja",
+  "@poojaLabel": {
+    "description": "The text displayed on the pooja label."
+  },
+  "poojaTimeHintText": "Choose One",
+  "@poojaTimeHintText": {
+    "description": "The hint text displayed on the pooja time hint text."
+  },
+  "poojaTimeLabel": "Pooja Time",
+  "@poojaTimeLabel": {
+    "description": "The text displayed on the pooja time label."
+  },
+  "morningLabel": "Morning",
+  "@morningLabel": {
+    "description": "The text displayed on the morning label."
+  },
+  "eveningLabel": "Evening",
+  "@eveningLabel": {
+    "description": "The text displayed on the evening label."
+  },
+  "scheduleModeLabel": "Schedule Mode",
+  "@scheduleModeLabel": {
+    "description": "The text displayed on the schedule mode label."
+  },
+  "scheduleModeHintText": "Choose One",
+  "@scheduleModeHintText": {
+    "description": "The hint text displayed on the schedule mode hint text."
+  },
+  "repeatModeLabel": "Repeat Mode",
+  "@repeatModeLabel": {
+    "description": "The text displayed on the repeat mode label."
+  },
+  "onceOnlyModeLabel": "Once Only",
+  "@onceOnlyModeLabel": {
+    "description": "The text displayed on the once only mode label."
+  },
+  "poojaDateAndTimeLabel": "Pooja Date & Time",
+  "@poojaDateAndTimeLabel": {
+    "description": "The text displayed on the pooja date and time label."
+  },
+  "poojaDateAndTimeHintText": "MMM-DD-YYYY • HH:MM • A",
+  "@poojaDateAndTimeHintText": {
+    "description": "The hint text displayed on the pooja date and time hint text."
+  },
+  "deityLabel": "Deity",
+  "@deityLabel": {
+    "description": "The text displayed on the deity label."
+  },
+  "deityHintText": "Choose One Deity",
+  "@deityHintText": {
+    "description": "The hint text displayed on the deity hint text."
+  },
+  "poojaDaysLabel": "Pooja Days",
+  "@poojaDaysLabel": {
+    "description": "The text displayed on the pooja days label."
+  },
+  "specialPoojaLabel": "Special Pooja",
+  "@specialPoojaLabel": {
+    "description": "The text displayed on the special pooja label."
+  },
+  "poojaTypeLabelText": "Type",
+  "@poojaTypeLabelText": {
+    "description": "The text displayed on the pooja type label."
+  },
+  "poojaPurposeHintText": "Enter pooja purpose",
+  "@poojaPurposeHintText": {
+    "description": "The hint text displayed on the pooja purpose hint text."
+  },
+  "poojaPurposeLabel": "Purpose",
+  "@poojaPurposeLabel": {
+    "description": "The text displayed on the pooja purpose label."
+  },
+  "poojaDescriptionLabel": "Description",
+  "@poojaDescriptionLabel": {
+    "description": "The text displayed on the pooja description label."
+  },
+  "poojaDescriptionHintText": "Enter pooja description",
+  "@poojaDescriptionHintText": {
+    "description": "The text displayed on the pooja description hint text."
+  },
+  "uploadButtonLabel": "Upload",
+  "@uploadButtonLabel": {
+    "description": "The text displayed on the upload button."
+  },
+  "templeCommiteeMembersLabel": "Temple Committee Members",
+  "@templeCommiteeMembersLabel": {
+    "description": "The text displayed on the temple committee members label."
+  },
+  "chiefPriestLabel": "Chief Priest",
+  "@chiefPriestLabel": {
+    "description": "The text displayed on the chief priest label."
+  },
+  "nameLabel": "Name",
+  "@nameLabel": {
+    "description": "The text displayed on the name label."
+  },
+  "numberLabel": "Number",
+  "@numberLabel": {
+    "description": "The text displayed on the number label."
+  },
+  "addressLabel": "Address",
+  "@addressLabel": {
+    "description": "The text displayed on the address label."
+  },
+  "addressHintText": "Enter address",
+  "@addressHintText": {
+    "description": "The hint text displayed on the address hint text."
+  },
+  "websiteLinkLabel": "Website Link",
+  "@websiteLinkLabel": {
+    "description": "The text displayed on the website link label."
+  },
+  "websiteLinkHintText": "Enter website link (If any)",
+  "@websiteLinkHintText": {
+    "description": "The hint text displayed on the website link hint text."
+  },
+  "personLabelWithCount": "Person {count}",
+  "@personLabelWithCount": {
+    "description": "The text displayed on the person label.",
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "addMemberButtonTitle": "Add Member",
+  "@addMemberButtonTitle": {
+    "description": "The title displayed on the add member button."
+  },
+  "locationLinkLabel": "Location Link",
+  "@locationLinkLabel": {
+    "description": "The text displayed on the location link label."
+  },
+  "locationLinkHintText": "Enter location link",
+  "@locationLinkHintText": {
+    "description": "The text displayed on the location link hint text."
+  },
+  "notificationsAndAlertsLabel": "Notifications & Alerts",
+  "@notificationsAndAlertsLabel": {
+    "description": "The text displayed on the notifications and alerts label."
+  },
+  "smsNotificationsForDevoteesLabel": "SMS notifications for devotees",
+  "@smsNotificationsForDevoteesLabel": {
+    "description": "The text displayed on the sms notifications for devotees label."
+  },
+  "emailNotificationsForDevoteesLabel": "Email notifications for devotees",
+  "@emailNotificationsForDevoteesLabel": {
+    "description": "The text displayed on the email notifications for devotees label."
+  },
+  "bookingSettingsLabel": "Booking Settings",
+  "@bookingSettingsLabel": {
+    "description": "The text displayed on the booking settings label."
+  },
+  "enableOnlineBookingsLabel": "Enable online bookings",
+  "@enableOnlineBookingsLabel": {
+    "description": "The text displayed on the enable online bookings label."
+  },
+  "advancedBookingLimitLabel": "Advanced booking limit",
+  "@advancedBookingLimitLabel": {
+    "description": "The text displayed on the advanced booking limit label."
+  },
+  "accountSettingsLabel": "Account Settings",
+  "@accountSettingsLabel": {
+    "description": "The text displayed on the account settings label."
+  },
+  "changePasswordLabel": "Change password",
+  "@changePasswordLabel": {
+    "description": "The text displayed on the change password label."
+  },
+  "bankDetailsForPoojaPaymentsLabel": "Bank details for pooja payments",
+  "@bankDetailsForPoojaPaymentsLabel": {
+    "description": "The text displayed on the bank details for pooja payments label."
+  },
+  "daysLabelWithDaysCount": "{daysCount} days",
+  "@daysLabelWithDaysCount": {
+    "description": "The text displayed on the days label.",
+    "placeholders": {
+      "daysCount": {}
+    }
+  },
+  "changeAccountPasswordFormTitle": "Change Account Password",
+  "@changeAccountPasswordFormTitle": {
+    "description": "The title displayed on the change account password form."
+  },
+  "currentPasswordLabel": "Current password",
+  "@currentPasswordLabel": {
+    "description": "The text displayed on the current password label."
+  },
+  "currentPasswordHintText": "Enter current password",
+  "@currentPasswordHintText": {
+    "description": "The text displayed on the current password hint text."
+  },
+  "newPasswordLabel": "New password",
+  "@newPasswordLabel": {
+    "description": "The text displayed on the new password label."
+  },
+  "newPassWordHintText": "Enter new password",
+  "@newPassWordHintText": {
+    "description": "The text displayed on the new password hint text."
+  },
+  "confirmPasswordLabel": "Confirm password",
+  "@confirmPasswordLabel": {
+    "description": "The text displayed on the confirm password label."
+  },
+  "confirmPasswordHintText": "Enter confirm password",
+  "@confirmPasswordHintText": {
+    "description": "The text displayed on the confirm password hint text."
+  },
+  "bankDetailsFormTitle": "Bank Details",
+  "@bankDetailsFormTitle": {
+    "description": "The title displayed on the bank details form."
+  },
+  "bankNameLabel": "Bank name",
+  "@bankNameLabel": {
+    "description": "The text displayed on the bank name label."
+  },
+  "bankNameHintText": "Enter bank name",
+  "@bankNameHintText": {
+    "description": "The text displayed on the bank name hint text."
+  },
+  "accountHolderNameLabel": "Account holder name",
+  "@accountHolderNameLabel": {
+    "description": "The text displayed on the account holder name label."
+  },
+  "accountHolderNameHintText": "Enter account holder name",
+  "@accountHolderNameHintText": {
+    "description": "The text displayed on the account holder name hint text."
+  },
+  "accountNumberLabel": "Account number",
+  "@accountNumberLabel": {
+    "description": "The text displayed on the account number label."
+  },
+  "accountNumberHintText": "Enter account number",
+  "@accountNumberHintText": {
+    "description": "The text displayed on the account number hint text."
+  },
+  "ifscCodeLabel": "IFSC code",
+  "@ifscCodeLabel": {
+    "description": "The text displayed on the ifsc code label."
+  },
+  "ifscCodeHintText": "Enter ifsc code",
+  "@ifscCodeHintText": {
+    "description": "The text displayed on the ifsc code hint text."
+  },
+  "advancedBookingLimitDialogTitle": "Advanced booking limit \n ( Days )",
+  "@advancedBookingLimitDialogTitle": {
+    "description": "The title displayed on the advanced booking limit dialog."
+  },
+  "signoutConfirmationDialogTitle": "Sign out",
+  "@signoutConfirmationDialogTitle": {
+    "description": "The title displayed on the signout confirmation dialog."
+  },
+  "signoutConfirmationDialogDescription": "Are you sure you want to sign out?",
+  "@signoutConfirmationDialogDescription": {
+    "description": "The description displayed on the signout confirmation dialog."
+  },
+  "schedulePoojaAppBarTitle": "Schedule Pooja",
+  "@schedulePoojaAppBarTitle": {
+    "description": "The title displayed on the schedule pooja app bar."
+  },
+  "commonPoojasLabel": "Common Poojas",
+  "@commonPoojasLabel": {
+    "description": "The text displayed on the common poojas label."
+  },
+  "specialPoojasLabel": "Special Poojas",
+  "@specialPoojasLabel": {
+    "description": "The text displayed on the special poojas label."
+  },
+  "scheduleNowButtonLabel": "Schedule Now",
+  "@scheduleNowButtonLabel": {
+    "description": "The text displayed on the schedule now button."
+  },
+  "invalidCredentialsErrorMessage": "Incorrect username or password. Please try again.",
+  "@invalidCredentialsErrorMessage": {
+    "description": "The message displayed when login credentials are incorrect."
+  },
+  "invalidEmailErrorMessage": "Please enter a valid email address.",
+  "@invalidEmailErrorMessage": {
+    "description": "The message displayed when the entered email is invalid."
+  },
+  "userNotFoundErrorMessage": "No account found with this email. Please check and try again.",
+  "@userNotFoundErrorMessage": {
+    "description": "The message displayed when the entered email does not match any account."
+  },
+  "userDisabledErrorMessage": "This account has been disabled. Contact support for assistance.",
+  "@userDisabledErrorMessage": {
+    "description": "The message displayed when a user’s account is disabled."
+  },
+  "operationNotAllowedErrorMessage": "This action is not permitted. Please contact support if you need help.",
+  "@operationNotAllowedErrorMessage": {
+    "description": "The message displayed when a user attempts an unauthorized action."
+  },
+  "tooManyRequestsErrorMessage": "Too many login attempts. Please wait a few minutes before trying again.",
+  "@tooManyRequestsErrorMessage": {
+    "description": "The message displayed when a user exceeds the allowed number of login attempts."
+  },
+  "defaultErrorMessage": "An unexpected error occurred. Please try again later.",
+  "@defaultErrorMessage": {
+    "description": "The message displayed for general errors."
+  },
+  "permissionDeniedErrorMessage": "You do not have permission to perform this action.",
+  "@permissionDeniedErrorMessage": {
+    "description": "The message displayed when a user does not have permission to perform an action."
+  },
+  "notFoundErrorMessage": "The requested resource was not found.",
+  "@notFoundErrorMessage": {
+    "description": "The message displayed when the requested resource is not found."
+  },
+  "alreadyExistsErrorMessage": "The requested resource already exists.",
+  "@alreadyExistsErrorMessage": {
+    "description": "The message displayed when the requested resource already exists."
+  },
+  "cancelledErrorMessage": "The operation was cancelled.",
+  "@cancelledErrorMessage": {
+    "description": "The message displayed when an operation is cancelled."
+  },
+  "deadlineExceededErrorMessage": "The operation exceeded the deadline.",
+  "@deadlineExceededErrorMessage": {
+    "description": "The message displayed when an operation exceeds the deadline."
+  },
+  "unavailableErrorMessage": "The service is currently unavailable. Please try again later.",
+  "@unavailableErrorMessage": {
+    "description": "The message displayed when the service is unavailable."
+  },
+  "abortedErrorMessage": "The operation was aborted.",
+  "@abortedErrorMessage": {
+    "description": "The message displayed when an operation is aborted."
+  },
+  "dataLossErrorMessage": "Data loss occurred. Please try again.",
+  "@dataLossErrorMessage": {
+    "description": "The message displayed when data loss occurs."
+  },
+  "internalErrorMessage": "An internal error occurred. Please try again later.",
+  "@internalErrorMessage": {
+    "description": "The message displayed when an internal error occurs."
+  },
+  "objectNotFoundErrorMessage": "The requested object was not found.",
+  "@objectNotFoundErrorMessage": {
+    "description": "The message displayed when the requested object is not found."
+  },
+  "unAuthorizedErrorMessage": "You are not authorized to perform this action. Please contact support.",
+  "@unAuthorizedErrorMessage": {
+    "description": "The message displayed when a user is not authorized to perform an action."
+  },
+  "unknownErrorMessage": "An unknown error occurred. Please try again later.",
+  "@unknownErrorMessage": {
+    "description": "The message displayed when an unknown error occurs."
+  },
+  "quotaExceededErrorMessage": "The operation exceeded the quota.",
+  "@quotaExceededErrorMessage": {
+    "description": "The message displayed when an operation exceeds the quota."
+  },
+  "templeNameEmptyErrorText": "Temple name cannot be empty",
+  "@templeNameEmptyErrorText": {
+    "description": "The text displayed when the temple name is empty."
+  },
+  "templeNameInvalidErrorText": "Invalid temple name. Please enter a valid name.",
+  "@templeNameInvalidErrorText": {
+    "description": "The text displayed when the temple name is invalid."
+  },
+  "mainDeityNameEmptyErrorText": "Main deity name cannot be empty",
+  "@mainDeityNameEmptyErrorText": {
+    "description": "The text displayed when the main deity name is empty."
+  },
+  "mainDeityNameInvalidErrorText": "Invalid deity name. Please enter a valid name.",
+  "@mainDeityNameInvalidErrorText": {
+    "description": "The text displayed when the main deity name is invalid."
+  },
+  "otherDeitiesEmptyErrorText": "Other deities cannot be empty",
+  "@otherDeitiesEmptyErrorText": {
+    "description": "The text displayed when the other deities are empty."
+  },
+  "managingAuthorityEmptyErrorText": "Choose a managing authority",
+  "@managingAuthorityEmptyErrorText": {
+    "description": "The text displayed when the managing authority is empty."
+  },
+  "morningScheduleEmptyErrorText": "Morning schedule cannot be empty",
+  "@morningScheduleEmptyErrorText": {
+    "description": "The text displayed when the morning schedule is empty."
+  },
+  "eveningScheduleEmptyErrorText": "Evening schedule cannot be empty",
+  "@eveningScheduleEmptyErrorText": {
+    "description": "The text displayed when the evening schedule is empty."
+  },
+  "templeAmenitiesEmptyErrorText": "Temple amenities cannot be empty",
+  "@templeAmenitiesEmptyErrorText": {
+    "description": "The text displayed when the temple amenities are empty."
+  },
+  "templeDescriptionEmptyErrorText": "Temple description cannot be empty",
+  "@templeDescriptionEmptyErrorText": {
+    "description": "The text displayed when the temple description is empty."
+  },
+  "templeRulesEmptyErrorText": "Temple rules cannot be empty",
+  "@templeRulesEmptyErrorText": {
+    "description": "The text displayed when the temple rules are empty."
+  },
+  "successMessage": "Success",
+  "@successMessage": {
+    "description": "The text displayed when an operation is successful."
+  },
+  "nameEmptyErrorText": "Name cannot be empty",
+  "@nameEmptyErrorText": {
+    "description": "The text displayed when the name is empty."
+  },
+  "nameInvalidErrorText": "Invalid name. Please enter a valid name.",
+  "@nameInvalidErrorText": {
+    "description": "The text displayed when the name is invalid."
+  },
+  "phoneNumberEmptyErrorText": "Phone number cannot be empty",
+  "@phoneNumberEmptyErrorText": {
+    "description": "The text displayed when the phone number is empty."
+  },
+  "phoneNumberInvalidErrorText": "Invalid phone number. Please enter a valid phone number.",
+  "@phoneNumberInvalidErrorText": {
+    "description": "The text displayed when the phone number is invalid."
+  },
+  "addressEmptyErrorText": "Address cannot be empty",
+  "@addressEmptyErrorText": {
+    "description": "The text displayed when the address is empty."
+  },
+  "locationLinkErrorText": "Location link cannot be empty",
+  "@locationLinkErrorText": {
+    "description": "The text displayed when the location link is empty."
+  },
+  "locationLinkInvalidErrorText": "Invalid location link. Please enter a valid link.",
+  "@locationLinkInvalidErrorText": {
+    "description": "The text displayed when the location link is invalid."
+  },
+  "websiteLinkInvalidErrorText": "Invalid website link. Please enter a valid link.",
+  "@websiteLinkInvalidErrorText": {
+    "description": "The text displayed when the website link is invalid."
+  },
+  "bankNameEmptyErrorText": "Bank name cannot be empty",
+  "@bankNameEmptyErrorText": {
+    "description": "The text displayed when the bank name is empty."
+  },
+  "bankNameInvalidErrorText": "Invalid bank name. Please enter a valid name.",
+  "@bankNameInvalidErrorText": {
+    "description": "The text displayed when the bank name is invalid."
+  },
+  "accountHolderNameEmptyErrorText": "Account holder name cannot be empty",
+  "@accountHolderNameEmptyErrorText": {
+    "description": "The text displayed when the account holder name is empty."
+  },
+  "accountHolderNameInvalidErrorText": "Invalid account holder name. Please enter a valid name.",
+  "@accountHolderNameInvalidErrorText": {
+    "description": "The text displayed when the account holder name is invalid."
+  },
+  "accountNumberEmptyErrorText": "Account number cannot be empty",
+  "@accountNumberEmptyErrorText": {
+    "description": "The text displayed when the account number is empty."
+  },
+  "accountNumberInvalidErrorText": "Please enter a valid bank account number (9 to 18 digits).",
+  "@accountNumberInvalidErrorText": {
+    "description": "The text displayed when the account number is invalid."
+  },
+  "ifscCodeEmptyErrorText": "IFSC code cannot be empty",
+  "@ifscCodeEmptyErrorText": {
+    "description": "The text displayed when the IFSC code is empty."
+  },
+  "ifscCodeInvalidErrorText": "Please enter a valid 11-character IFSC code - (e.g., SBIN0001234).",
+  "@ifscCodeInvalidErrorText": {
+    "description": "The text displayed when the IFSC code is invalid."
+  },
+  "passwordsDoNotMatchErrorText": "Passwords do not match",
+  "@passwordsDoNotMatchErrorText": {
+    "description": "The text displayed when the passwords do not match."
+  },
+  "noImagesInGalleryText": "Nothing here yet. Upload your first image to get started!",
+  "@noImagesInGalleryText": {
+    "description": "The text displayed when there are no images in the gallery."
+  },
+  "deleteImagesConfirmationDialogTitle": "Delete Images",
+  "@deleteImagesConfirmationDialogTitle": {
+    "description": "The title displayed on the delete confirmation dialog."
+  },
+  "deleteImagesConfirmationDialogDescription": "Are you sure you want to delete selected images?",
+  "@deleteImagesConfirmationDialogDescription": {
+    "description": "The description displayed on the delete confirmation dialog."
+  },
+  "noImagesSelectedToDeleteErrorText": "No images selected to delete, Please select aleast one image to delete.",
+  "@noImagesSelectedToDeleteErrorText": {
+    "description": "The text displayed when no images are selected to delete."
+  },
+  "poojaImageNotSelectedErrorText": "Please select a pooja image",
+  "@poojaImageNotSelectedErrorText": {
+    "description": "The text displayed when a pooja image is not selected."
+  },
+  "poojaNameEmptyErrorText": "Pooja name cannot be empty",
+  "@poojaNameEmptyErrorText": {
+    "description": "The text displayed when the pooja name is empty."
+  },
+  "poojaNameDuplicateErrorText": "Pooja name already exists",
+  "@poojaNameDuplicateErrorText": {
+    "description": "The text displayed when the pooja name already exists."
+  },
+  "poojaTypeNotSelectedErrorText": "Please select a pooja type",
+  "@poojaTypeNotSelectedErrorText": {
+    "description": "The text displayed when a pooja type is not selected."
+  },
+  "poojaDescriptionEmptyErrorText": "Pooja description cannot be empty",
+  "@poojaDescriptionEmptyErrorText": {
+    "description": "The text displayed when the pooja description is empty."
+  },
+  "poojaListEmptyText": "No poojas found",
+  "@poojaListEmptyText": {
+    "description": "The text displayed when the pooja list is empty."
+  },
+  "priceEmptyErrorText": "Price cannot be empty",
+  "@priceEmptyErrorText": {
+    "description": "The text displayed when the price is empty."
+  },
+  "deityNotSelectedErrorText": "Please select a deity",
+  "@deityNotSelectedErrorText": {
+    "description": "The text displayed when a deity is not selected."
+  },
+  "scheduleModeNotSelectedErrorText": "Please select a schedule mode",
+  "@scheduleModeNotSelectedErrorText": {
+    "description": "The text displayed when a schedule mode is not selected."
+  },
+  "poojaDaysNotSelectedErrorText": "Please select pooja days",
+  "@poojaDaysNotSelectedErrorText": {
+    "description": "The text displayed when pooja days are not selected."
+  },
+  "poojaTimeNotSelectedErrorText": "Please select pooja time",
+  "@poojaTimeNotSelectedErrorText": {
+    "description": "The text displayed when pooja time is not selected."
+  },
+  "poojaDateTimeEmptyErrorText": "Please select pooja date and time",
+  "@poojaDateTimeEmptyErrorText": {
+    "description": "The text displayed when pooja date and time is empty."
+  },
+  "deleteScheduleConfirmationDialogTitle": "Delete",
+  "@deleteScheduleConfirmationDialogTitle": {
+    "description": "The title displayed on the delete confirmation dialog."
+  },
+  "deleteScheduleConfirmationDialogDescription": "Are you sure you want to delete this pooja schedule?",
+  "@deleteScheduleConfirmationDialogDescription": {
+    "description": "The description displayed on the delete confirmation dialog."
+  },
+  "scheduleListEmptyText": "No pooja schedules found",
+  "@scheduleListEmptyText": {
+    "description": "The text displayed when the pooja schedule list is empty."
+  }
 }
