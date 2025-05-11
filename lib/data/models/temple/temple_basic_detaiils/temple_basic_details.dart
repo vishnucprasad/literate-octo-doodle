@@ -16,6 +16,7 @@ class TempleBasicDetails with _$TempleBasicDetails {
     TimeRange? morningSchedule,
     TimeRange? eveningSchedule,
     List<String>? amenities,
+    String? templeHistory,
     String? description,
     String? rules,
   }) = _TempleBasicDetails;
@@ -35,6 +36,8 @@ class TempleBasicDetails with _$TempleBasicDetails {
       eveningSchedule == null ||
       amenities == null ||
       amenities!.isEmpty ||
+      templeHistory == null ||
+      templeHistory!.isEmpty ||
       description == null ||
       description!.isEmpty ||
       rules == null ||

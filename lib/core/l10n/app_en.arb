@@ -524,6 +524,14 @@
   "@templeAmenitiesHintText": {
     "description": "The hint text displayed on the temple amenities hint text."
   },
+  "templeHistoryLabel": "Temple History",
+  "@templeHistoryLabel": {
+    "description": "The text displayed on the temple history label."
+  },
+  "templeHistoryHintText": "Enter temple history",
+  "@templeHistoryHintText": {
+    "description": "The hint text displayed on the temple history hint text."
+  },
   "templeDescriptionLabel": "Temple Description",
   "@templeDescriptionLabel": {
     "description": "The text displayed on the temple description label."
@@ -1006,6 +1014,10 @@
   "templeAmenitiesEmptyErrorText": "Temple amenities cannot be empty",
   "@templeAmenitiesEmptyErrorText": {
     "description": "The text displayed when the temple amenities are empty."
+  },
+  "templeHistoryEmptyErrorText": "Temple history cannot be empty",
+  "@templeHistoryEmptyErrorText": {
+    "description": "The text displayed when the temple history is empty."
   },
   "templeDescriptionEmptyErrorText": "Temple description cannot be empty",
   "@templeDescriptionEmptyErrorText": {
