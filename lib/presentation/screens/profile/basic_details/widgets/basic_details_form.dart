@@ -168,6 +168,19 @@ class BasicDetailsForm extends HookConsumerWidget {
           ),
           AppSpacing.verticalMedium,
           AppInputField(
+            initialValue: state.basicDetails.templeHistory,
+            hint: context.l10n.templeHistoryHintText,
+            labelText: context.l10n.templeHistoryLabel,
+            errorText: state.validationErrors.templeHistory?.maybeMap(
+              empty: (value) => context.l10n.templeHistoryEmptyErrorText,
+              orElse: () => null,
+            ),
+            maxLines: 5,
+            enabled: state.isFormEnabled,
+            onChanged: controller.updateTempleHistory,
+          ),
+          AppSpacing.verticalMedium,
+          AppInputField(
             initialValue: state.basicDetails.description,
             hint: context.l10n.templeDescriptionHintText,
             labelText: context.l10n.templeDescriptionLabel,

@@ -7,16 +7,18 @@ part 'bank_details_validation_errors.freezed.dart';
 class BankDetailsValidationErrors with _$BankDetailsValidationErrors {
   const factory BankDetailsValidationErrors({
     ValidationError? bankName,
+    ValidationError? accountHolderName,
     ValidationError? accountNumber,
     ValidationError? ifscCode,
-    ValidationError? accountHolderName,
+    ValidationError? upiId,
   }) = _BankDetailsValidationErrors;
 
   const BankDetailsValidationErrors._();
 
   bool get hasErrors =>
       bankName != null ||
+      accountHolderName != null ||
       accountNumber != null ||
       ifscCode != null ||
-      accountHolderName != null;
+      upiId != null;
 }

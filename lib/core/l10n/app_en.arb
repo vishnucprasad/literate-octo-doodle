@@ -524,6 +524,14 @@
   "@templeAmenitiesHintText": {
     "description": "The hint text displayed on the temple amenities hint text."
   },
+  "templeHistoryLabel": "Temple History",
+  "@templeHistoryLabel": {
+    "description": "The text displayed on the temple history label."
+  },
+  "templeHistoryHintText": "Enter temple history",
+  "@templeHistoryHintText": {
+    "description": "The hint text displayed on the temple history hint text."
+  },
   "templeDescriptionLabel": "Temple Description",
   "@templeDescriptionLabel": {
     "description": "The text displayed on the temple description label."
@@ -855,6 +863,14 @@
   "@ifscCodeHintText": {
     "description": "The text displayed on the ifsc code hint text."
   },
+  "upiIdLabel": "UPI ID",
+  "@upiIdLabel": {
+    "description": "The text displayed on the upi id label."
+  },
+  "upiIdHintText": "Enter UPI ID",
+  "@upiIdHintText": {
+    "description": "The text displayed on the upi id hint text."
+  },
   "advancedBookingLimitDialogTitle": "Advanced booking limit \n ( Days )",
   "@advancedBookingLimitDialogTitle": {
     "description": "The title displayed on the advanced booking limit dialog."
@@ -999,6 +1015,10 @@
   "@templeAmenitiesEmptyErrorText": {
     "description": "The text displayed when the temple amenities are empty."
   },
+  "templeHistoryEmptyErrorText": "Temple history cannot be empty",
+  "@templeHistoryEmptyErrorText": {
+    "description": "The text displayed when the temple history is empty."
+  },
   "templeDescriptionEmptyErrorText": "Temple description cannot be empty",
   "@templeDescriptionEmptyErrorText": {
     "description": "The text displayed when the temple description is empty."
@@ -1074,6 +1094,14 @@
   "ifscCodeInvalidErrorText": "Please enter a valid 11-character IFSC code - (e.g., SBIN0001234).",
   "@ifscCodeInvalidErrorText": {
     "description": "The text displayed when the IFSC code is invalid."
+  },
+  "upiIdEmptyErrorText": "UPI ID cannot be empty",
+  "@upiIdEmptyErrorText": {
+    "description": "The text displayed when the UPI ID is empty."
+  },
+  "upiIdInvalidErrorText": "Invalid UPI ID. Please enter a valid ID.",
+  "@upiIdInvalidErrorText": {
+    "description": "The text displayed when the UPI ID is invalid."
   },
   "passwordsDoNotMatchErrorText": "Passwords do not match",
   "@passwordsDoNotMatchErrorText": {

@@ -15,6 +15,7 @@ abstract class BasicDetailsValidationErrors
     ValidationError? morningSchedule,
     ValidationError? eveningSchedule,
     ValidationError? amenities,
+    ValidationError? templeHistory,
     ValidationError? description,
     ValidationError? rules,
   }) = _BasicDetailsValidationErrors;
@@ -29,6 +30,7 @@ abstract class BasicDetailsValidationErrors
       morningSchedule != null ||
       eveningSchedule != null ||
       amenities != null ||
+      templeHistory != null ||
       description != null ||
       rules != null;
 }

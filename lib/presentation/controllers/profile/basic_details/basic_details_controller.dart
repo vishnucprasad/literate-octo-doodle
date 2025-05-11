@@ -152,6 +152,19 @@ class BasicDetailsController extends _$BasicDetailsController {
     );
   }
 
+  void updateTempleHistory(String history) {
+    state = state.copyWith(
+      basicDetails: state.basicDetails.copyWith(templeHistory: history),
+      validationErrors: state.validationErrors.copyWith(
+        templeHistory: Validators.validateRequiredWithMinAndMaxLength(
+          history,
+          10,
+          1000,
+        ),
+      ),
+    );
+  }
+
   void updateTempleDescription(String description) {
     state = state.copyWith(
       basicDetails: state.basicDetails.copyWith(description: description),
@@ -193,6 +206,11 @@ class BasicDetailsController extends _$BasicDetailsController {
           ),
           eveningSchedule: Validators.validateNotNull(
             state.basicDetails.eveningSchedule,
+          ),
+          templeHistory: Validators.validateRequiredWithMinAndMaxLength(
+            state.basicDetails.templeHistory,
+            10,
+            1000,
           ),
           description: Validators.validateRequired(
             state.basicDetails.description,

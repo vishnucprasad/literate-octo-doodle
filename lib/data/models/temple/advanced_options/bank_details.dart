@@ -7,9 +7,10 @@ part 'bank_details.g.dart';
 class BankDetails with _$BankDetails {
   const factory BankDetails({
     String? bankName,
+    String? accountHolderName,
     String? accountNumber,
     String? ifscCode,
-    String? accountHolderName,
+    String? upiId,
   }) = _BankDetails;
 
   const BankDetails._();
@@ -17,12 +18,14 @@ class BankDetails with _$BankDetails {
   bool get isEmpty =>
       bankName == null ||
       bankName!.isEmpty ||
+      accountHolderName == null ||
+      accountHolderName!.isEmpty ||
       accountNumber == null ||
       accountNumber!.isEmpty ||
       ifscCode == null ||
       ifscCode!.isEmpty ||
-      accountHolderName == null ||
-      accountHolderName!.isEmpty;
+      upiId == null ||
+      upiId!.isEmpty;
 
   factory BankDetails.fromJson(Map<String, dynamic> json) =>
       _$BankDetailsFromJson(json);
