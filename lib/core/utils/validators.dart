@@ -142,4 +142,16 @@ class Validators {
 
     return null;
   }
+
+  static ValidationError? validateUpiId(String? value) {
+    if (value == null || value.trim().isEmpty) return ValidationError.empty();
+
+    final upiRegExp = RegExp(r'^[\w\.\-_]{2,256}@[a-zA-Z]{3,64}$');
+
+    if (!upiRegExp.hasMatch(value)) {
+      return ValidationError.invalid();
+    }
+
+    return null;
+  }
 }

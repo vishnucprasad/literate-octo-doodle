@@ -131,6 +131,19 @@ class AdvancedOptionsController extends _$AdvancedOptionsController {
     );
   }
 
+  void updateUpiId(String accountNumber) {
+    state = state.copyWith(
+      advancedOptions: state.advancedOptions.copyWith(
+        bankDetails: state.advancedOptions.bankDetails.copyWith(
+          upiId: accountNumber,
+        ),
+      ),
+      validationErrors: state.validationErrors.copyWith(
+        upiId: Validators.validateUpiId(accountNumber),
+      ),
+    );
+  }
+
   void updateAccountHolderName(String accountHolderName) {
     state = state.copyWith(
       advancedOptions: state.advancedOptions.copyWith(
@@ -156,6 +169,9 @@ class AdvancedOptionsController extends _$AdvancedOptionsController {
           ),
           ifscCode: Validators.validateIFSCCode(
             state.advancedOptions.bankDetails.ifscCode,
+          ),
+          upiId: Validators.validateUpiId(
+            state.advancedOptions.bankDetails.upiId,
           ),
           accountHolderName: Validators.validateName(
             state.advancedOptions.bankDetails.accountHolderName,

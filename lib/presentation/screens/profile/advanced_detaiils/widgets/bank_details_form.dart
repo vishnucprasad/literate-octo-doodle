@@ -38,7 +38,7 @@ class BankDetailsForm extends ConsumerWidget {
     });
 
     return DraggableScrollableSheet(
-      initialChildSize: 0.6,
+      initialChildSize: 0.65,
       minChildSize: 0.3,
       expand: false,
       maxChildSize: 0.88,
@@ -95,6 +95,30 @@ class BankDetailsForm extends ConsumerWidget {
                   AppSpacing.verticalMedium,
                   AppInputField(
                     initialValue:
+                        state.advancedOptions.bankDetails.accountHolderName,
+                    hint: context.l10n.accountHolderNameHintText,
+                    labelText: context.l10n.accountHolderNameLabel,
+                    errorText: state.validationErrors.accountHolderName
+                        ?.maybeWhen(
+                          empty:
+                              () =>
+                                  context.l10n.accountHolderNameEmptyErrorText,
+                          invalid:
+                              () =>
+                                  context
+                                      .l10n
+                                      .accountHolderNameInvalidErrorText,
+                          orElse: () => null,
+                        ),
+                    prefixIcon: Icon(
+                      Icons.person_2_outlined,
+                      color: context.colors.grey[700],
+                    ),
+                    onChanged: controller.updateAccountHolderName,
+                  ),
+                  AppSpacing.verticalMedium,
+                  AppInputField(
+                    initialValue:
                         state.advancedOptions.bankDetails.accountNumber,
                     hint: context.l10n.accountNumberHintText,
                     labelText: context.l10n.accountNumberLabel,
@@ -129,27 +153,20 @@ class BankDetailsForm extends ConsumerWidget {
                   ),
                   AppSpacing.verticalMedium,
                   AppInputField(
-                    initialValue:
-                        state.advancedOptions.bankDetails.accountHolderName,
-                    hint: context.l10n.accountHolderNameHintText,
-                    labelText: context.l10n.accountHolderNameLabel,
-                    errorText: state.validationErrors.accountHolderName
-                        ?.maybeWhen(
-                          empty:
-                              () =>
-                                  context.l10n.accountHolderNameEmptyErrorText,
-                          invalid:
-                              () =>
-                                  context
-                                      .l10n
-                                      .accountHolderNameInvalidErrorText,
-                          orElse: () => null,
-                        ),
+                    initialValue: state.advancedOptions.bankDetails.upiId,
+                    hint: context.l10n.upiIdHintText,
+                    labelText: context.l10n.upiIdLabel,
+                    fontFamily: FontFamily.roboto,
+                    errorText: state.validationErrors.upiId?.maybeWhen(
+                      empty: () => context.l10n.upiIdEmptyErrorText,
+                      invalid: () => context.l10n.upiIdInvalidErrorText,
+                      orElse: () => null,
+                    ),
                     prefixIcon: Icon(
-                      Icons.person_2_outlined,
+                      Icons.electric_bolt_outlined,
                       color: context.colors.grey[700],
                     ),
-                    onChanged: controller.updateAccountHolderName,
+                    onChanged: controller.updateUpiId,
                   ),
                   AppSpacing.verticalMedium,
                   if (state.isSaving) ...[

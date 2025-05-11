@@ -855,6 +855,14 @@
   "@ifscCodeHintText": {
     "description": "The text displayed on the ifsc code hint text."
   },
+  "upiIdLabel": "UPI ID",
+  "@upiIdLabel": {
+    "description": "The text displayed on the upi id label."
+  },
+  "upiIdHintText": "Enter UPI ID",
+  "@upiIdHintText": {
+    "description": "The text displayed on the upi id hint text."
+  },
   "advancedBookingLimitDialogTitle": "Advanced booking limit \n ( Days )",
   "@advancedBookingLimitDialogTitle": {
     "description": "The title displayed on the advanced booking limit dialog."
@@ -1074,6 +1082,14 @@
   "ifscCodeInvalidErrorText": "Please enter a valid 11-character IFSC code - (e.g., SBIN0001234).",
   "@ifscCodeInvalidErrorText": {
     "description": "The text displayed when the IFSC code is invalid."
+  },
+  "upiIdEmptyErrorText": "UPI ID cannot be empty",
+  "@upiIdEmptyErrorText": {
+    "description": "The text displayed when the UPI ID is empty."
+  },
+  "upiIdInvalidErrorText": "Invalid UPI ID. Please enter a valid ID.",
+  "@upiIdInvalidErrorText": {
+    "description": "The text displayed when the UPI ID is invalid."
   },
   "passwordsDoNotMatchErrorText": "Passwords do not match",
   "@passwordsDoNotMatchErrorText": {
