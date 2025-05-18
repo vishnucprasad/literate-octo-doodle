@@ -13,7 +13,7 @@ class DateListState with _$DateListState {
   factory DateListState.initial() => DateListState(
     selectedDate: DateTime.now(),
     dateList: List.generate(
-      7,
+      30,
       (index) => DateTime.now().add(Duration(days: index)),
     ),
   );

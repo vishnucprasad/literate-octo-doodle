@@ -78,7 +78,9 @@ class FirestoreDbDatasourceImpl implements DbDatasource {
         querySnapshot = await _db.collection(collectionPath).get();
       }
 
-      return querySnapshot.docs.map((doc) => doc.data()).toList();
+      return querySnapshot.docs
+          .map((doc) => {"id": doc.id, ...doc.data()})
+          .toList();
     } on FirebaseException catch (e) {
       throw DatabaseException.fromFirebaseException(e);
     } on PlatformException catch (e) {
@@ -114,7 +116,89 @@ class FirestoreDbDatasourceImpl implements DbDatasource {
                 .get();
       }
 
-      return querySnapshot.docs.map((doc) => doc.data()).toList();
+      return querySnapshot.docs
+          .map((doc) => {"id": doc.id, ...doc.data()})
+          .toList();
+    } on FirebaseException catch (e) {
+      throw DatabaseException.fromFirebaseException(e);
+    } on PlatformException catch (e) {
+      throw DatabaseException.fromPlatformException(e);
+    } catch (e) {
+      throw DatabaseException.unexpected(e.toString());
+    }
+  }
+
+  @override
+  Future<List<Map<String, dynamic>>> queryCollection(
+    String collectionPath, {
+    required List<QueryCondition> conditions,
+    String? orderBy,
+    bool descending = true,
+  }) async {
+    try {
+      Query<Map<String, dynamic>> query = _db.collection(collectionPath);
+
+      // Apply all query conditions
+      for (final condition in conditions) {
+        switch (condition.operator) {
+          case "==":
+            query = query.where(condition.field, isEqualTo: condition.value);
+            break;
+          case "!=":
+            query = query.where(condition.field, isNotEqualTo: condition.value);
+            break;
+          case ">":
+            query = query.where(
+              condition.field,
+              isGreaterThan: condition.value,
+            );
+            break;
+          case ">=":
+            query = query.where(
+              condition.field,
+              isGreaterThanOrEqualTo: condition.value,
+            );
+            break;
+          case "<":
+            query = query.where(condition.field, isLessThan: condition.value);
+            break;
+          case "<=":
+            query = query.where(
+              condition.field,
+              isLessThanOrEqualTo: condition.value,
+            );
+            break;
+          case "array-contains":
+            query = query.where(
+              condition.field,
+              arrayContains: condition.value,
+            );
+            break;
+          case "array-contains-any":
+            query = query.where(
+              condition.field,
+              arrayContainsAny: condition.value,
+            );
+            break;
+          case "in":
+            query = query.where(condition.field, whereIn: condition.value);
+            break;
+          case "not-in":
+            query = query.where(condition.field, whereNotIn: condition.value);
+            break;
+        }
+      }
+
+      // Apply ordering if specified
+      if (orderBy != null) {
+        query = query.orderBy(orderBy, descending: descending);
+      }
+
+      final querySnapshot = await query.get();
+
+      return querySnapshot.docs
+          .map((doc) => {"id": doc.id, ...doc.data()})
+          .toList();
     } on FirebaseException catch (e) {
       throw DatabaseException.fromFirebaseException(e);
     } on PlatformException catch (e) {
