@@ -190,6 +190,14 @@
   "@pendingBadgeLabel": {
     "description": "The text displayed on the pending badge."
   },
+  "approvedBadgeLabel": "Approved",
+  "@approvedBadgeLabel": {
+    "description": "The text displayed on the approved badge."
+  },
+  "rejectedBadgeLabel": "Rejected",
+  "@rejectedBadgeLabel": {
+    "description": "The text displayed on the rejected badge."
+  },
   "confirmedBadgeLabel": "Confirmed",
   "@confirmedBadgeLabel": {
     "description": "The text displayed on the confirmed badge."
@@ -205,6 +213,13 @@
   "canceledBadgeLabel": "Cancelled",
   "@canceledBadgeLabel": {
     "description": "The text displayed on the canceled badge."
+  },
+  "allPaymentsLabelWithCount": "All Payments ({count})",
+  "@allPaymentsLabelWithCount": {
+    "description": "The text displayed on the all payments label with count.",
+    "placeholders": {
+      "count": {}
+    }
   },
   "allBoookingsLabelWithCount": "All Bookings ({count})",
   "@allBoookingsLabelWithCount": {

@@ -4,6 +4,7 @@ import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spaci
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/date_selector.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/home_app_bar.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/payments/widgets/listof_payments.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/payments/widgets/payment_filters.dart';
 import 'package:flutter/material.dart';
 
 class PaymentsScreen extends StatelessWidget {
@@ -21,6 +22,8 @@ class PaymentsScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               children: [
                 DateSelector(),
+                AppSpacing.verticalMedium,
+                PaymentFilters(),
                 AppSpacing.verticalMedium,
                 ListofPayments(),
                 AppSpacing.verticalMedium,
