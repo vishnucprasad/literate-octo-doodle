@@ -61,6 +61,30 @@
   "@invalidPasswordValidationErorrMessage": {
     "description": "The error message displayed when the password field is invalid."
   },
+  "homeNavLabel": "Home",
+  "@homeNavLabel": {
+    "description": "The text displayed on the home navigation label."
+  },
+  "bookingsNavLabel": "Bookings",
+  "@bookingsNavLabel": {
+    "description": "The text displayed on the bookings navigation label."
+  },
+  "paymentsNavLabel": "Payments",
+  "@paymentsNavLabel": {
+    "description": "The text displayed on the payments navigation label."
+  },
+  "eventsNavLabel": "Events",
+  "@eventsNavLabel": {
+    "description": "The text displayed on the events navigation label."
+  },
+  "moreNavLabel": "More",
+  "@moreNavLabel": {
+    "description": "The text displayed on the more navigation label."
+  },
+  "dashboardNavLabel": "Dashboard",
+  "@dashboardNavLabel": {
+    "description": "The text displayed on the dashboard navigation label."
+  },
   "dashboardAppBarTitle": "Aaraadhya Admin",
   "@dashboardAppBarTitle": {
     "description": "The title displayed on the dashboard app bar."
@@ -117,7 +141,7 @@
   "@bookingsManagementAppBarTitle": {
     "description": "The title displayed on the bookings management app bar."
   },
-  "bookingsSectionTitle": "{month} {day} Bookings",
+  "bookingsSectionTitle": "Bookings on {month} {day}",
   "@bookingsSectionTitle": {
     "description": "The title displayed on the bookings section.",
     "placeholders": {
@@ -162,6 +186,10 @@
   "@hideDetailsButtonLabel": {
     "description": "The text displayed on the hide details button."
   },
+  "pendingBadgeLabel": "Pending",
+  "@pendingBadgeLabel": {
+    "description": "The text displayed on the pending badge."
+  },
   "confirmedBadgeLabel": "Confirmed",
   "@confirmedBadgeLabel": {
     "description": "The text displayed on the confirmed badge."
@@ -196,6 +224,38 @@
       "name": {},
       "count": {}
     }
+  },
+  "paymentsManagementAppBarTitle": "Payments Management",
+  "@paymentsManagementAppBarTitle": {
+    "description": "The title displayed on the payments management app bar."
+  },
+  "paymentsSectionTitle": "Payments on {month} {day}",
+  "@paymentsSectionTitle": {
+    "description": "The title displayed on the payments section.",
+    "placeholders": {
+      "month": {},
+      "day": {}
+    }
+  },
+  "paymentDetailsSectionTitle": "Payment Details",
+  "@paymentDetailsSectionTitle": {
+    "description": "The title displayed on the payment details section."
+  },
+  "paymentIdLabel": "Payment ID",
+  "@paymentIdLabel": {
+    "description": "The text displayed on the payment id label."
+  },
+  "paymentScreenshotLabel": "Payment Screenshot",
+  "@paymentScreenshotLabel": {
+    "description": "The text displayed on the payment screenshot label."
+  },
+  "approvePaymentButtonLabel": "Approve",
+  "@approvePaymentButtonLabel": {
+    "description": "The text displayed on the approve payment button."
+  },
+  "rejectPaymentButtonLabel": "Reject",
+  "@rejectPaymentButtonLabel": {
+    "description": "The text displayed on the reject payment button."
   },
   "donationsManagementAppBarTitle": "Donations Management",
   "@donationsManagementAppBarTitle": {

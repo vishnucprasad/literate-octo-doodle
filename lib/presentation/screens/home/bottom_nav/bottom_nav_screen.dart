@@ -1,4 +1,5 @@
 import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
+import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bottom_nav/widgets/rupee_icon.dart';
@@ -40,7 +41,7 @@ class BottomNavScreen extends HookConsumerWidget {
               context.go(AppRoutes.bookings.path);
               break;
             case 2:
-              context.go(AppRoutes.donations.path);
+              context.go(AppRoutes.payments.path);
               break;
             case 3:
               context.go(AppRoutes.events.path);
@@ -54,12 +55,12 @@ class BottomNavScreen extends HookConsumerWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
             activeIcon: Icon(Icons.home),
-            label: 'Home',
+            label: context.l10n.homeNavLabel,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.confirmation_num_outlined),
             activeIcon: Icon(Icons.confirmation_num),
-            label: 'Bookings',
+            label: context.l10n.bookingsNavLabel,
           ),
           BottomNavigationBarItem(
             icon: RupeeIcon(
@@ -72,17 +73,17 @@ class BottomNavScreen extends HookConsumerWidget {
               backgroundColor: context.colorScheme.primary,
               iconColor: context.colorScheme.surface,
             ),
-            label: 'Donations',
+            label: context.l10n.paymentsNavLabel,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.event_outlined),
             activeIcon: Icon(Icons.event),
-            label: 'Events',
+            label: context.l10n.eventsNavLabel,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.more_horiz),
             activeIcon: Icon(Icons.more_vert),
-            label: 'More',
+            label: context.l10n.moreNavLabel,
           ),
         ],
       ),

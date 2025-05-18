@@ -3,13 +3,13 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.d
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/date_list/date_list_controller.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/screens/home/donations/widgets/donation_details_card.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/payments/widgets/payment_details_card.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
-class ListofDonations extends ConsumerWidget {
-  const ListofDonations({super.key});
+class ListofPayments extends ConsumerWidget {
+  const ListofPayments({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -23,7 +23,7 @@ class ListofDonations extends ConsumerWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(
-            context.l10n.donationsSectionTitle(
+            context.l10n.paymentsSectionTitle(
               DateFormat('MMMM').format(selectedDate),
               DateFormat('d').format(selectedDate),
             ),
@@ -40,7 +40,7 @@ class ListofDonations extends ConsumerWidget {
           physics: NeverScrollableScrollPhysics(),
           itemCount: 2,
           itemBuilder: (context, index) {
-            return DonationDetailsCard(index: index);
+            return PaymentDetailsCard(index: index);
           },
           separatorBuilder: (context, index) => AppSpacing.verticalMedium,
         ),

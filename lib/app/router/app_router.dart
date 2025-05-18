@@ -60,9 +60,9 @@ GoRouter appRouter(Ref ref) {
             pageBuilder: AppRoutes.bookings.revealTransitionBuilder,
           ),
           GoRoute(
-            path: AppRoutes.donations.path,
-            name: AppRoutes.donations.name,
-            pageBuilder: AppRoutes.donations.revealTransitionBuilder,
+            path: AppRoutes.payments.path,
+            name: AppRoutes.payments.name,
+            pageBuilder: AppRoutes.payments.revealTransitionBuilder,
           ),
           GoRoute(
             path: AppRoutes.events.path,

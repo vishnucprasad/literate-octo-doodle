@@ -3,13 +3,13 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.d
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/screens/home/donations/widgets/donation_and_tax_details_container.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/payments/widgets/payment_details_container.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
-class DonationDetailsCard extends ConsumerWidget {
-  const DonationDetailsCard({super.key, required this.index});
+class PaymentDetailsCard extends ConsumerWidget {
+  const PaymentDetailsCard({super.key, required this.index});
 
   final int index;
 
@@ -50,7 +50,7 @@ class DonationDetailsCard extends ConsumerWidget {
                             text: TextSpan(
                               children: [
                                 TextSpan(
-                                  text: '${context.l10n.transactionIdLabel}: ',
+                                  text: '${context.l10n.paymentIdLabel}: ',
                                   style: context.theme.textTheme.bodySmall
                                       ?.copyWith(
                                         fontWeight: FontWeight.bold,
@@ -135,7 +135,7 @@ class DonationDetailsCard extends ConsumerWidget {
               ),
             ],
           ),
-          if (expandedIndex == index) DonationAndTaxDetailsContainer(),
+          if (expandedIndex == index) PaymentDetailsContainer(),
         ],
       ),
     );
