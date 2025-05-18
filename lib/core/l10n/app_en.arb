@@ -89,9 +89,9 @@
   "@dashboardAppBarTitle": {
     "description": "The title displayed on the dashboard app bar."
   },
-  "todaysDonationsCardTitle": "Today's Donations",
-  "@todaysDonationsCardTitle": {
-    "description": "The title displayed on the today's donations card in dashboard."
+  "todaysPaymentsCardTitle": "Today's Payments",
+  "@todaysPaymentsCardTitle": {
+    "description": "The title displayed on the today's payments card in dashboard."
   },
   "todaysPoojaBookingsCardTitle": "Today's Pooja Bookings",
   "@todaysPoojaBookingsCardTitle": {
@@ -256,34 +256,6 @@
   "rejectPaymentButtonLabel": "Reject",
   "@rejectPaymentButtonLabel": {
     "description": "The text displayed on the reject payment button."
-  },
-  "donationsManagementAppBarTitle": "Donations Management",
-  "@donationsManagementAppBarTitle": {
-    "description": "The title displayed on the donations management app bar."
-  },
-  "donationsSectionTitle": "{month} {day} Donations",
-  "@donationsSectionTitle": {
-    "description": "The title displayed on the donations section.",
-    "placeholders": {
-      "month": {},
-      "day": {}
-    }
-  },
-  "donationDateAndTimeLabel": "Donation Date & Time",
-  "@donationDateAndTimeLabel": {
-    "description": "The text displayed on the donation date and time label."
-  },
-  "transactionIdLabel": "Transaction ID",
-  "@transactionIdLabel": {
-    "description": "The text displayed on the transaction id label."
-  },
-  "donationDetailsSectionTitle": "Donation Details",
-  "@donationDetailsSectionTitle": {
-    "description": "The title displayed on the donation details section."
-  },
-  "donationPurposeLabel": "Donation Purpose",
-  "@donationPurposeLabel": {
-    "description": "The text displayed on the donation purpose label."
   },
   "statusLabel": "Status",
   "@statusLabel": {
