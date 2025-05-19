@@ -3,6 +3,7 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.d
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/payments/payments_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/payments/widgets/payment_details_container.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -17,6 +18,8 @@ class PaymentDetailsCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final expandedIndex = ref.watch(expandableContainerControllerProvider);
     final controller = ref.read(expandableContainerControllerProvider.notifier);
+
+    final payment = ref.watch(paymentsControllerProvider).payments[index];
 
     return Container(
       padding: EdgeInsets.all(16.0),
@@ -38,7 +41,7 @@ class PaymentDetailsCard extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'John Doe',
+                            payment.devotee.displayName,
                             style: context.theme.textTheme.titleMedium
                                 ?.copyWith(
                                   color: context.colorScheme.primary,
@@ -61,7 +64,7 @@ class PaymentDetailsCard extends ConsumerWidget {
                                       ),
                                 ),
                                 TextSpan(
-                                  text: '1234567890',
+                                  text: payment.id,
                                   style: context.theme.textTheme.bodySmall
                                       ?.copyWith(fontFamily: FontFamily.roboto),
                                 ),
@@ -72,7 +75,7 @@ class PaymentDetailsCard extends ConsumerWidget {
                           Text(
                             DateFormat(
                               "MMMM d, y • h:mm a",
-                            ).format(DateTime.now()),
+                            ).format(payment.createdAt),
                             style: context.theme.textTheme.bodyMedium?.copyWith(
                               fontFamily: FontFamily.roboto,
                             ),
@@ -98,7 +101,7 @@ class PaymentDetailsCard extends ConsumerWidget {
                       vertical: 4.0,
                     ),
                     child: Text(
-                      context.l10n.paymentBadgeLabel("3,300"),
+                      context.l10n.paymentBadgeLabel(payment.price),
                       style: context.theme.textTheme.bodyMedium?.copyWith(
                         color: context.colors.success,
                         fontFamily: FontFamily.roboto,

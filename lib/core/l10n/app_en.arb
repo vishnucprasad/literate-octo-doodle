@@ -214,6 +214,10 @@
   "@canceledBadgeLabel": {
     "description": "The text displayed on the canceled badge."
   },
+  "refundedBadgeLabel": "Refunded",
+  "@refundedBadgeLabel": {
+    "description": "The text displayed on the refunded badge."
+  },
   "allPaymentsLabelWithCount": "All Payments ({count})",
   "@allPaymentsLabelWithCount": {
     "description": "The text displayed on the all payments label with count.",

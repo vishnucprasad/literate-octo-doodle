@@ -10,10 +10,10 @@ class DateListController extends _$DateListController {
     return DateListState.initial();
   }
 
-  void selectIndex(int index) {
+  void selectDate({required int index, DateTime? date}) {
     state = state.copyWith(
       selectedDateIndex: index,
-      selectedDate: state.dateList[index],
+      selectedDate: date ?? state.dateList[index],
     );
   }
 }

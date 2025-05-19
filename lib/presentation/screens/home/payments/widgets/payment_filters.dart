@@ -14,6 +14,7 @@ class PaymentFilters extends ConsumerWidget {
     final controller = ref.read(filtersControllerProvider.notifier);
 
     final List<String> filters = [
+      context.l10n.pendingBadgeLabel,
       context.l10n.allPaymentsLabelWithCount(2),
       context.l10n.approvedBadgeLabel,
       context.l10n.rejectedBadgeLabel,
@@ -22,7 +23,7 @@ class PaymentFilters extends ConsumerWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: List.generate(3, (index) {
+        children: List.generate(4, (index) {
           final isSelected = selectedIndex == index;
 
           return Padding(

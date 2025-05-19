@@ -25,7 +25,41 @@ class DateSelector extends ConsumerWidget {
           children: List.generate(state.dateList.length, (index) {
             bool isSelected = state.selectedDateIndex == index;
             return IconButton(
-              onPressed: () => controller.selectIndex(index),
+              onPressed: () async {
+                if (index == 0) {
+                  final date = await showDatePicker(
+                    context: context,
+                    firstDate: DateTime(DateTime.now().year - 1, 1, 1),
+                    lastDate: DateTime(DateTime.now().year + 1, 12, 31),
+                    initialDate: DateTime.now(),
+                    builder: (context, child) {
+                      return DatePickerTheme(
+                        data: DatePickerThemeData(
+                          headerBackgroundColor: context.colors.primary[50],
+                          headerForegroundColor: context.colorScheme.primary,
+                          headerHeadlineStyle: context
+                              .theme
+                              .textTheme
+                              .headlineLarge
+                              ?.copyWith(fontFamily: FontFamily.roboto),
+                          headerHelpStyle: context.theme.textTheme.bodyMedium
+                              ?.copyWith(fontFamily: FontFamily.roboto),
+                          dayStyle: context.theme.textTheme.bodyMedium
+                              ?.copyWith(fontFamily: FontFamily.roboto),
+                          yearStyle: context.theme.textTheme.bodyMedium
+                              ?.copyWith(fontFamily: FontFamily.roboto),
+                          dividerColor: context.colorScheme.primary,
+                        ),
+                        child: child!,
+                      );
+                    },
+                  );
+
+                  return controller.selectDate(index: index, date: date);
+                }
+
+                controller.selectDate(index: index);
+              },
               style: IconButton.styleFrom(
                 overlayColor: context.colorScheme.primary,
               ),
@@ -33,35 +67,50 @@ class DateSelector extends ConsumerWidget {
                 radius: isSelected ? 26 : 22,
                 backgroundColor:
                     isSelected ? context.colors.primary[50] : Colors.white,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      DateFormat('d').format(state.dateList[index]),
-                      style: context.theme.textTheme.titleMedium?.copyWith(
-                        color:
-                            isSelected
-                                ? context.colorScheme.primary
-                                : context.colors.grey[900],
-                        fontWeight:
-                            isSelected ? FontWeight.bold : FontWeight.normal,
-                        fontFamily: FontFamily.roboto,
-                      ),
-                    ),
-                    Text(
-                      DateFormat('E').format(state.dateList[index]),
-                      style: context.theme.textTheme.bodyMedium?.copyWith(
-                        color:
-                            isSelected
-                                ? context.colorScheme.primary
-                                : context.colors.grey[900],
-                        fontWeight:
-                            isSelected ? FontWeight.bold : FontWeight.normal,
-                        fontFamily: FontFamily.roboto,
-                      ),
-                    ),
-                  ],
-                ),
+                child:
+                    index == 0
+                        ? Icon(
+                          Icons.calendar_today_outlined,
+                          color:
+                              isSelected
+                                  ? context.colorScheme.primary
+                                  : context.colors.grey[900],
+                        )
+                        : Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              DateFormat('d').format(state.dateList[index]),
+                              style: context.theme.textTheme.titleMedium
+                                  ?.copyWith(
+                                    color:
+                                        isSelected
+                                            ? context.colorScheme.primary
+                                            : context.colors.grey[900],
+                                    fontWeight:
+                                        isSelected
+                                            ? FontWeight.bold
+                                            : FontWeight.normal,
+                                    fontFamily: FontFamily.roboto,
+                                  ),
+                            ),
+                            Text(
+                              DateFormat('E').format(state.dateList[index]),
+                              style: context.theme.textTheme.bodyMedium
+                                  ?.copyWith(
+                                    color:
+                                        isSelected
+                                            ? context.colorScheme.primary
+                                            : context.colors.grey[900],
+                                    fontWeight:
+                                        isSelected
+                                            ? FontWeight.bold
+                                            : FontWeight.normal,
+                                    fontFamily: FontFamily.roboto,
+                                  ),
+                            ),
+                          ],
+                        ),
               ),
             );
           }),

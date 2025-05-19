@@ -1,6 +1,7 @@
 import 'package:aaraadhya_temple_dashboard/core/exceptions/database_exception.dart';
 import 'package:aaraadhya_temple_dashboard/data/datasources/remote/db_datasource.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/common/image_data.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/core/query_condition.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/pooja/pooja.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/pooja/pooja_schedule/pooja_schedule.dart';
 import 'package:aaraadhya_temple_dashboard/data/repositories/pooja_repository.dart';
@@ -21,7 +22,7 @@ class PoojaRepositoryImpl implements PoojaRepository {
 
   @override
   Future<Pooja> addPooja(Pooja pooja, ImageData image) async {
-    final documents = await _dbDatasource.getCollection('poojas');
+    final documents = await _dbDatasource.queryCollection('poojas');
 
     final isExistingName = documents.any(
       (doc) => doc['name'].toString().toLowerCase() == pooja.name.toLowerCase(),
@@ -51,7 +52,7 @@ class PoojaRepositoryImpl implements PoojaRepository {
   @override
   Future<List<Pooja>> getPoojas() async {
     return await _dbDatasource
-        .getCollection('poojas', orderBy: 'createdAt')
+        .queryCollection('poojas', orderBy: 'createdAt')
         .then((value) => value.map((e) => Pooja.fromJson(e)).toList());
   }
 
@@ -91,10 +92,11 @@ class PoojaRepositoryImpl implements PoojaRepository {
 
   @override
   Future<List<PoojaSchedule>> getPoojaSchedules(String userId) async {
-    final docs = await _dbDatasource.getCollectionByField(
+    final docs = await _dbDatasource.queryCollection(
       'temple-poojas',
-      field: "templeId",
-      value: userId,
+      conditions: [
+        QueryCondition(field: 'templeId', operator: '==', value: userId),
+      ],
     );
 
     final schedules = await Future.wait(

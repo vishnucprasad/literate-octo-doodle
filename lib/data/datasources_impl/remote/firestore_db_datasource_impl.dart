@@ -1,5 +1,6 @@
 import 'package:aaraadhya_temple_dashboard/core/exceptions/database_exception.dart';
 import 'package:aaraadhya_temple_dashboard/data/datasources/remote/db_datasource.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/core/query_condition.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 
@@ -60,61 +61,81 @@ class FirestoreDbDatasourceImpl implements DbDatasource {
   }
 
   @override
-  Future<List<Map<String, dynamic>>> getCollection(
+  Future<List<Map<String, dynamic>>> queryCollection(
     String collectionPath, {
+    List<QueryCondition>? conditions,
     String? orderBy,
     bool descending = true,
   }) async {
     try {
-      final QuerySnapshot<Map<String, dynamic>> querySnapshot;
+      Query<Map<String, dynamic>> query = _db.collection(collectionPath);
 
-      if (orderBy != null) {
-        querySnapshot =
-            await _db
-                .collection(collectionPath)
-                .orderBy(orderBy, descending: descending)
-                .get();
-      } else {
-        querySnapshot = await _db.collection(collectionPath).get();
+      // Apply all query conditions if specified
+      if (conditions != null) {
+        for (final condition in conditions) {
+          switch (condition.operator) {
+            case "==":
+              query = query.where(condition.field, isEqualTo: condition.value);
+              break;
+            case "!=":
+              query = query.where(
+                condition.field,
+                isNotEqualTo: condition.value,
+              );
+              break;
+            case ">":
+              query = query.where(
+                condition.field,
+                isGreaterThan: condition.value,
+              );
+              break;
+            case ">=":
+              query = query.where(
+                condition.field,
+                isGreaterThanOrEqualTo: condition.value,
+              );
+              break;
+            case "<":
+              query = query.where(condition.field, isLessThan: condition.value);
+              break;
+            case "<=":
+              query = query.where(
+                condition.field,
+                isLessThanOrEqualTo: condition.value,
+              );
+              break;
+            case "array-contains":
+              query = query.where(
+                condition.field,
+                arrayContains: condition.value,
+              );
+              break;
+            case "array-contains-any":
+              query = query.where(
+                condition.field,
+                arrayContainsAny: condition.value,
+              );
+              break;
+            case "in":
+              query = query.where(condition.field, whereIn: condition.value);
+              break;
+            case "not-in":
+              query = query.where(condition.field, whereNotIn: condition.value);
+              break;
+          }
+        }
       }
 
-      return querySnapshot.docs.map((doc) => doc.data()).toList();
-    } on FirebaseException catch (e) {
-      throw DatabaseException.fromFirebaseException(e);
-    } on PlatformException catch (e) {
-      throw DatabaseException.fromPlatformException(e);
-    } catch (e) {
-      throw DatabaseException.unexpected(e.toString());
-    }
-  }
-
-  @override
-  Future<List<Map<String, dynamic>>> getCollectionByField(
-    String collectionPath, {
-    required Object field,
-    required dynamic value,
-    String? orderBy,
-    bool descending = true,
-  }) async {
-    try {
-      final QuerySnapshot<Map<String, dynamic>> querySnapshot;
-
+      // Apply ordering if specified
       if (orderBy != null) {
-        querySnapshot =
-            await _db
-                .collection(collectionPath)
-                .orderBy(orderBy, descending: descending)
-                .where(field, isEqualTo: value)
-                .get();
-      } else {
-        querySnapshot =
-            await _db
-                .collection(collectionPath)
-                .where(field, isEqualTo: value)
-                .get();
+        query = query.orderBy(orderBy, descending: descending);
       }
 
-      return querySnapshot.docs.map((doc) => doc.data()).toList();
+      final querySnapshot = await query.get();
+
+      return querySnapshot.docs
+          .map((doc) => {"id": doc.id, ...doc.data()})
+          .toList();
     } on FirebaseException catch (e) {
       throw DatabaseException.fromFirebaseException(e);
     } on PlatformException catch (e) {
