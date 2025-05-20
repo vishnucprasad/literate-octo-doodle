@@ -284,6 +284,26 @@
   "@paymentMethodLabel": {
     "description": "The text displayed on the payment method label."
   },
+  "noPaymentsFound": "No payments found",
+  "@noPaymentsFound": {
+    "description": "The text displayed when no payments are found."
+  },
+  "approvePaymentConfirmationTitle": "Approve Payment",
+  "@approvePaymentConfirmationTitle": {
+    "description": "The title displayed on the approve payment confirmation dialog."
+  },
+  "approvePaymentConfirmationMessage": "Are you sure you want to approve this payment?",
+  "@approvePaymentConfirmationMessage": {
+    "description": "The message displayed on the approve payment confirmation dialog."
+  },
+  "rejectPaymentConfirmationTitle": "Reject Payment",
+  "@rejectPaymentConfirmationTitle": {
+    "description": "The title displayed on the reject payment confirmation dialog."
+  },
+  "rejectPaymentConfirmationMessage": "Are you sure you want to reject this payment?",
+  "@rejectPaymentConfirmationMessage": {
+    "description": "The message displayed on the reject payment confirmation dialog."
+  },
   "taxExemptionReceiptSectionTitle": "Tax Exemption Receipt",
   "@taxExemptionReceiptSectionTitle": {
     "description": "The title displayed on the tax exemption receipt section."

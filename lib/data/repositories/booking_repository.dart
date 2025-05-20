@@ -11,6 +11,10 @@ abstract class BookingRepository {
   Future<List<Payment>> getPayments({
     required String userId,
     required DateTime date,
+    BookingStatus? status,
+  });
+  Future<void> updateBookingStatus({
+    required String bookingId,
     required BookingStatus status,
   });
 }

@@ -14,7 +14,7 @@ class BookingRepositoryImpl implements BookingRepository {
   Future<List<Payment>> getPayments({
     required String userId,
     required DateTime date,
-    required BookingStatus status,
+    BookingStatus? status,
   }) async {
     final startOfDay = DateTime(date.year, date.month, date.day);
     final endOfDay = startOfDay.add(const Duration(days: 1));
@@ -32,7 +32,9 @@ class BookingRepositoryImpl implements BookingRepository {
           operator: '<',
           value: Timestamp.fromDate(endOfDay),
         ),
-        QueryCondition(field: "status", operator: '==', value: status.name),
+        if (status != null) ...[
+          QueryCondition(field: "status", operator: '==', value: status.name),
+        ],
       ],
       orderBy: 'createdAt',
     );
@@ -52,5 +54,15 @@ class BookingRepositoryImpl implements BookingRepository {
     return payments.map((payment) {
       return Payment.fromJson(payment);
     }).toList();
+  }
+
+  @override
+  Future<void> updateBookingStatus({
+    required String bookingId,
+    required BookingStatus status,
+  }) async {
+    await _dbDatasource.updateDocument('bookings', bookingId, {
+      "status": status.name,
+    });
   }
 }

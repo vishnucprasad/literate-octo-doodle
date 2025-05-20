@@ -5,6 +5,7 @@ import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spaci
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/date_list/date_list_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/payments/payments_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/payments/widgets/payment_details_card.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/payments/widgets/payments_loading_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -38,15 +39,40 @@ class ListofPayments extends ConsumerWidget {
           ),
         ),
         AppSpacing.verticalMedium,
-        ListView.separated(
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: state.payments.length,
-          itemBuilder: (context, index) {
-            return PaymentDetailsCard(index: index);
-          },
-          separatorBuilder: (context, index) => AppSpacing.verticalMedium,
-        ),
+        state.isLoading
+            ? PaymentsLoadingShimmer()
+            : state.payments.isEmpty
+            ? SizedBox(
+              width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.block_outlined,
+                    size: 72,
+                    color: context.colors.grey[700],
+                  ),
+                  AppSpacing.verticalMedium,
+                  Text(
+                    context.l10n.noPaymentsFound,
+                    style: context.theme.textTheme.titleLarge?.copyWith(
+                      color: context.colors.grey[900],
+                      fontFamily: FontFamily.roboto,
+                      fontVariations: [FontVariation('wght', 400)],
+                    ),
+                  ),
+                ],
+              ),
+            )
+            : ListView.separated(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: state.payments.length,
+              itemBuilder: (context, index) {
+                return PaymentDetailsCard(index: index);
+              },
+              separatorBuilder: (context, index) => AppSpacing.verticalMedium,
+            ),
       ],
     );
   }

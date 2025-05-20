@@ -1,8 +1,11 @@
+import 'package:aaraadhya_temple_dashboard/core/enums/booking_status.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/payments/payments_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/payments/widgets/payment_actions_confirmation_dialog.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/payments/widgets/payment_details.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -13,6 +16,13 @@ class PaymentDetailsContainer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final controller = ref.read(expandableContainerControllerProvider.notifier);
+    final expandableIndex = ref.watch(expandableContainerControllerProvider);
+
+    if (expandableIndex == null) return Placeholder();
+
+    final payment =
+        ref.watch(paymentsControllerProvider).payments[expandableIndex];
+
     return ListView(
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
@@ -26,54 +36,74 @@ class PaymentDetailsContainer extends ConsumerWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Expanded(
-              child: SizedBox(
-                height: 30,
-                child: FilledButton(
-                  onPressed: () {},
-                  style: FilledButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.0,
-                      vertical: 4.0,
+            if (payment.status == BookingStatus.pending) ...[
+              Expanded(
+                child: SizedBox(
+                  height: 30,
+                  child: FilledButton(
+                    onPressed: () async {
+                      await showDialog(
+                        context: context,
+                        builder:
+                            (context) => PaymentActionsConfirmationDialog(
+                              paymentIndex: expandableIndex,
+                              status: BookingStatus.confirmed,
+                            ),
+                      );
+                    },
+                    style: FilledButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12.0,
+                        vertical: 4.0,
+                      ),
+                      foregroundColor: context.colors.white,
+                      backgroundColor: context.colors.success,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14.0),
+                      ),
                     ),
-                    foregroundColor: context.colors.white,
-                    backgroundColor: context.colors.success,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14.0),
-                    ),
-                  ),
-                  child: Text(context.l10n.approvePaymentButtonLabel),
-                ),
-              ),
-            ),
-            AppSpacing.horizontalSmall,
-            Expanded(
-              child: SizedBox(
-                height: 30,
-                child: FilledButton(
-                  onPressed: () {},
-                  style: FilledButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.0,
-                      vertical: 4.0,
-                    ),
-                    foregroundColor: context.colors.white,
-                    backgroundColor: context.colors.error,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14.0),
-                    ),
-                  ),
-                  child: Text(
-                    context.l10n.rejectPaymentButtonLabel,
-                    style: context.theme.textTheme.bodyMedium?.copyWith(
-                      fontFamily: FontFamily.roboto,
-                      color: context.colorScheme.surface,
-                    ),
+                    child: Text(context.l10n.approvePaymentButtonLabel),
                   ),
                 ),
               ),
-            ),
-            AppSpacing.horizontalSmall,
+              AppSpacing.horizontalSmall,
+              Expanded(
+                child: SizedBox(
+                  height: 30,
+                  child: FilledButton(
+                    onPressed: () async {
+                      await showDialog(
+                        context: context,
+                        builder:
+                            (context) => PaymentActionsConfirmationDialog(
+                              paymentIndex: expandableIndex,
+                              status: BookingStatus.rejected,
+                            ),
+                      );
+                    },
+                    style: FilledButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12.0,
+                        vertical: 4.0,
+                      ),
+                      foregroundColor: context.colors.white,
+                      backgroundColor: context.colors.error,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14.0),
+                      ),
+                    ),
+                    child: Text(
+                      context.l10n.rejectPaymentButtonLabel,
+                      style: context.theme.textTheme.bodyMedium?.copyWith(
+                        fontFamily: FontFamily.roboto,
+                        color: context.colorScheme.surface,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              AppSpacing.horizontalSmall,
+            ],
             Expanded(
               child: SizedBox(
                 height: 30,

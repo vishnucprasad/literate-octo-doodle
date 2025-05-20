@@ -10,7 +10,7 @@ class PaymentsState with _$PaymentsState {
   const factory PaymentsState({
     @Default(false) bool isLoading,
     @Default([]) List<Payment> payments,
-    @Default(BookingStatus.pending) BookingStatus filterStatus,
+    @Default(null) BookingStatus? filterStatus,
     @Default(null) BaseException? error,
   }) = _PaymentsState;
 }
