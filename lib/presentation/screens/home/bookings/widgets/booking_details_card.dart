@@ -2,6 +2,7 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_ext
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/bookings/bookings_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/widgets/pooja_details_container.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,8 @@ class BookingDetailsCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final expandedIndex = ref.watch(expandableContainerControllerProvider);
     final controller = ref.read(expandableContainerControllerProvider.notifier);
+
+    final booking = ref.watch(bookingsControllerProvider).bookings[index];
 
     return Container(
       padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
@@ -48,12 +51,11 @@ class BookingDetailsCard extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'John Doe',
-                            style: context.theme.textTheme.titleMedium
-                                ?.copyWith(
-                                  color: context.colorScheme.primary,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            booking.pooja.schedule.pooja.name,
+                            style: context.theme.textTheme.titleSmall?.copyWith(
+                              color: context.colorScheme.primary,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           AppSpacing.verticalSmall,
                           RichText(
@@ -71,7 +73,7 @@ class BookingDetailsCard extends ConsumerWidget {
                                       ),
                                 ),
                                 TextSpan(
-                                  text: '1234567890',
+                                  text: booking.id,
                                   style: context.theme.textTheme.bodySmall
                                       ?.copyWith(fontFamily: FontFamily.roboto),
                                 ),
@@ -80,7 +82,9 @@ class BookingDetailsCard extends ConsumerWidget {
                           ),
                           AppSpacing.verticalSmall,
                           Text(
-                            context.l10n.poojasCount(3),
+                            context.l10n.membersCount(
+                              booking.pooja.members.length + 1,
+                            ),
                             style: context.theme.textTheme.bodyMedium?.copyWith(
                               fontFamily: FontFamily.roboto,
                             ),
@@ -88,8 +92,8 @@ class BookingDetailsCard extends ConsumerWidget {
                           AppSpacing.verticalMedium,
                           Text(
                             DateFormat(
-                              "MMMM d, y • h:mm a",
-                            ).format(DateTime.now()),
+                              "MMMM d, y",
+                            ).format(DateTime.parse(booking.pooja.poojaDate)),
                             style: context.theme.textTheme.bodyMedium?.copyWith(
                               fontFamily: FontFamily.roboto,
                             ),
@@ -104,24 +108,6 @@ class BookingDetailsCard extends ConsumerWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: context.colors.success[50],
-                      borderRadius: BorderRadius.circular(14.0),
-                      border: Border.all(color: context.colors.success),
-                    ),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.0,
-                      vertical: 4.0,
-                    ),
-                    child: Text(
-                      context.l10n.paymentBadgeLabel("3,300"),
-                      style: context.theme.textTheme.bodyMedium?.copyWith(
-                        color: context.colors.success,
-                        fontFamily: FontFamily.roboto,
-                      ),
-                    ),
-                  ),
                   AppSpacing.verticalSmall,
                   Container(
                     height: 20,

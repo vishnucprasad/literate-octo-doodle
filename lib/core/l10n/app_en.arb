@@ -164,6 +164,13 @@
   "@bookingDateAndTimeLabel": {
     "description": "The text displayed on the booking date and time label"
   },
+  "membersCount": "{count} Members",
+  "@membersCount": {
+    "description": "The text displayed on the members count label",
+    "placeholders": {
+      "count": {}
+    }
+  },
   "poojasCount": "{count} Poojas",
   "@poojasCount": {
     "description": "The text displayed on the poojas count label",
@@ -243,6 +250,10 @@
       "name": {},
       "count": {}
     }
+  },
+  "noBookingsFound": "No bookings found",
+  "@noBookingsFound": {
+    "description": "The text displayed when no bookings are found."
   },
   "paymentsManagementAppBarTitle": "Payments Management",
   "@paymentsManagementAppBarTitle": {
