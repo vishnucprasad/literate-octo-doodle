@@ -5,6 +5,7 @@ import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spaci
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/bookings/bookings_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/widgets/pooja_details_container.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/widgets/update_completion_status_confirmation_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -37,9 +38,19 @@ class BookingDetailsCard extends ConsumerWidget {
                 child: Row(
                   children: [
                     Checkbox(
-                      value: false,
+                      value: booking.pooja.isCompleted,
                       visualDensity: VisualDensity.compact,
-                      onChanged: (value) {},
+                      onChanged: (value) async {
+                        await showDialog(
+                          context: context,
+                          builder: (context) {
+                            return UpdateCompletionStatusConfirmationDialog(
+                              booking: booking,
+                              value: value == true,
+                            );
+                          },
+                        );
+                      },
                       side: BorderSide(color: context.colorScheme.primary),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
@@ -91,9 +102,7 @@ class BookingDetailsCard extends ConsumerWidget {
                           ),
                           AppSpacing.verticalMedium,
                           Text(
-                            DateFormat(
-                              "MMMM d, y",
-                            ).format(DateTime.parse(booking.pooja.poojaDate)),
+                            'Booked on ${DateFormat("MMMM d, y").format(booking.createdAt)}',
                             style: context.theme.textTheme.bodyMedium?.copyWith(
                               fontFamily: FontFamily.roboto,
                             ),
@@ -112,7 +121,10 @@ class BookingDetailsCard extends ConsumerWidget {
                   Container(
                     height: 20,
                     decoration: BoxDecoration(
-                      color: context.colors.success,
+                      color:
+                          booking.pooja.isCompleted
+                              ? context.colors.success
+                              : context.colors.primary,
                       borderRadius: BorderRadius.circular(14.0),
                     ),
                     padding: EdgeInsets.symmetric(
@@ -120,7 +132,9 @@ class BookingDetailsCard extends ConsumerWidget {
                       vertical: 2.0,
                     ),
                     child: Text(
-                      context.l10n.confirmedBadgeLabel,
+                      booking.pooja.isCompleted
+                          ? context.l10n.completedBadgeLabel
+                          : context.l10n.confirmedBadgeLabel,
                       style: context.theme.textTheme.bodySmall?.copyWith(
                         color: context.colors.white,
                         fontWeight: FontWeight.bold,

@@ -8,6 +8,7 @@ part 'bookings_state.freezed.dart';
 class BookingsState with _$BookingsState {
   const factory BookingsState({
     @Default(false) bool isLoading,
+    @Default(false) bool isUpdating,
     @Default([]) List<Booking> bookings,
     @Default(null) BaseException? error,
   }) = _BookingsState;

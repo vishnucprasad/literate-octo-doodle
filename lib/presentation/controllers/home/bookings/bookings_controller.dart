@@ -18,7 +18,7 @@ class BookingsController extends _$BookingsController {
 
   Future<void> loadBookings() async {
     final authRepository = ref.watch(authRepositoryProvider);
-    final profileRepository = ref.watch(bookingRepositoryProvider);
+    final bookingRepository = ref.watch(bookingRepositoryProvider);
 
     try {
       state = state.copyWith(isLoading: true, error: null);
@@ -26,7 +26,7 @@ class BookingsController extends _$BookingsController {
       final user = authRepository.getCurrentUser();
 
       if (user != null) {
-        final bookings = await profileRepository.getAllBookings(
+        final bookings = await bookingRepository.getAllBookings(
           userId: user.uid,
           date: ref.watch(dateListControllerProvider).selectedDate,
         );
@@ -41,6 +41,45 @@ class BookingsController extends _$BookingsController {
       );
     } finally {
       state = state.copyWith(isLoading: false);
+    }
+  }
+
+  Future<void> updateCompletionStatus({
+    required String bookingId,
+    required String poojaId,
+    required bool isCompleted,
+  }) async {
+    final profileRepository = ref.watch(bookingRepositoryProvider);
+
+    try {
+      state = state.copyWith(isUpdating: true, error: null);
+
+      await profileRepository.updatePoojaCompletionStatus(
+        id: poojaId,
+        bookingId: bookingId,
+        value: isCompleted,
+      );
+
+      state = state.copyWith(
+        bookings:
+            state.bookings.map((booking) {
+              if (booking.id == bookingId && booking.pooja.id == poojaId) {
+                return booking.copyWith(
+                  pooja: booking.pooja.copyWith(isCompleted: isCompleted),
+                );
+              }
+              return booking;
+            }).toList(),
+      );
+    } on BaseException catch (e) {
+      state = state.copyWith(isLoading: false, error: e);
+    } catch (e) {
+      state = state.copyWith(
+        isLoading: false,
+        error: DatabaseException.unexpected(e.toString()),
+      );
+    } finally {
+      state = state.copyWith(isUpdating: false);
     }
   }
 }

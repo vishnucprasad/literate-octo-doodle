@@ -1,4 +1,5 @@
 import 'package:aaraadhya_temple_dashboard/core/enums/booking_status.dart';
+import 'package:aaraadhya_temple_dashboard/core/exceptions/database_exception.dart';
 import 'package:aaraadhya_temple_dashboard/data/datasources/remote/db_datasource.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/booking/booked_pooja_details/booked_pooja_details.dart';
 import 'package:aaraadhya_temple_dashboard/data/models/booking/booking.dart';
@@ -168,8 +169,34 @@ class BookingRepositoryImpl implements BookingRepository {
     return bookings.expand<Booking>((booking) {
       final List poojas = booking['poojas'];
       return poojas.map<Booking>((pooja) {
-        return Booking.fromJson({...booking, 'pooja': pooja});
+        return Booking.fromJson({
+          ...booking,
+          'pooja': pooja,
+          "createdAt":
+              (booking['createdAt'] as Timestamp).toDate().toIso8601String(),
+        });
       });
     }).toList();
+  }
+
+  @override
+  Future<void> updatePoojaCompletionStatus({
+    required String id,
+    required String bookingId,
+    required bool value,
+  }) async {
+    final booking = await _dbDatasource.getDocument('bookings', bookingId);
+
+    if (booking == null) throw DatabaseException.notFound();
+
+    await _dbDatasource.updateDocument('bookings', bookingId, {
+      'poojas':
+          (booking['poojas'] as List).map((pooja) {
+            if (pooja['id'] == id) {
+              return {...pooja, 'isCompleted': value};
+            }
+            return pooja;
+          }).toList(),
+    });
   }
 }

@@ -10,6 +10,7 @@ class Booking with _$Booking {
     required String id,
     required String userId,
     required BookedPoojaDetails pooja,
+    required DateTime createdAt,
   }) = _Booking;
 
   factory Booking.fromJson(Map<String, dynamic> json) =>

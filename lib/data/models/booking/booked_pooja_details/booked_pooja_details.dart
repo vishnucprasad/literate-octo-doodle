@@ -8,11 +8,13 @@ part 'booked_pooja_details.g.dart';
 @freezed
 class BookedPoojaDetails with _$BookedPoojaDetails {
   const factory BookedPoojaDetails({
+    required String id,
     required String name,
     required String starSign,
     required List<Member> members,
     required PoojaSchedule schedule,
     required String poojaDate,
+    required bool isCompleted,
   }) = _BookedPoojaDetails;
 
   factory BookedPoojaDetails.fromJson(Map<String, dynamic> json) =>

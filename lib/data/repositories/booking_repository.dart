@@ -22,6 +22,11 @@ abstract class BookingRepository {
     required String userId,
     required DateTime date,
   });
+  Future<void> updatePoojaCompletionStatus({
+    required String id,
+    required String bookingId,
+    required bool value,
+  });
 }
 
 @riverpod

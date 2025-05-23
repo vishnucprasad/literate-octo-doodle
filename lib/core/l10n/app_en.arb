@@ -141,13 +141,33 @@
   "@bookingsManagementAppBarTitle": {
     "description": "The title displayed on the bookings management app bar."
   },
-  "bookingsSectionTitle": "Bookings on {month} {day}",
+  "bookingsSectionTitle": "Bookings for {month} {day}",
   "@bookingsSectionTitle": {
     "description": "The title displayed on the bookings section.",
     "placeholders": {
       "month": {},
       "day": {}
     }
+  },
+  "markAsConfirmedConfirmationDialogTitle": "Mark as Confirmed?",
+  "@markAsConfirmedConfirmationDialogTitle": {
+    "description": "The title displayed on the mark as confirmed confirmation dialog."
+  },
+  "markAsConfirmedConfirmationDialogMessage": "Are you sure you want to mark this pooja as confirmed?",
+  "@markAsConfirmedConfirmationDialogMessage": {
+    "description": "The message displayed on the mark as confirmed confirmation dialog."
+  },
+  "markAsCompletedConfirmationDialogTitle": "Mark as Completed?",
+  "@markAsCompletedConfirmationDialogTitle": {
+    "description": "The title displayed on the mark as completed confirmation dialog."
+  },
+  "markAsCompletedConfirmationDialogMessage": "Are you sure you want to mark this pooja as completed?",
+  "@markAsCompletedConfirmationDialogMessage": {
+    "description": "The message displayed on the mark as completed confirmation dialog."
+  },
+  "okButtonLabel": "OK",
+  "@okButtonLabel": {
+    "description": "The text displayed on the ok button."
   },
   "paymentBadgeLabel": "₹{amount} Paid",
   "@paymentBadgeLabel": {
