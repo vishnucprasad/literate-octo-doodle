@@ -245,19 +245,13 @@
   "@refundedBadgeLabel": {
     "description": "The text displayed on the refunded badge."
   },
-  "allPaymentsLabelWithCount": "All Payments ({count})",
-  "@allPaymentsLabelWithCount": {
-    "description": "The text displayed on the all payments label with count.",
-    "placeholders": {
-      "count": {}
-    }
+  "allPaymentsLabel": "All Payments",
+  "@allPaymentsLabel": {
+    "description": "The text displayed on the all payments label."
   },
-  "allBoookingsLabelWithCount": "All Bookings ({count})",
-  "@allBoookingsLabelWithCount": {
-    "description": "The text displayed on the all bookings label with count.",
-    "placeholders": {
-      "count": {}
-    }
+  "allBoookingsLabel": "All Bookings",
+  "@allBoookingsLabel": {
+    "description": "The text displayed on the all bookings label."
   },
   "newPoojaBookingNotificationTitle": "New Pooja Booking",
   "@newPoojaBookingNotificationTitle": {

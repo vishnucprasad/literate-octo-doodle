@@ -3,7 +3,6 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.d
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/bookings/bookings_controller.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/date_list/date_list_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/widgets/booking_details_card.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/widgets/bookings_loading_shimmer.dart';
 import 'package:flutter/material.dart';
@@ -15,10 +14,6 @@ class ListofBookings extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final selectedDate = ref.watch(
-      dateListControllerProvider.select((state) => state.selectedDate),
-    );
-
     final state = ref.watch(bookingsControllerProvider);
 
     return Column(
@@ -28,8 +23,8 @@ class ListofBookings extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(
             context.l10n.bookingsSectionTitle(
-              DateFormat('MMMM').format(selectedDate),
-              DateFormat('d').format(selectedDate),
+              DateFormat('MMMM').format(state.selectedDate),
+              DateFormat('d').format(state.selectedDate),
             ),
             style: context.theme.textTheme.titleLarge?.copyWith(
               color: context.colors.grey[900],

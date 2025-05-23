@@ -15,12 +15,9 @@ class PaymentFilters extends ConsumerWidget {
     final selectedIndex = ref.watch(filtersControllerProvider);
     final controller = ref.read(filtersControllerProvider.notifier);
     final paymentController = ref.read(paymentsControllerProvider.notifier);
-    final payments = ref.watch(
-      paymentsControllerProvider.select((state) => state.payments),
-    );
 
     final List<String> filters = [
-      context.l10n.allPaymentsLabelWithCount(payments.length),
+      context.l10n.allPaymentsLabel,
       context.l10n.pendingBadgeLabel,
       context.l10n.approvedBadgeLabel,
       context.l10n.rejectedBadgeLabel,

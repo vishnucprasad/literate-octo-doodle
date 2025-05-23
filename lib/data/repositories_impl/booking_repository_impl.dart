@@ -87,6 +87,7 @@ class BookingRepositoryImpl implements BookingRepository {
   Future<List<Booking>> getAllBookings({
     required String userId,
     required DateTime date,
+    required BookingStatus? status,
   }) async {
     final docs = await _dbDatasource.queryCollection(
       'bookings',
@@ -119,11 +120,15 @@ class BookingRepositoryImpl implements BookingRepository {
                   }
                   return <String, dynamic>{};
                 })
-                .where(
-                  (pooja) =>
-                      getDateOnlyFromISOString(pooja['poojaDate']) ==
-                      getDateOnlyFromISOString(date.toIso8601String()),
-                )
+                .where((pooja) {
+                  return getDateOnlyFromISOString(pooja['poojaDate']) ==
+                      getDateOnlyFromISOString(date.toIso8601String());
+                })
+                .where((pooja) {
+                  return status == null ||
+                      pooja['isCompleted'] ==
+                          (status == BookingStatus.completed);
+                })
                 .toList();
 
         final List<BookedPoojaDetails> bookedPoojaDetailsList = [];

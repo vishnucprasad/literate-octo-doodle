@@ -3,7 +3,6 @@ import 'package:aaraadhya_temple_dashboard/core/exceptions/base_exception.dart';
 import 'package:aaraadhya_temple_dashboard/core/exceptions/database_exception.dart';
 import 'package:aaraadhya_temple_dashboard/data/repositories/auth_repository.dart';
 import 'package:aaraadhya_temple_dashboard/data/repositories/booking_repository.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/date_list/date_list_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/payments/payments_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -14,7 +13,15 @@ class PaymentsController extends _$PaymentsController {
   @override
   PaymentsState build() {
     Future.microtask(loadPayments);
-    return PaymentsState();
+    return PaymentsState.initial();
+  }
+
+  void selectDate({required int index, DateTime? date}) {
+    state = state.copyWith(
+      selectedDateIndex: index,
+      selectedDate: date ?? state.dateList[index],
+    );
+    loadPayments();
   }
 
   Future<void> loadPayments() async {
@@ -29,7 +36,7 @@ class PaymentsController extends _$PaymentsController {
       if (user != null) {
         final payments = await profileRepository.getPayments(
           userId: user.uid,
-          date: ref.watch(dateListControllerProvider).selectedDate,
+          date: state.selectedDate,
           status: state.filterStatus,
         );
         state = state.copyWith(payments: payments);

@@ -1,9 +1,9 @@
+import 'package:aaraadhya_temple_dashboard/core/enums/booking_status.dart';
 import 'package:aaraadhya_temple_dashboard/core/exceptions/base_exception.dart';
 import 'package:aaraadhya_temple_dashboard/core/exceptions/database_exception.dart';
 import 'package:aaraadhya_temple_dashboard/data/repositories/auth_repository.dart';
 import 'package:aaraadhya_temple_dashboard/data/repositories/booking_repository.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/bookings/bookings_state.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/date_list/date_list_controller.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'bookings_controller.g.dart';
@@ -13,7 +13,15 @@ class BookingsController extends _$BookingsController {
   @override
   BookingsState build() {
     Future.microtask(loadBookings);
-    return BookingsState();
+    return BookingsState.initial();
+  }
+
+  void selectDate({required int index, DateTime? date}) {
+    state = state.copyWith(
+      selectedDateIndex: index,
+      selectedDate: date ?? state.dateList[index],
+    );
+    loadBookings();
   }
 
   Future<void> loadBookings() async {
@@ -28,7 +36,8 @@ class BookingsController extends _$BookingsController {
       if (user != null) {
         final bookings = await bookingRepository.getAllBookings(
           userId: user.uid,
-          date: ref.watch(dateListControllerProvider).selectedDate,
+          date: state.selectedDate,
+          status: state.bookingFilter,
         );
         state = state.copyWith(bookings: bookings);
       }
@@ -42,6 +51,11 @@ class BookingsController extends _$BookingsController {
     } finally {
       state = state.copyWith(isLoading: false);
     }
+  }
+
+  void changeFilter(BookingStatus? status) async {
+    state = state.copyWith(bookingFilter: status);
+    loadBookings();
   }
 
   Future<void> updateCompletionStatus({

@@ -21,6 +21,7 @@ abstract class BookingRepository {
   Future<List<Booking>> getAllBookings({
     required String userId,
     required DateTime date,
+    required BookingStatus? status,
   });
   Future<void> updatePoojaCompletionStatus({
     required String id,
