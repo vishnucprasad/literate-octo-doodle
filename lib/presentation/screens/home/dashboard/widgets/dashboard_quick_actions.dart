@@ -1,7 +1,9 @@
+import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class DashboardQuickActions extends StatelessWidget {
   const DashboardQuickActions({super.key});
@@ -24,7 +26,8 @@ class DashboardQuickActions extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 FilledButton(
-                  onPressed: () {},
+                  onPressed:
+                      () => context.push(AppRoutes.schedulePoojaScreen.path),
                   style: FilledButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(14.0),

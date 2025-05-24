@@ -5,24 +5,35 @@ import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expanda
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bottom_nav/widgets/rupee_icon.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/events/widgets/event_form.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class BottomNavScreen extends HookConsumerWidget {
+class BottomNavScreen extends ConsumerWidget {
   final Widget child;
 
   const BottomNavScreen({required this.child, super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final currentIndexNotifier = useState<int>(0);
+    final location = GoRouter.of(context).state.matchedLocation;
+
+    int getCurrentIndexFromLocation() {
+      if (location.startsWith(AppRoutes.dashboard.path)) return 0;
+      if (location.startsWith(AppRoutes.bookings.path)) return 1;
+      if (location.startsWith(AppRoutes.payments.path)) return 2;
+      if (location.startsWith(AppRoutes.events.path)) return 3;
+      if (location.startsWith(AppRoutes.more.path)) return 4;
+      return 0;
+    }
+
+    final currentIndex = getCurrentIndexFromLocation();
+
     final controller = ref.read(expandableContainerControllerProvider.notifier);
 
     return Scaffold(
       body: SafeArea(child: child),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndexNotifier.value,
+        currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,
         enableFeedback: true,
         selectedItemColor: context.colorScheme.primary,
@@ -31,7 +42,6 @@ class BottomNavScreen extends HookConsumerWidget {
         showUnselectedLabels: true,
         onTap: (index) {
           controller.setIndex(null);
-          currentIndexNotifier.value = index;
 
           switch (index) {
             case 0:
@@ -88,7 +98,7 @@ class BottomNavScreen extends HookConsumerWidget {
         ],
       ),
       floatingActionButton:
-          currentIndexNotifier.value == 3
+          currentIndex == 3
               ? FloatingActionButton(
                 onPressed: () {
                   showModalBottomSheet(

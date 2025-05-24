@@ -261,6 +261,10 @@
   "@noBookingsFound": {
     "description": "The text displayed when no bookings are found."
   },
+  "noNotificationsFound": "There is no notifications at the moment.",
+  "@noNotificationsFound": {
+    "description": "The text displayed when no notifications are found."
+  },
   "paymentsManagementAppBarTitle": "Payments Management",
   "@paymentsManagementAppBarTitle": {
     "description": "The title displayed on the payments management app bar."

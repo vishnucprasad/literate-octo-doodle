@@ -1,12 +1,16 @@
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/dashboard/dashboard_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/dashboard/widgets/dashboard_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class DashboardOverviewGrid extends StatelessWidget {
+class DashboardOverviewGrid extends ConsumerWidget {
   const DashboardOverviewGrid({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(dashboardControllerProvider);
+
     return GridView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -19,14 +23,24 @@ class DashboardOverviewGrid extends StatelessWidget {
       children: [
         DashboardCard(
           title: context.l10n.todaysPaymentsCardTitle,
-          value: context.l10n.amountLabel("24,500"),
+          value: context.l10n.amountLabel(state.data.totalPayments),
+          isLoading: state.isLoading,
         ),
         DashboardCard(
           title: context.l10n.todaysPoojaBookingsCardTitle,
-          value: '12',
+          value: state.data.totalBookings.toString(),
+          isLoading: state.isLoading,
         ),
-        DashboardCard(title: context.l10n.activePoojasCardTitle, value: '23'),
-        DashboardCard(title: context.l10n.activeEventsCardTitle, value: '4'),
+        DashboardCard(
+          title: context.l10n.activePoojasCardTitle,
+          value: state.data.totalActivePoojas.toString(),
+          isLoading: state.isLoading,
+        ),
+        DashboardCard(
+          title: context.l10n.activeEventsCardTitle,
+          value: state.data.totalActiveEvents.toString(),
+          isLoading: state.isLoading,
+        ),
       ],
     );
   }
