@@ -149,19 +149,11 @@
       "day": {}
     }
   },
-  "markAsConfirmedConfirmationDialogTitle": "Mark as Confirmed?",
-  "@markAsConfirmedConfirmationDialogTitle": {
-    "description": "The title displayed on the mark as confirmed confirmation dialog."
-  },
-  "markAsConfirmedConfirmationDialogMessage": "Are you sure you want to mark this pooja as confirmed?",
-  "@markAsConfirmedConfirmationDialogMessage": {
-    "description": "The message displayed on the mark as confirmed confirmation dialog."
-  },
   "markAsCompletedConfirmationDialogTitle": "Mark as Completed?",
   "@markAsCompletedConfirmationDialogTitle": {
     "description": "The title displayed on the mark as completed confirmation dialog."
   },
-  "markAsCompletedConfirmationDialogMessage": "Are you sure you want to mark this pooja as completed?",
+  "markAsCompletedConfirmationDialogMessage": "Are you sure you want to mark this pooja as completed?, This action cannot be undone.",
   "@markAsCompletedConfirmationDialogMessage": {
     "description": "The message displayed on the mark as completed confirmation dialog."
   },

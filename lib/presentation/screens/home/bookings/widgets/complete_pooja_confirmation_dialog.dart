@@ -6,15 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class UpdateCompletionStatusConfirmationDialog extends ConsumerWidget {
-  const UpdateCompletionStatusConfirmationDialog({
-    super.key,
-    required this.booking,
-    required this.value,
-  });
+class CompletePoojaConfirmationDialog extends ConsumerWidget {
+  const CompletePoojaConfirmationDialog({super.key, required this.booking});
 
   final Booking booking;
-  final bool value;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -36,9 +31,7 @@ class UpdateCompletionStatusConfirmationDialog extends ConsumerWidget {
       ),
       iconPadding: EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 8.0),
       title: Text(
-        value
-            ? context.l10n.markAsCompletedConfirmationDialogTitle
-            : context.l10n.markAsConfirmedConfirmationDialogTitle,
+        context.l10n.markAsCompletedConfirmationDialogTitle,
         style: context.theme.textTheme.titleMedium?.copyWith(
           fontWeight: FontWeight.bold,
         ),
@@ -46,9 +39,7 @@ class UpdateCompletionStatusConfirmationDialog extends ConsumerWidget {
       ),
       contentPadding: EdgeInsets.fromLTRB(24.0, 8.0, 24.0, 0.0),
       content: Text(
-        value
-            ? context.l10n.markAsCompletedConfirmationDialogMessage
-            : context.l10n.markAsConfirmedConfirmationDialogMessage,
+        context.l10n.markAsCompletedConfirmationDialogMessage,
         textAlign: TextAlign.center,
       ),
       actionsPadding: EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 8.0),
@@ -63,7 +54,6 @@ class UpdateCompletionStatusConfirmationDialog extends ConsumerWidget {
             await controller.updateCompletionStatus(
               bookingId: booking.id,
               poojaId: booking.pooja.id,
-              isCompleted: value,
             );
 
             if (context.mounted) context.pop();

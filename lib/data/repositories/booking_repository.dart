@@ -23,10 +23,9 @@ abstract class BookingRepository {
     required DateTime date,
     required BookingStatus? status,
   });
-  Future<void> updatePoojaCompletionStatus({
-    required String id,
+  Future<void> updatePoojaStatus({
+    required String poojaId,
     required String bookingId,
-    required bool value,
   });
 }
 

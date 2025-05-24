@@ -26,6 +26,7 @@ class BookingRepositoryImpl implements BookingRepository {
     final docs = await _dbDatasource.queryCollection(
       'bookings',
       conditions: [
+        QueryCondition(field: "templeId", operator: "==", value: userId),
         QueryCondition(
           field: "createdAt",
           operator: '>=',
@@ -185,10 +186,9 @@ class BookingRepositoryImpl implements BookingRepository {
   }
 
   @override
-  Future<void> updatePoojaCompletionStatus({
-    required String id,
+  Future<void> updatePoojaStatus({
+    required String poojaId,
     required String bookingId,
-    required bool value,
   }) async {
     final booking = await _dbDatasource.getDocument('bookings', bookingId);
 
@@ -197,8 +197,8 @@ class BookingRepositoryImpl implements BookingRepository {
     await _dbDatasource.updateDocument('bookings', bookingId, {
       'poojas':
           (booking['poojas'] as List).map((pooja) {
-            if (pooja['id'] == id) {
-              return {...pooja, 'isCompleted': value};
+            if (pooja['id'] == poojaId) {
+              return {...pooja, 'isCompleted': true};
             }
             return pooja;
           }).toList(),

@@ -61,17 +61,15 @@ class BookingsController extends _$BookingsController {
   Future<void> updateCompletionStatus({
     required String bookingId,
     required String poojaId,
-    required bool isCompleted,
   }) async {
     final profileRepository = ref.watch(bookingRepositoryProvider);
 
     try {
       state = state.copyWith(isUpdating: true, error: null);
 
-      await profileRepository.updatePoojaCompletionStatus(
-        id: poojaId,
+      await profileRepository.updatePoojaStatus(
+        poojaId: poojaId,
         bookingId: bookingId,
-        value: isCompleted,
       );
 
       state = state.copyWith(
@@ -79,7 +77,7 @@ class BookingsController extends _$BookingsController {
             state.bookings.map((booking) {
               if (booking.id == bookingId && booking.pooja.id == poojaId) {
                 return booking.copyWith(
-                  pooja: booking.pooja.copyWith(isCompleted: isCompleted),
+                  pooja: booking.pooja.copyWith(isCompleted: true),
                 );
               }
               return booking;

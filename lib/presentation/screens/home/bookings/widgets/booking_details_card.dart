@@ -4,8 +4,8 @@ import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/bookings/bookings_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/widgets/complete_pooja_confirmation_dialog.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/widgets/pooja_details_container.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/widgets/update_completion_status_confirmation_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -25,7 +25,10 @@ class BookingDetailsCard extends ConsumerWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
       decoration: BoxDecoration(
-        color: context.colors.primary[50],
+        color:
+            booking.pooja.isCompleted
+                ? context.colors.grey[50]
+                : context.colors.primary[50],
         borderRadius: BorderRadius.circular(14.0),
       ),
       child: Column(
@@ -41,12 +44,13 @@ class BookingDetailsCard extends ConsumerWidget {
                       value: booking.pooja.isCompleted,
                       visualDensity: VisualDensity.compact,
                       onChanged: (value) async {
+                        if (booking.pooja.isCompleted) return;
+
                         await showDialog(
                           context: context,
                           builder: (context) {
-                            return UpdateCompletionStatusConfirmationDialog(
+                            return CompletePoojaConfirmationDialog(
                               booking: booking,
-                              value: value == true,
                             );
                           },
                         );
@@ -155,11 +159,20 @@ class BookingDetailsCard extends ConsumerWidget {
                                 fontFamily: FontFamily.roboto,
                               ),
                           padding: EdgeInsets.symmetric(horizontal: 8.0),
-                          backgroundColor: context.colors.primary[50],
-                          foregroundColor: context.colorScheme.primary,
+                          backgroundColor:
+                              booking.pooja.isCompleted
+                                  ? context.colors.grey[50]
+                                  : context.colors.primary[50],
+                          foregroundColor:
+                              booking.pooja.isCompleted
+                                  ? context.colors.grey[700]
+                                  : context.colorScheme.primary,
                           side: BorderSide(
                             width: 1,
-                            color: context.colorScheme.primary,
+                            color:
+                                booking.pooja.isCompleted
+                                    ? context.colors.grey[700]!
+                                    : context.colorScheme.primary,
                           ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(14.0),
