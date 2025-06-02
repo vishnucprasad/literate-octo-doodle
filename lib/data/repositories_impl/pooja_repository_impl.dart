@@ -68,6 +68,10 @@ class PoojaRepositoryImpl implements PoojaRepository {
     String userId,
     PoojaSchedule schedule,
   ) async {
+    final String? templeName = await _dbDatasource
+        .getDocument('temples', userId)
+        .then((data) => data?['basicDetails']['templeName']);
+
     final String id = _dbDatasource.generateId('temple-poojas');
 
     final data = {
@@ -81,6 +85,7 @@ class PoojaRepositoryImpl implements PoojaRepository {
       "poojaDays": schedule.poojaDays,
       "poojaTime": schedule.poojaTime?.name,
       "poojaDateAndTime": schedule.poojaDateAndTime?.toIso8601String(),
+      "keywords": _generateKeywords([schedule.pooja.name, templeName ?? '']),
       "createdAt": DateTime.now().toIso8601String(),
       "updatedAt": DateTime.now().toIso8601String(),
     };
@@ -122,6 +127,7 @@ class PoojaRepositoryImpl implements PoojaRepository {
       "poojaDays": schedule.poojaDays,
       "poojaTime": schedule.poojaTime?.name,
       "poojaDateAndTime": schedule.poojaDateAndTime?.toIso8601String(),
+      "keywords": schedule.keywords,
       "createdAt": schedule.createdAt.toIso8601String(),
       "updatedAt": DateTime.now().toIso8601String(),
     };
@@ -134,5 +140,23 @@ class PoojaRepositoryImpl implements PoojaRepository {
   @override
   Future<void> deletePoojaSchedule(String id) async {
     await _dbDatasource.deleteDocument("temple-poojas", id);
+  }
+
+  List<String> _generateKeywords(List<String> input) {
+    final Set<String> keywords = {};
+
+    for (final item in input) {
+      final cleaned = item.toLowerCase().replaceAll(RegExp(r'\s+'), '');
+      final length = cleaned.length;
+
+      for (int start = 0; start < length; start++) {
+        for (int end = start + 1; end <= length; end++) {
+          final substring = cleaned.substring(start, end);
+          keywords.add(substring);
+        }
+      }
+    }
+
+    return keywords.toList()..sort();
   }
 }
