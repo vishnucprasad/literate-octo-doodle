@@ -1,27 +1,39 @@
 import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
+import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bottom_nav/widgets/rupee_icon.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/events/widgets/event_form.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class BottomNavScreen extends HookConsumerWidget {
+class BottomNavScreen extends ConsumerWidget {
   final Widget child;
 
   const BottomNavScreen({required this.child, super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final currentIndexNotifier = useState<int>(0);
+    final location = GoRouter.of(context).state.matchedLocation;
+
+    int getCurrentIndexFromLocation() {
+      if (location.startsWith(AppRoutes.dashboard.path)) return 0;
+      if (location.startsWith(AppRoutes.bookings.path)) return 1;
+      if (location.startsWith(AppRoutes.payments.path)) return 2;
+      if (location.startsWith(AppRoutes.events.path)) return 3;
+      if (location.startsWith(AppRoutes.more.path)) return 4;
+      return 0;
+    }
+
+    final currentIndex = getCurrentIndexFromLocation();
+
     final controller = ref.read(expandableContainerControllerProvider.notifier);
 
     return Scaffold(
       body: SafeArea(child: child),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndexNotifier.value,
+        currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,
         enableFeedback: true,
         selectedItemColor: context.colorScheme.primary,
@@ -30,7 +42,6 @@ class BottomNavScreen extends HookConsumerWidget {
         showUnselectedLabels: true,
         onTap: (index) {
           controller.setIndex(null);
-          currentIndexNotifier.value = index;
 
           switch (index) {
             case 0:
@@ -40,7 +51,7 @@ class BottomNavScreen extends HookConsumerWidget {
               context.go(AppRoutes.bookings.path);
               break;
             case 2:
-              context.go(AppRoutes.donations.path);
+              context.go(AppRoutes.payments.path);
               break;
             case 3:
               context.go(AppRoutes.events.path);
@@ -54,12 +65,12 @@ class BottomNavScreen extends HookConsumerWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
             activeIcon: Icon(Icons.home),
-            label: 'Home',
+            label: context.l10n.homeNavLabel,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.confirmation_num_outlined),
             activeIcon: Icon(Icons.confirmation_num),
-            label: 'Bookings',
+            label: context.l10n.bookingsNavLabel,
           ),
           BottomNavigationBarItem(
             icon: RupeeIcon(
@@ -72,22 +83,22 @@ class BottomNavScreen extends HookConsumerWidget {
               backgroundColor: context.colorScheme.primary,
               iconColor: context.colorScheme.surface,
             ),
-            label: 'Donations',
+            label: context.l10n.paymentsNavLabel,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.event_outlined),
             activeIcon: Icon(Icons.event),
-            label: 'Events',
+            label: context.l10n.eventsNavLabel,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.more_horiz),
             activeIcon: Icon(Icons.more_vert),
-            label: 'More',
+            label: context.l10n.moreNavLabel,
           ),
         ],
       ),
       floatingActionButton:
-          currentIndexNotifier.value == 3
+          currentIndex == 3
               ? FloatingActionButton(
                 onPressed: () {
                   showModalBottomSheet(

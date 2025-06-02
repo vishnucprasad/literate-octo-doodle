@@ -2,13 +2,18 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_ext
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/dashboard/dashboard_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/dashboard/widgets/dashboard_notifications_loading_shimmer.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class DashboardNotifications extends StatelessWidget {
+class DashboardNotifications extends ConsumerWidget {
   const DashboardNotifications({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(dashboardControllerProvider);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -36,48 +41,68 @@ class DashboardNotifications extends StatelessWidget {
           ),
         ),
         AppSpacing.verticalMedium,
-        ListView.separated(
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: 3,
-          itemBuilder: (context, index) {
-            return Container(
+        state.isLoading
+            ? DashboardNotificationsLoadingShimmer()
+            : state.data.latestNotifications.isEmpty
+            ? Container(
+              padding: const EdgeInsets.all(8.0),
+              width: double.infinity,
               decoration: BoxDecoration(
-                color: context.colors.grey[50],
+                color: context.colors.primary[50],
                 borderRadius: BorderRadius.circular(14.0),
               ),
-              child: ListTile(
-                title: Text(
-                  context.l10n.newPoojaBookingNotificationTitle,
-                  style: context.theme.textTheme.titleMedium?.copyWith(
-                    color: context.colorScheme.primary,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                subtitle: Text(
-                  context.l10n.newPoojaBookingNotificationDescription(
-                    'John Doe',
-                    index + 1,
-                  ),
-                  style: context.theme.textTheme.bodyMedium?.copyWith(
-                    color: context.colors.grey[700],
-                    fontFamily: FontFamily.roboto,
-                  ),
-                ),
-                trailing: Text(
-                  '${10 + index}:00 AM',
-                  style: context.theme.textTheme.bodyLarge?.copyWith(
-                    color: context.colorScheme.primary,
-                    fontFamily: FontFamily.roboto,
-                  ),
-                ),
+              child: Column(
+                children: [
+                  AppSpacing.verticalSmall,
+                  Icon(Icons.block),
+                  AppSpacing.verticalSmall,
+                  Text(context.l10n.noNotificationsFound),
+                  AppSpacing.verticalSmall,
+                ],
               ),
-            );
-          },
-          separatorBuilder: (context, index) {
-            return AppSpacing.verticalSmall;
-          },
-        ),
+            )
+            : ListView.separated(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: 3,
+              itemBuilder: (context, index) {
+                return Container(
+                  decoration: BoxDecoration(
+                    color: context.colors.grey[50],
+                    borderRadius: BorderRadius.circular(14.0),
+                  ),
+                  child: ListTile(
+                    title: Text(
+                      context.l10n.newPoojaBookingNotificationTitle,
+                      style: context.theme.textTheme.titleMedium?.copyWith(
+                        color: context.colorScheme.primary,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      context.l10n.newPoojaBookingNotificationDescription(
+                        'John Doe',
+                        index + 1,
+                      ),
+                      style: context.theme.textTheme.bodyMedium?.copyWith(
+                        color: context.colors.grey[700],
+                        fontFamily: FontFamily.roboto,
+                      ),
+                    ),
+                    trailing: Text(
+                      '${10 + index}:00 AM',
+                      style: context.theme.textTheme.bodyLarge?.copyWith(
+                        color: context.colorScheme.primary,
+                        fontFamily: FontFamily.roboto,
+                      ),
+                    ),
+                  ),
+                );
+              },
+              separatorBuilder: (context, index) {
+                return AppSpacing.verticalSmall;
+              },
+            ),
       ],
     );
   }

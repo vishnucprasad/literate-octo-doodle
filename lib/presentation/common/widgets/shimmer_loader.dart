@@ -6,12 +6,16 @@ class ShimmerLoader extends StatelessWidget {
   const ShimmerLoader({
     super.key,
     required this.isLoading,
-    required this.child,
     this.showBackground = false,
+    this.baseColor,
+    this.highlightColor,
+    required this.child,
   });
 
   final bool isLoading;
   final bool showBackground;
+  final Color? baseColor;
+  final Color? highlightColor;
   final Widget child;
 
   @override
@@ -19,8 +23,8 @@ class ShimmerLoader extends StatelessWidget {
     if (!isLoading) return child;
 
     return Shimmer.fromColors(
-      baseColor: context.colors.grey[200]!,
-      highlightColor: context.colors.grey[50]!,
+      baseColor: baseColor ?? context.colors.grey[200]!,
+      highlightColor: highlightColor ?? context.colors.grey[50]!,
       child: Container(
         decoration: BoxDecoration(
           color: showBackground ? context.colorScheme.surface : null,

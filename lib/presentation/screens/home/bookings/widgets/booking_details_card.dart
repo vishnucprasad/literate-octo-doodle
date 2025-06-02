@@ -2,7 +2,9 @@ import 'package:aaraadhya_temple_dashboard/core/extensions/app_localizations_ext
 import 'package:aaraadhya_temple_dashboard/core/extensions/app_theme_extension.dart';
 import 'package:aaraadhya_temple_dashboard/core/gen/fonts.gen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/common/widgets/app_spacing.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/bookings/bookings_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/expandable_container/expandable_container_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/widgets/complete_pooja_confirmation_dialog.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/widgets/pooja_details_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -18,10 +20,15 @@ class BookingDetailsCard extends ConsumerWidget {
     final expandedIndex = ref.watch(expandableContainerControllerProvider);
     final controller = ref.read(expandableContainerControllerProvider.notifier);
 
+    final booking = ref.watch(bookingsControllerProvider).bookings[index];
+
     return Container(
       padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
       decoration: BoxDecoration(
-        color: context.colors.primary[50],
+        color:
+            booking.pooja.isCompleted
+                ? context.colors.grey[50]
+                : context.colors.primary[50],
         borderRadius: BorderRadius.circular(14.0),
       ),
       child: Column(
@@ -34,9 +41,20 @@ class BookingDetailsCard extends ConsumerWidget {
                 child: Row(
                   children: [
                     Checkbox(
-                      value: false,
+                      value: booking.pooja.isCompleted,
                       visualDensity: VisualDensity.compact,
-                      onChanged: (value) {},
+                      onChanged: (value) async {
+                        if (booking.pooja.isCompleted) return;
+
+                        await showDialog(
+                          context: context,
+                          builder: (context) {
+                            return CompletePoojaConfirmationDialog(
+                              booking: booking,
+                            );
+                          },
+                        );
+                      },
                       side: BorderSide(color: context.colorScheme.primary),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
@@ -48,12 +66,11 @@ class BookingDetailsCard extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'John Doe',
-                            style: context.theme.textTheme.titleMedium
-                                ?.copyWith(
-                                  color: context.colorScheme.primary,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            booking.pooja.schedule.pooja.name,
+                            style: context.theme.textTheme.titleSmall?.copyWith(
+                              color: context.colorScheme.primary,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           AppSpacing.verticalSmall,
                           RichText(
@@ -71,7 +88,7 @@ class BookingDetailsCard extends ConsumerWidget {
                                       ),
                                 ),
                                 TextSpan(
-                                  text: '1234567890',
+                                  text: booking.id,
                                   style: context.theme.textTheme.bodySmall
                                       ?.copyWith(fontFamily: FontFamily.roboto),
                                 ),
@@ -80,16 +97,16 @@ class BookingDetailsCard extends ConsumerWidget {
                           ),
                           AppSpacing.verticalSmall,
                           Text(
-                            context.l10n.poojasCount(3),
+                            context.l10n.membersCount(
+                              booking.pooja.members.length + 1,
+                            ),
                             style: context.theme.textTheme.bodyMedium?.copyWith(
                               fontFamily: FontFamily.roboto,
                             ),
                           ),
                           AppSpacing.verticalMedium,
                           Text(
-                            DateFormat(
-                              "MMMM d, y • h:mm a",
-                            ).format(DateTime.now()),
+                            'Booked on ${DateFormat("MMMM d, y").format(booking.createdAt)}',
                             style: context.theme.textTheme.bodyMedium?.copyWith(
                               fontFamily: FontFamily.roboto,
                             ),
@@ -104,29 +121,14 @@ class BookingDetailsCard extends ConsumerWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: context.colors.success[50],
-                      borderRadius: BorderRadius.circular(14.0),
-                      border: Border.all(color: context.colors.success),
-                    ),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.0,
-                      vertical: 4.0,
-                    ),
-                    child: Text(
-                      context.l10n.paymentBadgeLabel("3,300"),
-                      style: context.theme.textTheme.bodyMedium?.copyWith(
-                        color: context.colors.success,
-                        fontFamily: FontFamily.roboto,
-                      ),
-                    ),
-                  ),
                   AppSpacing.verticalSmall,
                   Container(
                     height: 20,
                     decoration: BoxDecoration(
-                      color: context.colors.success,
+                      color:
+                          booking.pooja.isCompleted
+                              ? context.colors.success
+                              : context.colors.primary,
                       borderRadius: BorderRadius.circular(14.0),
                     ),
                     padding: EdgeInsets.symmetric(
@@ -134,7 +136,9 @@ class BookingDetailsCard extends ConsumerWidget {
                       vertical: 2.0,
                     ),
                     child: Text(
-                      context.l10n.confirmedBadgeLabel,
+                      booking.pooja.isCompleted
+                          ? context.l10n.completedBadgeLabel
+                          : context.l10n.confirmedBadgeLabel,
                       style: context.theme.textTheme.bodySmall?.copyWith(
                         color: context.colors.white,
                         fontWeight: FontWeight.bold,
@@ -155,11 +159,20 @@ class BookingDetailsCard extends ConsumerWidget {
                                 fontFamily: FontFamily.roboto,
                               ),
                           padding: EdgeInsets.symmetric(horizontal: 8.0),
-                          backgroundColor: context.colors.primary[50],
-                          foregroundColor: context.colorScheme.primary,
+                          backgroundColor:
+                              booking.pooja.isCompleted
+                                  ? context.colors.grey[50]
+                                  : context.colors.primary[50],
+                          foregroundColor:
+                              booking.pooja.isCompleted
+                                  ? context.colors.grey[700]
+                                  : context.colorScheme.primary,
                           side: BorderSide(
                             width: 1,
-                            color: context.colorScheme.primary,
+                            color:
+                                booking.pooja.isCompleted
+                                    ? context.colors.grey[700]!
+                                    : context.colorScheme.primary,
                           ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(14.0),

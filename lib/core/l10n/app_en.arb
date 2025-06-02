@@ -61,13 +61,37 @@
   "@invalidPasswordValidationErorrMessage": {
     "description": "The error message displayed when the password field is invalid."
   },
+  "homeNavLabel": "Home",
+  "@homeNavLabel": {
+    "description": "The text displayed on the home navigation label."
+  },
+  "bookingsNavLabel": "Bookings",
+  "@bookingsNavLabel": {
+    "description": "The text displayed on the bookings navigation label."
+  },
+  "paymentsNavLabel": "Payments",
+  "@paymentsNavLabel": {
+    "description": "The text displayed on the payments navigation label."
+  },
+  "eventsNavLabel": "Events",
+  "@eventsNavLabel": {
+    "description": "The text displayed on the events navigation label."
+  },
+  "moreNavLabel": "More",
+  "@moreNavLabel": {
+    "description": "The text displayed on the more navigation label."
+  },
+  "dashboardNavLabel": "Dashboard",
+  "@dashboardNavLabel": {
+    "description": "The text displayed on the dashboard navigation label."
+  },
   "dashboardAppBarTitle": "Aaraadhya Admin",
   "@dashboardAppBarTitle": {
     "description": "The title displayed on the dashboard app bar."
   },
-  "todaysDonationsCardTitle": "Today's Donations",
-  "@todaysDonationsCardTitle": {
-    "description": "The title displayed on the today's donations card in dashboard."
+  "todaysPaymentsCardTitle": "Today's Payments",
+  "@todaysPaymentsCardTitle": {
+    "description": "The title displayed on the today's payments card in dashboard."
   },
   "todaysPoojaBookingsCardTitle": "Today's Pooja Bookings",
   "@todaysPoojaBookingsCardTitle": {
@@ -117,13 +141,25 @@
   "@bookingsManagementAppBarTitle": {
     "description": "The title displayed on the bookings management app bar."
   },
-  "bookingsSectionTitle": "{month} {day} Bookings",
+  "bookingsSectionTitle": "Bookings for {month} {day}",
   "@bookingsSectionTitle": {
     "description": "The title displayed on the bookings section.",
     "placeholders": {
       "month": {},
       "day": {}
     }
+  },
+  "markAsCompletedConfirmationDialogTitle": "Mark as Completed?",
+  "@markAsCompletedConfirmationDialogTitle": {
+    "description": "The title displayed on the mark as completed confirmation dialog."
+  },
+  "markAsCompletedConfirmationDialogMessage": "Are you sure you want to mark this pooja as completed?, This action cannot be undone.",
+  "@markAsCompletedConfirmationDialogMessage": {
+    "description": "The message displayed on the mark as completed confirmation dialog."
+  },
+  "okButtonLabel": "OK",
+  "@okButtonLabel": {
+    "description": "The text displayed on the ok button."
   },
   "paymentBadgeLabel": "₹{amount} Paid",
   "@paymentBadgeLabel": {
@@ -139,6 +175,13 @@
   "bookingDateAndTimeLabel": "Booking Date & Time",
   "@bookingDateAndTimeLabel": {
     "description": "The text displayed on the booking date and time label"
+  },
+  "membersCount": "{count} Members",
+  "@membersCount": {
+    "description": "The text displayed on the members count label",
+    "placeholders": {
+      "count": {}
+    }
   },
   "poojasCount": "{count} Poojas",
   "@poojasCount": {
@@ -162,6 +205,18 @@
   "@hideDetailsButtonLabel": {
     "description": "The text displayed on the hide details button."
   },
+  "pendingBadgeLabel": "Pending",
+  "@pendingBadgeLabel": {
+    "description": "The text displayed on the pending badge."
+  },
+  "approvedBadgeLabel": "Approved",
+  "@approvedBadgeLabel": {
+    "description": "The text displayed on the approved badge."
+  },
+  "rejectedBadgeLabel": "Rejected",
+  "@rejectedBadgeLabel": {
+    "description": "The text displayed on the rejected badge."
+  },
   "confirmedBadgeLabel": "Confirmed",
   "@confirmedBadgeLabel": {
     "description": "The text displayed on the confirmed badge."
@@ -178,12 +233,17 @@
   "@canceledBadgeLabel": {
     "description": "The text displayed on the canceled badge."
   },
-  "allBoookingsLabelWithCount": "All Bookings ({count})",
-  "@allBoookingsLabelWithCount": {
-    "description": "The text displayed on the all bookings label with count.",
-    "placeholders": {
-      "count": {}
-    }
+  "refundedBadgeLabel": "Refunded",
+  "@refundedBadgeLabel": {
+    "description": "The text displayed on the refunded badge."
+  },
+  "allPaymentsLabel": "All Payments",
+  "@allPaymentsLabel": {
+    "description": "The text displayed on the all payments label."
+  },
+  "allBoookingsLabel": "All Bookings",
+  "@allBoookingsLabel": {
+    "description": "The text displayed on the all bookings label."
   },
   "newPoojaBookingNotificationTitle": "New Pooja Booking",
   "@newPoojaBookingNotificationTitle": {
@@ -197,33 +257,45 @@
       "count": {}
     }
   },
-  "donationsManagementAppBarTitle": "Donations Management",
-  "@donationsManagementAppBarTitle": {
-    "description": "The title displayed on the donations management app bar."
+  "noBookingsFound": "No bookings found",
+  "@noBookingsFound": {
+    "description": "The text displayed when no bookings are found."
   },
-  "donationsSectionTitle": "{month} {day} Donations",
-  "@donationsSectionTitle": {
-    "description": "The title displayed on the donations section.",
+  "noNotificationsFound": "There is no notifications at the moment.",
+  "@noNotificationsFound": {
+    "description": "The text displayed when no notifications are found."
+  },
+  "paymentsManagementAppBarTitle": "Payments Management",
+  "@paymentsManagementAppBarTitle": {
+    "description": "The title displayed on the payments management app bar."
+  },
+  "paymentsSectionTitle": "Payments on {month} {day}",
+  "@paymentsSectionTitle": {
+    "description": "The title displayed on the payments section.",
     "placeholders": {
       "month": {},
       "day": {}
     }
   },
-  "donationDateAndTimeLabel": "Donation Date & Time",
-  "@donationDateAndTimeLabel": {
-    "description": "The text displayed on the donation date and time label."
+  "paymentDetailsSectionTitle": "Payment Details",
+  "@paymentDetailsSectionTitle": {
+    "description": "The title displayed on the payment details section."
   },
-  "transactionIdLabel": "Transaction ID",
-  "@transactionIdLabel": {
-    "description": "The text displayed on the transaction id label."
+  "paymentIdLabel": "Payment ID",
+  "@paymentIdLabel": {
+    "description": "The text displayed on the payment id label."
   },
-  "donationDetailsSectionTitle": "Donation Details",
-  "@donationDetailsSectionTitle": {
-    "description": "The title displayed on the donation details section."
+  "paymentScreenshotLabel": "Payment Screenshot",
+  "@paymentScreenshotLabel": {
+    "description": "The text displayed on the payment screenshot label."
   },
-  "donationPurposeLabel": "Donation Purpose",
-  "@donationPurposeLabel": {
-    "description": "The text displayed on the donation purpose label."
+  "approvePaymentButtonLabel": "Approve",
+  "@approvePaymentButtonLabel": {
+    "description": "The text displayed on the approve payment button."
+  },
+  "rejectPaymentButtonLabel": "Reject",
+  "@rejectPaymentButtonLabel": {
+    "description": "The text displayed on the reject payment button."
   },
   "statusLabel": "Status",
   "@statusLabel": {
@@ -232,6 +304,26 @@
   "paymentMethodLabel": "Payment Method",
   "@paymentMethodLabel": {
     "description": "The text displayed on the payment method label."
+  },
+  "noPaymentsFound": "No payments found",
+  "@noPaymentsFound": {
+    "description": "The text displayed when no payments are found."
+  },
+  "approvePaymentConfirmationTitle": "Approve Payment",
+  "@approvePaymentConfirmationTitle": {
+    "description": "The title displayed on the approve payment confirmation dialog."
+  },
+  "approvePaymentConfirmationMessage": "Are you sure you want to approve this payment?",
+  "@approvePaymentConfirmationMessage": {
+    "description": "The message displayed on the approve payment confirmation dialog."
+  },
+  "rejectPaymentConfirmationTitle": "Reject Payment",
+  "@rejectPaymentConfirmationTitle": {
+    "description": "The title displayed on the reject payment confirmation dialog."
+  },
+  "rejectPaymentConfirmationMessage": "Are you sure you want to reject this payment?",
+  "@rejectPaymentConfirmationMessage": {
+    "description": "The message displayed on the reject payment confirmation dialog."
   },
   "taxExemptionReceiptSectionTitle": "Tax Exemption Receipt",
   "@taxExemptionReceiptSectionTitle": {

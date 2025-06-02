@@ -1,4 +1,5 @@
 import 'package:aaraadhya_temple_dashboard/data/datasources_impl/remote/firestore_db_datasource_impl.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/core/query_condition.dart';
 import 'package:aaraadhya_temple_dashboard/di/firebase_providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -16,15 +17,9 @@ abstract class DbDatasource {
     String collectionPath,
     String docId,
   );
-  Future<List<Map<String, dynamic>>> getCollection(
+  Future<List<Map<String, dynamic>>> queryCollection(
     String collectionPath, {
-    String? orderBy,
-    bool descending = true,
-  });
-  Future<List<Map<String, dynamic>>> getCollectionByField(
-    String collectionPath, {
-    required Object field,
-    required dynamic value,
+    List<QueryCondition>? conditions,
     String? orderBy,
     bool descending = true,
   });

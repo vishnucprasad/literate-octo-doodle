@@ -5,9 +5,9 @@ import 'package:aaraadhya_temple_dashboard/presentation/screens/auth/splash/spla
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bookings/bookings_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/bottom_nav/bottom_nav_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/dashboard/dashboard_screen.dart';
-import 'package:aaraadhya_temple_dashboard/presentation/screens/home/donations/donations_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/events/events_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/home/more/more_screen.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/screens/home/payments/payments_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/profile_settings/profile_settings_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/schedule_pooja/schedule_pooja_screen.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/registrations/view_registrations/view_registrations_screen.dart';
@@ -50,10 +50,10 @@ class AppRoutes {
     path: '/bookings',
   );
 
-  static AppRoute donations = AppRoute(
-    DonationsScreen(),
-    name: 'donations',
-    path: '/donations',
+  static AppRoute payments = AppRoute(
+    PaymentsScreen(),
+    name: 'payments',
+    path: '/payments',
   );
 
   static AppRoute events = AppRoute(

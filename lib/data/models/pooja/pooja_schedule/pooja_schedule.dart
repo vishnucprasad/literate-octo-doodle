@@ -19,6 +19,7 @@ class PoojaSchedule with _$PoojaSchedule {
     required List<bool>? poojaDays,
     required PoojaTime? poojaTime,
     required DateTime? poojaDateAndTime,
+    required List<String> keywords,
     required DateTime createdAt,
     required DateTime? updatedAt,
   }) = _PoojaSchedule;
@@ -34,6 +35,7 @@ class PoojaSchedule with _$PoojaSchedule {
     poojaDays: null,
     poojaTime: null,
     poojaDateAndTime: null,
+    keywords: [],
     createdAt: DateTime.now(),
     updatedAt: null,
   );

@@ -99,7 +99,7 @@ class ProfileRepositoryImpl implements ProfileRepository {
   @override
   Future<List<GalleryItem>> getGalleryItems(String userId) async {
     return await _dbDataSource
-        .getCollection('temples/$userId/gallery', orderBy: 'uploadedAt')
+        .queryCollection('temples/$userId/gallery', orderBy: 'uploadedAt')
         .then((data) => data.map((doc) => GalleryItem.fromJson(doc)).toList());
   }
 
