@@ -1015,6 +1015,22 @@
   "@tooManyRequestsErrorMessage": {
     "description": "The message displayed when a user exceeds the allowed number of login attempts."
   },
+  "clearAllButtonLabel": "Clear All",
+  "@clearAllButtonLabel": {
+    "description": "The text displayed on the clear all button."
+  },
+  "fcmPermissionDenied": "Push notification permission was denied.",
+  "@fcmPermissionDenied": {
+    "description": "The message displayed when a user denies push notification permission."
+  },
+  "fcmTokenFetchFailed": "Unable to retrieve device token for notifications.",
+  "@fcmTokenFetchFailed": {
+    "description": "The message displayed when unable to retrieve device token for notifications."
+  },
+  "fcmMessageHandlingFailed": "Something went wrong while handling the notification.",
+  "@fcmMessageHandlingFailed": {
+    "description": "The message displayed when unable to handle the notification."
+  },
   "defaultErrorMessage": "An unexpected error occurred. Please try again later.",
   "@defaultErrorMessage": {
     "description": "The message displayed for general errors."

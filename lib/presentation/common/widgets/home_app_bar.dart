@@ -49,6 +49,15 @@ class HomeAppBar extends StatelessWidget {
           [
             IconButton(
               onPressed: () {
+                context.push(AppRoutes.notifications.path);
+              },
+              icon: Icon(
+                Icons.notifications_outlined,
+                color: context.theme.colorScheme.onSurface,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
                 context.push(AppRoutes.profileSettingsScreen.path);
               },
               icon: CircleAvatar(
