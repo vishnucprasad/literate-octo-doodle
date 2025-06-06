@@ -30,7 +30,7 @@ class ProfileSettingsScreen extends HookConsumerWidget {
         }
       });
 
-      return tabController.dispose;
+      return null;
     }, []);
 
     final basicDetailsState = ref.watch(basicDetailsControllerProvider);

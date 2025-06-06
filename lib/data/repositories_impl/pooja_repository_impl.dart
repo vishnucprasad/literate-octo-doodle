@@ -102,6 +102,7 @@ class PoojaRepositoryImpl implements PoojaRepository {
       conditions: [
         QueryCondition(field: 'templeId', operator: '==', value: userId),
       ],
+      orderBy: 'createdAt',
     );
 
     final schedules = await Future.wait(

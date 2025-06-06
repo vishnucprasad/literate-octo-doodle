@@ -180,6 +180,7 @@ class SchedulePoojaForm extends HookConsumerWidget {
                       if (value == 'OTHER') {
                         showDeityNameInputField.value = true;
                       } else {
+                        showDeityNameInputField.value = false;
                         controller.updateDeityName(value);
                       }
                     },

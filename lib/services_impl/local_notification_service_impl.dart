@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:aaraadhya_temple_dashboard/services/local_notification_service.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
@@ -5,6 +8,8 @@ class LocalNotificationServiceImpl implements LocalNotificationService {
   final FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin;
 
   LocalNotificationServiceImpl(this._flutterLocalNotificationsPlugin);
+
+  final _tapController = StreamController<Map<String, dynamic>>.broadcast();
 
   @override
   Future<void> init() async {
@@ -14,7 +19,16 @@ class LocalNotificationServiceImpl implements LocalNotificationService {
     const initializationSettings = InitializationSettings(
       android: initializationSettingsAndroid,
     );
-    await _flutterLocalNotificationsPlugin.initialize(initializationSettings);
+    await _flutterLocalNotificationsPlugin.initialize(
+      initializationSettings,
+      onDidReceiveNotificationResponse: (response) {
+        final rawPayload = response.payload;
+        if (rawPayload != null) {
+          final data = jsonDecode(rawPayload) as Map<String, dynamic>;
+          _tapController.add(data);
+        }
+      },
+    );
   }
 
   @override
@@ -22,7 +36,7 @@ class LocalNotificationServiceImpl implements LocalNotificationService {
     required int id,
     required String title,
     required String body,
-    String? payload,
+    required Map<String, dynamic> data,
   }) async {
     const androidDetails = AndroidNotificationDetails(
       'default_channel',
@@ -38,7 +52,11 @@ class LocalNotificationServiceImpl implements LocalNotificationService {
       title,
       body,
       notificationDetails,
-      payload: payload,
+      payload: jsonEncode(data),
     );
   }
+
+  @override
+  Stream<Map<String, dynamic>> get onLocalNotificationTap =>
+      _tapController.stream;
 }

@@ -11,8 +11,9 @@ abstract class LocalNotificationService {
     required int id,
     required String title,
     required String body,
-    String? payload,
+    required Map<String, dynamic> data,
   });
+  Stream<Map<String, dynamic>> get onLocalNotificationTap;
 }
 
 @riverpod

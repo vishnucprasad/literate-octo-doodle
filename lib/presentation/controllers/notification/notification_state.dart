@@ -8,7 +8,6 @@ part 'notification_state.freezed.dart';
 class NotificationState with _$NotificationState {
   const factory NotificationState({
     @Default(false) bool isLoading,
-    @Default(0) int count,
     @Default([]) List<Notification> notifications,
     @Default(false) bool isClearing,
     @Default(false) bool isTappedOnNotification,

@@ -33,21 +33,29 @@ class NotificationController extends _$NotificationController {
         await fcmService.initFCM(userId);
         await localNotificationService.init();
 
+        final message = await fcmService.getInitialMessage();
+        if (message != null) {
+          state = state.copyWith(isTappedOnNotification: true);
+          deleteNotification(message.data["notificationId"]);
+        }
+
         fcmService.onMessage.listen((message) async {
-          state = state.copyWith(count: state.count + 1);
           localNotificationService.showNotification(
             id: DateTime.now().millisecondsSinceEpoch ~/ 1000,
             title: message.notification?.title ?? 'New Booking Received!',
             body: message.notification?.body ?? 'Please verify the payment.',
+            data: message.data,
           );
         });
 
         fcmService.onNotificationTap.listen((message) async {
-          await deleteNotification(message.data["notificationId"]);
-          state = state.copyWith(
-            count: state.count - 1,
-            isTappedOnNotification: true,
-          );
+          state = state.copyWith(isTappedOnNotification: true);
+          deleteNotification(message.data["notificationId"]);
+        });
+
+        localNotificationService.onLocalNotificationTap.listen((data) {
+          state = state.copyWith(isTappedOnNotification: true);
+          deleteNotification(data["notificationId"]);
         });
 
         await getNotifications();
@@ -104,7 +112,6 @@ class NotificationController extends _$NotificationController {
               state.notifications
                   .where((notification) => notification.id != notificationId)
                   .toList(),
-          count: state.count - 1,
         );
       }
     } on BaseException catch (e) {
@@ -126,8 +133,6 @@ class NotificationController extends _$NotificationController {
 
       if (userId != null) {
         await notificationRepository.clearAllNotifications(userId: userId);
-
-        state = state.copyWith(notifications: [], count: 0);
       }
     } on BaseException catch (e) {
       state = state.copyWith(error: e);

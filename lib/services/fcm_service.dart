@@ -9,6 +9,7 @@ part 'fcm_service.g.dart';
 
 abstract class FcmService {
   Future<void> initFCM(String userId);
+  Future<RemoteMessage?> getInitialMessage();
   Stream<RemoteMessage> get onMessage;
   Stream<RemoteMessage> get onNotificationTap;
 }
