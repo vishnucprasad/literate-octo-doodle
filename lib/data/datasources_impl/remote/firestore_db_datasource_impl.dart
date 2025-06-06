@@ -47,7 +47,9 @@ class FirestoreDbDatasourceImpl implements DbDatasource {
   ) async {
     try {
       final docSnapshot = await _db.collection(collectionPath).doc(docId).get();
-      if (docSnapshot.exists) return docSnapshot.data();
+      if (docSnapshot.exists && docSnapshot.data() != null) {
+        return {"id": docSnapshot.id, ...docSnapshot.data()!};
+      }
       throw DatabaseException.notFound();
     } on FirebaseException catch (e) {
       throw DatabaseException.fromFirebaseException(e);
@@ -176,10 +178,48 @@ class FirestoreDbDatasourceImpl implements DbDatasource {
   }
 
   @override
+  Future<void> deleteCollection(
+    String collectionPath, {
+    int batchSize = 100,
+  }) async {
+    try {
+      final collectionRef = _db.collection(collectionPath);
+      final query = collectionRef.limit(batchSize);
+
+      // Recursive delete function
+      Future<void> deleteBatch(Query<Map<String, dynamic>> query) async {
+        final snapshot = await query.get();
+
+        if (snapshot.docs.isEmpty) return;
+
+        final batch = _db.batch();
+        for (final doc in snapshot.docs) {
+          batch.delete(doc.reference);
+        }
+
+        await batch.commit();
+
+        // Recursively delete next batch
+        await deleteBatch(query);
+      }
+
+      await deleteBatch(query);
+    } on FirebaseException catch (e) {
+      throw DatabaseException.fromFirebaseException(e);
+    } on PlatformException catch (e) {
+      throw DatabaseException.fromPlatformException(e);
+    } catch (e) {
+      throw DatabaseException.unexpected(e.toString());
+    }
+  }
+
+  @override
   Stream<List<Map<String, dynamic>>> listenToCollection(String collectionPath) {
     try {
       return _db.collection(collectionPath).snapshots().map((snapshot) {
-        return snapshot.docs.map((doc) => doc.data()).toList();
+        return snapshot.docs
+            .map((doc) => {'id': doc.id, ...doc.data()})
+            .toList();
       });
     } on FirebaseException catch (e) {
       throw DatabaseException.fromFirebaseException(e);

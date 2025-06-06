@@ -29,6 +29,7 @@ abstract class DbDatasource {
     Map<String, dynamic> data,
   );
   Future<void> deleteDocument(String collectionPath, String docId);
+  Future<void> deleteCollection(String collectionPath, {int batchSize = 100});
   Stream<List<Map<String, dynamic>>> listenToCollection(String collectionPath);
 }
 

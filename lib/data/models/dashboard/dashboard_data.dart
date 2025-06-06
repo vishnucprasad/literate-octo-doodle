@@ -1,4 +1,5 @@
 import 'package:aaraadhya_temple_dashboard/data/models/booking/booking.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/notification/notification.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'dashboard_data.freezed.dart';
@@ -12,7 +13,7 @@ class DashboardData with _$DashboardData {
     @Default(0) int totalActivePoojas,
     @Default(0) int totalActiveEvents,
     @Default([]) List<Booking> latestBookings,
-    @Default([]) List<dynamic> latestNotifications,
+    @Default([]) List<Notification> latestNotifications,
   }) = _DashboardData;
 
   factory DashboardData.fromJson(Map<String, dynamic> json) =>
