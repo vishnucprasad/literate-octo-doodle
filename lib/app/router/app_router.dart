@@ -77,6 +77,11 @@ GoRouter appRouter(Ref ref) {
         ],
       ),
       GoRoute(
+        path: AppRoutes.notifications.path,
+        name: AppRoutes.notifications.name,
+        pageBuilder: AppRoutes.notifications.slideTransitionBuilder,
+      ),
+      GoRoute(
         path: AppRoutes.profileSettingsScreen.path,
         name: AppRoutes.profileSettingsScreen.name,
         pageBuilder: AppRoutes.profileSettingsScreen.slideTransitionBuilder,
