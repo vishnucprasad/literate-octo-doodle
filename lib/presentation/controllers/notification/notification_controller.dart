@@ -4,6 +4,7 @@ import 'package:aaraadhya_temple_dashboard/data/repositories/auth_repository.dar
 import 'package:aaraadhya_temple_dashboard/data/repositories/notification_repository.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/notification/notification_state.dart';
 import 'package:aaraadhya_temple_dashboard/services/fcm_service.dart';
+import 'package:aaraadhya_temple_dashboard/services/local_notification_service.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'notification_controller.g.dart';
@@ -19,6 +20,9 @@ class NotificationController extends _$NotificationController {
   Future<void> initFcmAndListenToNotifications() async {
     final authRepository = ref.watch(authRepositoryProvider);
     final fcmService = ref.watch(fcmServiceProvider);
+    final localNotificationService = ref.watch(
+      localNotificationServiceProvider,
+    );
 
     try {
       state = state.copyWith(isLoading: true);
@@ -27,9 +31,15 @@ class NotificationController extends _$NotificationController {
 
       if (userId != null) {
         await fcmService.initFCM(userId);
+        await localNotificationService.init();
 
         fcmService.onMessage.listen((message) async {
           state = state.copyWith(count: state.count + 1);
+          localNotificationService.showNotification(
+            id: DateTime.now().millisecondsSinceEpoch ~/ 1000,
+            title: message.notification?.title ?? 'New Booking Received!',
+            body: message.notification?.body ?? 'Please verify the payment.',
+          );
         });
 
         fcmService.onNotificationTap.listen((message) async {

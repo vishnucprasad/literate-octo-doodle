@@ -1,3 +1,4 @@
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -16,3 +17,8 @@ ImagePicker imagePicker(Ref ref) => ImagePicker();
 
 @riverpod
 ImageCropper imageCropper(Ref ref) => ImageCropper();
+
+@riverpod
+FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin(Ref ref) {
+  return FlutterLocalNotificationsPlugin();
+}
