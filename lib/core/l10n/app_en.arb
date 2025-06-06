@@ -713,6 +713,18 @@
   "@poojaPriceHintText": {
     "description": "The hint text displayed on the pooja price hint text."
   },
+  "specifyDeityNameLabel": "Specify Deity Name",
+  "@specifyDeityNameLabel": {
+    "description": "The text displayed on the specify deity name label."
+  },
+  "specifyDeityNameHintText": "Enter deity name",
+  "@specifyDeityNameHintText": {
+    "description": "The hint text displayed on the specify deity name hint text."
+  },
+  "specifyDeityNameEmptyErrorText": "Please specify deity name",
+  "@specifyDeityNameEmptyErrorText": {
+    "description": "The error text displayed when the specify deity name is empty."
+  },
   "poojaLabel": "Pooja",
   "@poojaLabel": {
     "description": "The text displayed on the pooja label."
