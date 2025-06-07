@@ -67,6 +67,10 @@ class FcmServiceImpl implements FcmService {
   }
 
   @override
+  Future<RemoteMessage?> getInitialMessage() =>
+      _firebaseMessaging.getInitialMessage();
+
+  @override
   Stream<RemoteMessage> get onMessage => _messageController.stream;
 
   @override

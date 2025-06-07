@@ -1,5 +1,6 @@
 import 'package:aaraadhya_temple_dashboard/app/router/app_routes.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/auth/auth_controller.dart';
+import 'package:aaraadhya_temple_dashboard/presentation/controllers/notification/notification_controller.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -9,6 +10,11 @@ part 'app_router.g.dart';
 @riverpod
 GoRouter appRouter(Ref ref) {
   final authState = ref.watch(authControllerProvider);
+  final isTappedOnNotification = ref.watch(
+    notificationControllerProvider.select(
+      (state) => state.isTappedOnNotification,
+    ),
+  );
 
   return GoRouter(
     initialLocation: AppRoutes.splash.path,
@@ -21,7 +27,9 @@ GoRouter appRouter(Ref ref) {
             return AppRoutes.splash.path;
           }
           if (authState.user != null) {
-            return AppRoutes.dashboard.path;
+            return isTappedOnNotification
+                ? AppRoutes.payments.path
+                : AppRoutes.dashboard.path;
           }
           return AppRoutes.signin.path;
         },

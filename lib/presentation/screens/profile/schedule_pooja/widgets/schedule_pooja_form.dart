@@ -13,14 +13,17 @@ import 'package:aaraadhya_temple_dashboard/presentation/controllers/profile/basi
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/profile/poojas/pooja_schedules_controller.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/screens/profile/schedule_pooja/widgets/repeat_days_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SchedulePoojaForm extends ConsumerWidget {
+class SchedulePoojaForm extends HookConsumerWidget {
   const SchedulePoojaForm({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final showDeityNameInputField = useState<bool>(false);
+
     final state = ref.watch(poojaSchedulesControllerProvider);
     final controller = ref.read(poojaSchedulesControllerProvider.notifier);
 
@@ -146,7 +149,8 @@ class SchedulePoojaForm extends ConsumerWidget {
                     initialSelection:
                         state.isEditing ? state.schedule.deityName : null,
                     errorText:
-                        state.validationErrors.showValidationErrors
+                        !showDeityNameInputField.value &&
+                                state.validationErrors.showValidationErrors
                             ? state.validationErrors.deityName?.maybeMap(
                               empty:
                                   (value) =>
@@ -168,13 +172,43 @@ class SchedulePoojaForm extends ConsumerWidget {
                           );
                         },
                       ),
+                      DropdownMenuEntry<String>(value: 'OTHER', label: "Other"),
                     ],
                     onSelected: (value) {
-                      if (value != null) {
+                      if (value == null) return;
+
+                      if (value == 'OTHER') {
+                        showDeityNameInputField.value = true;
+                      } else {
+                        showDeityNameInputField.value = false;
                         controller.updateDeityName(value);
                       }
                     },
                   ),
+                  if (showDeityNameInputField.value) ...[
+                    AppSpacing.verticalMedium,
+                    AppInputField(
+                      hint: context.l10n.specifyDeityNameHintText,
+                      labelText: context.l10n.specifyDeityNameLabel,
+                      errorText:
+                          state.validationErrors.showValidationErrors
+                              ? state.validationErrors.deityName?.maybeMap(
+                                empty:
+                                    (value) =>
+                                        context
+                                            .l10n
+                                            .specifyDeityNameEmptyErrorText,
+                                orElse: () => null,
+                              )
+                              : null,
+                      prefixIcon: Icon(
+                        Icons.temple_hindu_outlined,
+                        color: context.colors.grey[700],
+                      ),
+                      keyboardType: TextInputType.name,
+                      onChanged: controller.updateDeityName,
+                    ),
+                  ],
                   AppSpacing.verticalMedium,
                   AppDropdownMenu<ScheduleMode>(
                     labelText: context.l10n.scheduleModeLabel,

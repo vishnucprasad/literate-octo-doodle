@@ -1,6 +1,7 @@
 import 'package:aaraadhya_temple_dashboard/core/exceptions/auth_exception.dart';
 import 'package:aaraadhya_temple_dashboard/core/exceptions/base_exception.dart';
 import 'package:aaraadhya_temple_dashboard/core/exceptions/database_exception.dart';
+import 'package:aaraadhya_temple_dashboard/data/models/notification/notification.dart';
 import 'package:aaraadhya_temple_dashboard/data/repositories/auth_repository.dart';
 import 'package:aaraadhya_temple_dashboard/data/repositories/dashboard_repository.dart';
 import 'package:aaraadhya_temple_dashboard/presentation/controllers/home/dashboard/dashboard_state.dart';
@@ -37,5 +38,22 @@ class DashboardController extends _$DashboardController {
     } finally {
       state = state.copyWith(isLoading: false);
     }
+  }
+
+  void onNewNotification(Notification notification) {
+    state = state.copyWith(
+      data: state.data.copyWith(
+        latestNotifications: [
+          notification,
+          ...state.data.latestNotifications.skip(
+            state.data.latestNotifications.length > 2 ? 1 : 0,
+          ),
+        ],
+      ),
+    );
+  }
+
+  void onClearNotifications() {
+    state = state.copyWith(data: state.data.copyWith(latestNotifications: []));
   }
 }

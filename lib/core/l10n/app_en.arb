@@ -713,6 +713,18 @@
   "@poojaPriceHintText": {
     "description": "The hint text displayed on the pooja price hint text."
   },
+  "specifyDeityNameLabel": "Specify Deity Name",
+  "@specifyDeityNameLabel": {
+    "description": "The text displayed on the specify deity name label."
+  },
+  "specifyDeityNameHintText": "Enter deity name",
+  "@specifyDeityNameHintText": {
+    "description": "The hint text displayed on the specify deity name hint text."
+  },
+  "specifyDeityNameEmptyErrorText": "Please specify deity name",
+  "@specifyDeityNameEmptyErrorText": {
+    "description": "The error text displayed when the specify deity name is empty."
+  },
   "poojaLabel": "Pooja",
   "@poojaLabel": {
     "description": "The text displayed on the pooja label."
@@ -1290,5 +1302,21 @@
   "scheduleListEmptyText": "No pooja schedules found",
   "@scheduleListEmptyText": {
     "description": "The text displayed when the pooja schedule list is empty."
+  },
+  "defaultComingSoonTitle": "Coming Soon",
+  "@defaultComingSoonTitle": {
+    "description": "The default title displayed when the coming soon page is empty."
+  },
+  "defaultComingSoonMessage": "We're working on this feature. Stay tuned!",
+  "@defaultComingSoonMessage": {
+    "description": "The default message displayed when the coming soon page is empty."
+  },
+  "eventsComingSoonTitle": "Events Management Coming Soon!",
+  "@eventsComingSoonTitle": {
+    "description": "The title displayed when the events management coming soon page is empty."
+  },
+  "eventsComingSoonMessage": "You’ll soon be able to view and manage temple events from here.",
+  "@eventsComingSoonMessage": {
+    "description": "The message displayed when the events management coming soon page is empty."
   }
 }
