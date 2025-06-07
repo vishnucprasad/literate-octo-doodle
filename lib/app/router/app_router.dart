@@ -10,7 +10,11 @@ part 'app_router.g.dart';
 @riverpod
 GoRouter appRouter(Ref ref) {
   final authState = ref.watch(authControllerProvider);
-  final notificationState = ref.watch(notificationControllerProvider);
+  final isTappedOnNotification = ref.watch(
+    notificationControllerProvider.select(
+      (state) => state.isTappedOnNotification,
+    ),
+  );
 
   return GoRouter(
     initialLocation: AppRoutes.splash.path,
@@ -23,7 +27,7 @@ GoRouter appRouter(Ref ref) {
             return AppRoutes.splash.path;
           }
           if (authState.user != null) {
-            return notificationState.isTappedOnNotification
+            return isTappedOnNotification
                 ? AppRoutes.payments.path
                 : AppRoutes.dashboard.path;
           }

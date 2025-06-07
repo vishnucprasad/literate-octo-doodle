@@ -42,7 +42,7 @@ class Validators {
   static ValidationError? validateName(String? name) {
     if (name == null || name.isEmpty) return ValidationError.empty();
 
-    final nameRegExp = RegExp(r'^[a-zA-Z ]+$');
+    final nameRegExp = RegExp(r'^[\u0D00-\u0D7F a-zA-Z]+$');
 
     if (!nameRegExp.hasMatch(name)) {
       return ValidationError.invalid();
